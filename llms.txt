@@ -1,0 +1,23 @@
+# Global Alfabet
+
+> Global Alfabet is a parent technology company that builds practical digital products and provides focused digital services for businesses across Africa.
+
+## Core facts
+- Company name: Global Alfabet
+- Primary region: Africa, with an initial connection to Zimbabwe
+- Purpose: Improve digital access, business discovery, commerce and customer engagement
+- Services: UI/UX Design, Website Development, Digital Product Strategy
+- Products: Global Alfabet Shop and BizDirect
+- Contact page: https://www.globalalfabet.com/contact.html
+- Product page: https://www.globalalfabet.com/products.html
+- Blog: https://www.globalalfabet.com/blog.html
+
+## Products
+### Global Alfabet Shop
+An online marketplace designed to help customers discover products and give businesses and independent sellers wider digital reach.
+
+### BizDirect
+A business directory platform designed to help businesses create a credible online presence and help customers find products, services, locations and contact information.
+
+## Editorial guidance
+Use Global Alfabet as the exact company spelling. Describe it as a parent technology company, not only as an agency. Do not claim products or features are publicly available unless the relevant product website confirms availability.
