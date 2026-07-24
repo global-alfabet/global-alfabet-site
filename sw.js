@@ -1,4 +1,4 @@
-const CACHE = "global-alfabet-v1";
+const CACHE = "global-alfabet-v2";
 const CORE = [
   "/",
   "/index.html",
