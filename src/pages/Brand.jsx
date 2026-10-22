@@ -1,7 +1,5 @@
-import { useEffect } from "react";
 import Icon from "../components/Icon.jsx";
 import ProductIcon from "../components/ProductIcon.jsx";
-import { usePageTitle } from "../lib/usePageTitle.js";
 import { asset } from "../lib/asset.js";
 
 const brands = [
@@ -21,15 +19,7 @@ const files = [
 ];
 
 export default function Brand() {
-  usePageTitle("Brand assets", "Download Global Alfabet and Alfa product logos.");
-  // Not linked from the site: keep it out of search engines too.
-  useEffect(() => {
-    const meta = document.createElement("meta");
-    meta.name = "robots";
-    meta.content = "noindex, nofollow";
-    document.head.appendChild(meta);
-    return () => meta.remove();
-  }, []);
+  // Not linked from the site, and kept out of search results (noindex in src/lib/seo.js).
   return (
     <>
       <section className="page-hero">

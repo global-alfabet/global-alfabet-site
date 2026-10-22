@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 import { posts, formatDate } from "../lib/blog.js";
-import { usePageTitle } from "../lib/usePageTitle.js";
 
 export default function Blog() {
-  usePageTitle("Blog", "Company news, product updates and practical guidance from Global Alfabet.");
   return (
     <>
       <section className="page-hero">

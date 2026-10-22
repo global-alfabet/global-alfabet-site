@@ -2,12 +2,10 @@ import { Link, useParams } from "react-router-dom";
 import Icon from "../components/Icon.jsx";
 import NotFound from "./NotFound.jsx";
 import { postBySlug, formatDate } from "../lib/blog.js";
-import { usePageTitle } from "../lib/usePageTitle.js";
 
 export default function Article() {
   const { slug } = useParams();
   const post = postBySlug[slug];
-  usePageTitle(post?.title, post?.summary);
   if (!post) return <NotFound />;
   return (
     <article className="article">

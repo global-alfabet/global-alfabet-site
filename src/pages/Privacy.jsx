@@ -1,10 +1,8 @@
 import { company } from "../config.js";
-import { usePageTitle } from "../lib/usePageTitle.js";
 
 // Plain-language notice describing what this website actually does. Have it reviewed before launch in each
 // country Global Alfabet operates in, and update it when analytics, cookies or new services are added.
 export default function Privacy() {
-  usePageTitle("Privacy", "How the Global Alfabet website handles the information you send us.");
   return (
     <article className="article">
       <div className="container narrow prose">

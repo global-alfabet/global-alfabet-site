@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Nav from "./components/Nav.jsx";
 import Footer from "./components/Footer.jsx";
+import Seo from "./components/Seo.jsx";
 import Home from "./pages/Home.jsx";
 import Products from "./pages/Products.jsx";
 import Blog from "./pages/Blog.jsx";
@@ -34,6 +35,7 @@ export default function App() {
         Skip to content
       </a>
       <ScrollManager />
+      <Seo />
       <Nav />
       <main id="main">
         <Routes>
