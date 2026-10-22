@@ -985,15 +985,21 @@ a.way:hover {
   .nav-toggle {
     display: block;
   }
+  /* The sheet hangs below the bar. It can't use position: fixed, because the bar's backdrop blur makes the bar
+     the containing block, which collapsed the sheet and left the links floating over the page. */
+  .nav.is-open {
+    background: var(--bg);
+  }
   .nav.is-open .nav-sheet {
     display: flex;
     flex-direction: column;
-    position: fixed;
-    top: var(--nav-h);
+    position: absolute;
+    top: 100%;
     left: 0;
     right: 0;
-    bottom: 0;
-    background: #fff;
+    height: calc(100dvh - var(--nav-h));
+    overflow-y: auto;
+    background: var(--bg);
     padding: 24px 32px;
     gap: 6px;
   }

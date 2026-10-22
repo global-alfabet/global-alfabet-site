@@ -30,9 +30,6 @@ export default function Footer() {
               <li>
                 <Link to="/blog">Blog</Link>
               </li>
-              <li>
-                <Link to="/brand">Brand assets</Link>
-              </li>
             </ul>
           </div>
           <div>

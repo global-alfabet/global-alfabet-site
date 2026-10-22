@@ -55,7 +55,6 @@ export default function Nav() {
             {l.label}
           </Link>
         ))}
-        <Link to="/brand">Brand assets</Link>
       </nav>
     </header>
   );
