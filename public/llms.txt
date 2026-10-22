@@ -1,0 +1,21 @@
+# Global Alfabet
+
+> Global Alfabet is a technology company that builds the Alfa family of digital products and offers design and development services to businesses in Africa and beyond. Tagline: Providing access.
+
+## Products
+- Alfa Maps: turns a property developer's layout plan and stand list into a 3D estate buyers explore on their phone, with house designs, prices, payment plans, PDF stand packs and WhatsApp enquiries. Demos available.
+- Alfa Places (formerly BizDirect): a directory of businesses, attractions and places to visit. In development.
+- Alfa Shop (formerly Global Alfabet Shop): an online marketplace for businesses and independent sellers. Coming soon.
+- Global Alfabet Account: one sign-in for every Alfa product, with company workspaces. Coming soon.
+
+## Services
+UI/UX design, website development, digital product strategy.
+
+## Pages
+- Products: https://www.globalalfabet.com/products
+- Contact: https://www.globalalfabet.com/contact
+- Blog: https://www.globalalfabet.com/blog
+- Brand assets: https://www.globalalfabet.com/brand
+
+## Contact
+hello@globalalfabet.com

@@ -1,5 +1,49 @@
 [build]
-  publish = "."
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Old page addresses keep working
+[[redirects]]
+  from = "/products.html"
+  to = "/products"
+  status = 301
+[[redirects]]
+  from = "/blog.html"
+  to = "/blog"
+  status = 301
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact"
+  status = 301
+[[redirects]]
+  from = "/privacy.html"
+  to = "/privacy"
+  status = 301
+[[redirects]]
+  from = "/article.html"
+  to = "/blog"
+  status = 301
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/admin"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/admin.html"
+  to = "/"
+  status = 301
+
+# Single-page app: every other address is handled by React
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
 
 [[headers]]
   for = "/*"
@@ -12,9 +56,16 @@
 [[headers]]
   for = "/sw.js"
   [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
+    Cache-Control = "no-cache"
 
 [[headers]]
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Logos are public so Adobe Express designs and partners can link to them
+[[headers]]
+  for = "/brand/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=86400"
