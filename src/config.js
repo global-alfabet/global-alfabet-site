@@ -12,8 +12,8 @@ export const company = {
 
 // Where each product lives. Leave url empty until the product is public: the site then shows "Coming soon".
 export const productLinks = {
-  "alfa-maps": "",
-  "alfa-places": "",
+  "alfa-maps": "https://maps.globalalfabet.com",
+  "alfa-places": "https://places.globalalfabet.com",
   "alfa-shop": "",
   account: "",
 };

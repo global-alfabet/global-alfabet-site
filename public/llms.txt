@@ -15,7 +15,6 @@ UI/UX design, website development, digital product strategy.
 - Products: https://www.globalalfabet.com/products
 - Contact: https://www.globalalfabet.com/contact
 - Blog: https://www.globalalfabet.com/blog
-- Brand assets: https://www.globalalfabet.com/brand
 
 ## Contact
 hello@globalalfabet.com
