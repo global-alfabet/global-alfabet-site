@@ -14,7 +14,7 @@ const SHARE_IMAGE = {
   url: "/og.png",
   width: 1200,
   height: 630,
-  alt: "Global Alfabet, Providing access, with the Alfa Maps, Alfa Places, Alfa Shop and Account icons",
+  alt: "Global Alfabet, Providing access, with the Alfa Maps, Alfa Finda, Alfa Shop and Account icons",
 };
 
 // Titles show as "<title> · Global Alfabet". Keep descriptions under about 160 characters.
@@ -22,12 +22,12 @@ const pages = {
   "/": {
     fullTitle: "Global Alfabet · Digital products for businesses in Zimbabwe",
     description:
-      "Global Alfabet builds Alfa Maps, 3D estate sales for property developers, and Alfa Places, businesses and places to visit in Zimbabwe. Alfa Shop is next.",
+      "Global Alfabet builds Alfa Maps, 3D estate sales for property developers, and Alfa Finda, businesses and places to visit in Zimbabwe. Alfa Shop is next.",
   },
   "/products": {
-    title: "Alfa Maps, Alfa Places and Alfa Shop",
+    title: "Alfa Maps, Alfa Finda and Alfa Shop",
     description:
-      "Alfa Maps turns a layout plan into a 3D estate buyers explore on their phone. Alfa Places finds businesses and places to visit in Zimbabwe. Alfa Shop is next.",
+      "Alfa Maps turns a layout plan into a 3D estate buyers explore on their phone. Alfa Finda searches businesses and places to visit in Zimbabwe. Alfa Shop is next.",
     crumb: "Products",
   },
   "/blog": {
@@ -38,7 +38,7 @@ const pages = {
   "/contact": {
     title: "Contact",
     description:
-      "Book an Alfa Maps demo, list your business on Alfa Places, start a website project or get help with a Global Alfabet product.",
+      "Book an Alfa Maps demo, list your business on Alfa Finda, start a website project or get help with a Global Alfabet product.",
     crumb: "Contact",
   },
   "/privacy": {

@@ -1,6 +1,6 @@
 # globalalfabet.com
 
-The Global Alfabet company website: the parent brand for Alfa Maps, Alfa Places, Alfa Shop and the Global Alfabet
+The Global Alfabet company website: the parent brand for Alfa Maps, Alfa Finda, Alfa Shop and the Global Alfabet
 Account. React + Vite, frontend only, hosted on Netlify.
 
 ```bash

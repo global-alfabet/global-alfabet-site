@@ -237,7 +237,7 @@ export default function Home() {
         <div className="container narrow center">
           <h2>Let's open some doors.</h2>
           <p className="muted">
-            Book an Alfa Maps demo, list your business on Alfa Places, or tell us what you want to build.
+            Book an Alfa Maps demo, list your business on Alfa Finda, or tell us what you want to build.
           </p>
           <div className="hero-actions">
             <Link className="btn" to="/contact">
