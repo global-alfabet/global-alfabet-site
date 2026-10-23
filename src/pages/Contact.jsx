@@ -5,7 +5,6 @@ import { company } from "../config.js";
 import { products } from "../content/products.js";
 import { services } from "../content/company.js";
 import { submitNetlifyForm } from "../lib/forms.js";
-import { usePageTitle } from "../lib/usePageTitle.js";
 
 const interests = [...products.map((p) => p.name), ...services.map((s) => s.title), "Something else"];
 
@@ -45,7 +44,6 @@ function Result({ state, email }) {
 }
 
 export default function Contact() {
-  usePageTitle("Contact", "Book a demo, start a project or get help with a Global Alfabet product.");
   const [params] = useSearchParams();
   const preset = interests.find((i) => i.toLowerCase() === (params.get("interest") || "").toLowerCase()) || "";
   const enquiry = useForm("enquiry");

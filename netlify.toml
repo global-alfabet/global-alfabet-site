@@ -5,23 +5,28 @@
 [build.environment]
   NODE_VERSION = "22"
 
-# Old page addresses keep working
+# Old page addresses keep working. force: products.html etc. now exist as files, and the old .html addresses
+# should still move to the clean ones rather than show the same page twice.
 [[redirects]]
   from = "/products.html"
   to = "/products"
   status = 301
+  force = true
 [[redirects]]
   from = "/blog.html"
   to = "/blog"
   status = 301
+  force = true
 [[redirects]]
   from = "/contact.html"
   to = "/contact"
   status = 301
+  force = true
 [[redirects]]
   from = "/privacy.html"
   to = "/privacy"
   status = 301
+  force = true
 [[redirects]]
   from = "/article.html"
   to = "/blog"
@@ -39,11 +44,8 @@
   to = "/"
   status = 301
 
-# Single-page app: every other address is handled by React
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Every page is built as its own HTML file (scripts/prerender.js): /products is served from products.html.
+# Any other address gets 404.html with a real 404 status, so search engines don't index missing pages.
 
 [[headers]]
   for = "/*"

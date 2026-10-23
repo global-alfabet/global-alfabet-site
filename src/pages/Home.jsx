@@ -4,7 +4,6 @@ import ProductIcon from "../components/ProductIcon.jsx";
 import { products, productById } from "../content/products.js";
 import { services, values, faq } from "../content/company.js";
 import { posts, formatDate } from "../lib/blog.js";
-import { usePageTitle } from "../lib/usePageTitle.js";
 import { asset } from "../lib/asset.js";
 
 function Status({ children }) {
@@ -12,7 +11,6 @@ function Status({ children }) {
 }
 
 export default function Home() {
-  usePageTitle();
   const maps = productById["alfa-maps"];
   const others = products.filter((p) => p.id !== "alfa-maps");
 
@@ -31,7 +29,7 @@ export default function Home() {
             {products.map((p) => (
               <li key={p.id}>
                 <Link to={`/products#${p.id}`}>
-                  <ProductIcon id={p.id} size={96} shadow alt="" />
+                  <ProductIcon id={p.id} size={96} shadow alt="" eager />
                   <span>{p.short}</span>
                 </Link>
               </li>

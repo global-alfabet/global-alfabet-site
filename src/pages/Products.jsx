@@ -3,10 +3,8 @@ import Icon from "../components/Icon.jsx";
 import ProductIcon from "../components/ProductIcon.jsx";
 import { products } from "../content/products.js";
 import { productLinks } from "../config.js";
-import { usePageTitle } from "../lib/usePageTitle.js";
 
 export default function Products() {
-  usePageTitle("Products", "Alfa Maps, Alfa Places, Alfa Shop and the Global Alfabet Account.");
   return (
     <>
       <section className="page-hero">
