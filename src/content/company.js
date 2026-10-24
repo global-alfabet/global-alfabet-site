@@ -35,15 +35,15 @@ export const values = [
 export const faq = [
   {
     q: "What is Global Alfabet?",
-    a: "Global Alfabet is a technology company that builds and runs digital products, Alfa Maps, Alfa Places and Alfa Shop, and offers design and development services to businesses.",
+    a: "Global Alfabet is a technology company that builds and runs digital products, Alfa Maps, Alfa Finda and Alfa Shop, and offers design and development services to businesses.",
   },
   {
     q: "What is Alfa Maps?",
     a: "Alfa Maps turns a property developer's layout plan into a 3D estate. Buyers explore every plot on their phone, try house designs, see prices and payment plans, and enquire on WhatsApp.",
   },
   {
-    q: "What happened to BizDirect and Global Alfabet Shop?",
-    a: "They have new names. BizDirect is now Alfa Places and Global Alfabet Shop is now Alfa Shop, so every product shares the Alfa family name.",
+    q: "What happened to Alfa Places, BizDirect and Global Alfabet Shop?",
+    a: "They have new names. BizDirect became Alfa Places and is now Alfa Finda, and Global Alfabet Shop is now Alfa Shop. Old Alfa Places links still work and open the same page on Alfa Finda.",
   },
   {
     q: "Do I need a separate account for each product?",

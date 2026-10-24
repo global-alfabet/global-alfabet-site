@@ -21,14 +21,14 @@ export const products = [
     cta: "Book a demo",
   },
   {
-    id: "alfa-places",
-    name: "Alfa Places",
-    short: "Places",
+    id: "alfa-finda",
+    name: "Alfa Finda",
+    short: "Finda",
     role: "Businesses and attractions",
     line: "Find places worth going to.",
     accent: "#F2613A",
     status: "Open now",
-    formerly: "BizDirect",
+    formerly: "Alfa Places and BizDirect",
     summary:
       "Businesses, attractions and places to visit across Zimbabwe, in one search. Each business has a profile with its services, hours and contact details, and travellers can plan a trip around what they find.",
     features: [

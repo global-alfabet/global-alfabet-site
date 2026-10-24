@@ -5,7 +5,7 @@ import { asset } from "../lib/asset.js";
 const brands = [
   { id: "global-alfabet", name: "Global Alfabet", colour: "#2563EB" },
   { id: "alfa-maps", name: "Alfa Maps", colour: "#1FA45A" },
-  { id: "alfa-places", name: "Alfa Places", colour: "#F2613A" },
+  { id: "alfa-finda", name: "Alfa Finda", colour: "#F2613A" },
   { id: "alfa-shop", name: "Alfa Shop", colour: "#7C4DFF" },
   { id: "account", name: "Global Alfabet Account", colour: "#3A3A3C" },
 ];
@@ -72,7 +72,7 @@ export default function Brand() {
               <li>Leave space around a logo at least as tall as its capital letters.</li>
               <li>Don't recolour, stretch, outline or add effects. The tile gradient is part of each icon.</li>
               <li>Keep the yellow window. It's the mark every Alfa product shares.</li>
-              <li>Write product names in full: Alfa Maps, Alfa Places, Alfa Shop.</li>
+              <li>Write product names in full: Alfa Maps, Alfa Finda, Alfa Shop.</li>
             </ul>
           </div>
         </div>

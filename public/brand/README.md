@@ -22,7 +22,7 @@ Logos for Global Alfabet and every Alfa product. SVG is the master; PNGs are rea
 | --- | --- | --- | --- |
 | Global Alfabet | Alfabet Blue | `#2563EB` | `#3D86F7` → `#1C4FD6` |
 | Alfa Maps | Land Green | `#1FA45A` | `#3CCB74` → `#138A48` |
-| Alfa Places | Sunset Coral | `#F2613A` | `#FF8C5E` → `#EA4A28` |
+| Alfa Finda | Sunset Coral | `#F2613A` | `#FF8C5E` → `#EA4A28` |
 | Alfa Shop | Market Violet | `#7C4DFF` | `#A17DFF` → `#6339EC` |
 | Global Alfabet Account | Graphite | `#3A3A3C` | `#64646A` → `#2A2A2D` |
 | Alfa Guides | Guide Teal | `#0F9F94` | `#2DD4BF` → `#0B857C` |
@@ -34,5 +34,5 @@ Logos for Global Alfabet and every Alfa product. SVG is the master; PNGs are rea
 - Keep clear space around a logo equal to the height of its capital letters.
 - Do not recolour, stretch, outline or add effects. The tile gradient is part of the icon.
 - The yellow window is the family signature: never remove it.
-- Product names are always written in full in text: Alfa Maps, Alfa Places, Alfa Shop.
+- Product names are always written in full in text: Alfa Maps, Alfa Finda, Alfa Shop.
 - Type: Inter Display SemiBold (logos, headings), Inter Regular (text).

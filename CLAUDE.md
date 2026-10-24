@@ -1,6 +1,6 @@
 # globalalfabet.com: guide for Claude Code
 
-Company website for Global Alfabet, parent of Alfa Maps, Alfa Places, Alfa Shop and the Global Alfabet Account.
+Company website for Global Alfabet, parent of Alfa Maps, Alfa Finda, Alfa Shop and the Global Alfabet Account.
 React 18 + Vite + react-router, plain JavaScript (JSX). Frontend only: no server, no database.
 
 ## Layout
@@ -22,7 +22,7 @@ public/brand/            the logo kit (SVG + PNG). Do not edit by hand: regenera
 ## Rules
 - Design language: clean Apple-style pages. White and #f5f5f7 sections, Inter, large confident headings, pill buttons,
   rounded 28px cards. One accent colour per product, from the tokens in `site.css`. No new colours.
-- Product names are always written in full: Alfa Maps, Alfa Places, Alfa Shop, Global Alfabet Account.
+- Product names are always written in full: Alfa Maps, Alfa Finda, Alfa Shop, Global Alfabet Account.
 - Copy: plain, specific, short sentences. Only claim what a product does today; keep each product's `status` honest.
 - SEO: every page is prerendered at build time and hydrated in the browser. A new route also needs an entry in
   `pages` in `src/lib/seo.js` (title under 60 characters, description under 160). Components must render the same on

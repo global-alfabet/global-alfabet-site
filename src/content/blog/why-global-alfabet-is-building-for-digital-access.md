@@ -13,7 +13,7 @@ Across Africa, many capable businesses still have limited digital visibility. Cu
 
 ## Practical technology before complexity
 
-Our approach is to build simple digital products that solve clear problems. Alfa Places helps businesses set up a profile people can find, while Alfa Shop creates another path for products to reach customers.
+Our approach is to build simple digital products that solve clear problems. Alfa Finda helps businesses set up a profile people can find, while Alfa Shop creates another path for products to reach customers.
 
 > Digital access should be useful, understandable and available to businesses of every size.
 
