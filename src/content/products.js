@@ -26,7 +26,7 @@ export const products = [
     short: "Finda",
     role: "Businesses and attractions",
     line: "Find places worth going to.",
-    accent: "#F2613A",
+    accent: "#005BBF",
     status: "Open now",
     formerly: "Alfa Places and BizDirect",
     summary:
