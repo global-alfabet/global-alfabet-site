@@ -5,7 +5,7 @@ import { asset } from "../lib/asset.js";
 const brands = [
   { id: "global-alfabet", name: "Global Alfabet", colour: "#2563EB" },
   { id: "alfa-maps", name: "Alfa Maps", colour: "#1FA45A" },
-  { id: "alfa-finda", name: "Alfa Finda", colour: "#F2613A" },
+  { id: "alfa-finda", name: "Alfa Finda", colour: "#005BBF" },
   { id: "alfa-shop", name: "Alfa Shop", colour: "#7C4DFF" },
   { id: "account", name: "Global Alfabet Account", colour: "#3A3A3C" },
 ];
