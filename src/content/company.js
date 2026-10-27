@@ -51,6 +51,6 @@ export const faq = [
   },
   {
     q: "What services does Global Alfabet provide?",
-    a: "UI/UX design, website development and digital product strategy.",
+    a: "Through Global Alfabet Studio, UI/UX design, website development and digital product strategy for other businesses.",
   },
 ];
