@@ -8,7 +8,7 @@ export const products = [
     role: "3D estate sales",
     line: "See the estate before it's built.",
     accent: "#1FA45A",
-    status: "Demo online",
+    status: "Live",
     summary:
       "Developers send their layout plan and plot list. Alfa Maps turns them into a 3D estate that buyers explore on their phone, before a single house is built.",
     features: [
@@ -17,6 +17,7 @@ export const products = [
       "Prices, deposits and payment plans on every plot",
       "PDF plot packs and WhatsApp enquiries",
       "An admin view for plot status and pricing",
+      "Founding members: first development free for 12 months",
     ],
     cta: "Book a demo",
   },
