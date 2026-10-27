@@ -6,7 +6,7 @@ export const company = {
   supportEmail: "hello@globalalfabet.com", // one inbox for enquiries, demos and support
   phone: "+263 772 906 967",
   whatsapp: "263772906967", // digits only, used for wa.me links
-  location: "Zimbabwe",
+  location: "Online, with businesses anywhere", // shown on the contact page
   url: "https://www.globalalfabet.com",
 };
 

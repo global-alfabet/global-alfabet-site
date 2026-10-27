@@ -1,6 +1,6 @@
 ---
 title: Why Global Alfabet is building for digital access
-subtitle: A practical approach to helping more African businesses take part in the digital economy.
+subtitle: A practical approach to helping more businesses take part in the digital economy.
 author: Global Alfabet Team
 date: 2026-07-23
 category: Company news
@@ -9,7 +9,7 @@ coverAlt: A woman using a tablet, with lines of light connecting digital icons a
 summary: Global Alfabet is focused on useful technology, platforms and services that help businesses become easier to find, trust and contact.
 ---
 
-Across Africa, many capable businesses still have limited digital visibility. Customers may know those businesses through word of mouth, but struggle to find verified information, products, services or contact details online.
+Around the world, many capable businesses still have limited digital visibility. Customers may know those businesses through word of mouth, but struggle to find verified information, products, services or contact details online.
 
 ## Practical technology before complexity
 
