@@ -17,7 +17,7 @@ export const products = [
       "Prices, deposits and payment plans on every plot",
       "PDF plot packs and WhatsApp enquiries",
       "An admin view for plot status and pricing",
-      "Founding members: first development free for 12 months",
+      "Founding members start with a free pilot",
     ],
     cta: "Book a demo",
   },
