@@ -85,7 +85,7 @@ export default function Contact() {
             <div className="way">
               <Icon name="pin" size={22} />
               <span>
-                <strong>Based in</strong>
+                <strong>Where we work</strong>
                 {company.location}
               </span>
             </div>

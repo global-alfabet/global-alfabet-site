@@ -20,14 +20,14 @@ const SHARE_IMAGE = {
 // Titles show as "<title> · Global Alfabet". Keep descriptions under about 160 characters.
 const pages = {
   "/": {
-    fullTitle: "Global Alfabet · Digital products for businesses in Zimbabwe",
+    fullTitle: "Global Alfabet · Digital products for businesses",
     description:
-      "Global Alfabet builds Alfa Maps, 3D estate sales for property developers, and Alfa Finda, businesses and places to visit in Zimbabwe. Alfa Shop is next.",
+      "Global Alfabet builds Alfa Maps, 3D estate sales for property developers, and Alfa Finda, a search for businesses and places to visit. Alfa Shop is next.",
   },
   "/products": {
     title: "Alfa Maps, Alfa Finda and Alfa Shop",
     description:
-      "Alfa Maps turns a layout plan into a 3D estate buyers explore on their phone. Alfa Finda searches businesses and places to visit in Zimbabwe. Alfa Shop is next.",
+      "Alfa Maps turns a layout plan into a 3D estate buyers explore on their phone. Alfa Finda searches businesses and places to visit. Alfa Shop is next.",
     crumb: "Products",
   },
   "/blog": {
@@ -253,7 +253,7 @@ export function llmsTxt() {
   return [
     `# ${company.name}`,
     "",
-    `> ${company.name} is a technology company in ${company.location} that builds the Alfa family of digital products and offers design and development services to businesses. Tagline: ${company.tagline}.`,
+    `> ${company.name} is a technology company that builds the Alfa family of digital products and offers design and development services to businesses. Tagline: ${company.tagline}.`,
     "",
     "## Products",
     ...products.map(product),

@@ -170,8 +170,8 @@ export default function Home() {
             <p className="eyebrow">About Global Alfabet</p>
             <h2>Useful technology, without the complexity.</h2>
             <p className="muted">
-              Global Alfabet is the parent company of the Alfa products. We build for businesses across Africa and
-              beyond, from sole traders to established organisations, starting with problems people already have.
+              Global Alfabet is the parent company of the Alfa products. We build for businesses wherever they
+              are, from sole traders to established organisations, starting with problems people already have.
             </p>
           </div>
           <ul className="values">

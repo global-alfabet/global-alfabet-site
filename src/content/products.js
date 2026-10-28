@@ -31,9 +31,9 @@ export const products = [
     status: "Open now",
     formerly: "Alfa Places and BizDirect",
     summary:
-      "Businesses, attractions and places to visit across Zimbabwe, in one search. Each business has a profile with its services, hours and contact details, and travellers can plan a trip around what they find.",
+      "Businesses, attractions and places to visit, in one search. Each business has a profile with its services, hours and contact details, and travellers can plan a trip around what they find.",
     features: [
-      "Search in plain words, like “vets in Harare”",
+      "Search in plain words, like “vets” or “places to stay”",
       "Business profiles with services, hours and contact details",
       "Places to visit, with what to do and when to go",
       "A trip planner that builds the days for you",
