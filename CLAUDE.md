@@ -28,6 +28,11 @@ public/brand/            the logo kit (SVG + PNG). Do not edit by hand: regenera
   `pages` in `src/lib/seo.js` (title under 60 characters, description under 160). Components must render the same on
   the server and in the browser: read `window`/`document` only inside effects.
 - Forms are Netlify Forms. Any field change goes in both `src/pages/Contact.jsx` and the hidden form in `index.html`.
+  Keep the hidden `subject` and `source` fields (they name the form and website in our notification email);
+  `netlify/functions/submission-created.mjs` emails the sender a confirmation (needs RESEND_API_KEY in Netlify).
+- Analytics: Google Analytics 4 only after the visitor accepts, through `src/lib/consent.js` (the same file on every
+  Global Alfabet site; change it everywhere or nowhere). The ID goes in `analytics.ga4` in `src/config.js`. Never send
+  names, emails or phone numbers in events.
 - Check layout at 1440px and 390px wide. No horizontal scrolling on phones.
 - Never commit secrets. This site has none and needs none.
 - Work on a branch and open a pull request. Julius approves every merge; `main` deploys to Netlify.

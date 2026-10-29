@@ -1,12 +1,31 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Icon from "../components/Icon.jsx";
+import SocialLinks from "../components/SocialLinks.jsx";
 import { company } from "../config.js";
 import { products } from "../content/products.js";
 import { services } from "../content/company.js";
 import { submitNetlifyForm } from "../lib/forms.js";
+import { track } from "../lib/consent.js";
 
 const interests = [...products.map((p) => p.name), ...services.map((s) => s.title), "Something else"];
+
+// Our notification email shows which form and which website a message came from: Netlify uses the hidden "subject"
+// field as the email subject, and lists "source" with the other fields.
+const FORMS = { enquiry: "Enquiry form", support: "Product support form" };
+const SITE = "globalalfabet.com (Global Alfabet)";
+const subjectFor = (name) => `New message · ${FORMS[name]} · ${SITE}`;
+const sourceFor = (name) => `${FORMS[name]} on globalalfabet.com`;
+
+function FormMeta({ name }) {
+  return (
+    <>
+      <input type="hidden" name="form-name" value={name} />
+      <input type="hidden" name="subject" value={subjectFor(name)} />
+      <input type="hidden" name="source" value={sourceFor(name)} />
+    </>
+  );
+}
 
 function useForm(name) {
   const [state, setState] = useState("idle"); // idle | sending | sent | error
@@ -15,9 +34,13 @@ function useForm(name) {
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form));
     if (data["bot-field"]) return; // spam trap
+    // The enquiry's own subject line goes on the end of ours, so the inbox shows both.
+    const topic = String(data.topic || "").trim().slice(0, 80);
+    if (topic) data.subject = `${subjectFor(name)}: ${topic}`;
     setState("sending");
     try {
       await submitNetlifyForm(name, data);
+      track("generate_lead", { form: name });
       setState("sent");
       form.reset();
     } catch {
@@ -89,12 +112,13 @@ export default function Contact() {
                 {company.location}
               </span>
             </div>
+            <SocialLinks links={company.social} name={company.name} />
           </aside>
 
           <div className="forms">
             <form className="form-card" id="enquiry" name="enquiry" onSubmit={enquiry.onSubmit}>
               <h2>Make an enquiry</h2>
-              <input type="hidden" name="form-name" value="enquiry" />
+              <FormMeta name="enquiry" />
               <p className="hidden-field">
                 <label>
                   Leave this empty: <input name="bot-field" tabIndex={-1} autoComplete="off" />
@@ -137,7 +161,7 @@ export default function Contact() {
               </div>
               <label>
                 Subject
-                <input name="subject" required />
+                <input name="topic" required maxLength={120} />
               </label>
               <label>
                 Message
@@ -152,7 +176,7 @@ export default function Contact() {
             <form className="form-card" id="support" name="support" onSubmit={support.onSubmit}>
               <h2>Product support</h2>
               <p className="muted">Already using one of our products? Tell us what's wrong and we'll help.</p>
-              <input type="hidden" name="form-name" value="support" />
+              <FormMeta name="support" />
               <p className="hidden-field">
                 <label>
                   Leave this empty: <input name="bot-field" tabIndex={-1} autoComplete="off" />
