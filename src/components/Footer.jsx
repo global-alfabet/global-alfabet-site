@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { company } from "../config.js";
 import { products } from "../content/products.js";
 import { asset } from "../lib/asset.js";
+import { openCookieSettings } from "../lib/consent.js";
+import SocialLinks from "./SocialLinks.jsx";
 
 export default function Footer() {
   return (
@@ -44,6 +46,13 @@ export default function Footer() {
               <li>
                 <Link to="/privacy">Privacy</Link>
               </li>
+              {company.analytics.ga4 && (
+                <li>
+                  <button type="button" className="footer-link" onClick={openCookieSettings}>
+                    Cookie settings
+                  </button>
+                </li>
+              )}
             </ul>
           </div>
           <div>
@@ -61,6 +70,7 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
+            <SocialLinks links={company.social} name={company.name} />
           </div>
         </div>
         <div className="footer-base">

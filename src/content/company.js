@@ -39,7 +39,7 @@ export const faq = [
   },
   {
     q: "What is Alfa Maps?",
-    a: "Alfa Maps turns a property developer's layout plan into a 3D estate. Buyers explore every plot on their phone, try house designs, see prices and payment plans, and enquire on WhatsApp.",
+    a: "Alfa Maps turns a property developer's layout plan into a 3D estate. Buyers explore every plot on their phone, try house designs, see prices and payment plans, and contact the sales team in one tap.",
   },
   {
     q: "What happened to Alfa Places, BizDirect and Global Alfabet Shop?",

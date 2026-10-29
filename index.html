@@ -15,16 +15,19 @@
   </head>
   <body>
     <div id="root"></div>
-    <!-- Lets Netlify Forms detect both forms at build time. Field names must match src/pages/Contact.jsx -->
+    <!-- Lets Netlify Forms detect both forms at build time. Field names must match src/pages/Contact.jsx.
+         "subject" becomes the subject of our notification email; "source" says which form and website it came from. -->
     <form name="enquiry" data-netlify="true" netlify-honeypot="bot-field" hidden>
-      <input name="firstName" /><input name="lastName" /><input name="email" /><input name="phone" /><input
-        name="company"
-      /><input name="interest" /><input name="subject" /><textarea name="message"></textarea><input name="bot-field" />
+      <input type="hidden" name="subject" /><input type="hidden" name="source" /><input name="firstName" /><input
+        name="lastName"
+      /><input name="email" /><input name="phone" /><input name="company" /><input name="interest" /><input
+        name="topic"
+      /><textarea name="message"></textarea><input name="bot-field" />
     </form>
     <form name="support" data-netlify="true" netlify-honeypot="bot-field" hidden>
-      <input name="name" /><input name="email" /><input name="product" /><textarea name="message"></textarea><input
-        name="bot-field"
-      />
+      <input type="hidden" name="subject" /><input type="hidden" name="source" /><input name="name" /><input
+        name="email"
+      /><input name="product" /><textarea name="message"></textarea><input name="bot-field" />
     </form>
     <script type="module" src="/src/main.jsx"></script>
   </body>

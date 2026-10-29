@@ -41,6 +41,33 @@ The enquiry and support forms use Netlify Forms. Each form also has a hidden cop
 at build time: if you add or rename a field, change both. Submissions appear in Netlify under Forms; set up email
 notifications there.
 
+- Our notification email says which form and website a message came from: Netlify uses the hidden `subject` field
+  as the email subject (for example "New message · Enquiry form · globalalfabet.com (Global Alfabet): Website for
+  a hotel"), and the hidden `source` field is listed with the other fields. Don't also set a subject in Netlify's
+  notification settings: the form's own subject wins.
+- Whoever sends a form gets a short confirmation email from `netlify/functions/submission-created.mjs`. Netlify runs
+  it for every accepted submission (spam is filtered out first). It sends through [Resend](https://resend.com) and
+  needs these environment variables in Netlify (Site configuration → Environment variables, scope Functions):
+
+  | Variable | What |
+  | --- | --- |
+  | `RESEND_API_KEY` | A Resend API key. globalalfabet.com must be verified in Resend. Without it, no email is sent. |
+  | `MAIL_FROM` | Optional. Default `Global Alfabet <hello@globalalfabet.com>`. |
+  | `REPLY_TO` | Optional. Default `hello@globalalfabet.com`. |
+
+## Analytics and cookies
+
+Google Analytics 4 runs only after a visitor presses Accept on the cookie banner (`src/lib/consent.js`,
+`src/components/CookieBanner.jsx`). Paste the measurement ID (`G-…`) into `analytics.ga4` in `src/config.js`; while
+it's empty there's no banner and nothing is measured. The same consent code is used on every Global Alfabet site, and
+one answer covers them all (the `ga_consent` cookie is set for globalalfabet.com). Visitors change their answer with
+"Cookie settings" in the footer. Never send names, emails or phone numbers to analytics.
+
+## Social media
+
+The footer links to our social media profiles from `social` in `src/config.js`. "#" is a placeholder until the real
+links are in; an empty value hides that network.
+
 ## Deploying
 
 Netlify builds on every push to `main` (`netlify.toml`). Old addresses such as `/products.html` redirect to the new
