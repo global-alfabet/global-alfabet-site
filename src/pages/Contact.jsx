@@ -40,7 +40,8 @@ function useForm(name) {
     setState("sending");
     try {
       await submitNetlifyForm(name, data);
-      track("generate_lead", { form: name });
+      // generate_lead: an enquiry or support form was sent (form_name only, never what's in it)
+      track("generate_lead", { form_name: name });
       setState("sent");
       form.reset();
     } catch {

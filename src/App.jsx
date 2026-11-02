@@ -5,6 +5,7 @@ import Footer from "./components/Footer.jsx";
 import Seo from "./components/Seo.jsx";
 import CookieBanner from "./components/CookieBanner.jsx";
 import { company } from "./config.js";
+import { listenForClicks } from "./lib/events.js";
 import Home from "./pages/Home.jsx";
 import Products from "./pages/Products.jsx";
 import Blog from "./pages/Blog.jsx";
@@ -31,6 +32,7 @@ function ScrollManager() {
 }
 
 export default function App() {
+  useEffect(listenForClicks, []); // calls to action and links to other Global Alfabet sites (src/lib/events.js)
   return (
     <>
       <a className="skip-link" href="#main">

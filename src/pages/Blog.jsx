@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { posts, formatDate } from "../lib/blog.js";
+import { openPost } from "../lib/events.js";
 
 export default function Blog() {
   return (
@@ -14,7 +15,7 @@ export default function Blog() {
         <div className="container">
           <div className={`post-grid${posts.length === 1 ? " single" : ""}`}>
             {posts.map((post) => (
-              <Link className="post-card" to={`/blog/${post.slug}`} key={post.slug}>
+              <Link className="post-card" to={`/blog/${post.slug}`} key={post.slug} onClick={() => openPost(post.slug)}>
                 {post.cover && <img src={post.cover} alt="" />}
                 <div>
                   <p className="eyebrow">{post.category}</p>
