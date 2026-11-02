@@ -136,7 +136,10 @@ function blogPosting(post, url, image) {
     image: image.url,
     datePublished: post.date,
     dateModified: post.updated || post.date,
-    author: { "@type": "Organization", name: post.author || company.name, url: `${SITE_URL}/` },
+    author:
+      post.author && !/team/i.test(post.author)
+        ? { "@type": "Person", name: post.author, worksFor: { "@type": "Organization", name: company.name } }
+        : { "@type": "Organization", name: post.author || company.name, url: `${SITE_URL}/` },
     publisher: {
       "@type": "Organization",
       name: company.name,
