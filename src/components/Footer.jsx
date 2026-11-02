@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { company } from "../config.js";
+import { company, productLinks } from "../config.js";
 import { products } from "../content/products.js";
 import { asset } from "../lib/asset.js";
 import { openCookieSettings } from "../lib/consent.js";
@@ -15,7 +15,12 @@ export default function Footer() {
             <ul>
               {products.map((p) => (
                 <li key={p.id}>
-                  <Link to={`/products#${p.id}`}>{p.name}</Link>
+                  {/* Live products link to their own website; the others to their card on /products. */}
+                  {productLinks[p.id] ? (
+                    <a href={productLinks[p.id]}>{p.name}</a>
+                  ) : (
+                    <Link to={`/products#${p.id}`}>{p.name}</Link>
+                  )}
                 </li>
               ))}
             </ul>

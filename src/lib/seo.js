@@ -20,9 +20,9 @@ const SHARE_IMAGE = {
 // Titles show as "<title> · Global Alfabet". Keep descriptions under about 160 characters.
 const pages = {
   "/": {
-    fullTitle: "Global Alfabet · Digital products for businesses",
+    fullTitle: "Global Alfabet · Digital products and web design studio",
     description:
-      "Global Alfabet builds Alfa Maps, 3D estate sales for property developers, and Alfa Finda, a search for businesses and places to visit. Alfa Shop is next.",
+      "Global Alfabet builds Alfa Maps, 3D estates for property developers, and Alfa Finda, a search for businesses and places to visit, and designs websites.",
   },
   "/products": {
     title: "Alfa Maps, Alfa Finda and Alfa Shop",
@@ -78,6 +78,8 @@ function organization() {
       height: 512,
     },
     slogan: company.tagline,
+    description:
+      "Global Alfabet is a technology company. It builds Alfa Maps, Alfa Finda and Alfa Shop, and designs and builds websites for businesses through Global Alfabet Studio.",
     email: company.email,
     telephone: company.phone,
     address: { "@type": "PostalAddress", addressCountry: "ZW" },
@@ -87,6 +89,8 @@ function organization() {
       ...(productLinks[p.id] ? { url: productLinks[p.id] } : {}),
     })),
     knowsAbout: services.map((s) => s.title),
+    // Our social profiles: tells search engines and AI assistants these accounts are ours.
+    sameAs: Object.values(company.social).filter(Boolean),
   };
 }
 
@@ -155,7 +159,8 @@ export function getMeta(pathname) {
     const url = absolute(path);
     const cover = post.cover ? { url: absolute(post.cover), alt: post.coverAlt || post.title } : image;
     return {
-      title: `${post.title} · ${company.name}`,
+      // Search results cut titles at about 60 characters: long post titles go without the site name.
+      title: post.title.length > 42 ? post.title : `${post.title} · ${company.name}`,
       description: post.summary,
       canonical: url,
       type: "article",
@@ -243,6 +248,8 @@ export function sitemap() {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.join("\n")}\n</urlset>\n`;
 }
 
+const SOCIAL_NAMES = { instagram: "Instagram", facebook: "Facebook", linkedin: "LinkedIn", youtube: "YouTube" };
+
 /** llms.txt: a plain summary of the site for AI assistants (https://llmstxt.org). */
 export function llmsTxt() {
   const product = (p) => {
@@ -258,7 +265,8 @@ export function llmsTxt() {
     "## Products",
     ...products.map(product),
     "",
-    "## Services",
+    "## Services (Global Alfabet Studio)",
+    "Global Alfabet Studio is the design and development side of the company. It designs and builds websites and digital products for other businesses.",
     ...services.map((s) => `- ${s.title}: ${s.text}`),
     "",
     "## Pages",
@@ -272,6 +280,12 @@ export function llmsTxt() {
     "## Contact",
     `- Email: ${company.email}`,
     `- Support: ${company.supportEmail}`,
+    `- [Contact page](${absolute("/contact")})`,
+    "",
+    "## Social profiles",
+    ...Object.entries(company.social)
+      .filter(([, url]) => url)
+      .map(([name, url]) => `- [${SOCIAL_NAMES[name] || name}](${url})`),
     "",
   ].join("\n");
 }
