@@ -33,6 +33,9 @@ public/brand/            the logo kit (SVG + PNG). Do not edit by hand: regenera
 - Analytics: Google Analytics 4 only after the visitor accepts, through `src/lib/consent.js` (the same file on every
   Global Alfabet site; change it everywhere or nowhere). The ID goes in `analytics.ga4` in `src/config.js`. Never send
   names, emails or phone numbers in events.
+- Visit counts: Cloudflare Web Analytics runs for every visitor, whatever they answer on the cookie banner, because it
+  sets no cookies and stores nothing in the browser (src/lib/webAnalytics.js, the same file on every Global Alfabet site).
+  The token goes in `analytics.cloudflare` in `src/config.js`. Don't add anything that sets cookies or identifiers to it.
 - Check layout at 1440px and 390px wide. No horizontal scrolling on phones.
 - Never commit secrets. This site has none and needs none.
 - Work on a branch and open a pull request. Julius approves every merge; `main` deploys to Netlify.

@@ -9,7 +9,7 @@ export default function Privacy() {
     <article className="article">
       <div className="container narrow prose">
         <h1>Privacy</h1>
-        <p className="meta">Last updated 29 October 2026</p>
+        <p className="meta">Last updated 2 November 2026</p>
         <p>
           This notice covers the {company.name} website at globalalfabet.com. Each Alfa product has its own notice:{" "}
           <a href="https://app.maps.globalalfabet.com/privacy">Alfa Maps</a>, covering maps.globalalfabet.com and the Alfa Maps
@@ -28,6 +28,15 @@ export default function Privacy() {
           a short email confirming we've received your message through Resend, our email provider.
         </p>
         <h2 id="cookies">Cookies and analytics</h2>
+        {company.analytics.cloudflare && (
+          <p>
+            <b>Visit counts, without cookies:</b> we use Cloudflare Web Analytics to count visits, whatever you choose
+            on the cookie banner. It sets no cookies, stores nothing on your device and doesn't follow you to other
+            websites. It records the page address you open, the site you came from, your country, your type of device
+            and browser, and how fast the page loaded. Cloudflare does this for us and may process it outside your
+            country.
+          </p>
+        )}
         {company.analytics.ga4 ? (
           <>
             <p>
