@@ -52,7 +52,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
-      <CookieBanner measurementId={company.analytics.ga4} policyHref="/privacy#cookies" />
+      <CookieBanner measurementId={company.analytics.ga4} countsVisits={!!company.analytics.cloudflare} policyHref="/privacy#cookies" />
     </>
   );
 }
