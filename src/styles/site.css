@@ -831,6 +831,29 @@ a.way:hover {
   font-size: 28px;
   margin-top: 44px;
 }
+.prose figure {
+  margin: 40px 0;
+}
+.prose figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  background: var(--soft);
+}
+.prose figure.narrow img {
+  max-width: 380px;
+  margin: 0 auto;
+}
+.prose figure.narrow figcaption {
+  text-align: center;
+}
+.prose figcaption {
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
 .prose blockquote {
   margin: 36px 0;
   padding-left: 22px;
