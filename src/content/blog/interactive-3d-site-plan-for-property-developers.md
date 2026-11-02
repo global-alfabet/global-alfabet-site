@@ -4,8 +4,8 @@ subtitle: How Alfa Maps turns a surveyor's layout plan and plot list into an est
 author: Julius Choga
 date: 2026-11-04
 category: Alfa Maps
-cover:
-coverAlt:
+cover: /images/blog/interactive-3d-site-plan-for-property-developers/interactive-3d-site-plan-cover.jpg
+coverAlt: An interactive 3D site plan of a housing estate seen from above
 summary: An interactive site plan lets buyers explore every plot online. Alfa Maps builds one in 3D from your surveyor's layout plan and plot list.
 ---
 An interactive site plan is a version of your estate layout that buyers can open, tap and explore online, instead of reading a static PDF. Alfa Maps builds one in 3D. You send the surveyor's layout plan and your plot list. We trace every plot and turn it into a 3D estate that buyers explore on their phone, with each plot's size, status, price and payment plans, and a way to contact your sales team in one tap.
@@ -17,6 +17,11 @@ Most estates are sold from two documents: a black-and-white layout plan and a sp
 An interactive site plan puts the same information in one place. Each plot can be tapped. It shows whether the plot is for sale, reserved or sold, how big it is, and what it costs. A 3D site plan goes one step further: the buyer sees the plot to scale, next to its neighbours, roads and open spaces, from above or from the street.
 
 [Alfa Maps](https://maps.globalalfabet.com/) is a 3D interactive site plan made for plots, houses and townhouses.
+
+<figure>
+<img src="/images/blog/interactive-3d-site-plan-for-property-developers/street-view-of-a-plot-with-a-house.webp" alt="Street view of a plot in a 3D estate with an illustrated house" width="1200" height="750" loading="lazy" decoding="async">
+<figcaption>Street view: buyers see the plot as if they were standing on the road. Fictional demo estate; houses are illustrations.</figcaption>
+</figure>
 
 ## What do you need to send?
 
@@ -35,6 +40,11 @@ Global Alfabet traces every plot from your plan and builds the estate in 3D, wit
 
 You then review the estate privately. Your team can set each plot to for sale, reserved or sold, add prices, choose the houses shown, and set the sales contact. An owner in your company approves it, or asks us for changes. Nothing is public until an owner chooses to share it.
 
+<figure>
+<img src="/images/blog/interactive-3d-site-plan-for-property-developers/layout-plan-to-3d-estate.webp" alt="A surveyor's layout plan next to the same estate built in 3D in Alfa Maps" width="1400" height="700" loading="lazy" decoding="async">
+<figcaption>From the surveyor's layout plan to a 3D estate. Fictional demo estate.</figcaption>
+</figure>
+
 ## What can buyers do in a 3D site plan?
 
 Buyers open a normal web link. There is no app to install and no account to create. It works in the browser on phones, tablets and computers.
@@ -51,6 +61,11 @@ In Alfa Maps, a buyer can:
 - **Enquire in one tap**, with the plot already filled in.
 
 The houses are concept homes to help buyers picture the finished estate. If you have your own house plans, they can be added as house types.
+
+<figure>
+<img src="/images/blog/interactive-3d-site-plan-for-property-developers/buyer-view-on-phone-plot-list-and-street-view.webp" alt="The Alfa Maps buyer view on a phone: a plot list with sizes and prices, and the street view of a plot" width="1000" height="1032" loading="lazy" decoding="async">
+<figcaption>The buyer view on a phone: find a plot, then see it from the street. Fictional demo estate and prices.</figcaption>
+</figure>
 
 ## How do you keep plot status and prices up to date?
 
