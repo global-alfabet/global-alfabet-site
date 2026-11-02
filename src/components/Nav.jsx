@@ -37,7 +37,7 @@ export default function Nav() {
             ),
           )}
         </nav>
-        <Link to="/contact" className="btn btn-small nav-cta">
+        <Link to="/contact" className="btn btn-small nav-cta" data-cta="get_in_touch" data-placement="nav">
           Get in touch
         </Link>
         <button

@@ -48,11 +48,16 @@ export default function Products() {
               </ul>
               <div className="card-actions">
                 {productLinks[p.id] ? (
-                  <a className="btn" href={productLinks[p.id]}>
+                  <a className="btn" href={productLinks[p.id]} data-placement="products_page">
                     Open {p.name}
                   </a>
                 ) : (
-                  <Link className="btn" to={`/contact?interest=${encodeURIComponent(p.name)}#enquiry`}>
+                  <Link
+                    className="btn"
+                    to={`/contact?interest=${encodeURIComponent(p.name)}#enquiry`}
+                    data-cta={`enquire_${p.id.replace(/-/g, "_")}`}
+                    data-placement="products_page"
+                  >
                     {p.cta}
                   </Link>
                 )}

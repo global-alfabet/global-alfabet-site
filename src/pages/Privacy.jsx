@@ -58,8 +58,9 @@ export default function Privacy() {
             <p>
               <b>What's measured:</b> the pages you open, how you arrived (for example from a search engine or a link),
               your approximate region (worked out from your IP address, which Google Analytics doesn't store), your type
-              of device and browser, and clicks on our email, phone and WhatsApp links. We never send Google your name,
-              email, phone number or anything you type into a form. Google signals and advertising features are off.
+              of device and browser, clicks on our email, phone and WhatsApp links, on our main buttons and on links to
+              our other sites, which blog posts you open, and that a form was sent (not what was in it). We never send
+              Google your name, email, phone number or anything you type into a form. Google signals and advertising features are off.
             </p>
             <p>
               Google processes this data for us as our processor, under its data processing terms, and may process it

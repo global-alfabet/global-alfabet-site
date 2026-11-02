@@ -4,6 +4,7 @@ import ProductIcon from "../components/ProductIcon.jsx";
 import { products, productById } from "../content/products.js";
 import { services, values, faq } from "../content/company.js";
 import { posts, formatDate } from "../lib/blog.js";
+import { openPost } from "../lib/events.js";
 import { asset } from "../lib/asset.js";
 
 function Status({ children }) {
@@ -40,10 +41,10 @@ export default function Home() {
             getting, from 3D estate tours to a shop of your own. <strong>One account for all of it.</strong>
           </p>
           <div className="hero-actions">
-            <Link className="btn" to="/products">
+            <Link className="btn" to="/products" data-cta="explore_products" data-placement="hero">
               Explore products
             </Link>
-            <Link className="text-link" to="/contact">
+            <Link className="text-link" to="/contact" data-cta="talk_to_us" data-placement="hero">
               Talk to us <Icon name="chevron" size={16} stroke={2.2} />
             </Link>
           </div>
@@ -78,7 +79,7 @@ export default function Home() {
                 ))}
               </ul>
               <div className="card-actions">
-                <Link className="btn" to="/contact?interest=Alfa%20Maps#enquiry">
+                <Link className="btn" to="/contact?interest=Alfa%20Maps#enquiry" data-cta="alfa_maps_demo" data-placement="featured">
                   {maps.cta}
                 </Link>
                 <Link className="text-link" to={`/products#${maps.id}`}>
@@ -157,7 +158,7 @@ export default function Home() {
             ))}
           </div>
           <div className="center-actions">
-            <Link className="btn btn-secondary" to="/contact?interest=Website%20development#enquiry">
+            <Link className="btn btn-secondary" to="/contact?interest=Website%20development#enquiry" data-cta="start_project" data-placement="services">
               Start a project
             </Link>
           </div>
@@ -199,7 +200,7 @@ export default function Home() {
             </header>
             <div className={`post-grid${posts.length === 1 ? " single" : ""}`}>
               {posts.slice(0, 3).map((post) => (
-                <Link className="post-card" to={`/blog/${post.slug}`} key={post.slug}>
+                <Link className="post-card" to={`/blog/${post.slug}`} key={post.slug} onClick={() => openPost(post.slug)}>
                   {post.cover && <img src={post.cover} alt="" />}
                   <div>
                     <p className="eyebrow">{post.category}</p>
@@ -240,7 +241,7 @@ export default function Home() {
             Book an Alfa Maps demo, list your business on Alfa Finda, or tell us what you want to build.
           </p>
           <div className="hero-actions">
-            <Link className="btn" to="/contact">
+            <Link className="btn" to="/contact" data-cta="get_in_touch" data-placement="closing">
               Get in touch
             </Link>
             <Link className="text-link" to="/products">
