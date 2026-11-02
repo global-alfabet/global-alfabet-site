@@ -4,8 +4,8 @@ subtitle: What remote buyers and buyers abroad need to see before they commit, a
 author: Julius Choga
 date: 2026-11-06
 category: Guides
-cover:
-coverAlt:
+cover: /images/blog/how-to-sell-plots-online-to-buyers-abroad/sell-plots-online-cover.jpg
+coverAlt: Two phones showing a 3D estate plot list and a one-tap enquiry about a plot
 summary: A practical guide for developers: what buyers who can't visit the site need to know, and how to show it online so they can decide with confidence.
 ---
 To sell plots online to buyers who can't visit the site, give them what a site visit would: where the plot is, how big it is, what's around it, what it costs, and who to talk to. Put all of it behind one link they can open on their phone and share with family. The clearer the information, the fewer questions stand between a buyer and a decision.
@@ -35,6 +35,11 @@ A spreadsheet of plots goes out of date the moment a plot is sold. Different ver
 
 Neither shows the buyer the plot itself. And without that, many buyers wait until they can visit, or until someone they trust can visit for them.
 
+<figure>
+<img src="/images/blog/how-to-sell-plots-online-to-buyers-abroad/black-and-white-layout-plan.webp" alt="A black-and-white surveyor's layout plan showing plot outlines and numbers" width="1200" height="1066" loading="lazy" decoding="async">
+<figcaption>A typical layout plan: clear for a surveyor, hard for a buyer to picture.</figcaption>
+</figure>
+
 ## How does an interactive site plan help?
 
 An interactive site plan puts the plan, the plot list and the prices in one place, online, always current.
@@ -42,6 +47,11 @@ An interactive site plan puts the plan, the plot list and the prices in one plac
 Buyers tap a plot to see its size, status and price. In a 3D site plan, they also see it to scale next to its neighbours, from above and from the street. They can compare plots without asking you for another document.
 
 For you, there is one thing to keep up to date. When a plot is reserved or sold, you change it once and every buyer sees it.
+
+<figure>
+<img src="/images/blog/how-to-sell-plots-online-to-buyers-abroad/interactive-site-plan-highlighted-plot.webp" alt="An interactive 3D site plan with one plot highlighted" width="1200" height="750" loading="lazy" decoding="async">
+<figcaption>One plot highlighted on a 3D site plan. Fictional demo estate; houses are illustrations.</figcaption>
+</figure>
 
 ## Why do plot packs matter?
 
@@ -54,6 +64,11 @@ A buyer can save it, print it and come back to it. It also travels well in a cha
 The harder it is to ask a question, the fewer people ask. A one-tap enquiry opens a message to your sales team with the estate and the plot already filled in. The buyer doesn't have to describe which plot they mean, and your team knows straight away what they're asking about.
 
 If agents sell for you, give each of them their own link. Enquiries then reach the agent who sent the buyer.
+
+<figure class="narrow">
+<img src="/images/blog/how-to-sell-plots-online-to-buyers-abroad/one-tap-enquiry-on-phone.webp" alt="A one-tap enquiry on a phone, with the plot number already in the message" width="550" height="1052" loading="lazy" decoding="async">
+<figcaption>Enquiring about a plot in one tap. Fictional demo estate.</figcaption>
+</figure>
 
 ## What else helps buyers abroad decide?
 
