@@ -5,8 +5,9 @@ author: Global Alfabet Team
 date: 2026-07-23
 updated: 2026-11-03
 category: Company news
-cover: /images/blog/why-global-alfabet-is-building-for-digital-access/global-alfabet-four-websites-cover.jpg
-coverAlt: The four Global Alfabet websites: globalalfabet.com, Alfa Maps, Alfa Finda and Alfa Shop
+cover: /images/digital-access.jpg
+coverAlt: A woman using a tablet, with lines of light connecting digital icons around her
+coverCredit: Adobe Stock, licensed by Julius Choga for Global Alfabet
 summary: Global Alfabet builds simple digital products, Alfa Maps, Alfa Finda and Alfa Shop, that help businesses and property developers become easier to find, trust and contact.
 ---
 
