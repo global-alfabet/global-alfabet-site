@@ -36,7 +36,7 @@ function ScrollManager() {
 export default function App() {
   const { pathname } = useLocation();
   useEffect(listenForClicks, []); // calls to action and links to other Global Alfabet sites (src/lib/events.js)
-  useEffect(pageChanged, [pathname]); // the Meta Pixel's PageView, if the visitor allowed advertising (src/lib/consent.js)
+  useEffect(pageChanged, [pathname]); // answers changed elsewhere, and the Meta Pixel's PageView (src/lib/consent.js)
   return (
     <>
       <a className="skip-link" href="#main">

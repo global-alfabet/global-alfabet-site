@@ -14,7 +14,7 @@ export default function About() {
           <h1>About {company.name}</h1>
           <p className="lead">
             {company.name} is a technology company. We build our own apps (Alfa Maps, Alfa Finda and Alfa Shop) and
-            design, build and advertise for businesses through Global Alfabet Studio.
+            design and build websites for businesses through Global Alfabet Studio.
           </p>
           <div className="hero-actions">
             <Link className="btn" to="/products" data-cta="explore_products" data-placement="about">
