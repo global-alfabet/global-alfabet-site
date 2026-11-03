@@ -538,6 +538,9 @@ p {
 .about .muted {
   font-size: 19px;
 }
+.about-more {
+  margin-top: 20px;
+}
 .values {
   list-style: none;
   padding: 0;
@@ -556,6 +559,43 @@ p {
 .values h3 {
   font-size: 21px;
   margin-bottom: 6px;
+}
+
+/* About page: the founder. A photo (founder.photo in src/config.js) adds a column beside the text. */
+.founder {
+  text-align: center;
+}
+.founder h2 {
+  margin-bottom: 18px;
+}
+.founder-text {
+  font-size: clamp(19px, 2vw, 22px);
+  line-height: 1.4;
+  color: var(--ink-2);
+  margin: 0;
+}
+.founder.has-photo {
+  max-width: 980px;
+  display: grid;
+  grid-template-columns: minmax(0, 280px) 1fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+  text-align: left;
+}
+.founder-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-card);
+}
+@media (max-width: 640px) {
+  .founder.has-photo {
+    grid-template-columns: 1fr;
+  }
+  .founder-photo {
+    max-width: 240px;
+  }
 }
 
 /* Posts */
