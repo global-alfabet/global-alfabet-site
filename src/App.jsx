@@ -6,6 +6,7 @@ import Seo from "./components/Seo.jsx";
 import CookieBanner from "./components/CookieBanner.jsx";
 import { company } from "./config.js";
 import { listenForClicks } from "./lib/events.js";
+import { pageChanged } from "./lib/consent.js";
 import Home from "./pages/Home.jsx";
 import Products from "./pages/Products.jsx";
 import Blog from "./pages/Blog.jsx";
@@ -33,7 +34,9 @@ function ScrollManager() {
 }
 
 export default function App() {
+  const { pathname } = useLocation();
   useEffect(listenForClicks, []); // calls to action and links to other Global Alfabet sites (src/lib/events.js)
+  useEffect(pageChanged, [pathname]); // the Meta Pixel's PageView, if the visitor allowed advertising (src/lib/consent.js)
   return (
     <>
       <a className="skip-link" href="#main">

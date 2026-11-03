@@ -14,9 +14,10 @@ export const company = {
     ga4: "G-47R00SKKE8",
     // Cloudflare Web Analytics token: counts every visit without cookies (src/lib/webAnalytics.js). Empty: off.
     cloudflare: "b076606cedb44cbfa356120571757734",
-    // Meta Pixel ID (digits only, from Meta Events Manager). Empty: no pixel. Like GA4, it loads only after a
-    // visitor presses Accept (src/lib/consent.js), and sends only PageView and Lead (an enquiry form was sent).
-    // Before you fill it in: the privacy and cookie wording must describe the pixel (Julius approves it).
+    // Meta Pixel ID (digits only, from Meta Events Manager). Empty: no pixel. It loads only after a visitor allows
+    // advertising on the cookie banner (src/lib/consent.js), and sends only PageView and Lead (the enquiry form was
+    // sent; never the support form). Before you fill it in: Julius approves the privacy and cookie wording
+    // (src/pages/Privacy.jsx shows it then).
     metaPixel: "",
   },
   // Search engine ownership checks. Paste only the code from content="…" (Google Search Console: "HTML tag";
