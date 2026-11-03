@@ -6,7 +6,7 @@ date: 2026-11-02
 category: Company news
 cover: /images/blog/why-we-are-building-global-alfabet/global-alfabet-products-cover.jpg
 coverAlt: The Global Alfabet product family: Alfa Maps, Alfa Finda, Alfa Shop and the Global Alfabet Account
-updated: 2026-11-02
+updated: 2026-11-03
 summary: Global Alfabet builds Alfa Maps, Alfa Finda and Alfa Shop. Here is why we started, the problem behind each product, and where we are today.
 ---
 Global Alfabet is a technology company that builds and runs its own digital products: Alfa Maps, Alfa Finda and Alfa Shop, with one Global Alfabet Account to come. We build them around one problem: good businesses, good places and good property that people struggle to find, understand or buy online. Each product takes one part of that problem and solves it simply.
@@ -23,7 +23,7 @@ Behind it is a simple belief: useful technology should be easy to understand and
 
 ## What problem does Alfa Maps solve?
 
-Most property developments are sold from a black-and-white layout plan and a spreadsheet of plot numbers. That works for surveyors. It doesn't help a family in another city, or a buyer living abroad, picture where their home will stand.
+Many property developments are sold from a black-and-white layout plan and a spreadsheet of plot numbers. That works for surveyors. It doesn't help a family in another city, or a buyer living abroad, picture where their home will stand.
 
 [Alfa Maps](https://maps.globalalfabet.com/) turns a developer's layout plan and plot list into a 3D estate that buyers explore on their phone. They see every plot to scale, check its size and status, try a house on it, see the price and payment plans, download a plot pack and contact the sales team in one tap. The developer's team keeps plots and prices up to date themselves.
 
@@ -71,7 +71,7 @@ Each product does one job well. Together, they help businesses and developers be
 - **Alfa Shop** lets people order online in a few taps.
 - **The Global Alfabet Account**, coming soon, will give one sign-in for every Alfa product, with a workspace for your company and team.
 
-We also work for other businesses through Global Alfabet Studio: UI/UX design, website development and digital product strategy.
+We also work for other businesses through Global Alfabet Studio: UI/UX design, websites, 3D renders, logos, graphic design, advertising and advert videos.
 
 You can see every product, and where each one is today, on our [products page](https://www.globalalfabet.com/products).
 
