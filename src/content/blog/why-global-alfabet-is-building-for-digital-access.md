@@ -5,8 +5,8 @@ author: Global Alfabet Team
 date: 2026-07-23
 updated: 2026-11-03
 category: Company news
-cover: /images/digital-access.jpg
-coverAlt: A woman using a tablet, with lines of light connecting digital icons around her
+cover: /images/blog/why-global-alfabet-is-building-for-digital-access/global-alfabet-four-websites-cover.jpg
+coverAlt: The four Global Alfabet websites: globalalfabet.com, Alfa Maps, Alfa Finda and Alfa Shop
 summary: Global Alfabet builds simple digital products, Alfa Maps, Alfa Finda and Alfa Shop, that help businesses and property developers become easier to find, trust and contact.
 ---
 
@@ -17,11 +17,11 @@ Around the world, many capable businesses still have limited digital visibility.
 Our approach is to build simple digital products that each solve one clear problem:
 
 - **[Alfa Maps](https://maps.globalalfabet.com/)** turns a property developer's layout plan and plot list into a 3D estate that buyers explore on their phone. It's live today.
-- **[Alfa Finda](https://finda.globalalfabet.com/)** brings businesses, attractions and places to visit into one search. Businesses send their details with a short form and, once we've checked them, get a profile with their services, hours and contact details.
-- **Alfa Shop**, coming soon, is our online shop for Global Alfabet products, gift cards and airtime.
+- **[Alfa Finda](https://finda.globalalfabet.com/)** brings businesses, attractions and places to visit into one search. Businesses send their details with a short form and, once we've checked them, get a profile with the services, hours and contact details they've shared.
+- **Alfa Shop**, coming soon, will be our online shop for Global Alfabet products, gift cards and airtime.
 - **The Global Alfabet Account**, also coming soon, will give one sign-in for every Alfa product.
 
-We also work for other businesses through Global Alfabet Studio: UI/UX design, websites, 3D renders, logos, graphic design, advertising and advert videos.
+We also work for other businesses through Global Alfabet Studio: UI/UX design, website development and digital product strategy.
 
 > Digital access should be useful, understandable and available to businesses of every size.
 

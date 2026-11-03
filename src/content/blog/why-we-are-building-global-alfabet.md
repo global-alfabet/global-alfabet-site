@@ -40,7 +40,7 @@ Alfa Maps is live today. You can try it on our fictional [demo estate](https://m
 
 Many capable businesses are known mostly by word of mouth. Customers struggle to find accurate details online: what a business does, when it's open, how to reach it. Travelers have the same problem with places worth visiting.
 
-Alfa Finda brings businesses, attractions and places to visit into one search. People search in plain words, like "vets" or "places to stay". Each business has a profile with its services, hours and contact details. Businesses add themselves with a short form. Travelers can plan a trip around what they find, and the trip planner builds the days for them.
+Alfa Finda brings businesses, attractions and places to visit into one search. People search in plain words, like "vets" or "places to stay". Each business has a profile with the services, hours and contact details it sends us. Businesses send their details with a short form, and we check each one before it goes live. Travelers can plan a trip around what they find, and the trip planner builds the days for them.
 
 With Alfa Finda, I realized there are a lot of entrepreneurs in developing countries who struggle to gain an online presence beyond social media mainly because of the cost and complexities involved in having a website setup. Which led me to create a business directory where all they need to do is enter their info, and once we've checked it they get a webpage, hassle-free. Moreover, I wanted travelers to get a simple one stop shop to find out where they can get certain services in a new area as well as places to visit. 
 
@@ -51,7 +51,7 @@ With Alfa Finda, I realized there are a lot of entrepreneurs in developing count
 
 ## What problem does Alfa Shop solve?
 
-Buying online should be simple. Alfa Shop is our own online shop for Global Alfabet products, gift cards and airtime. You pick an item, choose your options and send your order in a few taps, with no account needed. Gift cards and airtime are delivered digitally.
+Buying online should be simple. Alfa Shop will be our own online shop for Global Alfabet products, gift cards and airtime. You'll pick an item, choose your options and send your order in a few taps, with no account needed. Gift cards and airtime will be delivered digitally.
 
 Alfa Shop is coming soon. Other sellers can join later.
 
@@ -68,10 +68,10 @@ Each product does one job well. Together, they help businesses and developers be
 
 - **Alfa Maps** helps developers sell plots, houses and townhouses to buyers who can't visit the site.
 - **Alfa Finda** helps people find businesses and places worth going to.
-- **Alfa Shop** lets people order online in a few taps.
+- **Alfa Shop**, coming soon, will let people order online in a few taps.
 - **The Global Alfabet Account**, coming soon, will give one sign-in for every Alfa product, with a workspace for your company and team.
 
-We also work for other businesses through Global Alfabet Studio: UI/UX design, websites, 3D renders, logos, graphic design, advertising and advert videos.
+We also work for other businesses through Global Alfabet Studio: UI/UX design, website development and digital product strategy.
 
 You can see every product, and where each one is today, on our [products page](https://www.globalalfabet.com/products).
 
