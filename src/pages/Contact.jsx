@@ -6,7 +6,7 @@ import { company } from "../config.js";
 import { products } from "../content/products.js";
 import { services } from "../content/company.js";
 import { submitNetlifyForm } from "../lib/forms.js";
-import { track } from "../lib/consent.js";
+import { track, trackLead } from "../lib/consent.js";
 
 const interests = [...products.map((p) => p.name), ...services.map((s) => s.title), "Something else"];
 
@@ -42,6 +42,8 @@ function useForm(name) {
       await submitNetlifyForm(name, data);
       // generate_lead: an enquiry or support form was sent (form_name only, never what's in it)
       track("generate_lead", { form_name: name });
+      // Meta Pixel Lead: an enquiry was sent (nothing else; support requests aren't leads)
+      if (name === "enquiry") trackLead();
       setState("sent");
       form.reset();
     } catch {

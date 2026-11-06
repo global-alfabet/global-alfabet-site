@@ -6,12 +6,14 @@ import Seo from "./components/Seo.jsx";
 import CookieBanner from "./components/CookieBanner.jsx";
 import { company } from "./config.js";
 import { listenForClicks } from "./lib/events.js";
+import { pageChanged } from "./lib/consent.js";
 import Home from "./pages/Home.jsx";
 import Products from "./pages/Products.jsx";
 import Blog from "./pages/Blog.jsx";
 import Article from "./pages/Article.jsx";
 import Contact from "./pages/Contact.jsx";
 import Privacy from "./pages/Privacy.jsx";
+import About from "./pages/About.jsx";
 import Brand from "./pages/Brand.jsx";
 import NotFound from "./pages/NotFound.jsx";
 
@@ -32,7 +34,9 @@ function ScrollManager() {
 }
 
 export default function App() {
+  const { pathname } = useLocation();
   useEffect(listenForClicks, []); // calls to action and links to other Global Alfabet sites (src/lib/events.js)
+  useEffect(pageChanged, [pathname]); // answers changed elsewhere, and the Meta Pixel's PageView (src/lib/consent.js)
   return (
     <>
       <a className="skip-link" href="#main">
@@ -47,6 +51,7 @@ export default function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<Article />} />
+          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/brand" element={<Brand />} />
@@ -54,7 +59,12 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
-      <CookieBanner measurementId={company.analytics.ga4} countsVisits={!!company.analytics.cloudflare} policyHref="/privacy#cookies" />
+      <CookieBanner
+        measurementId={company.analytics.ga4}
+        metaPixel={company.analytics.metaPixel}
+        countsVisits={!!company.analytics.cloudflare}
+        policyHref="/privacy#cookies"
+      />
     </>
   );
 }
