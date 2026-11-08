@@ -4,7 +4,7 @@ import Icon from "../components/Icon.jsx";
 import SocialLinks from "../components/SocialLinks.jsx";
 import { company } from "../config.js";
 import { products } from "../content/products.js";
-import { services } from "../content/company.js";
+import { services, serviceAliases } from "../content/company.js";
 import { submitNetlifyForm } from "../lib/forms.js";
 import { track, trackLead } from "../lib/consent.js";
 
@@ -71,7 +71,9 @@ function Result({ state, email }) {
 
 export default function Contact() {
   const [params] = useSearchParams();
-  const preset = interests.find((i) => i.toLowerCase() === (params.get("interest") || "").toLowerCase()) || "";
+  const asked = (params.get("interest") || "").toLowerCase();
+  const wanted = (serviceAliases[asked] || asked).toLowerCase();
+  const preset = interests.find((i) => i.toLowerCase() === wanted) || "";
   const enquiry = useForm("enquiry");
   const support = useForm("support");
 
