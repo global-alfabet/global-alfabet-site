@@ -36,13 +36,13 @@ A price list goes out of date the moment a plot is sold. Different versions end 
 Neither shows the buyer the plot itself. And without that, many buyers wait until they can visit, or until someone they trust can visit for them.
 
 <figure>
-<img src="/images/blog/how-to-sell-plots-online-to-buyers-abroad/black-and-white-layout-plan.webp" alt="A black-and-white surveyor's layout plan showing plot outlines and numbers" width="1200" height="1066" loading="lazy" decoding="async">
-<figcaption>A typical layout plan: clear for a surveyor, hard for a buyer to picture.</figcaption>
+<img src="/images/blog/how-to-sell-plots-online-to-buyers-abroad/black-and-white-layout-plan.webp" alt="A black-and-white layout plan showing plot outlines and numbers" width="1200" height="1066" loading="lazy" decoding="async">
+<figcaption>A typical layout plan: clear for a surveyor, hard for a buyer to picture. Fictional demo estate.</figcaption>
 </figure>
 
 ## How does an interactive site plan help?
 
-An interactive site plan puts the plan, the plot list and the prices in one place, online, always current.
+An interactive site plan puts the layout plan, prices and availability in one place, online, always current.
 
 Buyers tap a plot to see its size, status and price. In a 3D site plan, they also see it to scale next to its neighbours, from above and from the street. They can compare plots without asking you for another document.
 
@@ -81,7 +81,7 @@ Some things only you can provide, but they matter just as much:
 
 ## How Alfa Maps does this
 
-[Alfa Maps](https://maps.globalalfabet.com/) turns your surveyor's layout plan and plot list into a 3D estate that buyers explore on their phone. Each plot shows its size, frontage, boundary lengths, status, price and payment plans. Buyers can try a house on any plot, download a plot pack and enquire in one tap. Your team updates plots and prices from an admin view, and buyers see changes straight away.
+[Alfa Maps](https://maps.globalalfabet.com/) turns your layout plan and plot schedule into a 3D estate that buyers explore on their phone. Each plot shows its size, frontage, boundary lengths, status, price and payment plans. Buyers can try a house on any plot, download a plot pack and enquire in one tap. Your team updates plots and prices from an admin view, and buyers see changes straight away.
 
 You can try it on our fictional [demo estate](https://maps.globalalfabet.com/demo/), which has 170 plots and works on any phone. See our other products on the [products page](https://www.globalalfabet.com/products).
 
