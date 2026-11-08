@@ -2,7 +2,7 @@
 title: How to sell plots online to buyers who can't visit
 subtitle: What remote buyers and buyers abroad need to see before they commit, and how to give it to them.
 author: Julius Choga
-date: 2026-11-06
+date: 2026-11-16
 category: Guides
 cover: /images/blog/how-to-sell-plots-online-to-buyers-abroad/sell-plots-online-cover.jpg
 coverAlt: Two phones showing a 3D estate plot list and a one-tap enquiry about a plot
@@ -14,7 +14,7 @@ To sell plots online to buyers who can't visit the site, give them what a site v
 
 Remote buyers are people who want a plot but can't walk the site before they decide. Some live in another city. Many live in another country. The UN counts [304 million international migrants worldwide in 2024](https://www.un.org/development/desa/pd/content/international-migrant-stock), and some of them want to buy a plot or a home where they grew up or where family still lives. Buyers like these often decide with family members in different places, all looking at the same information on their phones.
 
-For these buyers, a layout plan PDF and a price list sent in a chat are rarely enough. They can't stand on the plot, look down the road or ask the sales agent a quick question face to face.
+For these buyers, a layout plan and a price list sent in a chat are rarely enough. They can't stand on the plot, look down the road or ask the sales agent a quick question face to face.
 
 ## What do buyers need to know before they buy a plot?
 
@@ -27,11 +27,11 @@ Think about the questions a buyer asks on a site visit. A good online listing an
 5. **What could I build there?** A picture of a house on that plot helps buyers imagine the finished home.
 6. **Who do I talk to?** A named contact, reachable in the way the buyer already uses.
 
-## Why don't PDFs and spreadsheets work for remote buyers?
+## Why don't layout plans and price lists work for remote buyers?
 
 A layout plan is made for surveyors and planners. It is accurate, but hard to read on a phone. Plot numbers are small, and there's no sense of scale or of what the estate will look like.
 
-A spreadsheet of plots goes out of date the moment a plot is sold. Different versions end up in different chats. A buyer abroad may be looking at prices or availability that changed weeks ago.
+A price list goes out of date the moment a plot is sold. Different versions end up in different chats. A buyer abroad may be looking at prices or availability that changed weeks ago.
 
 Neither shows the buyer the plot itself. And without that, many buyers wait until they can visit, or until someone they trust can visit for them.
 
@@ -55,7 +55,7 @@ For you, there is one thing to keep up to date. When a plot is reserved or sold,
 
 ## Why do plot packs matter?
 
-Remote buyers rarely decide alone. They forward details to a spouse, parents or a lawyer. A plot pack, a short PDF about one plot, gives everyone the same facts: the site plan with boundary lengths, the plot's size, views of the plot, the price and payment plans, and who to contact.
+Remote buyers rarely decide alone. They forward details to a spouse, parents or a lawyer. A plot pack, a short printable summary of one plot, gives everyone the same facts: the site plan with boundary lengths, the plot's size, views of the plot, the price and payment plans, and who to contact.
 
 A buyer can save it, print it and come back to it. It also travels well in a chat, which is where many of these conversations happen.
 
@@ -96,7 +96,7 @@ Give them what a site visit would: the plot's position, size, neighbours, status
 Up-to-date availability, the full cost with payment plans, and a clear picture of where the plot is and what's around it.
 
 **What is a plot pack?**
-A short PDF about one plot, with the site plan, boundary lengths, views, prices and contact details, that buyers can share with family.
+A short printable summary of one plot, with the site plan, boundary lengths, views, prices and contact details, that buyers can share with family.
 
 **Do buyers need an app to view an interactive site plan?**
 Not with Alfa Maps. It opens in the browser on phones, tablets and computers.
