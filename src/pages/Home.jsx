@@ -174,6 +174,9 @@ export default function Home() {
               Global Alfabet is the parent company of the Alfa products. We build for businesses wherever they
               are, from sole traders to established organisations, starting with problems people already have.
             </p>
+            <Link className="text-link about-more" to="/about">
+              About us and our founder <Icon name="chevron" size={16} stroke={2.2} />
+            </Link>
           </div>
           <ul className="values">
             {values.map((v) => (
