@@ -29,7 +29,7 @@ export default function Footer() {
             <h3>Company</h3>
             <ul>
               <li>
-                <Link to="/#about">About</Link>
+                <Link to="/about">About</Link>
               </li>
               <li>
                 <Link to="/#services">Services</Link>
@@ -51,7 +51,7 @@ export default function Footer() {
               <li>
                 <Link to="/privacy">Privacy</Link>
               </li>
-              {company.analytics.ga4 && (
+              {(company.analytics.ga4 || company.analytics.metaPixel) && (
                 <li>
                   <button type="button" className="footer-link" onClick={openCookieSettings}>
                     Cookie settings

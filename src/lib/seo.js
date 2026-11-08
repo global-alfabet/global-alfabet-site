@@ -2,7 +2,7 @@
 // data (JSON-LD). Used twice: at build time, to write each page's HTML (scripts/prerender.js), and in the browser,
 // to update the <head> when a visitor moves between pages (components/Seo.jsx).
 // A new page needs an entry in `pages` below. A new blog post needs nothing: it is picked up from src/content/blog.
-import { company, productLinks } from "../config.js";
+import { company, founder, productLinks } from "../config.js";
 import { products } from "../content/products.js";
 import { services, faq } from "../content/company.js";
 import { posts, postBySlug } from "./blog.js";
@@ -35,6 +35,12 @@ const pages = {
     description: "Company news, product updates and practical guidance from Global Alfabet.",
     crumb: "Blog",
   },
+  "/about": {
+    fullTitle: "About Global Alfabet · Founder Julius Choga",
+    description:
+      "Global Alfabet is a technology company founded by Julius Choga. It builds Alfa Maps, Alfa Finda and Alfa Shop, and designs and builds for businesses.",
+    crumb: "About",
+  },
   "/contact": {
     title: "Contact",
     description:
@@ -64,6 +70,10 @@ const NOT_FOUND = {
 export const routes = [...Object.keys(pages), ...posts.map((p) => `/blog/${p.slug}`)];
 
 const organizationId = `${SITE_URL}/#organization`;
+const ABOUT_URL = `${SITE_URL}/about`;
+// The founder's one identity across the site: the Organization's founder, the About page and blog posts he wrote.
+const founderId = `${ABOUT_URL}#${founder.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+const founderSameAs = founder.sameAs.filter(Boolean);
 
 function organization() {
   return {
@@ -88,10 +98,61 @@ function organization() {
       name: p.name,
       ...(productLinks[p.id] ? { url: productLinks[p.id] } : {}),
     })),
+    founder: { "@type": "Person", "@id": founderId, name: founder.name, jobTitle: founder.jobTitle, url: ABOUT_URL },
     knowsAbout: services.map((s) => s.title),
     // Our social profiles: tells search engines and AI assistants these accounts are ours.
     sameAs: Object.values(company.social).filter(Boolean),
   };
+}
+
+// The founder, described in full on /about. sameAs (his own profiles) is added once src/config.js lists any.
+function person() {
+  return {
+    "@type": "Person",
+    "@id": founderId,
+    name: founder.name,
+    jobTitle: founder.jobTitle,
+    url: ABOUT_URL,
+    description: `${founder.name} founded ${company.name}. He's a software engineering student who designs and builds apps and websites, and he leads the company's products.`,
+    ...(founder.photo ? { image: absolute(founder.photo) } : {}),
+    worksFor: { "@id": organizationId },
+    ...(founderSameAs.length ? { sameAs: founderSameAs } : {}),
+  };
+}
+
+// The company as /about describes it: who it is and who founded it. The About page names no location or phone
+// number, so those stay in the home page's structured data only.
+function organizationWithFounder() {
+  const { "@type": type, "@id": id, name, url, logo, founder: by, sameAs } = organization();
+  return { "@type": type, "@id": id, name, url, logo, founder: by, sameAs };
+}
+
+function aboutPage() {
+  return {
+    "@type": "AboutPage",
+    "@id": ABOUT_URL,
+    url: ABOUT_URL,
+    name: pages["/about"].fullTitle,
+    about: { "@id": organizationId },
+    mentions: { "@id": founderId },
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    inLanguage: "en",
+  };
+}
+
+// A blog post's author: the founder (by the same @id as on /about), another person, or the company.
+function author(name) {
+  if (name === founder.name)
+    return {
+      "@type": "Person",
+      "@id": founderId,
+      name: founder.name,
+      url: ABOUT_URL,
+      worksFor: { "@type": "Organization", "@id": organizationId, name: company.name },
+    };
+  if (name && !/team/i.test(name))
+    return { "@type": "Person", name, worksFor: { "@type": "Organization", "@id": organizationId, name: company.name } };
+  return { "@type": "Organization", name: name || company.name, url: `${SITE_URL}/` };
 }
 
 function website() {
@@ -136,10 +197,7 @@ function blogPosting(post, url, image) {
     image: image.url,
     datePublished: post.date,
     dateModified: post.updated || post.date,
-    author:
-      post.author && !/team/i.test(post.author)
-        ? { "@type": "Person", name: post.author, worksFor: { "@type": "Organization", name: company.name } }
-        : { "@type": "Organization", name: post.author || company.name, url: `${SITE_URL}/` },
+    author: author(post.author),
     publisher: {
       "@type": "Organization",
       name: company.name,
@@ -183,7 +241,13 @@ export function getMeta(pathname) {
   if (!page) return { ...NOT_FOUND, canonical: null, type: "website", image, jsonLd: [] };
 
   const jsonLd =
-    path === "/" ? [organization(), website(), faqPage()] : page.crumb ? [breadcrumbs([[page.crumb, path]])] : [];
+    path === "/"
+      ? [organization(), website(), faqPage()]
+      : path === "/about"
+        ? [aboutPage(), organizationWithFounder(), person(), breadcrumbs([[page.crumb, path]])]
+        : page.crumb
+          ? [breadcrumbs([[page.crumb, path]])]
+          : [];
   return {
     title: page.fullTitle || `${page.title} · ${company.name}`,
     description: page.description,
@@ -209,9 +273,21 @@ export const jsonLdText = (items) =>
         },
   ).replace(/</g, "\\u003c");
 
+// Search engine ownership checks (company.verification in src/config.js): the code from content="…", or the whole
+// tag if that's what was pasted. Empty: no tag.
+const verificationCode = (value) => {
+  const v = String(value || "").trim();
+  return (v.match(/content=["']([^"']+)["']/)?.[1] || v).replace(/[^\w-]/g, "");
+};
+const VERIFICATION = [
+  ["google-site-verification", verificationCode(company.verification?.google)],
+  ["msvalidate.01", verificationCode(company.verification?.bing)],
+].filter(([, code]) => code);
+
 /** The <head> tags for one page, as HTML. Used by the build. */
 export function headTags(meta) {
   const tags = [
+    ...VERIFICATION.map(([name, code]) => `<meta name="${name}" content="${code}" />`),
     `<title>${escape(meta.title)}</title>`,
     `<meta name="description" content="${escape(meta.description)}" />`,
     meta.noindex ? `<meta name="robots" content="noindex, follow" />` : "",
@@ -272,7 +348,12 @@ export function llmsTxt() {
     "Global Alfabet Studio is the design and development side of the company. It designs and builds websites and digital products for other businesses.",
     ...services.map((s) => `- ${s.title}: ${s.text}`),
     "",
+    "## Founder",
+    `- [${founder.name}](${ABOUT_URL}) founded ${company.name}. He's a software engineering student who designs and builds apps and websites, and he leads the company's products.`,
+    ...founderSameAs.map((url) => `- ${founder.name} on [${new URL(url).hostname.replace(/^www\./, "")}](${url})`),
+    "",
     "## Pages",
+    `- [About ${company.name}](${ABOUT_URL}): who we are and who founded the company`,
     `- [Products](${absolute("/products")})`,
     `- [Blog](${absolute("/blog")})`,
     `- [Contact](${absolute("/contact")})`,
