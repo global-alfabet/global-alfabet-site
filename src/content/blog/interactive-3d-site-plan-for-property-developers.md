@@ -1,14 +1,14 @@
 ---
 title: Interactive site plans in 3D for property developers
-subtitle: How Alfa Maps turns a surveyor's layout plan and plot list into an estate buyers explore on their phone.
+subtitle: How Alfa Maps turns your layout plan and plot schedule into an estate buyers explore on their phone.
 author: Julius Choga
 date: 2026-11-09
 category: Alfa Maps
 cover: /images/blog/interactive-3d-site-plan-for-property-developers/interactive-3d-site-plan-cover.jpg
 coverAlt: An interactive 3D site plan of a housing estate seen from above
-summary: An interactive site plan lets buyers explore every plot online. Alfa Maps builds one in 3D from your surveyor's layout plan and plot list.
+summary: An interactive site plan lets buyers explore every plot online. Alfa Maps builds one in 3D from your layout plan and plot schedule.
 ---
-An interactive site plan is a version of your estate layout that buyers can open, tap and explore online, instead of studying a flat drawing. Alfa Maps builds one in 3D. You send the surveyor's layout plan and your plot list. We trace every plot and turn it into a 3D estate that buyers explore on their phone, with each plot's size, status, price and payment plans, and a way to contact your sales team in one tap.
+An interactive site plan is a version of your estate layout that buyers can open, tap and explore online, instead of studying a flat drawing. Alfa Maps builds one in 3D. You send your layout plan and plot schedule. We trace every plot and turn it into a 3D estate that buyers explore on their phone, with each plot's size, status, price and payment plans, and a way to contact your sales team in one tap.
 
 ## What is an interactive site plan?
 
@@ -27,8 +27,8 @@ An interactive site plan puts the same information in one place. Each plot can b
 
 You probably have everything already:
 
-- **The layout plan** from your surveyor (also called the subdivision or general plan). The CAD file (DWG or DXF) works best, or a vector copy exported straight from CAD.
-- **The plot list**, with each plot's number and size, in Excel or CSV. Add the status (for sale, reserved, sold) if you have it.
+- **Your layout plan** (also called a site plan, subdivision plan or general plan), from your surveyor or planner. A PDF exported from CAD works best, not a scan. DWG or DXF is fine too.
+- **Your plot schedule**: each plot's number and size, in Excel or CSV. Add the status (for sale, reserved, sold) if you have it.
 - **Your prices and payment plans**: price per square metre or per plot, deposit, terms, interest and fees.
 - **Your logo**, and photos of the site if you have them.
 
@@ -41,8 +41,8 @@ Global Alfabet traces every plot from your plan and builds the estate in 3D, wit
 You then review the estate privately. Your team can set each plot to for sale, reserved or sold, add prices, choose the houses shown, and set the sales contact. An owner in your company approves it, or asks us for changes. Nothing is public until an owner chooses to share it.
 
 <figure>
-<img src="/images/blog/interactive-3d-site-plan-for-property-developers/layout-plan-to-3d-estate.webp" alt="A surveyor's layout plan next to the same estate built in 3D in Alfa Maps" width="1400" height="700" loading="lazy" decoding="async">
-<figcaption>From the surveyor's layout plan to a 3D estate. Fictional demo estate.</figcaption>
+<img src="/images/blog/interactive-3d-site-plan-for-property-developers/layout-plan-to-3d-estate.webp" alt="A layout plan next to the same estate built in 3D in Alfa Maps" width="1400" height="700" loading="lazy" decoding="async">
+<figcaption>From layout plan to 3D estate. Fictional demo estate.</figcaption>
 </figure>
 
 ## What can buyers do in a 3D site plan?
@@ -101,7 +101,7 @@ The quickest way to understand an interactive site plan is to use one. Our [demo
 An online version of your estate layout where buyers tap a plot to see its size, status and price. Alfa Maps shows it in 3D.
 
 **What does Alfa Maps need from a developer?**
-The surveyor's layout plan (ideally the CAD file), the plot list with sizes, your prices and payment plans, and your logo.
+Your layout plan (ideally a PDF exported from CAD), your plot schedule with each plot's size, your prices and payment plans, and your logo.
 
 **Do buyers need to install an app?**
 No. The 3D estate opens from a normal link in the browser, on phones, tablets and computers.
