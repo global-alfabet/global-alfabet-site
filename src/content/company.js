@@ -40,7 +40,8 @@ export const serviceById = Object.fromEntries(services.map((s) => [s.id, s]));
 // - `show: false` hides a tab. 3D renders is off until there are renders we may show; its services still show in the list.
 // - `contact`: the service "Start a project" picks on the Contact form while the tab is open.
 // - `note` (caption) and `example` (a pill on the picture): labels for fictional or made-for-the-showcase work.
-//   The designer's "before" pictures already carry "Example" in the picture.
+//   The designer's "before" pictures were drawn for the showcase: their labels say "Example" (the picture's own
+//   "Example" tag sits where the slider can hide it).
 export const studioTabs = [
   {
     id: "websites",
@@ -50,7 +51,7 @@ export const studioTabs = [
     pair: "websites",
     show: true,
     before: {
-      label: "Wireframe",
+      label: "Wireframe · Example",
       alt: "Wireframe of the Alfa Maps home page: grey blocks for the heading, pictures and buttons.",
     },
     after: {
@@ -81,7 +82,7 @@ export const studioTabs = [
     contact: "logo-design",
     pair: "logos",
     show: true,
-    before: { label: "Sketch", alt: "Construction sketch of the Alfa product icons on a grid." },
+    before: { label: "Sketch · Example", alt: "Construction sketch of the Alfa product icons on a grid." },
     after: { label: "Finished icons", alt: "The finished Alfa product icons in their brand colours." },
     compare: "Compare the sketch with the finished icons",
     caption: "From construction sketch to finished icons: the Alfa product family.",
@@ -93,7 +94,7 @@ export const studioTabs = [
     contact: "video-ads",
     pair: "ads",
     show: true,
-    before: { label: "Storyboard", alt: "Storyboard sketches for a Global Alfabet video ad." },
+    before: { label: "Storyboard · Example", alt: "Storyboard sketches for a Global Alfabet video ad." },
     after: { label: "Finished frames", alt: "Finished frames from the same Global Alfabet video ad." },
     compare: "Compare the storyboard with the finished frames",
     caption: "From storyboard to finished frames, for one of our own video ads.",

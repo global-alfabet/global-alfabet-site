@@ -159,7 +159,7 @@ export default function Home() {
           <header className="section-head">
             <p className="eyebrow">Global Alfabet Studio</p>
             <h2>We build for other businesses too.</h2>
-            <p>Global Alfabet Studio is the design and development side of the company. The team behind the Alfa products designs and builds websites and digital products for clients.</p>
+            <p>Global Alfabet Studio is the design and development side of the company. The team behind the Alfa products designs and builds websites, logos, ads, videos and 3D renders for other businesses.</p>
           </header>
           <StudioShowcase />
         </div>
