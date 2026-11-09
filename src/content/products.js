@@ -20,7 +20,7 @@ export const products = [
       "Founding members start with a free pilot",
     ],
     cta: "Book a demo",
-    // The loop on the home page's feature card: the layout plan's lines trace in green, plot details write in, the
+    // The loop on the home page's feature card: the layout plan's lines trace in green and the
     // estate rises in 3D. 1200x900, from the designer (web-visuals/out/maps/README.md). `caption` labels the demo
     // estate (add "Example prices." if a price ever shows in the loop).
     loop: {
@@ -29,7 +29,7 @@ export const products = [
       width: 1200,
       height: 900,
       label:
-        "Animation: a layout plan's plot outlines trace in green, plot details appear, and the estate rises in 3D. Fictional demo estate.",
+        "Animation: a layout plan's plot outlines trace in green, and the estate rises in 3D. Fictional demo estate.",
       caption: "Fictional demo estate.",
     },
   },

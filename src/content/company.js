@@ -23,7 +23,7 @@ export const services = [
   {
     id: "graphic-design",
     title: "Graphic design",
-    text: "Social posts, adverts, brochures and documents in your brand.",
+    text: "Social posts, ads, brochures and documents in your brand.",
   },
   {
     id: "advertising",
@@ -52,7 +52,7 @@ export const studioTabs = [
     show: true,
     before: {
       label: "Wireframe · Example",
-      alt: "Wireframe of the Alfa Maps home page: grey blocks for the heading, pictures and buttons.",
+      alt: "Wireframe of the Alfa Maps home page: bars for the text, crossed boxes for the logo and the 3D estate, and a pill for the button. Example.",
     },
     after: {
       label: "Live site",
@@ -82,10 +82,10 @@ export const studioTabs = [
     contact: "logo-design",
     pair: "logos",
     show: true,
-    before: { label: "Sketch · Example", alt: "Construction sketch of the Alfa product icons on a grid." },
-    after: { label: "Finished icons", alt: "The finished Alfa product icons in their brand colours." },
+    before: { label: "Sketch · Example", alt: "Construction sketch of the Global Alfabet and Alfa product icons on a grid. Example." },
+    after: { label: "Finished icons", alt: "The finished Global Alfabet and Alfa product icons in their brand colours." },
     compare: "Compare the sketch with the finished icons",
-    caption: "From construction sketch to finished icons: the Alfa product family.",
+    caption: "From construction sketch to finished icons: the Global Alfabet product family.",
   },
   {
     id: "ads",
@@ -94,10 +94,10 @@ export const studioTabs = [
     contact: "video-ads",
     pair: "ads",
     show: true,
-    before: { label: "Storyboard · Example", alt: "Storyboard sketches for a Global Alfabet video ad." },
+    before: { label: "Storyboard · Example", alt: "Example storyboard for a Global Alfabet video ad: three rough frames with shot notes." },
     after: { label: "Finished frames", alt: "Finished frames from the same Global Alfabet video ad." },
     compare: "Compare the storyboard with the finished frames",
-    caption: "From storyboard to finished frames, for one of our own video ads.",
+    caption: "An example storyboard, and finished frames from one of our own video ads.",
   },
 ];
 
