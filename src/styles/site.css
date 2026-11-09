@@ -429,9 +429,10 @@ p {
   filter: drop-shadow(0 24px 30px rgba(0, 0, 0, 0.18));
 }
 /* The feature card with a loop: a dark media panel. The 4:3 loop sits uncropped in the middle, its top and bottom
-   edges fading into the panel. */
+   edges fading into the panel, with its caption under it. */
 .feature-visual.has-loop {
-  position: relative;
+  margin: 0;
+  align-content: center;
   background: var(--ink);
 }
 .feature-visual.has-loop .video-loop {
@@ -448,23 +449,12 @@ p {
   object-fit: cover;
   background: var(--ink);
 }
-/* A label on a picture or loop, such as "Fictional demo estate": light frosted glass, ink text */
-.media-note {
-  position: absolute;
-  left: 16px;
-  bottom: 16px;
-  padding: 6px 12px;
-  border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.82);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-  color: var(--ink);
+/* The small, muted caption under a loop on a dark panel, such as "Fictional demo estate." */
+.media-caption {
+  padding: 2px 20px 16px;
+  color: var(--ink-3);
   font-size: 13px;
-  font-weight: 600;
-  letter-spacing: -0.005em;
-  pointer-events: none;
+  text-align: center;
 }
 .card-grid {
   display: grid;
@@ -544,6 +534,10 @@ p {
   font-weight: 600;
   letter-spacing: -0.015em;
   text-align: center;
+}
+.studio-note {
+  font-weight: 400;
+  color: var(--ink-2);
 }
 .studio-covers {
   list-style: none;
@@ -1475,11 +1469,6 @@ a.way:hover {
   }
   .ba-note {
     bottom: 10px;
-    font-size: 12px;
-  }
-  .media-note {
-    left: 12px;
-    bottom: 12px;
     font-size: 12px;
   }
   .footer-tagline {

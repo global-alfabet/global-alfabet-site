@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import BeforeAfter from "./BeforeAfter.jsx";
-import { services, serviceById, studioTabs, studioPlaceholders } from "../content/company.js";
+import { services, serviceById, studioTabs } from "../content/company.js";
 import { asset } from "../lib/asset.js";
 import { useNearScreen } from "../lib/nearScreen.js";
 
@@ -9,11 +9,10 @@ import { useNearScreen } from "../lib/nearScreen.js";
 // for each. Only the open tab's pictures are on the page, so the others load only when someone opens their tab.
 const tabs = studioTabs.filter((t) => t.show);
 
+// public/images/studio/<pair>-<side>.webp (1600x1000) and <pair>-<side>-800.webp (800x500, for phones)
 const picture = (pair, side) => {
-  const standIn = studioPlaceholders?.[pair]?.[side];
-  if (standIn) return { src: asset(standIn) };
   const file = (size) => asset(`/images/studio/${pair}-${side}${size}.webp`);
-  return { src: file(""), srcSet: `${file("-sm")} 800w, ${file("")} 1600w` };
+  return { src: file(""), srcSet: `${file("-800")} 800w, ${file("")} 1600w` };
 };
 
 export default function StudioShowcase() {
@@ -35,8 +34,8 @@ export default function StudioShowcase() {
     buttons.current[to.id]?.focus();
   };
 
-  // "Start a project" opens the Contact form with the open tab's first service chosen.
-  const interest = serviceById[tab.services[0]].title;
+  // "Start a project" opens the Contact form with the open tab's service chosen.
+  const interest = serviceById[tab.contact || tab.services[0]].title;
   return (
     <>
       <div className="studio" ref={card}>
@@ -65,10 +64,14 @@ export default function StudioShowcase() {
             before={{ ...tab.before, ...picture(tab.pair, "before") }}
             after={{ ...tab.after, ...picture(tab.pair, "after") }}
             sizes="(max-width: 640px) calc(100vw - 84px), 980px"
+            compare={tab.compare}
             note={tab.example ? "Example" : null}
             load={near}
           />
-          <p className="studio-caption">{tab.caption}</p>
+          <p className="studio-caption">
+            {tab.caption}
+            {tab.note && <span className="studio-note"> {tab.note}</span>}
+          </p>
           <ul className="studio-covers">
             {tab.services.map((id) => (
               <li key={id}>{serviceById[id].title}</li>

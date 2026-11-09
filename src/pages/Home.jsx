@@ -90,15 +90,16 @@ export default function Home() {
               </div>
             </div>
             {maps.loop ? (
-              <div className="feature-visual has-loop">
+              <figure className="feature-visual has-loop">
                 <VideoLoop
                   src={asset(maps.loop.src)}
                   poster={asset(maps.loop.poster)}
                   width={maps.loop.width}
                   height={maps.loop.height}
+                  label={maps.loop.label}
                 />
-                {maps.loop.note && <p className="media-note">{maps.loop.note}</p>}
-              </div>
+                {maps.loop.caption && <figcaption className="media-caption">{maps.loop.caption}</figcaption>}
+              </figure>
             ) : (
               <div className="feature-visual" style={{ "--accent": maps.accent }} aria-hidden="true">
                 <img src={asset("/brand/alfa-maps/alfa-maps-glyph-white.svg")} alt="" />
