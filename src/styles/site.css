@@ -446,12 +446,12 @@ p {
   position: absolute;
   right: 12px;
   bottom: 12px;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   display: grid;
   place-items: center;
   padding: 0;
-  border: 0;
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 999px;
   background: rgba(29, 29, 31, 0.62);
   color: #fff;
