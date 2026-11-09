@@ -28,8 +28,7 @@ export const products = [
       poster: "/videos/card-plan-to-3d.webp",
       width: 1200,
       height: 900,
-      label:
-        "Animation: a layout plan's plot outlines trace in green, and the estate rises in 3D. Fictional demo estate.",
+      label: "Animation: a layout plan's plot outlines trace in green, and the estate rises in 3D.", // the caption says it's fictional
       caption: "Fictional demo estate.",
     },
   },

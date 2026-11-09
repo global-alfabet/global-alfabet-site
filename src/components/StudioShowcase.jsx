@@ -63,7 +63,7 @@ export default function StudioShowcase() {
             key={tab.id}
             before={{ ...tab.before, ...picture(tab.pair, "before") }}
             after={{ ...tab.after, ...picture(tab.pair, "after") }}
-            sizes="(max-width: 640px) calc(100vw - 84px), 980px"
+            sizes="(max-width: 640px) calc(100vw - 84px), min(980px, calc(100vw - 100px))"
             compare={tab.compare}
             note={tab.example ? "Example" : null}
             load={near}
@@ -80,7 +80,7 @@ export default function StudioShowcase() {
         </div>
 
         <p className="studio-all">
-          <strong>Studio services:</strong> {services.map((s) => s.title).join(" · ")}
+          <strong>Studio services:</strong> {services.map((s) => s.title).join("\u00a0· ")}
         </p>
       </div>
       <div className="center-actions">

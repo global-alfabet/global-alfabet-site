@@ -89,7 +89,7 @@ function organization() {
     },
     slogan: company.tagline,
     description:
-      "Global Alfabet is a technology company. It builds Alfa Maps, Alfa Finda and Alfa Shop, and designs and builds websites for businesses through Global Alfabet Studio.",
+      "Global Alfabet is a technology company. It builds Alfa Maps, Alfa Finda and Alfa Shop, and through Global Alfabet Studio designs websites, apps, logos, ads, videos and 3D renders for other businesses.",
     email: company.email,
     telephone: company.phone,
     address: { "@type": "PostalAddress", addressCountry: "ZW" },
@@ -345,7 +345,7 @@ export function llmsTxt() {
     ...products.map(product),
     "",
     "## Services (Global Alfabet Studio)",
-    "Global Alfabet Studio is the design and development side of the company. It designs and builds websites and digital products for other businesses.",
+    "Global Alfabet Studio is the design and development side of the company. It designs and builds websites and apps, and makes logos, graphics, ads, videos and 3D renders, for other businesses.",
     ...services.map((s) => `- ${s.title}: ${s.text}`),
     "",
     "## Founder",

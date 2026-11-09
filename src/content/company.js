@@ -82,8 +82,14 @@ export const studioTabs = [
     contact: "logo-design",
     pair: "logos",
     show: true,
-    before: { label: "Sketch · Example", alt: "Construction sketch of the Global Alfabet and Alfa product icons on a grid. Example." },
-    after: { label: "Finished icons", alt: "The finished Global Alfabet and Alfa product icons in their brand colours." },
+    before: {
+      label: "Sketch · Example",
+      alt: "Construction sketch of the Global Alfabet and Alfa product icons on a grid. Example.",
+    },
+    after: {
+      label: "Finished icons",
+      alt: "The finished Global Alfabet and Alfa product icons in their brand colours.",
+    },
     compare: "Compare the sketch with the finished icons",
     caption: "From construction sketch to finished icons: the Global Alfabet product family.",
   },
@@ -94,7 +100,10 @@ export const studioTabs = [
     contact: "video-ads",
     pair: "ads",
     show: true,
-    before: { label: "Storyboard · Example", alt: "Example storyboard for a Global Alfabet video ad: three rough frames with shot notes." },
+    before: {
+      label: "Storyboard · Example",
+      alt: "Example storyboard for a Global Alfabet video ad: three rough frames with shot notes.",
+    },
     after: { label: "Finished frames", alt: "Finished frames from the same Global Alfabet video ad." },
     compare: "Compare the storyboard with the finished frames",
     caption: "An example storyboard, and finished frames from one of our own video ads.",
