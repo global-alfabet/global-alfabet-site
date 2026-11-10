@@ -1,19 +1,112 @@
 // Services, values and FAQ shown on the home page.
+
+// Global Alfabet Studio's services: Julius's seven (8 Nov 2026), in marketing's industry wording. Order here = order on
+// the site. The titles also fill the Contact form's "I'm interested in" list, llms.txt and the structured data
+// (knowsAbout). Keep "Website development": /contact?interest=Website%20development links use it.
 export const services = [
   {
-    icon: "layers",
+    id: "ui-ux",
     title: "UI/UX design",
     text: "Clear, accessible interfaces and user journeys designed around real customer needs and business goals.",
   },
   {
-    icon: "code",
+    id: "website-development",
     title: "Website development",
     text: "Fast, responsive and search-friendly websites for businesses, organisations and growing brands.",
   },
   {
-    icon: "spark",
-    title: "Digital product strategy",
-    text: "Planning and prototyping practical platforms, directories, marketplaces and tools built to grow.",
+    id: "3d-renders",
+    title: "3D renders from house plans",
+    text: "House plans turned into 3D renders that show the finished home.",
+  },
+  { id: "logo-design", title: "Logo design", text: "Logos and icon families for businesses and products." },
+  {
+    id: "graphic-design",
+    title: "Graphic design",
+    text: "Social posts, ads, brochures and documents in your brand.",
+  },
+  {
+    id: "advertising",
+    title: "Advertising",
+    text: "Ads for social media and the web, planned and made in your brand.",
+  },
+  { id: "video-ads", title: "Video ads", text: "Short video ads and reels, from storyboard to final cut." },
+];
+export const serviceById = Object.fromEntries(services.map((s) => [s.id, s]));
+
+// The Studio showcase on the home page: one pill tab per kind of work, each with a before/after pair.
+// Pictures, from the designer (web-visuals/out/studio/README.md): public/images/studio/<pair>-before.webp and
+// <pair>-after.webp (1600x1000), plus <pair>-before-800.webp and <pair>-after-800.webp (800x500) for phones.
+// - `show: false` hides a tab. 3D renders is off until there are renders we may show; its services still show in the list.
+// - `contact`: the service "Start a project" picks on the Contact form while the tab is open.
+// - `note` (caption) and `example` (a pill on the picture): labels for fictional or made-for-the-showcase work.
+//   The designer's "before" pictures were drawn for the showcase: their labels say "Example" (the picture's own
+//   "Example" tag sits where the slider can hide it).
+export const studioTabs = [
+  {
+    id: "websites",
+    label: "Websites & apps",
+    services: ["ui-ux", "website-development"],
+    contact: "website-development",
+    pair: "websites",
+    show: true,
+    before: {
+      label: "Wireframe · Example",
+      alt: "Wireframe of the Alfa Maps home page: bars for the text, crossed boxes for the logo and the 3D estate, and a pill for the button. Example.",
+    },
+    after: {
+      label: "Live site",
+      alt: "The same page finished and live: the Alfa Maps website, one of Global Alfabet's own websites.",
+    },
+    compare: "Compare the wireframe with the live site",
+    caption: "From wireframe to live site: the Alfa Maps website, designed and built in-house.",
+    note: "Fictional demo estate.",
+  },
+  {
+    id: "3d-renders",
+    label: "3D renders",
+    services: ["3d-renders"],
+    contact: "3d-renders",
+    pair: "3d-renders",
+    show: false, // no renders yet (designer's README, 8 Nov 2026)
+    example: true,
+    before: { label: "Floor plan", alt: "A house floor plan: walls, doors and windows in black lines. Example." },
+    after: { label: "3D render", alt: "The same house as a 3D render, an illustration, not a photo. Example." },
+    compare: "Compare the floor plan with the 3D render",
+    caption: "A floor plan turned into a 3D render of the finished house. Example.",
+  },
+  {
+    id: "logos",
+    label: "Logos & graphics",
+    services: ["logo-design", "graphic-design"],
+    contact: "logo-design",
+    pair: "logos",
+    show: true,
+    before: {
+      label: "Sketch · Example",
+      alt: "Construction sketch of the Global Alfabet and Alfa product icons on a grid. Example.",
+    },
+    after: {
+      label: "Finished icons",
+      alt: "The finished Global Alfabet and Alfa product icons in their brand colours.",
+    },
+    compare: "Compare the sketch with the finished icons",
+    caption: "From construction sketch to finished icons: the Global Alfabet product family.",
+  },
+  {
+    id: "ads",
+    label: "Ads & video",
+    services: ["advertising", "video-ads"],
+    contact: "video-ads",
+    pair: "ads",
+    show: true,
+    before: {
+      label: "Storyboard · Example",
+      alt: "Example storyboard for a Global Alfabet video ad: three rough frames with shot notes.",
+    },
+    after: { label: "Finished frames", alt: "Finished frames from the same Global Alfabet video ad." },
+    compare: "Compare the storyboard with the finished frames",
+    caption: "An example storyboard, and finished frames from one of our own video ads.",
   },
 ];
 
@@ -51,6 +144,7 @@ export const faq = [
   },
   {
     q: "What services does Global Alfabet provide?",
-    a: "Through Global Alfabet Studio, UI/UX design, website development and digital product strategy for other businesses.",
+    // Keep this in step with `services` above.
+    a: "Through Global Alfabet Studio: UI/UX design, website development, 3D renders from house plans, logo design, graphic design, advertising and video ads, for other businesses.",
   },
 ];

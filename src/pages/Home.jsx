@@ -2,10 +2,12 @@ import { Link } from "react-router-dom";
 import Icon from "../components/Icon.jsx";
 import ProductIcon from "../components/ProductIcon.jsx";
 import { products, productById } from "../content/products.js";
-import { services, values, faq } from "../content/company.js";
+import { values, faq } from "../content/company.js";
 import { posts, formatDate } from "../lib/blog.js";
 import { openPost } from "../lib/events.js";
 import { asset } from "../lib/asset.js";
+import VideoLoop from "../components/VideoLoop.jsx";
+import StudioShowcase from "../components/StudioShowcase.jsx";
 
 function Status({ children }) {
   return <span className="status">{children}</span>;
@@ -87,9 +89,22 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="feature-visual" style={{ "--accent": maps.accent }} aria-hidden="true">
-              <img src={asset("/brand/alfa-maps/alfa-maps-glyph-white.svg")} alt="" />
-            </div>
+            {maps.loop ? (
+              <figure className="feature-visual has-loop">
+                <VideoLoop
+                  src={asset(maps.loop.src)}
+                  poster={asset(maps.loop.poster)}
+                  width={maps.loop.width}
+                  height={maps.loop.height}
+                  label={maps.loop.label}
+                />
+                {maps.loop.caption && <figcaption className="media-caption">{maps.loop.caption}</figcaption>}
+              </figure>
+            ) : (
+              <div className="feature-visual" style={{ "--accent": maps.accent }} aria-hidden="true">
+                <img src={asset("/brand/alfa-maps/alfa-maps-glyph-white.svg")} alt="" />
+              </div>
+            )}
           </article>
 
           <div className="card-grid">
@@ -144,24 +159,9 @@ export default function Home() {
           <header className="section-head">
             <p className="eyebrow">Global Alfabet Studio</p>
             <h2>We build for other businesses too.</h2>
-            <p>Global Alfabet Studio is the design and development side of the company. The team behind the Alfa products designs and builds websites and digital products for clients.</p>
+            <p>Global Alfabet Studio is the design and development side of the company. The team behind the Alfa products designs and builds websites, logos, ads, videos and 3D renders for other businesses.</p>
           </header>
-          <div className="card-grid">
-            {services.map((s) => (
-              <article className="card card-plain" key={s.title}>
-                <span className="service-icon">
-                  <Icon name={s.icon} size={26} />
-                </span>
-                <h3>{s.title}</h3>
-                <p className="muted">{s.text}</p>
-              </article>
-            ))}
-          </div>
-          <div className="center-actions">
-            <Link className="btn btn-secondary" to="/contact?interest=Website%20development#enquiry" data-cta="start_project" data-placement="services">
-              Start a project
-            </Link>
-          </div>
+          <StudioShowcase />
         </div>
       </section>
 

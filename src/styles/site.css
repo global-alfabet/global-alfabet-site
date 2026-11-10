@@ -428,6 +428,56 @@ p {
   width: min(64%, 360px);
   filter: drop-shadow(0 24px 30px rgba(0, 0, 0, 0.18));
 }
+/* The feature card with a loop: a dark media panel. The 4:3 loop sits uncropped in the middle, its top and bottom
+   edges fading into the panel, with its caption under it. */
+.feature-visual.has-loop {
+  margin: 0;
+  align-content: center;
+  background: var(--ink);
+}
+.feature-visual.has-loop .video-loop {
+  -webkit-mask-image: linear-gradient(transparent, #000 9%, #000 91%, transparent);
+  mask-image: linear-gradient(transparent, #000 9%, #000 91%, transparent);
+}
+
+/* VideoLoop's Pause / Play button (components/VideoLoop.jsx): the same rules on every Global Alfabet site */
+.video-loop-wrap { position: relative; }
+.video-loop-toggle {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  background: rgba(29, 29, 31, 0.62);
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.video-loop-toggle:hover { opacity: 1; }
+.video-loop-toggle:focus-visible { opacity: 1; outline: 2px solid #fff; outline-offset: 2px; box-shadow: 0 0 0 4px rgba(29, 29, 31, 0.62); }
+
+/* Video loops (components/VideoLoop.jsx): dark media, 4:3 unless a section says otherwise */
+.video-loop {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--ink);
+}
+/* The small, muted caption under a loop on a dark panel, such as "Fictional demo estate." */
+.media-caption {
+  padding: 2px 20px 16px;
+  color: var(--ink-3);
+  font-size: 13px;
+  text-align: center;
+}
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -447,22 +497,6 @@ p {
 .card h3 {
   font-size: 28px;
 }
-.card-plain h3 {
-  font-size: 24px;
-  margin-top: 20px;
-}
-.card-plain .muted {
-  margin-bottom: 0;
-}
-.service-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 16px;
-  background: #fff;
-  color: var(--blue);
-  display: grid;
-  place-items: center;
-}
 .checks {
   list-style: none;
   padding: 0;
@@ -478,6 +512,189 @@ p {
 .checks .icon {
   color: var(--maps);
   margin-top: 3px;
+}
+
+/* Global Alfabet Studio showcase (components/StudioShowcase.jsx): one large card, pill tabs, a before/after slider */
+.studio {
+  background: var(--soft);
+  border-radius: var(--radius-card);
+  padding: clamp(20px, 4.4vw, 48px);
+}
+.studio-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: clamp(20px, 3vw, 32px);
+}
+.studio-tab {
+  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--ink);
+  background: #fff;
+  border: 0;
+  border-radius: var(--radius-pill);
+  padding: 10px 18px;
+  min-height: 44px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.studio-tab:hover {
+  background: #e8e8ed;
+}
+.studio-tab[aria-selected="true"] {
+  background: var(--ink);
+  color: #fff;
+}
+.studio-caption {
+  margin-top: 20px;
+  font-size: clamp(17px, 1.8vw, 19px);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-align: center;
+}
+.studio-note {
+  font-weight: 400;
+  color: var(--ink-2);
+}
+.studio-covers {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+.studio-covers li {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--blue-dark);
+  background: color-mix(in srgb, var(--blue) 9%, white);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+}
+.studio-all {
+  margin-top: clamp(24px, 3vw, 32px);
+  padding-top: clamp(20px, 2.6vw, 28px);
+  border-top: 1px solid var(--line);
+  text-align: center;
+  font-size: 15px;
+  color: var(--ink-2);
+}
+.studio-all strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Before/after slider (components/BeforeAfter.jsx), the same pattern as `.ba` on maps.globalalfabet.com */
+.ba {
+  --pos: 50%;
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.ba img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ba .ba-after {
+  clip-path: inset(0 0 0 var(--pos));
+}
+.ba-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--pos);
+  width: 3px;
+  margin-left: -1.5px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+}
+.ba-knob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 48px;
+  height: 48px;
+  margin: -24px 0 0 -24px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+}
+.ba-knob::before,
+.ba-knob::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  margin-top: -5px;
+  border: solid var(--ink);
+  border-width: 0 0 2px 2px;
+}
+.ba-knob::before {
+  left: 13px;
+  transform: rotate(45deg);
+}
+.ba-knob::after {
+  right: 13px;
+  transform: rotate(-135deg);
+}
+.ba:has(input:focus-visible) .ba-knob {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+}
+.ba-tag,
+.ba-note {
+  position: absolute;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  pointer-events: none;
+}
+.ba-tag {
+  top: 16px;
+}
+.ba-l {
+  left: 16px;
+}
+.ba-r {
+  right: 16px;
+}
+.ba-note {
+  left: 16px;
+  bottom: 16px;
+  font-size: 13px;
+}
+.ba input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  touch-action: pan-y;
 }
 
 /* Account band */
@@ -1153,6 +1370,13 @@ a.way:hover {
     min-height: 280px;
     order: -1;
   }
+  .feature-visual.has-loop {
+    min-height: 0;
+  }
+  .feature-visual.has-loop .video-loop {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
   .about,
   .contact {
     grid-template-columns: 1fr;
@@ -1245,6 +1469,29 @@ a.way:hover {
   .section-head.left {
     flex-direction: column;
     align-items: flex-start;
+  }
+  .studio-tab {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+  .ba {
+    border-radius: 14px;
+  }
+  .ba-tag {
+    top: 10px;
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+  .ba-l,
+  .ba-note {
+    left: 10px;
+  }
+  .ba-r {
+    right: 10px;
+  }
+  .ba-note {
+    bottom: 10px;
+    font-size: 12px;
   }
   .footer-tagline {
     margin-left: 0;

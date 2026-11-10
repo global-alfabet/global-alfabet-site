@@ -10,16 +10,27 @@ export const products = [
     accent: "#1FA45A",
     status: "Live",
     summary:
-      "Developers send their layout plan and plot list. Alfa Maps turns them into a 3D estate that buyers explore on their phone, before a single house is built.",
+      "Developers send their layout plan and plot schedule. Alfa Maps turns them into a 3D estate that buyers explore on their phone, before a single house is built.",
     features: [
       "Every plot on the plan, in 3D",
       "Buyers try house designs on any plot",
       "Prices, deposits and payment plans on every plot",
-      "PDF plot packs and enquiries in one tap",
+      "Plot packs buyers can share, and enquiries in one tap",
       "An admin view for plot status and pricing",
       "Founding members start with a free pilot",
     ],
     cta: "Book a demo",
+    // The loop on the home page's feature card: the layout plan's lines trace in green and the
+    // estate rises in 3D. 1200x900, from the designer (web-visuals/out/maps/README.md). `caption` labels the demo
+    // estate (add "Example prices." if a price ever shows in the loop).
+    loop: {
+      src: "/videos/card-plan-to-3d.mp4",
+      poster: "/videos/card-plan-to-3d.webp",
+      width: 1200,
+      height: 900,
+      label: "Animation: a layout plan's plot outlines trace in green, and the estate rises in 3D.", // the caption says it's fictional
+      caption: "Fictional demo estate.",
+    },
   },
   {
     id: "alfa-finda",

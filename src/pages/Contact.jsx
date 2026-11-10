@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Icon from "../components/Icon.jsx";
 import SocialLinks from "../components/SocialLinks.jsx";
@@ -72,6 +72,12 @@ function Result({ state, email }) {
 export default function Contact() {
   const [params] = useSearchParams();
   const preset = interests.find((i) => i.toLowerCase() === (params.get("interest") || "").toLowerCase()) || "";
+  const interestField = useRef(null);
+  // The page is prerendered without the address's ?interest=, so the browser picks the choice after it loads (and
+  // again if the link changes while the page is open).
+  useEffect(() => {
+    if (preset && interestField.current) interestField.current.value = preset;
+  }, [preset]);
   const enquiry = useForm("enquiry");
   const support = useForm("support");
 
@@ -154,7 +160,7 @@ export default function Contact() {
                 </label>
                 <label>
                   I'm interested in
-                  <select name="interest" defaultValue={preset}>
+                  <select name="interest" defaultValue={preset} ref={interestField}>
                     <option value="">Choose one</option>
                     {interests.map((i) => (
                       <option key={i}>{i}</option>
