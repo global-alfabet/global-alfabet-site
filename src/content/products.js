@@ -17,7 +17,6 @@ export const products = [
       "Prices, deposits and payment plans on every plot",
       "Plot packs buyers can share, and enquiries in one tap",
       "An admin view for plot status and pricing",
-      "Founding members start with a free pilot",
     ],
     cta: "Book a demo",
     // The loop on the home page's feature card: the layout plan's lines trace in green and the
