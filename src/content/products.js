@@ -1,6 +1,9 @@
 // The Global Alfabet product family. Order here = order on the site.
 // status: what we can honestly say today. Keep it accurate.
-export const products = [
+// launched: false hides a product everywhere on the site (home page, /products, nav and footer, the contact forms,
+// FAQ, structured data and llms.txt) without deleting it. Julius, 16 Nov 2026: Alfa Shop and the Global Alfabet
+// Account stay hidden until they launch. Set `launched: true` (or remove the line) to show one again.
+export const allProducts = [
   {
     id: "alfa-maps",
     name: "Alfa Maps",
@@ -53,6 +56,7 @@ export const products = [
   },
   {
     id: "alfa-shop",
+    launched: false,
     name: "Alfa Shop",
     short: "Shop",
     role: "Online shop",
@@ -72,6 +76,7 @@ export const products = [
   },
   {
     id: "account",
+    launched: false,
     name: "Global Alfabet Account",
     short: "Account",
     role: "One sign-in",
@@ -89,4 +94,13 @@ export const products = [
   },
 ];
 
+/** The products the site shows: every launched one. */
+export const products = allProducts.filter((p) => p.launched !== false);
 export const productById = Object.fromEntries(products.map((p) => [p.id, p]));
+/** True when the product is launched and shown on the site. */
+export const isLaunched = (id) => Boolean(productById[id]);
+/** "Alfa Maps and Alfa Finda", or "Alfa Maps, Alfa Finda and Alfa Shop": the shown products' names. */
+export const productNames = (list = products) => {
+  const names = list.map((p) => p.name);
+  return names.length < 2 ? names.join("") : `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]}`;
+};

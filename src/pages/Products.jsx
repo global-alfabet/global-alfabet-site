@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import Icon from "../components/Icon.jsx";
 import ProductIcon from "../components/ProductIcon.jsx";
-import { products } from "../content/products.js";
+import { products, isLaunched } from "../content/products.js";
 import { productLinks } from "../config.js";
+
+const COUNT = ["", "One", "Two", "Three", "Four", "Five"];
 
 export default function Products() {
   return (
@@ -19,7 +21,10 @@ export default function Products() {
             ))}
           </ul>
           <h1>Products</h1>
-          <p className="lead">Four products, one family, one account.</p>
+          <p className="lead">
+            {COUNT[products.length] || products.length} products, one family
+            {isLaunched("account") ? ", one account" : ""}.
+          </p>
         </div>
       </section>
 

@@ -439,6 +439,13 @@ p {
   -webkit-mask-image: linear-gradient(transparent, #000 9%, #000 91%, transparent);
   mask-image: linear-gradient(transparent, #000 9%, #000 91%, transparent);
 }
+/* Reserve the loop's 4:3 box at full width from the start. In the centred grid the wrapper used to shrink to the
+   video's own size: 300px wide before anything loaded, 0 for a moment while the poster loaded, then full width,
+   which moved the card's text (a layout shift). */
+.feature-visual.has-loop .video-loop-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
 
 /* VideoLoop's Pause / Play button (components/VideoLoop.jsx): the same rules on every Global Alfabet site */
 .video-loop-wrap { position: relative; }
@@ -493,6 +500,22 @@ p {
 .card .muted {
   margin: 10px 0 20px;
   flex: 1;
+}
+/* Only one card in the row (while Alfa Shop and the Account are hidden): full width, its features in two columns */
+.card-grid.single {
+  grid-template-columns: 1fr;
+}
+.card-grid.single .card .muted {
+  flex: none;
+  max-width: 680px;
+}
+.card-grid.single .checks {
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 32px;
+  margin: 0 0 28px;
+}
+.card-grid.single .checks .icon {
+  color: var(--check, var(--maps)); /* the product's own accent */
 }
 .card h3 {
   font-size: 28px;
@@ -560,6 +583,13 @@ p {
 .studio-note {
   font-weight: 400;
   color: var(--ink-2);
+}
+.studio-more {
+  margin-top: 6px;
+  text-align: center;
+}
+.studio-more .text-link {
+  font-size: 15px;
 }
 .studio-covers {
   list-style: none;
@@ -1437,73 +1467,300 @@ a.way:hover {
   text-overflow: ellipsis;
 }
 
-/* Studio page hero: a few library pieces side by side */
+/* Studio page hero: a fan of five phones in front of two desktop pages, all library pieces. Positions are in % of
+   the stage, so it scales; --r tilts each phone from its foot, and --p (src/lib/scrollMotion.js, 0 to 1 as the page
+   scrolls) lifts the phones and opens the fan a little. Transforms only, so nothing else moves (no layout shift). */
 .studio-hero {
-  padding: clamp(64px, 8vw, 104px) 0 clamp(56px, 7vw, 96px);
+  padding: clamp(64px, 8vw, 104px) 0 clamp(40px, 5vw, 64px);
   overflow: hidden;
+  overflow: clip;
+}
+.studio-hero .container.narrow {
+  max-width: 1180px; /* room for the headline on two lines */
 }
 .studio-hero h1 {
-  font-size: clamp(44px, 6.6vw, 84px);
-  letter-spacing: -0.038em;
+  font-size: clamp(48px, 8vw, 108px);
+  letter-spacing: -0.045em;
+  line-height: 1;
 }
-.studio-stage {
-  max-width: 1260px;
-  margin: clamp(48px, 6vw, 80px) auto 0;
+.studio-hero .lead {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.fan {
+  max-width: 1320px;
+  margin: clamp(48px, 6vw, 88px) auto 0;
   padding: 0 22px;
 }
-.studio-stage-inner {
+.fan-stage {
   position: relative;
-  aspect-ratio: 16 / 6.2;
+  aspect-ratio: 16 / 7.9;
 }
-.studio-stage-inner > * {
+.fan-stage > * {
   position: absolute;
 }
-.studio-stage-inner img {
-  height: auto;
+.fan-page {
+  top: 5%;
+  width: 47%;
+  transform: translate3d(0, calc(var(--p, 0) * 30px), 0) rotate(var(--tilt));
 }
-.stage-browser {
-  left: 24%;
-  top: 0;
-  width: 52%;
+.fan-page-left {
+  left: 0;
+  --tilt: -4deg;
+}
+.fan-page-right {
+  right: 0;
+  --tilt: 4deg;
+}
+.fan-phone {
+  width: 13.4%;
+  transform-origin: 50% 100%;
+  transform: translate3d(0, calc(var(--p, 0) * var(--rise, 0px)), 0) rotate(calc(var(--r, 0deg) * (1 + var(--p, 0) * 0.5)));
+}
+.fan-1 {
+  left: 15.5%;
+  top: 30%;
   z-index: 2;
 }
-.stage-left,
-.stage-right {
-  width: 12.6%;
+.fan-2 {
+  left: 28.5%;
+  top: 17%;
   z-index: 3;
 }
-.stage-left {
-  left: 16%;
-  top: 28%;
+.fan-3 {
+  left: 42%;
+  top: 8%;
+  width: 16%;
+  z-index: 5;
 }
-.stage-right {
-  left: 70.4%;
-  top: 14%;
+.fan-4 {
+  left: 58.1%;
+  top: 17%;
+  z-index: 4;
 }
-.stage-far-left,
-.stage-far-right {
-  border-radius: 20px;
-  box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.3);
-}
-.stage-far-left {
-  left: 0;
-  top: 50%;
-  width: 23%;
-}
-.stage-far-right {
-  right: 0;
+.fan-5 {
+  left: 71.1%;
   top: 30%;
-  width: 19%;
+  z-index: 3;
 }
-.studio-stage figcaption {
-  margin-top: 20px;
+.fan-phone .device-phone {
+  transition: transform 0.35s ease;
+}
+.fan-stage .device-phone {
+  box-shadow:
+    0 40px 60px -24px rgba(0, 0, 0, 0.45),
+    0 2px 8px rgba(0, 0, 0, 0.14);
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .fan-phone:hover .device-phone {
+    transform: translateY(-14px);
+  }
+}
+.fan figcaption {
+  margin-top: clamp(20px, 3vw, 32px);
   color: var(--ink-3);
   font-size: 13px;
   text-align: center;
 }
-/* The caption names what's on screen: all five pieces here, two on phones (see the 640px block) */
-.stage-caption-narrow {
+/* The caption names what's on screen (fewer pieces on phones, see the 640px block) */
+.fan-caption-narrow {
   display: none;
+}
+
+/* The moving strip of fictional brands (components/LogoStrip.jsx) */
+.strip-band {
+  padding: clamp(40px, 5vw, 64px) 0;
+  background: var(--soft);
+  overflow: hidden;
+  overflow: clip;
+}
+.strip-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  color: var(--ink-2);
+  font-size: 15px;
+}
+.strip-toggle {
+  flex: none;
+  min-height: 36px;
+  padding: 7px 16px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.strip-window {
+  overflow: hidden;
+}
+.strip-track {
+  display: flex;
+  width: max-content;
+  animation: strip-move 80s linear infinite;
+}
+.strip.is-paused .strip-track,
+.strip-window:hover .strip-track,
+.strip-window:focus-within .strip-track {
+  animation-play-state: paused;
+}
+@keyframes strip-move {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.strip-list {
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  padding: 4px 16px 8px 0;
+  list-style: none;
+}
+.strip-tile a {
+  display: block;
+  width: 240px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: var(--bg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.strip-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.strip-tile a:focus-visible {
+  outline-offset: -3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  /* No motion: one set of tiles that scrolls sideways, and no Pause button */
+  .strip-track {
+    animation: none;
+  }
+  .strip-window {
+    overflow-x: auto;
+  }
+  .strip-copy,
+  .strip-toggle {
+    display: none;
+  }
+  .strip-list {
+    padding-left: 22px;
+  }
+}
+
+/* Studio page: the dark services section */
+.studio-dark {
+  background: var(--ink);
+  color: #f5f5f7;
+}
+.studio-dark h2,
+.studio-dark h3 {
+  color: #fff;
+}
+.studio-dark .section-head p:not(.eyebrow) {
+  color: #a1a1a6;
+}
+.studio-numbers {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 clamp(48px, 6vw, 72px);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.studio-numbers li {
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+.studio-numbers strong {
+  display: block;
+  color: #fff;
+  font-size: clamp(56px, 7vw, 96px);
+  font-weight: 650;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+.studio-numbers span {
+  display: block;
+  margin-top: 10px;
+  max-width: 220px;
+  color: #a1a1a6;
+  font-size: 15px;
+}
+.service-tiles {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.service-tile {
+  display: block;
+  height: 100%;
+  padding: 12px 12px 28px;
+  border-radius: var(--radius-card);
+  background: rgba(255, 255, 255, 0.06);
+  color: #f5f5f7;
+}
+.service-tile:hover {
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.09);
+}
+.service-tile .work-frame {
+  aspect-ratio: 16 / 10;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.07);
+}
+.service-tile h3 {
+  margin: 24px 16px 0;
+  font-size: clamp(24px, 2.6vw, 32px);
+}
+.service-tile p {
+  margin: 8px 16px 0;
+  max-width: 460px;
+  color: #a1a1a6;
+}
+.service-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin: 16px 16px 0;
+  color: color-mix(in srgb, var(--blue) 45%, white); /* a tint of Alfabet Blue, readable on ink */
+  font-weight: 500;
+}
+.service-tile:hover .service-more {
+  text-decoration: underline;
+}
+.service-list-dark {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.service-list-dark li {
+  padding: 28px;
+  border-radius: var(--radius-card);
+  background: rgba(255, 255, 255, 0.06);
+}
+.service-list-dark h3 {
+  font-size: 24px;
+}
+.service-list-dark p {
+  margin-top: 8px;
+  color: #a1a1a6;
 }
 
 /* Studio page: the library's sections */
@@ -1527,7 +1784,7 @@ a.way:hover {
   text-decoration: none;
 }
 .shelf-tile .work-frame {
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 3;
   border-radius: 18px;
   background: var(--soft);
 }
@@ -1553,29 +1810,6 @@ a.way:hover {
   text-decoration: underline;
 }
 
-/* Studio page: services */
-.service-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0 40px;
-}
-.service-list li {
-  padding: 24px 0 28px;
-  border-top: 1px solid var(--line);
-}
-.service-list h3 {
-  font-size: 21px;
-}
-.service-list p {
-  margin: 8px 0 12px;
-  font-size: 16px;
-}
-.service-list .text-link {
-  font-size: 15px;
-}
 .section-head .section-link {
   margin-top: 18px;
 }
@@ -1971,9 +2205,11 @@ a.way:hover {
 }
 
 @media (max-width: 960px) {
-  .work-grid,
-  .service-list {
+  .work-grid {
     grid-template-columns: 1fr 1fr;
+  }
+  .service-list-dark {
+    grid-template-columns: 1fr;
   }
   .item-details {
     grid-template-columns: 1fr;
@@ -2004,7 +2240,6 @@ a.way:hover {
 @media (max-width: 640px) {
   .work-grid,
   .shelf,
-  .service-list,
   .viewer-gallery {
     grid-template-columns: 1fr;
   }
@@ -2063,36 +2298,76 @@ a.way:hover {
     background: var(--ink);
     color: #fff;
   }
-  .stage-caption-wide {
+  .fan-caption-wide {
     display: none;
+  }
+  .fan-caption-narrow {
+    display: inline;
   }
   /* One under the other: side by side they only just fit, and wrapped while the web font loaded (a layout shift) */
   .studio-hero .hero-actions {
     flex-direction: column;
     gap: 18px;
   }
-  .stage-caption-narrow {
-    display: inline;
+  /* The hero on a phone: three phones in front of the two pages; the outer two phones are left out */
+  .fan {
+    padding: 0;
   }
-  /* The hero on a phone: the browser window with one phone in front, and the other pieces left out */
-  .studio-stage-inner {
-    aspect-ratio: 4 / 3.3;
+  .fan-stage {
+    aspect-ratio: 1 / 1.02;
   }
-  .stage-browser {
-    left: 0;
-    top: 6%;
-    width: 84%;
+  .fan-page {
+    top: 4%;
+    width: 72%;
   }
-  .stage-left,
-  .stage-far-left,
-  .stage-far-right {
+  .fan-page-left {
+    left: -10%;
+  }
+  .fan-page-right {
+    right: -10%;
+    top: 22%;
+  }
+  .fan-1,
+  .fan-5 {
     display: none;
   }
-  .stage-right {
-    left: auto;
-    right: 2%;
+  .fan-phone {
+    width: 29%;
+  }
+  .fan-2 {
+    left: 9%;
+    top: 30%;
+  }
+  .fan-3 {
+    left: 34%;
     top: 22%;
-    width: 27%;
+    width: 32%;
+  }
+  .fan-4 {
+    left: 62%;
+    top: 30%;
+  }
+  .strip-tile a {
+    width: 192px;
+    height: 120px;
+    border-radius: 16px;
+  }
+  .studio-numbers {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 20px;
+  }
+  .service-tiles,
+  .service-list-dark {
+    grid-template-columns: 1fr;
+  }
+  .service-tile h3,
+  .service-tile p,
+  .service-more {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+  .service-list-dark li {
+    padding: 24px;
   }
 }
 
@@ -2169,6 +2444,9 @@ a.way:hover {
   .post-grid.single .post-card img {
     min-height: 0;
     aspect-ratio: 16 / 10;
+  }
+  .card-grid.single .checks {
+    grid-template-columns: 1fr;
   }
   .card-grid,
   .post-grid,
