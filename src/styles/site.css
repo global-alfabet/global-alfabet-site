@@ -1357,6 +1357,745 @@ a.way:hover {
 }
 @media print { .cookie-banner { display: none; } }
 
+/* Global Alfabet Studio (/studio) and its library (/studio/library). The work brings its own colours in its pictures;
+   everything around it stays white, light grey and ink, with Alfabet Blue for links and buttons. */
+
+/* Device frames (components/Device.jsx), sized by their parent. Corners and the bezel are in % so they scale with
+   the frame (the bezel is the screen's margin: a margin in % follows the phone's width, a padding wouldn't). */
+.device-phone {
+  position: relative;
+  display: flow-root;
+  border-radius: 17% / 8%;
+  background: var(--ink);
+  box-shadow:
+    0 28px 48px -18px rgba(0, 0, 0, 0.38),
+    0 2px 6px rgba(0, 0, 0, 0.12);
+}
+.device-phone-screen {
+  position: relative;
+  margin: 3.4%;
+  overflow: hidden;
+  border-radius: 14% / 6.6%;
+  background: var(--ink);
+}
+.device-phone img,
+.device-browser img {
+  width: 100%;
+  height: auto;
+}
+.device-phone-island {
+  position: absolute;
+  top: 1.6%;
+  left: 35%;
+  width: 30%;
+  height: 3.9%;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+}
+.device-browser {
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--bg);
+  box-shadow:
+    0 28px 56px -22px rgba(0, 0, 0, 0.32),
+    0 0 0 1px rgba(0, 0, 0, 0.07);
+}
+.device-browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 36px;
+  padding: 0 14px;
+  background: var(--soft);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.device-browser-dots {
+  display: flex;
+  flex: none;
+  gap: 6px;
+}
+.device-browser-dots i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--line);
+}
+.device-browser-address {
+  flex: 0 1 280px;
+  min-width: 0;
+  margin: 0 auto;
+  transform: translateX(-21px); /* centred on the window, not on the space after the dots */
+  padding: 0 12px;
+  border-radius: var(--radius-pill);
+  background: var(--bg);
+  color: var(--ink-3);
+  font-size: 12px;
+  line-height: 22px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Studio page hero: a few library pieces side by side */
+.studio-hero {
+  padding: clamp(64px, 8vw, 104px) 0 clamp(56px, 7vw, 96px);
+  overflow: hidden;
+}
+.studio-hero h1 {
+  font-size: clamp(44px, 6.6vw, 84px);
+  letter-spacing: -0.038em;
+}
+.studio-stage {
+  max-width: 1260px;
+  margin: clamp(48px, 6vw, 80px) auto 0;
+  padding: 0 22px;
+}
+.studio-stage-inner {
+  position: relative;
+  aspect-ratio: 16 / 6.2;
+}
+.studio-stage-inner > * {
+  position: absolute;
+}
+.studio-stage-inner img {
+  height: auto;
+}
+.stage-browser {
+  left: 24%;
+  top: 0;
+  width: 52%;
+  z-index: 2;
+}
+.stage-left,
+.stage-right {
+  width: 12.6%;
+  z-index: 3;
+}
+.stage-left {
+  left: 16%;
+  top: 28%;
+}
+.stage-right {
+  left: 70.4%;
+  top: 14%;
+}
+.stage-far-left,
+.stage-far-right {
+  border-radius: 20px;
+  box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.3);
+}
+.stage-far-left {
+  left: 0;
+  top: 50%;
+  width: 23%;
+}
+.stage-far-right {
+  right: 0;
+  top: 30%;
+  width: 19%;
+}
+.studio-stage figcaption {
+  margin-top: 20px;
+  color: var(--ink-3);
+  font-size: 13px;
+  text-align: center;
+}
+/* The caption names what's on screen: all five pieces here, two on phones (see the 640px block) */
+.stage-caption-narrow {
+  display: none;
+}
+
+/* Studio page: the library's sections */
+.shelf {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.shelf-tile {
+  display: block;
+  height: 100%;
+  padding: 12px;
+  border-radius: var(--radius-card);
+  background: var(--bg);
+  color: var(--ink);
+}
+.shelf-tile:hover {
+  text-decoration: none;
+}
+.shelf-tile .work-frame {
+  aspect-ratio: 16 / 10;
+  border-radius: 18px;
+  background: var(--soft);
+}
+.shelf-text {
+  padding: 20px 16px 14px;
+}
+.shelf-text h3 {
+  font-size: 28px;
+}
+.shelf-text .muted {
+  margin-top: 6px;
+}
+.shelf-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-top: 14px;
+  color: var(--blue);
+  font-weight: 500;
+}
+.shelf-tile:hover .shelf-count,
+.work-card:hover .work-title {
+  text-decoration: underline;
+}
+
+/* Studio page: services */
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 40px;
+}
+.service-list li {
+  padding: 24px 0 28px;
+  border-top: 1px solid var(--line);
+}
+.service-list h3 {
+  font-size: 21px;
+}
+.service-list p {
+  margin: 8px 0 12px;
+  font-size: 16px;
+}
+.service-list .text-link {
+  font-size: 15px;
+}
+.section-head .section-link {
+  margin-top: 18px;
+}
+
+/* Library: filters and grid */
+.library-hero .eyebrow a {
+  color: inherit;
+}
+.library-note {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--soft);
+  color: var(--ink-2);
+  font-size: 14px;
+  font-weight: 500;
+}
+.library-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding: 10px;
+  border-radius: 26px;
+  background: var(--soft);
+}
+.library-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.studio-tab[aria-pressed="true"] {
+  background: var(--ink);
+  color: #fff;
+}
+.library-select {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink-2);
+  font-size: 15px;
+  font-weight: 500;
+}
+.library-select select {
+  appearance: none;
+  -webkit-appearance: none;
+  min-height: 44px;
+  padding: 10px 40px 10px 18px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--bg)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231d1d1f' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")
+    no-repeat right 16px center;
+  color: var(--ink);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.library-count {
+  margin: 28px 0 20px;
+  color: var(--ink-2);
+  font-size: 15px;
+}
+/* Opened with a filter in the address: hidden (space kept) until the page has applied it (index.html,
+   Library.jsx). The animation shows it anyway after 2.5 s, in case the page's script never runs. */
+.library-filtering .library-count,
+.library-filtering .work-grid {
+  visibility: hidden;
+  animation: library-reveal 0s 2.5s forwards;
+}
+@keyframes library-reveal {
+  to {
+    visibility: visible;
+  }
+}
+.library-empty {
+  padding: 64px 22px;
+  border-radius: var(--radius-card);
+  background: var(--soft);
+  text-align: center;
+}
+.library-empty h2 {
+  font-size: 28px;
+}
+.library-empty .muted {
+  margin: 8px 0 24px;
+}
+
+.work-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 44px 24px;
+}
+.work-card {
+  display: block;
+  color: var(--ink);
+}
+.work-card:hover {
+  text-decoration: none;
+}
+.work-frame {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-card);
+  background: var(--soft);
+}
+.section-soft .work-card .work-frame {
+  background: var(--bg);
+}
+.work-kind {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  z-index: 4;
+  padding: 5px 11px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.work-title {
+  margin-top: 16px;
+  font-size: 22px;
+}
+.work-business {
+  margin-top: 4px;
+  color: var(--ink-2);
+  font-size: 15px;
+}
+.work-media {
+  position: absolute;
+  inset: 0;
+}
+.work-media .device-phone {
+  box-shadow:
+    0 18px 32px -14px rgba(0, 0, 0, 0.38),
+    0 1px 4px rgba(0, 0, 0, 0.12);
+}
+.work-media .device-browser {
+  border-radius: 8px;
+}
+.work-browser .device-browser-bar {
+  height: 16px;
+  gap: 6px;
+  padding: 0 8px;
+}
+.work-browser .device-browser-dots {
+  gap: 4px;
+}
+.work-browser .device-browser-dots i {
+  width: 5px;
+  height: 5px;
+}
+.is-website .work-browser {
+  position: absolute;
+  left: 8%;
+  top: 17%;
+  width: 72%;
+}
+.is-website .work-phone {
+  position: absolute;
+  right: 8%;
+  top: 34%;
+  width: 21%;
+  z-index: 2;
+}
+.is-phones {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  padding-top: 15%;
+}
+.is-phones .work-phone {
+  flex: none;
+  width: 29%;
+}
+.is-phones.count-3 .work-phone {
+  width: 25%;
+}
+.is-phones.count-3 .work-phone:not(:nth-child(2)) {
+  margin-top: 7%;
+}
+.is-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Logo boards have their own tiles on a clear background: show the whole board, with room around it */
+.is-picture.is-logo img {
+  padding: 15% 6% 6%;
+  object-fit: contain;
+}
+
+/* One piece of work */
+.item-head {
+  padding: clamp(28px, 4vw, 48px) 0 clamp(24px, 3vw, 36px);
+}
+.item-back {
+  margin-bottom: clamp(24px, 3vw, 36px);
+  font-size: 15px;
+}
+.item-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px 32px;
+}
+.item-title .eyebrow {
+  color: var(--blue-dark);
+}
+.item-title h1 {
+  font-size: clamp(44px, 6vw, 76px);
+  letter-spacing: -0.035em;
+}
+.item-business {
+  margin-top: 10px;
+  color: var(--ink-2);
+  font-size: clamp(19px, 2vw, 22px);
+}
+.item-labels {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+.item-labels li {
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--soft);
+  color: var(--ink-2);
+  font-size: 14px;
+  font-weight: 500;
+}
+.viewer-stage {
+  padding: clamp(20px, 3.4vw, 40px) clamp(16px, 4vw, 56px) clamp(32px, 5vw, 64px);
+  border-radius: var(--radius-card);
+  background: var(--soft);
+}
+.view-switch {
+  display: flex;
+  width: max-content;
+  margin: 0 auto clamp(24px, 3.4vw, 40px);
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  background: var(--bg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.view-switch button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.view-switch button:hover {
+  background: var(--soft);
+}
+.view-switch button[aria-selected="true"] {
+  background: var(--ink);
+  color: #fff;
+}
+/* Before the page has loaded (LibraryItem.jsx), the screen size picks the view: Desktop here, Mobile on phones
+   (the phone rules are in the 640px block below). */
+.viewer-auto .viewer-panel-mobile {
+  display: none;
+}
+.viewer-auto .view-switch [data-view="desktop"] {
+  background: var(--ink);
+  color: #fff;
+}
+.viewer-phones {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: clamp(20px, 3.4vw, 48px);
+}
+.viewer-phones li {
+  flex: none;
+  width: clamp(220px, 23vw, 290px);
+}
+.viewer-scroll:focus-visible {
+  outline-offset: 6px;
+}
+.viewer-pages {
+  display: grid;
+  gap: 32px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.viewer-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 32px 24px;
+}
+.viewer-gallery figure {
+  margin: 0;
+}
+.viewer-gallery .is-wide {
+  grid-column: 1 / -1;
+}
+.viewer-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+.viewer-gallery figcaption {
+  margin-top: 10px;
+  color: var(--ink-2);
+  font-size: 15px;
+}
+.viewer-compare .ba {
+  aspect-ratio: 3 / 4;
+  border-radius: 20px;
+}
+.item-about {
+  padding-top: clamp(56px, 7vw, 96px);
+}
+.item-details {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  align-items: start;
+  gap: 40px clamp(40px, 7vw, 112px);
+}
+.item-story h2 {
+  font-size: 24px;
+  letter-spacing: -0.02em;
+}
+.item-story h2 + * {
+  margin-top: 12px;
+}
+.item-story * + h2 {
+  margin-top: 40px;
+}
+.item-summary {
+  font-size: clamp(19px, 2vw, 22px);
+  line-height: 1.4;
+}
+.item-story .checks .icon {
+  color: var(--blue);
+}
+.item-facts {
+  padding: 28px;
+  border-radius: var(--radius-card);
+  background: var(--soft);
+}
+.item-facts dl {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+}
+.item-facts dt {
+  color: var(--ink-2);
+  font-size: 14px;
+}
+.item-facts dd {
+  margin: 2px 0 0;
+  font-weight: 500;
+}
+.item-ask {
+  margin: 28px 0 14px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-weight: 600;
+}
+
+@media (max-width: 960px) {
+  .work-grid,
+  .service-list {
+    grid-template-columns: 1fr 1fr;
+  }
+  .item-details {
+    grid-template-columns: 1fr;
+  }
+  .item-facts {
+    max-width: 560px;
+  }
+}
+@media (max-width: 760px) {
+  /* More than one phone screen: swipe between them inside the grey stage, never the page */
+  .viewer-scroll {
+    margin: 0 calc(-1 * clamp(16px, 4vw, 56px));
+    overflow-x: auto;
+    scroll-snap-type: x proximity; /* proximity, so arrow keys can move past a screen */
+    scrollbar-width: none;
+  }
+  .viewer-scroll .viewer-phones {
+    justify-content: flex-start;
+    width: max-content;
+    padding: 4px 16vw 8px;
+  }
+  .viewer-scroll .viewer-phones li {
+    width: 62vw;
+    max-width: 260px;
+    scroll-snap-align: center;
+  }
+}
+@media (max-width: 640px) {
+  .work-grid,
+  .shelf,
+  .service-list,
+  .viewer-gallery {
+    grid-template-columns: 1fr;
+  }
+  .item-labels {
+    align-items: flex-start;
+  }
+  .library-filters {
+    border-radius: 22px;
+  }
+  .library-tabs {
+    gap: 2px;
+  }
+  .library-tabs .studio-tab {
+    padding: 10px 10px;
+    font-size: 13.5px;
+  }
+  .library-note {
+    border-radius: 16px;
+  }
+  .library-select {
+    width: 100%;
+    padding: 0 4px 2px;
+  }
+  .library-select select {
+    flex: 1;
+  }
+  .viewer-phones li {
+    width: min(72vw, 260px);
+  }
+  .device-browser-bar {
+    height: 28px;
+    padding: 0 10px;
+  }
+  .device-browser-dots i {
+    width: 8px;
+    height: 8px;
+  }
+  .device-browser-address {
+    font-size: 11px;
+    line-height: 18px;
+  }
+  .view-switch button {
+    padding: 10px 16px;
+  }
+  .viewer-auto .viewer-panel-mobile {
+    display: block;
+  }
+  .viewer-auto .viewer-panel-desktop {
+    display: none;
+  }
+  .viewer-auto .view-switch [data-view="desktop"] {
+    background: transparent;
+    color: var(--ink);
+  }
+  .viewer-auto .view-switch [data-view="mobile"] {
+    background: var(--ink);
+    color: #fff;
+  }
+  .stage-caption-wide {
+    display: none;
+  }
+  /* One under the other: side by side they only just fit, and wrapped while the web font loaded (a layout shift) */
+  .studio-hero .hero-actions {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .stage-caption-narrow {
+    display: inline;
+  }
+  /* The hero on a phone: the browser window with one phone in front, and the other pieces left out */
+  .studio-stage-inner {
+    aspect-ratio: 4 / 3.3;
+  }
+  .stage-browser {
+    left: 0;
+    top: 6%;
+    width: 84%;
+  }
+  .stage-left,
+  .stage-far-left,
+  .stage-far-right {
+    display: none;
+  }
+  .stage-right {
+    left: auto;
+    right: 2%;
+    top: 22%;
+    width: 27%;
+  }
+}
+
 /* Tablet and phone */
 @media (max-width: 960px) {
   .card-grid,

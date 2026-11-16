@@ -6,6 +6,7 @@ import { company, founder, productLinks } from "../config.js";
 import { products } from "../content/products.js";
 import { services, faq } from "../content/company.js";
 import { posts, postBySlug } from "./blog.js";
+import { coverOf, industryById, itemBySlug, kindById, labelsOf, library } from "../content/library.js";
 
 export const SITE_URL = company.url.replace(/\/$/, "");
 const absolute = (path) => (/^https?:/.test(path) ? path : `${SITE_URL}${path.startsWith("/") ? "" : "/"}${path}`);
@@ -29,6 +30,21 @@ const pages = {
     description:
       "Alfa Maps turns a layout plan into a 3D estate buyers explore on their phone. Alfa Finda searches businesses and places to visit. Alfa Shop is next.",
     crumb: "Products",
+  },
+  "/studio": {
+    fullTitle: "Global Alfabet Studio · Design and development",
+    description:
+      "Global Alfabet Studio designs apps, websites, logos, ads, videos and 3D renders for businesses. Browse our work and start a project.",
+    crumb: "Studio",
+  },
+  "/studio/library": {
+    title: "Studio library",
+    description:
+      "Concept work from Global Alfabet Studio for fictional brands: app screens, websites on phone and desktop, logo directions and 3D renders.",
+    crumbs: [
+      ["Studio", "/studio"],
+      ["Library", "/studio/library"],
+    ],
   },
   "/blog": {
     title: "Blog",
@@ -67,7 +83,58 @@ const NOT_FOUND = {
 };
 
 // Every address that gets its own HTML file at build time.
-export const routes = [...Object.keys(pages), ...posts.map((p) => `/blog/${p.slug}`)];
+export const routes = [
+  ...Object.keys(pages),
+  ...posts.map((p) => `/blog/${p.slug}`),
+  ...library.map((item) => `/studio/library/${item.slug}`),
+];
+
+// A piece of Studio work (src/content/library.js) as a creative work by the company.
+const LIBRARY_PATH = "/studio/library/";
+const itemTitle = (item) => `${item.brand}: ${kindById[item.kind].one} concept`;
+// The summary and the item's labels, with "By Global Alfabet Studio." when it still fits in 160 characters.
+function itemDescription(item) {
+  const labels = labelsOf(item).join(" ");
+  const long = `${item.summary} By Global Alfabet Studio. ${labels}`;
+  return long.length < 160 ? long : `${item.summary} ${labels}`;
+}
+function creativeWork(item, url) {
+  const pictures = [...item.desktop, ...item.mobile, ...item.images].map((p) => absolute(p.src));
+  return {
+    "@type": "CreativeWork",
+    "@id": `${url}#work`,
+    name: itemTitle(item),
+    description: itemDescription(item),
+    url,
+    image: pictures,
+    dateCreated: item.made,
+    genre: kindById[item.kind].label,
+    about: industryById[item.industry].label,
+    creator: { "@type": "Organization", "@id": organizationId, name: company.name },
+    isPartOf: { "@type": "CollectionPage", "@id": absolute("/studio/library") },
+    inLanguage: "en",
+  };
+}
+function libraryPage() {
+  const url = absolute("/studio/library");
+  return {
+    "@type": "CollectionPage",
+    "@id": url,
+    url,
+    name: "Studio library",
+    description: pages["/studio/library"].description,
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: library.map((item, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: absolute(`${LIBRARY_PATH}${item.slug}`),
+        name: itemTitle(item),
+      })),
+    },
+  };
+}
 
 const organizationId = `${SITE_URL}/#organization`;
 const ABOUT_URL = `${SITE_URL}/about`;
@@ -237,6 +304,30 @@ export function getMeta(pathname) {
     };
   }
 
+  const item = path.startsWith(LIBRARY_PATH) ? itemBySlug[path.slice(LIBRARY_PATH.length)] : null;
+  if (item) {
+    const url = absolute(path);
+    // Link previews: the item's own 1200x630 picture, or the site's.
+    const share = item.share
+      ? { url: absolute(item.share), width: 1200, height: 630, alt: `${coverOf(item).alt} ${labelsOf(item)[0]}` }
+      : image;
+    return {
+      title: `${itemTitle(item)} · ${company.name}`,
+      description: itemDescription(item),
+      canonical: url,
+      type: "website",
+      image: share,
+      jsonLd: [
+        creativeWork(item, url),
+        breadcrumbs([
+          ["Studio", "/studio"],
+          ["Library", "/studio/library"],
+          [item.brand, path],
+        ]),
+      ],
+    };
+  }
+
   const page = pages[path];
   if (!page) return { ...NOT_FOUND, canonical: null, type: "website", image, jsonLd: [] };
 
@@ -245,9 +336,11 @@ export function getMeta(pathname) {
       ? [organization(), website(), faqPage()]
       : path === "/about"
         ? [aboutPage(), organizationWithFounder(), person(), breadcrumbs([[page.crumb, path]])]
-        : page.crumb
-          ? [breadcrumbs([[page.crumb, path]])]
-          : [];
+        : path === "/studio/library"
+          ? [libraryPage(), breadcrumbs(page.crumbs)]
+          : page.crumb
+            ? [breadcrumbs([[page.crumb, path]])]
+            : [];
   return {
     title: page.fullTitle || `${page.title} · ${company.name}`,
     description: page.description,
@@ -321,7 +414,8 @@ export function sitemap() {
     .filter(({ meta }) => !meta.noindex)
     .map(({ path }) => {
       const post = path.startsWith("/blog/") ? postBySlug[path.slice(6)] : null;
-      const lastmod = post ? post.updated || post.date : path === "/blog" ? latestPost : null;
+      const item = path.startsWith(LIBRARY_PATH) ? itemBySlug[path.slice(LIBRARY_PATH.length)] : null;
+      const lastmod = post ? post.updated || post.date : path === "/blog" ? latestPost : item ? item.made : null;
       return `  <url><loc>${absolute(path)}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ""}</url>`;
     });
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.join("\n")}\n</urlset>\n`;
@@ -348,6 +442,13 @@ export function llmsTxt() {
     "Global Alfabet Studio is the design and development side of the company. It designs and builds websites, and makes logos, graphics, ads, videos and 3D renders, for other businesses.",
     ...services.map((s) => `- ${s.title}: ${s.text}`),
     "",
+    "## Studio library",
+    "Concept work for fictional brands, to show the range of what Global Alfabet Studio makes. None of it is a real client's work.",
+    ...library.map(
+      (item) =>
+        `- [${item.brand}](${absolute(`${LIBRARY_PATH}${item.slug}`)}): ${kindById[item.kind].label}, ${item.business.toLowerCase()}. ${item.summary}${item.ai ? " Made with AI-assisted tools." : ""}`,
+    ),
+    "",
     "## Founder",
     `- [${founder.name}](${ABOUT_URL}) founded ${company.name}. He's a software engineering student who designs and builds apps and websites, and he leads the company's products.`,
     ...founderSameAs.map((url) => `- ${founder.name} on [${new URL(url).hostname.replace(/^www\./, "")}](${url})`),
@@ -355,6 +456,8 @@ export function llmsTxt() {
     "## Pages",
     `- [About ${company.name}](${ABOUT_URL}): who we are and who founded the company`,
     `- [Products](${absolute("/products")})`,
+    `- [Global Alfabet Studio](${absolute("/studio")}): our design and development services`,
+    `- [Studio library](${absolute("/studio/library")}): our work, filtered by type (apps, websites, logos, 3D) and industry`,
     `- [Blog](${absolute("/blog")})`,
     `- [Contact](${absolute("/contact")})`,
     "",

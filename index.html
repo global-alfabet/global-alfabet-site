@@ -12,6 +12,12 @@
     <meta name="theme-color" content="#ffffff" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- The Studio library opened with a filter in the address (?type=apps): hide its grid until the page has applied
+         the filter, so the prerendered full grid doesn't show first and then jump (src/pages/Library.jsx). -->
+    <script>
+      if (/^\/studio\/library\/?$/.test(location.pathname) && /[?&](type|industry)=/.test(location.search))
+        document.documentElement.classList.add("library-filtering");
+    </script>
   </head>
   <body>
     <div id="root"></div>

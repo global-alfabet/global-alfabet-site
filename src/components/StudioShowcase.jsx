@@ -15,7 +15,8 @@ const picture = (pair, side) => {
   return { src: file(""), srcSet: `${file("-800")} 800w, ${file("")} 1600w` };
 };
 
-export default function StudioShowcase() {
+// `showServices` (the "Studio services:" line) and `showStartProject` (the button): off on /studio, which has its own.
+export default function StudioShowcase({ showServices = true, showStartProject = true }) {
   const [active, setActive] = useState(tabs[0]?.id);
   const buttons = useRef({});
   const card = useRef(null);
@@ -79,20 +80,24 @@ export default function StudioShowcase() {
           </ul>
         </div>
 
-        <p className="studio-all">
-          <strong>Studio services:</strong> {services.map((s) => s.title).join("\u00a0· ")}
-        </p>
+        {showServices && (
+          <p className="studio-all">
+            <strong>Studio services:</strong> {services.map((s) => s.title).join("\u00a0· ")}
+          </p>
+        )}
       </div>
-      <div className="center-actions">
-        <Link
-          className="btn btn-secondary"
-          to={`/contact?interest=${encodeURIComponent(interest)}#enquiry`}
-          data-cta="start_project"
-          data-placement="services"
-        >
-          Start a project
-        </Link>
-      </div>
+      {showStartProject && (
+        <div className="center-actions">
+          <Link
+            className="btn btn-secondary"
+            to={`/contact?interest=${encodeURIComponent(interest)}#enquiry`}
+            data-cta="start_project"
+            data-placement="services"
+          >
+            Start a project
+          </Link>
+        </div>
+      )}
     </>
   );
 }

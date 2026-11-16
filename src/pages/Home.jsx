@@ -160,6 +160,9 @@ export default function Home() {
             <p className="eyebrow">Global Alfabet Studio</p>
             <h2>We build for other businesses too.</h2>
             <p>Global Alfabet Studio is the design and development side of the company. The team behind the Alfa products designs and builds websites, logos, ads, videos and 3D renders for other businesses.</p>
+            <Link className="text-link section-link" to="/studio" data-placement="services">
+              Explore the Studio and its library <Icon name="chevron" size={16} stroke={2.2} />
+            </Link>
           </header>
           <StudioShowcase />
         </div>

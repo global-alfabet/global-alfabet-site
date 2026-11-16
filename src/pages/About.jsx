@@ -14,14 +14,14 @@ export default function About() {
           <h1>About {company.name}</h1>
           <p className="lead">
             {company.name} is a technology company. We build our own apps (Alfa Maps, Alfa Finda and Alfa Shop) and
-            design and build websites for businesses through Global Alfabet Studio.
+            design and build websites for businesses through <Link to="/studio">Global Alfabet Studio</Link>.
           </p>
           <div className="hero-actions">
             <Link className="btn" to="/products" data-cta="explore_products" data-placement="about">
               Explore products
             </Link>
-            <Link className="text-link" to="/#services">
-              Our services <Icon name="chevron" size={16} stroke={2.2} />
+            <Link className="text-link" to="/studio">
+              Global Alfabet Studio <Icon name="chevron" size={16} stroke={2.2} />
             </Link>
           </div>
         </div>

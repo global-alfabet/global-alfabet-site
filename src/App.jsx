@@ -7,6 +7,7 @@ import CookieBanner from "./components/CookieBanner.jsx";
 import { company } from "./config.js";
 import { listenForClicks } from "./lib/events.js";
 import { pageChanged } from "./lib/consent.js";
+import { markHydrated } from "./lib/hydrated.js";
 import Home from "./pages/Home.jsx";
 import Products from "./pages/Products.jsx";
 import Blog from "./pages/Blog.jsx";
@@ -15,6 +16,9 @@ import Contact from "./pages/Contact.jsx";
 import Privacy from "./pages/Privacy.jsx";
 import About from "./pages/About.jsx";
 import Brand from "./pages/Brand.jsx";
+import Studio from "./pages/Studio.jsx";
+import Library from "./pages/Library.jsx";
+import LibraryItem from "./pages/LibraryItem.jsx";
 import NotFound from "./pages/NotFound.jsx";
 
 // Scroll to the top on every new page, or to #section when the address has one.
@@ -37,6 +41,7 @@ export default function App() {
   const { pathname } = useLocation();
   useEffect(listenForClicks, []); // calls to action and links to other Global Alfabet sites (src/lib/events.js)
   useEffect(pageChanged, [pathname]); // answers changed elsewhere, and the Meta Pixel's PageView (src/lib/consent.js)
+  useEffect(markHydrated, []); // runs after every page's own first effects (src/lib/hydrated.js)
   return (
     <>
       <a className="skip-link" href="#main">
@@ -49,6 +54,9 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/studio" element={<Studio />} />
+          <Route path="/studio/library" element={<Library />} />
+          <Route path="/studio/library/:slug" element={<LibraryItem />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<Article />} />
           <Route path="/about" element={<About />} />
