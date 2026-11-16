@@ -5,7 +5,7 @@ import { asset } from "../lib/asset.js";
 
 const links = [
   { to: "/products", label: "Products" },
-  { to: "/#services", label: "Services" },
+  { to: "/studio", label: "Studio" },
   { to: "/blog", label: "Blog" },
   { to: "/contact", label: "Contact" },
 ];

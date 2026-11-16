@@ -16,6 +16,7 @@ npm run check    # lint + production build (must pass before merging)
 | Contact details, product links | `src/config.js` |
 | Products (names, lines, features, status) | `src/content/products.js` |
 | Services, values, FAQ | `src/content/company.js` |
+| Studio library (`/studio/library`): our work, its pictures | `src/content/library.js` (how to add an item is at the top); pictures in `public/library/<slug>/` |
 | Blog posts | `src/content/blog/<address>.md`: the file name becomes `/blog/<address>` |
 | Logos and brand kit | `public/brand/` (served at `/brand/...`) |
 | Colours and layout | `src/styles/site.css` (tokens at the top) |

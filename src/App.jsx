@@ -15,6 +15,9 @@ import Contact from "./pages/Contact.jsx";
 import Privacy from "./pages/Privacy.jsx";
 import About from "./pages/About.jsx";
 import Brand from "./pages/Brand.jsx";
+import Studio from "./pages/Studio.jsx";
+import Library from "./pages/Library.jsx";
+import LibraryItem from "./pages/LibraryItem.jsx";
 import NotFound from "./pages/NotFound.jsx";
 
 // Scroll to the top on every new page, or to #section when the address has one.
@@ -49,6 +52,9 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/studio" element={<Studio />} />
+          <Route path="/studio/library" element={<Library />} />
+          <Route path="/studio/library/:slug" element={<LibraryItem />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<Article />} />
           <Route path="/about" element={<About />} />

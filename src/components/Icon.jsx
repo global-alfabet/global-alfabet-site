@@ -31,6 +31,18 @@ const paths = {
     </>
   ),
   download: <path d="M12 4v11M7 10.5l5 5 5-5M5 20h14" />,
+  "device-phone": (
+    <>
+      <rect x="6.5" y="2.5" width="11" height="19" rx="2.5" />
+      <path d="M10.5 5.5h3" />
+    </>
+  ),
+  "device-desktop": (
+    <>
+      <rect x="2.5" y="4" width="19" height="13" rx="2" />
+      <path d="M9 21h6M12 17v4" />
+    </>
+  ),
 };
 
 export default function Icon({ name, size = 20, stroke = 1.75, className = "", title }) {
