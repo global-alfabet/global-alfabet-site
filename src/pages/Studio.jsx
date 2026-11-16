@@ -1,29 +1,54 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import Icon from "../components/Icon.jsx";
-import { Browser, Phone, Shot } from "../components/Device.jsx";
+import { Browser, Phone } from "../components/Device.jsx";
 import { WorkMedia } from "../components/WorkCard.jsx";
+import LogoStrip from "../components/LogoStrip.jsx";
 import StudioShowcase from "../components/StudioShowcase.jsx";
 import { services } from "../content/company.js";
-import { countOf, itemBySlug, kinds, library } from "../content/library.js";
+import { countOf, industries, itemBySlug, kinds, library } from "../content/library.js";
+import { useScrollProgress } from "../lib/scrollMotion.js";
 
-// /studio: Global Alfabet Studio, the design and development side of the company. The hero sets a few pieces from
-// the library side by side; the tiles open each section of the library (src/content/library.js).
+// /studio: Global Alfabet Studio, the design and development side of the company. Every picture is our fictional
+// concept work from the library (src/content/library.js); the brands' colours live inside those pictures, and the
+// page around them keeps to white, light grey, ink and Alfabet Blue.
 const pick = (slug) => itemBySlug[slug];
-const stage = {
-  browser: pick("brakko").desktop[0],
-  left: pick("kovalt").mobile[0],
-  right: pick("petalune").mobile[0],
-  farLeft: pick("two-storey-house").images[0],
-  farRight: pick("brumaro").images[0],
-};
-// Which library section shows each service's work.
+
+// The hero: two desktop pages behind a fan of five phones. `wide`: only on wide screens (lazy, so phones don't
+// download them). --r is each phone's tilt; --rise how far it travels as the page scrolls (src/lib/scrollMotion.js).
+const pages = [
+  { shot: pick("ferrovane").desktop[0], className: "fan-page fan-page-left" },
+  { shot: pick("velloran").desktop[0], className: "fan-page fan-page-right" },
+];
+const phones = [
+  { shot: pick("kovalt").mobile[0], className: "fan-phone fan-1", r: "-13deg", rise: "-40px", wide: true },
+  { shot: pick("fennivo").mobile[0], className: "fan-phone fan-2", r: "-6deg", rise: "-70px" },
+  { shot: pick("brakko").mobile[0], className: "fan-phone fan-3", r: "0deg", rise: "-100px" },
+  { shot: pick("petalune").mobile[0], className: "fan-phone fan-4", r: "6deg", rise: "-70px" },
+  { shot: pick("thronga").mobile[0], className: "fan-phone fan-5", r: "13deg", rise: "-40px", wide: true },
+];
+
+// Which library section shows each service's work, and the piece that pictures it.
 const serviceKind = Object.fromEntries(kinds.map((k) => [k.service, k]));
+const servicePicture = {
+  "ui-ux": "fennivo",
+  "website-development": "ferrovane",
+  "3d-renders": "two-storey-house",
+  "logo-design": "brumaro",
+};
+const pictured = services.filter((s) => servicePicture[s.id]);
+const others = services.filter((s) => !servicePicture[s.id]);
+const usedIndustries = industries.filter((i) => library.some((item) => item.industry === i.id));
+const numbers = [
+  [services.length, "services, from UI/UX design to video ads"],
+  [library.length, "pieces of concept work in the library"],
+  [kinds.length, "kinds of work: apps, websites, logos and 3D"],
+  [usedIndustries.length, "industries, from fitness to finance"],
+];
 
 export default function Studio() {
-  const opts = { small: true, decorative: true, eager: true };
-  // Phones show only the browser window and the Petalune phone: the other three are hidden there, and lazy, so
-  // phones don't download them.
-  const wideOnly = { ...opts, eager: false };
+  const stage = useRef(null);
+  useScrollProgress(stage);
   return (
     <>
       <section className="studio-hero">
@@ -43,27 +68,36 @@ export default function Studio() {
             </Link>
           </div>
         </div>
-        <figure className="studio-stage">
-          <div className="studio-stage-inner" aria-hidden="true">
-            <Shot shot={stage.farLeft} className="stage-far-left" {...wideOnly} />
-            <Shot shot={stage.farRight} className="stage-far-right" {...wideOnly} />
-            <Browser shot={stage.browser} className="stage-browser" {...opts} />
-            <Phone shot={stage.left} className="stage-left" {...wideOnly} />
-            <Phone shot={stage.right} className="stage-right" {...opts} />
+        <figure className="fan">
+          <div className="fan-stage" ref={stage} aria-hidden="true">
+            {pages.map((p) => (
+              <div key={p.shot.src} className={p.className}>
+                <Browser shot={p.shot} decorative eager sizes="(max-width: 640px) 70vw, 600px" />
+              </div>
+            ))}
+            {phones.map((p) => (
+              <div key={p.shot.src} className={p.className} style={{ "--r": p.r, "--rise": p.rise }}>
+                <Phone shot={p.shot} decorative eager={!p.wide} sizes="(max-width: 640px) 34vw, 210px" />
+              </div>
+            ))}
           </div>
           <figcaption>
-            <span className="stage-caption-wide">
-              Brakko, Kovalt, Petalune, Brumaro and a two-storey house: concept work for fictional brands, from the
-              library.
+            <span className="fan-caption-wide">
+              Kovalt, Fennivo, Brakko, Petalune and Thronga, with Ferrovane and Velloran behind: concept work for
+              fictional brands, from the library.
             </span>
-            <span className="stage-caption-narrow">
-              Brakko and Petalune: concept work for fictional brands, from the library.
+            <span className="fan-caption-narrow">
+              Fennivo, Brakko and Petalune, with Ferrovane and Velloran behind: concept work for fictional brands.
             </span>
           </figcaption>
         </figure>
       </section>
 
-      <section className="section section-soft" id="library">
+      <section className="strip-band" aria-label="Brands from the library">
+        <LogoStrip />
+      </section>
+
+      <section className="section" id="library">
         <div className="container">
           <header className="section-head">
             <h2>Browse our work.</h2>
@@ -100,32 +134,51 @@ export default function Studio() {
         </div>
       </section>
 
-      <section className="section" id="services">
+      <section className="section studio-dark" id="services">
         <div className="container">
           <header className="section-head">
             <h2>What we do.</h2>
             <p>Design and development in your brand, from one logo to a whole website.</p>
           </header>
-          <ul className="service-list">
-            {services.map((s) => {
+          <ul className="studio-numbers">
+            {numbers.map(([n, label]) => (
+              <li key={label}>
+                <strong>{n}</strong>
+                <span>{label}</span>
+              </li>
+            ))}
+          </ul>
+          <ul className="service-tiles">
+            {pictured.map((s) => {
               const kind = serviceKind[s.id];
               return (
                 <li key={s.id}>
-                  <h3>{s.title}</h3>
-                  <p className="muted">{s.text}</p>
-                  {kind && (
-                    <Link className="text-link" to={`/studio/library?type=${kind.type}`}>
+                  <Link className="service-tile" to={`/studio/library?type=${kind.type}`}>
+                    <div className="work-frame">
+                      <WorkMedia item={pick(servicePicture[s.id])} />
+                    </div>
+                    <h3>{s.title}</h3>
+                    <p>{s.text}</p>
+                    <span className="service-more">
                       See examples <Icon name="chevron" size={16} stroke={2.2} />
-                    </Link>
-                  )}
+                    </span>
+                  </Link>
                 </li>
               );
             })}
           </ul>
+          <ul className="service-list-dark">
+            {others.map((s) => (
+              <li key={s.id}>
+                <h3>{s.title}</h3>
+                <p>{s.text}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      <section className="section section-soft" id="own-work">
+      <section className="section section-soft" id="before-after">
         <div className="container">
           <header className="section-head">
             <h2>Before and after.</h2>
