@@ -2,12 +2,17 @@ import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Icon from "../components/Icon.jsx";
 import WorkCard from "../components/WorkCard.jsx";
-import { industries, industryById, kindByType, kinds, library } from "../content/library.js";
+import { countOf, industries, industryById, kindByType, kinds, library } from "../content/library.js";
+import { isHydrated } from "../lib/hydrated.js";
 
 // /studio/library: every piece of Studio work, with a tab for each kind and an industry filter. The choices live
 // in the address (?type=websites&industry=fitness) so a filtered view can be shared. The page is prerendered
-// without them, so the address is read only in an effect, after the page has loaded.
+// without them, so on the first page a visitor opens the address is read only in an effect. To stop the full grid
+// showing first and then jumping, a line in index.html hides the grid (class "library-filtering" on <html>) when
+// the address has a filter, and the effect below shows it again once the filter is applied. Opened by moving
+// around the site, the page reads the address straight away (src/lib/hydrated.js).
 const ALL = "all";
+const NONE = { type: ALL, industry: ALL };
 const tabs = [{ type: ALL, tab: "All" }, ...kinds];
 // Only industries that have work in them.
 const usedIndustries = industries.filter((i) => library.some((item) => item.industry === i.id));
@@ -25,8 +30,16 @@ function readFilters(search) {
 export default function Library() {
   const location = useLocation();
   const navigate = useNavigate();
-  const [filters, setFilters] = useState({ type: ALL, industry: ALL });
-  useEffect(() => setFilters(readFilters(location.search)), [location.search]);
+  const [filters, setFilters] = useState(() => (isHydrated() ? readFilters(location.search) : NONE));
+  const [applied, setApplied] = useState(false);
+  useEffect(() => {
+    setFilters(readFilters(location.search));
+    setApplied(true);
+  }, [location.search]);
+  // Show the grid once the filtered grid is on the page (both state changes above land in the same render).
+  useEffect(() => {
+    if (applied) document.documentElement.classList.remove("library-filtering");
+  }, [applied]);
 
   const choose = (change) => {
     const next = { ...filters, ...change };
@@ -43,7 +56,7 @@ export default function Library() {
     (item) => (!kind || item.kind === kind.id) && (filters.industry === ALL || item.industry === filters.industry),
   );
   const where = filters.industry === ALL ? "" : ` in ${industryById[filters.industry].label.toLowerCase()}`;
-  const count = (n) => (kind ? `${n} ${n === 1 ? kind.one : kind.plural}` : n === 1 ? "1 piece" : `${n} pieces`);
+  const count = (n) => (kind ? countOf(kind, n) : n === 1 ? "1 piece" : `${n} pieces`);
 
   return (
     <>
@@ -54,7 +67,7 @@ export default function Library() {
           </p>
           <h1>Studio library</h1>
           <p className="lead">
-            App screens, websites, logos and 3D renders. Open any piece to see it up close, on a phone and on a desktop.
+            App screens, websites, logos and 3D renders. Open any piece to see it up close.
           </p>
           <p className="library-note">Everything here is concept work for fictional brands.</p>
         </div>

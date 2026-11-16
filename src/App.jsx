@@ -7,6 +7,7 @@ import CookieBanner from "./components/CookieBanner.jsx";
 import { company } from "./config.js";
 import { listenForClicks } from "./lib/events.js";
 import { pageChanged } from "./lib/consent.js";
+import { markHydrated } from "./lib/hydrated.js";
 import Home from "./pages/Home.jsx";
 import Products from "./pages/Products.jsx";
 import Blog from "./pages/Blog.jsx";
@@ -40,6 +41,7 @@ export default function App() {
   const { pathname } = useLocation();
   useEffect(listenForClicks, []); // calls to action and links to other Global Alfabet sites (src/lib/events.js)
   useEffect(pageChanged, [pathname]); // answers changed elsewhere, and the Meta Pixel's PageView (src/lib/consent.js)
+  useEffect(markHydrated, []); // runs after every page's own first effects (src/lib/hydrated.js)
   return (
     <>
       <a className="skip-link" href="#main">

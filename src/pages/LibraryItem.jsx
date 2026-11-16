@@ -9,6 +9,7 @@ import { serviceById } from "../content/company.js";
 import { formatMade, industryById, itemBySlug, kindById, labelsOf, library } from "../content/library.js";
 import { asset } from "../lib/asset.js";
 import { useNearScreen } from "../lib/nearScreen.js";
+import { isHydrated } from "../lib/hydrated.js";
 
 // One piece of Studio work: /studio/library/<slug>. A viewer (phone frames, a browser frame, or a gallery), what we
 // made and why, and a way to start a similar project. Its title and share tags are in src/lib/seo.js.
@@ -18,10 +19,11 @@ const VIEWS = [
 ];
 
 // The Mobile / Desktop switch: the WAI-ARIA tabs pattern (arrow keys move and open), as in StudioShowcase.
+// `view` is null until the page has loaded: CSS then marks Desktop on wide screens and Mobile on phones.
 function ViewSwitch({ view, setView, slug }) {
   const buttons = useRef({});
   const onKeyDown = (e) => {
-    const i = VIEWS.findIndex((v) => v.id === view);
+    const i = VIEWS.findIndex((v) => v.id === (view || firstView()));
     const next = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: VIEWS.length - 1 }[e.key];
     if (next === undefined) return;
     e.preventDefault();
@@ -38,9 +40,10 @@ function ViewSwitch({ view, setView, slug }) {
           type="button"
           role="tab"
           id={`view-${slug}-${v.id}`}
+          data-view={v.id}
           aria-selected={view === v.id}
-          aria-controls={`panel-${slug}`}
-          tabIndex={view === v.id ? 0 : -1}
+          aria-controls={`panel-${slug}-${v.id}`}
+          tabIndex={!view || view === v.id ? 0 : -1}
           onClick={() => setView(v.id)}
         >
           <Icon name={v.id === "mobile" ? "device-phone" : "device-desktop"} size={18} />
@@ -53,12 +56,13 @@ function ViewSwitch({ view, setView, slug }) {
 
 // Phone screens in a row. On narrow screens several of them scroll sideways inside the stage (.viewer-scroll),
 // so the region can take focus and be scrolled with the arrow keys.
-function Phones({ shots }) {
+// `lazy`: every picture waits until it's shown (both views are on the page until it has loaded, one of them hidden).
+function Phones({ shots, lazy = false }) {
   const list = (
     <ul className={`viewer-phones count-${shots.length}`}>
       {shots.map((shot, i) => (
         <li key={shot.src}>
-          <Phone shot={shot} sizes="(max-width: 640px) 260px, 290px" eager={i === 0} />
+          <Phone shot={shot} sizes="(max-width: 640px) 260px, 290px" eager={!lazy && i === 0} />
         </li>
       ))}
     </ul>
@@ -71,7 +75,7 @@ function Phones({ shots }) {
   );
 }
 
-function Pages({ shots, address }) {
+function Pages({ shots, address, lazy = false }) {
   return (
     <div className="viewer-pages">
       {shots.map((shot, i) => (
@@ -80,7 +84,7 @@ function Pages({ shots, address }) {
           shot={shot}
           address={address}
           sizes="(max-width: 1040px) calc(100vw - 84px), 960px"
-          eager={i === 0}
+          eager={!lazy && i === 0}
         />
       ))}
     </div>
@@ -124,12 +128,17 @@ function Gallery({ item }) {
   );
 }
 
+// Which view a screen this size starts on: Mobile on phones, Desktop otherwise (the same width as the CSS below).
+const firstView = () => (window.matchMedia?.("(max-width: 640px)").matches ? "mobile" : "desktop");
+
 function Viewer({ item }) {
   const both = item.mobile.length > 0 && item.desktop.length > 0;
-  // Desktop first on a desktop; the phone view first on a phone (decided after load, as the page is prerendered).
-  const [view, setView] = useState(both ? "desktop" : "mobile");
+  // With both views: the prerendered page has both panels, and CSS (.viewer-auto) shows Desktop on wide screens and
+  // Mobile on phones, so nothing swaps when the page loads. Their pictures are lazy, so the hidden one isn't
+  // downloaded. Once the page has loaded, the view becomes state (nothing on screen changes) and the switch decides.
+  const [view, setView] = useState(() => (both && isHydrated() ? firstView() : null));
   useEffect(() => {
-    if (both && window.matchMedia?.("(max-width: 640px)").matches) setView("mobile");
+    if (both) setView((v) => v || firstView());
   }, [both]);
   const address = `${item.brand.toLowerCase().replace(/[^a-z0-9]+/g, "")}.example`;
 
@@ -141,11 +150,24 @@ function Viewer({ item }) {
       </div>
     );
   return (
-    <div className="viewer-stage">
+    <div className={`viewer-stage${view ? "" : " viewer-auto"}`}>
       <ViewSwitch view={view} setView={setView} slug={item.slug} />
-      <div id={`panel-${item.slug}`} role="tabpanel" aria-labelledby={`view-${item.slug}-${view}`}>
-        {view === "mobile" ? <Phones shots={item.mobile} /> : <Pages shots={item.desktop} address={address} />}
-      </div>
+      {VIEWS.map((v) => (
+        <div
+          key={v.id}
+          id={`panel-${item.slug}-${v.id}`}
+          role="tabpanel"
+          aria-labelledby={`view-${item.slug}-${v.id}`}
+          className={`viewer-panel viewer-panel-${v.id}`}
+          hidden={view ? view !== v.id : undefined}
+        >
+          {v.id === "mobile" ? (
+            <Phones shots={item.mobile} lazy />
+          ) : (
+            <Pages shots={item.desktop} address={address} lazy />
+          )}
+        </div>
+      ))}
     </div>
   );
 }

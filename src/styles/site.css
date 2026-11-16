@@ -1501,6 +1501,10 @@ a.way:hover {
   font-size: 13px;
   text-align: center;
 }
+/* The caption names what's on screen: all five pieces here, two on phones (see the 640px block) */
+.stage-caption-narrow {
+  display: none;
+}
 
 /* Studio page: the library's sections */
 .shelf {
@@ -1637,6 +1641,18 @@ a.way:hover {
   margin: 28px 0 20px;
   color: var(--ink-2);
   font-size: 15px;
+}
+/* Opened with a filter in the address: hidden (space kept) until the page has applied it (index.html,
+   Library.jsx). The animation shows it anyway after 2.5 s, in case the page's script never runs. */
+.library-filtering .library-count,
+.library-filtering .work-grid {
+  visibility: hidden;
+  animation: library-reveal 0s 2.5s forwards;
+}
+@keyframes library-reveal {
+  to {
+    visibility: visible;
+  }
 }
 .library-empty {
   padding: 64px 22px;
@@ -1847,6 +1863,15 @@ a.way:hover {
   background: var(--ink);
   color: #fff;
 }
+/* Before the page has loaded (LibraryItem.jsx), the screen size picks the view: Desktop here, Mobile on phones
+   (the phone rules are in the 640px block below). */
+.viewer-auto .viewer-panel-mobile {
+  display: none;
+}
+.viewer-auto .view-switch [data-view="desktop"] {
+  background: var(--ink);
+  color: #fff;
+}
 .viewer-phones {
   list-style: none;
   padding: 0;
@@ -2023,6 +2048,31 @@ a.way:hover {
   }
   .view-switch button {
     padding: 10px 16px;
+  }
+  .viewer-auto .viewer-panel-mobile {
+    display: block;
+  }
+  .viewer-auto .viewer-panel-desktop {
+    display: none;
+  }
+  .viewer-auto .view-switch [data-view="desktop"] {
+    background: transparent;
+    color: var(--ink);
+  }
+  .viewer-auto .view-switch [data-view="mobile"] {
+    background: var(--ink);
+    color: #fff;
+  }
+  .stage-caption-wide {
+    display: none;
+  }
+  /* One under the other: side by side they only just fit, and wrapped while the web font loaded (a layout shift) */
+  .studio-hero .hero-actions {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .stage-caption-narrow {
+    display: inline;
   }
   /* The hero on a phone: the browser window with one phone in front, and the other pieces left out */
   .studio-stage-inner {

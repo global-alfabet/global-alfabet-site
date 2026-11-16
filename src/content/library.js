@@ -27,7 +27,8 @@
 // Pictures: WebP, as small as they can be. `width` and `height` are the file's own size (they stop the page jumping
 // while it loads). `small` is the same picture at half the width ("-sm.webp"), used on cards and on phones.
 // Phone screens: 2x (600x1280 for a 300x640 design). Desktop pages: 1600x1000. Logo boards: 1600x1200.
-// A new item with a Google Stitch design: export each screen as PNG, convert to WebP (full and -sm), add it here.
+// A new item with a Google Stitch design: export each screen as PNG, convert to WebP (full and -sm), add it here,
+// and set `ai: true`. Stitch designs are made with AI, so their pages must say "Made with AI-assisted tools.".
 
 export const kinds = [
   { id: "app", type: "apps", tab: "Apps & UI", label: "App", one: "app", plural: "apps", service: "ui-ux", blurb: "App screens and user journeys." },
@@ -55,6 +56,9 @@ export const kinds = [
 ];
 export const kindById = Object.fromEntries(kinds.map((k) => [k.id, k]));
 export const kindByType = Object.fromEntries(kinds.map((k) => [k.type, k]));
+
+/** "4 apps", "One logo", "One 3D render". */
+export const countOf = (kind, n) => (n === 1 ? `One ${kind.one}` : `${n} ${kind.plural}`);
 
 export const industries = [
   { id: "events", label: "Events" },
@@ -163,7 +167,7 @@ export const library = [
     summary: "Five logo directions for a coffee roaster, each with an app icon, shown on packaging, cups and signs.",
     choices: [
       "Five first impressions, from a quiet serif wordmark to a warm brush script.",
-      "The brand idea is mist over highland hills, used in the badge, the abstract mark and the monogram.",
+      "Mist over highland hills shapes two of them: the badge and the striped abstract mark.",
       "Every mark still reads as a 32 px app icon.",
     ],
     mobile: [],
@@ -223,6 +227,8 @@ export const library = [
         1600,
         1200,
         "Direction 5 in three steps: a rough draft in grey on paper, the vector outline with its anchor points in blue, and the clean red vector on yellow.",
+        // 358 anchor points: the potrace outline's count, from the designer's notes (w47-s1 notes.md, "11 shapes,
+        // 358 anchor points") and the approved slide 7 ("Vector outline: 358 points").
         "Direction 5, from a rough draft to a vector outline (358 points) to a clean vector.",
       ),
     ],

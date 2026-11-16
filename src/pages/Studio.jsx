@@ -4,7 +4,7 @@ import { Browser, Phone, Shot } from "../components/Device.jsx";
 import { WorkMedia } from "../components/WorkCard.jsx";
 import StudioShowcase from "../components/StudioShowcase.jsx";
 import { services } from "../content/company.js";
-import { itemBySlug, kinds, library } from "../content/library.js";
+import { countOf, itemBySlug, kinds, library } from "../content/library.js";
 
 // /studio: Global Alfabet Studio, the design and development side of the company. The hero sets a few pieces from
 // the library side by side; the tiles open each section of the library (src/content/library.js).
@@ -16,13 +16,14 @@ const stage = {
   farLeft: pick("two-storey-house").images[0],
   farRight: pick("brumaro").images[0],
 };
-const shown = ["Brakko", "Kovalt", "Petalune", "Brumaro"];
-
 // Which library section shows each service's work.
 const serviceKind = Object.fromEntries(kinds.map((k) => [k.service, k]));
 
 export default function Studio() {
   const opts = { small: true, decorative: true, eager: true };
+  // Phones show only the browser window and the Petalune phone: the other three are hidden there, and lazy, so
+  // phones don't download them.
+  const wideOnly = { ...opts, eager: false };
   return (
     <>
       <section className="studio-hero">
@@ -44,14 +45,20 @@ export default function Studio() {
         </div>
         <figure className="studio-stage">
           <div className="studio-stage-inner" aria-hidden="true">
-            <Shot shot={stage.farLeft} className="stage-far-left" {...opts} />
-            <Shot shot={stage.farRight} className="stage-far-right" {...opts} />
+            <Shot shot={stage.farLeft} className="stage-far-left" {...wideOnly} />
+            <Shot shot={stage.farRight} className="stage-far-right" {...wideOnly} />
             <Browser shot={stage.browser} className="stage-browser" {...opts} />
-            <Phone shot={stage.left} className="stage-left" {...opts} />
+            <Phone shot={stage.left} className="stage-left" {...wideOnly} />
             <Phone shot={stage.right} className="stage-right" {...opts} />
           </div>
           <figcaption>
-            {shown.join(", ")} and a two-storey house: concept work for fictional brands, from the library.
+            <span className="stage-caption-wide">
+              Brakko, Kovalt, Petalune, Brumaro and a two-storey house: concept work for fictional brands, from the
+              library.
+            </span>
+            <span className="stage-caption-narrow">
+              Brakko and Petalune: concept work for fictional brands, from the library.
+            </span>
           </figcaption>
         </figure>
       </section>
@@ -76,7 +83,7 @@ export default function Studio() {
                       <h3>{k.tab}</h3>
                       <p className="muted">{k.blurb}</p>
                       <p className="shelf-count">
-                        {items.length === 1 ? `1 ${k.one}` : `${items.length} ${k.plural}`}
+                        {countOf(k, items.length)}
                         <Icon name="chevron" size={16} stroke={2.2} />
                       </p>
                     </div>
@@ -124,7 +131,8 @@ export default function Studio() {
             <h2>Our own work, before and after.</h2>
             <p>From the Alfa products we design and build ourselves.</p>
           </header>
-          <StudioShowcase />
+          {/* "What we do" and the closing "Get in touch" already cover the showcase's services line and button */}
+          <StudioShowcase showServices={false} showStartProject={false} />
         </div>
       </section>
 
