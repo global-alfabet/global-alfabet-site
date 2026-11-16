@@ -494,6 +494,22 @@ p {
   margin: 10px 0 20px;
   flex: 1;
 }
+/* Only one card in the row (while Alfa Shop and the Account are hidden): full width, its features in two columns */
+.card-grid.single {
+  grid-template-columns: 1fr;
+}
+.card-grid.single .card .muted {
+  flex: none;
+  max-width: 680px;
+}
+.card-grid.single .checks {
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 32px;
+  margin: 0 0 28px;
+}
+.card-grid.single .checks .icon {
+  color: var(--check, var(--maps)); /* the product's own accent */
+}
 .card h3 {
   font-size: 28px;
 }
@@ -2169,6 +2185,9 @@ a.way:hover {
   .post-grid.single .post-card img {
     min-height: 0;
     aspect-ratio: 16 / 10;
+  }
+  .card-grid.single .checks {
+    grid-template-columns: 1fr;
   }
   .card-grid,
   .post-grid,

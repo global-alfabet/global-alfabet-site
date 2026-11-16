@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Icon from "../components/Icon.jsx";
 import ProductIcon from "../components/ProductIcon.jsx";
-import { products, productById } from "../content/products.js";
+import { products, productById, isLaunched } from "../content/products.js";
 import { values, faq } from "../content/company.js";
 import { posts, formatDate } from "../lib/blog.js";
 import { openPost } from "../lib/events.js";
@@ -16,6 +16,8 @@ function Status({ children }) {
 export default function Home() {
   const maps = productById["alfa-maps"];
   const others = products.filter((p) => p.id !== "alfa-maps");
+  // Alfa Shop and the Account are hidden until they launch (src/content/products.js): copy that names them waits too.
+  const everything = isLaunched("alfa-shop") && isLaunched("account");
 
   return (
     <>
@@ -38,10 +40,17 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <p className="hero-lead">
-            <strong>Everything your business needs</strong> to get found, sell online and show buyers what they're
-            getting, from 3D estate tours to a shop of your own. <strong>One account for all of it.</strong>
-          </p>
+          {everything ? (
+            <p className="hero-lead">
+              <strong>Everything your business needs</strong> to get found, sell online and show buyers what they're
+              getting, from 3D estate tours to a shop of your own. <strong>One account for all of it.</strong>
+            </p>
+          ) : (
+            <p className="hero-lead">
+              <strong>Get found and show buyers what they're getting</strong>, from 3D estate tours on Alfa Maps to a
+              business profile on Alfa Finda.
+            </p>
+          )}
           <div className="hero-actions">
             <Link className="btn" to="/products" data-cta="explore_products" data-placement="hero">
               Explore products
@@ -57,7 +66,7 @@ export default function Home() {
         <div className="container">
           <header className="section-head">
             <h2>Meet the Alfa family.</h2>
-            <p>Each product does one job well, and they all share one account.</p>
+            <p>Each product does one job well{isLaunched("account") ? ", and they all share one account" : ""}.</p>
           </header>
 
           <article className="feature-card">
@@ -81,7 +90,12 @@ export default function Home() {
                 ))}
               </ul>
               <div className="card-actions">
-                <Link className="btn" to="/contact?interest=Alfa%20Maps#enquiry" data-cta="alfa_maps_demo" data-placement="featured">
+                <Link
+                  className="btn"
+                  to="/contact?interest=Alfa%20Maps#enquiry"
+                  data-cta="alfa_maps_demo"
+                  data-placement="featured"
+                >
                   {maps.cta}
                 </Link>
                 <Link className="text-link" to={`/products#${maps.id}`}>
@@ -107,7 +121,8 @@ export default function Home() {
             )}
           </article>
 
-          <div className="card-grid">
+          {/* One other product (Alfa Finda, while Alfa Shop and the Account are hidden): a wide card with its features */}
+          <div className={`card-grid${others.length === 1 ? " single" : ""}`}>
             {others.map((p) => (
               <article className="card" key={p.id}>
                 <div className="card-top">
@@ -118,7 +133,17 @@ export default function Home() {
                   {p.role}
                 </p>
                 <h3>{p.name}</h3>
-                <p className="muted">{p.line}</p>
+                <p className="muted">{others.length === 1 ? p.summary : p.line}</p>
+                {others.length === 1 && (
+                  <ul className="checks" style={{ "--check": p.accent }}>
+                    {p.features.slice(0, 4).map((f) => (
+                      <li key={f}>
+                        <Icon name="check" size={18} stroke={2.2} />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                )}
                 <Link className="text-link" to={`/products#${p.id}`}>
                   Learn more <Icon name="chevron" size={16} stroke={2.2} />
                 </Link>
@@ -128,38 +153,43 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section band-dark">
-        <div className="container account-band">
-          <ProductIcon id="account" size={88} alt="" />
-          <h2>One account. Every Alfa product.</h2>
-          <p>
-            Create a Global Alfabet Account for your company, invite your team and switch on the products you need. Add
-            more later without signing up again.
-          </p>
-          <ul className="account-points">
-            <li>
-              <strong>One login</strong>
-              <span>for every product</span>
-            </li>
-            <li>
-              <strong>One workspace</strong>
-              <span>for your company and team</span>
-            </li>
-            <li>
-              <strong>Your choice</strong>
-              <span>of products, as you grow</span>
-            </li>
-          </ul>
-          <Status>Coming soon</Status>
-        </div>
-      </section>
+      {isLaunched("account") && (
+        <section className="section band-dark">
+          <div className="container account-band">
+            <ProductIcon id="account" size={88} alt="" />
+            <h2>One account. Every Alfa product.</h2>
+            <p>
+              Create a Global Alfabet Account for your company, invite your team and switch on the products you need.
+              Add more later without signing up again.
+            </p>
+            <ul className="account-points">
+              <li>
+                <strong>One login</strong>
+                <span>for every product</span>
+              </li>
+              <li>
+                <strong>One workspace</strong>
+                <span>for your company and team</span>
+              </li>
+              <li>
+                <strong>Your choice</strong>
+                <span>of products, as you grow</span>
+              </li>
+            </ul>
+            <Status>Coming soon</Status>
+          </div>
+        </section>
+      )}
 
       <section className="section" id="services">
         <div className="container">
           <header className="section-head">
             <p className="eyebrow">Global Alfabet Studio</p>
             <h2>We build for other businesses too.</h2>
-            <p>Global Alfabet Studio is the design and development side of the company. The team behind the Alfa products designs and builds websites, logos, ads, videos and 3D renders for other businesses.</p>
+            <p>
+              Global Alfabet Studio is the design and development side of the company. The team behind the Alfa products
+              designs and builds websites, logos, ads, videos and 3D renders for other businesses.
+            </p>
             <Link className="text-link section-link" to="/studio" data-placement="services">
               Explore the Studio and its library <Icon name="chevron" size={16} stroke={2.2} />
             </Link>
@@ -174,8 +204,8 @@ export default function Home() {
             <p className="eyebrow">About Global Alfabet</p>
             <h2>Useful technology, without the complexity.</h2>
             <p className="muted">
-              Global Alfabet is the parent company of the Alfa products. We build for businesses wherever they
-              are, from sole traders to established organisations, starting with problems people already have.
+              Global Alfabet is the parent company of the Alfa products. We build for businesses wherever they are, from
+              sole traders to established organisations, starting with problems people already have.
             </p>
             <Link className="text-link about-more" to="/about">
               About us and our founder <Icon name="chevron" size={16} stroke={2.2} />
@@ -206,7 +236,12 @@ export default function Home() {
             </header>
             <div className={`post-grid${posts.length === 1 ? " single" : ""}`}>
               {posts.slice(0, 3).map((post) => (
-                <Link className="post-card" to={`/blog/${post.slug}`} key={post.slug} onClick={() => openPost(post.slug)}>
+                <Link
+                  className="post-card"
+                  to={`/blog/${post.slug}`}
+                  key={post.slug}
+                  onClick={() => openPost(post.slug)}
+                >
                   {post.cover && <img src={post.cover} alt="" />}
                   <div>
                     <p className="eyebrow">{post.category}</p>

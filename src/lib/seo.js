@@ -3,7 +3,7 @@
 // to update the <head> when a visitor moves between pages (components/Seo.jsx).
 // A new page needs an entry in `pages` below. A new blog post needs nothing: it is picked up from src/content/blog.
 import { company, founder, productLinks } from "../config.js";
-import { products } from "../content/products.js";
+import { products, productNames } from "../content/products.js";
 import { services, faq } from "../content/company.js";
 import { posts, postBySlug } from "./blog.js";
 import { coverOf, industryById, itemBySlug, kindById, labelsOf, library } from "../content/library.js";
@@ -11,11 +11,13 @@ import { coverOf, industryById, itemBySlug, kindById, labelsOf, library } from "
 export const SITE_URL = company.url.replace(/\/$/, "");
 const absolute = (path) => (/^https?:/.test(path) ? path : `${SITE_URL}${path.startsWith("/") ? "" : "/"}${path}`);
 
+// The share picture shows the launched products' icons. /og.png has all four (Alfa Shop and the Account too): switch
+// back to it when they launch (src/content/products.js).
 const SHARE_IMAGE = {
-  url: "/og.png",
+  url: "/og-maps-finda.png",
   width: 1200,
   height: 630,
-  alt: "Global Alfabet, Providing access, with the Alfa Maps, Alfa Finda, Alfa Shop and Account icons",
+  alt: "Global Alfabet, Providing access, with the Alfa Maps and Alfa Finda icons",
 };
 
 // Titles show as "<title> · Global Alfabet". Keep descriptions under about 160 characters.
@@ -26,9 +28,9 @@ const pages = {
       "Global Alfabet builds Alfa Maps, 3D estates for property developers, and Alfa Finda, a search for businesses and places to visit, and designs websites.",
   },
   "/products": {
-    title: "Alfa Maps, Alfa Finda and Alfa Shop",
+    title: productNames(),
     description:
-      "Alfa Maps turns a layout plan into a 3D estate buyers explore on their phone. Alfa Finda searches businesses and places to visit. Alfa Shop is next.",
+      "Alfa Maps turns a layout plan into a 3D estate buyers explore on their phone. Alfa Finda searches businesses and places to visit.",
     crumb: "Products",
   },
   "/studio": {
@@ -54,7 +56,7 @@ const pages = {
   "/about": {
     fullTitle: "About Global Alfabet · Founder Julius Choga",
     description:
-      "Global Alfabet is a technology company founded by Julius Choga. It builds Alfa Maps, Alfa Finda and Alfa Shop, and designs and builds for businesses.",
+      `Global Alfabet is a technology company founded by Julius Choga. It builds ${productNames(products.filter((p) => p.id !== "account"))}, and designs and builds for businesses.`,
     crumb: "About",
   },
   "/contact": {
@@ -156,7 +158,7 @@ function organization() {
     },
     slogan: company.tagline,
     description:
-      "Global Alfabet is a technology company. It builds Alfa Maps, Alfa Finda and Alfa Shop, and through Global Alfabet Studio designs websites, logos, ads, videos and 3D renders for other businesses.",
+      `Global Alfabet is a technology company. It builds ${productNames(products.filter((p) => p.id !== "account"))}, and through Global Alfabet Studio designs websites, logos, ads, videos and 3D renders for other businesses.`,
     email: company.email,
     telephone: company.phone,
     address: { "@type": "PostalAddress", addressCountry: "ZW" },

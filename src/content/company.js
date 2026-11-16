@@ -1,3 +1,5 @@
+import { isLaunched, productNames } from "./products.js";
+
 // Services, values and FAQ shown on the home page.
 
 // Global Alfabet Studio's services: Julius's seven (8 Nov 2026), in marketing's industry wording. Order here = order on
@@ -110,6 +112,10 @@ export const studioTabs = [
   },
 ];
 
+// `needs`: shown only while that product is launched (src/content/products.js). Text that names the products is
+// built from the launched ones, so hiding or launching a product updates it.
+const shopShown = isLaunched("alfa-shop");
+
 export const values = [
   {
     title: "Accessible by design",
@@ -117,29 +123,36 @@ export const values = [
   },
   {
     title: "One connected family",
+    needs: "account",
     text: "Products that share one account and work together for discovery, sales and customer contact.",
   },
   {
     title: "Built to last",
     text: "Product decisions that support steady growth rather than short-lived trends.",
   },
-];
+].filter((v) => !v.needs || isLaunched(v.needs));
 
 export const faq = [
   {
     q: "What is Global Alfabet?",
-    a: "Global Alfabet is a technology company that builds and runs digital products, Alfa Maps, Alfa Finda and Alfa Shop, and offers design and development services to businesses.",
+    a: `Global Alfabet is a technology company that builds and runs digital products, ${productNames()}, and offers design and development services to businesses.`,
   },
   {
     q: "What is Alfa Maps?",
     a: "Alfa Maps turns a property developer's layout plan into a 3D estate. Buyers explore every plot on their phone, try house designs, see prices and payment plans, and contact the sales team in one tap.",
   },
-  {
-    q: "What happened to Alfa Places, BizDirect and Global Alfabet Shop?",
-    a: "They have new names. BizDirect became Alfa Places and is now Alfa Finda, and Global Alfabet Shop is now Alfa Shop. Old Alfa Places links still work and open the same page on Alfa Finda.",
-  },
+  shopShown
+    ? {
+        q: "What happened to Alfa Places, BizDirect and Global Alfabet Shop?",
+        a: "They have new names. BizDirect became Alfa Places and is now Alfa Finda, and Global Alfabet Shop is now Alfa Shop. Old Alfa Places links still work and open the same page on Alfa Finda.",
+      }
+    : {
+        q: "What happened to Alfa Places and BizDirect?",
+        a: "They have a new name. BizDirect became Alfa Places and is now Alfa Finda. Old Alfa Places links still work and open the same page on Alfa Finda.",
+      },
   {
     q: "Do I need a separate account for each product?",
+    needs: "account",
     a: "No. The Global Alfabet Account will give you one sign-in for every Alfa product, with a workspace for your company and team.",
   },
   {
@@ -147,4 +160,4 @@ export const faq = [
     // Keep this in step with `services` above.
     a: "Through Global Alfabet Studio: UI/UX design, website development, 3D renders from house plans, logo design, graphic design, advertising and video ads, for other businesses.",
   },
-];
+].filter((item) => !item.needs || isLaunched(item.needs));
