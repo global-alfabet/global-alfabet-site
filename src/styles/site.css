@@ -439,6 +439,13 @@ p {
   -webkit-mask-image: linear-gradient(transparent, #000 9%, #000 91%, transparent);
   mask-image: linear-gradient(transparent, #000 9%, #000 91%, transparent);
 }
+/* Reserve the loop's 4:3 box at full width from the start. In the centred grid the wrapper used to shrink to the
+   video's own size: 300px wide before anything loaded, 0 for a moment while the poster loaded, then full width,
+   which moved the card's text (a layout shift). */
+.feature-visual.has-loop .video-loop-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
 
 /* VideoLoop's Pause / Play button (components/VideoLoop.jsx): the same rules on every Global Alfabet site */
 .video-loop-wrap { position: relative; }
