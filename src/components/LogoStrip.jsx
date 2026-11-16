@@ -1,50 +1,57 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import Icon from "./Icon.jsx";
 import { itemBySlug } from "../content/library.js";
 import { asset } from "../lib/asset.js";
 import { useNearScreen } from "../lib/nearScreen.js";
 
 // A slowly moving strip of our fictional concept brands: their logos (public/library/marks/, from the designers'
-// own marks) between pieces of their work. Every tile opens the piece in the library. It pauses on hover and on
-// keyboard focus, and with its Pause button; for visitors who ask for reduced motion it doesn't move at all and
-// scrolls sideways instead. Pictures load only once the strip is near the screen (each tile keeps its size).
-const mark = (id, slug, alt) => ({ key: `mark-${id}`, slug, src: `/library/marks/${id}.webp`, alt, logo: true });
-const work = (slug, pick, alt) => ({ key: `work-${slug}`, slug, shot: pick(itemBySlug[slug]), alt });
+// own marks) between pieces of their work. The strip itself is decorative: hidden from screen readers, with nothing
+// in it to tab to (every piece is in the library). Its line of text says what it is, and the only stops for the
+// keyboard are "See the library" and the Pause button, which sit still above it. It also pauses on hover. For
+// visitors who ask for reduced motion it stands still, with no Pause button. Pictures load only once the strip is
+// near the screen (each tile keeps its size, so nothing moves).
+const mark = (id) => ({ key: `mark-${id}`, src: `/library/marks/${id}.webp` });
+const work = (slug, pick) => {
+  const shot = pick(itemBySlug[slug]);
+  return { key: `work-${slug}`, src: shot.small || shot.src };
+};
 const desktop = (i) => i.desktop[0];
 const firstPicture = (i) => i.images[0];
 const phone = (i) => i.mobile[0];
 
 const tiles = [
-  mark("brakko", "brakko", "Brakko logo"),
-  work("ferrovane", desktop, "Ferrovane's home page"),
-  mark("kovalt", "kovalt", "Kovalt app icon and name"),
-  work("two-storey-house", firstPicture, "3D render of the two-storey house at dusk"),
-  mark("tumbloo", "tumbloo", "Tumbloo logo"),
-  work("fennivo", phone, "Fennivo's home screen"),
-  mark("brumaro-script", "brumaro", "Brumaro script logo"),
-  work("velloran", desktop, "Velloran's home page"),
-  mark("caravie", "caravie", "Caravie app icon and name"),
-  work("petalune", desktop, "Petalune's home page"),
-  mark("thronga", "thronga", "Thronga app icon and name"),
-  mark("ferrovane", "ferrovane", "Ferrovane logo"),
-  work("thronga", phone, "Thronga's ticket screen"),
-  mark("brumaro-badge", "brumaro", "Brumaro badge logo"),
-  work("tumbloo", desktop, "Tumbloo's home page"),
-  mark("velloran", "velloran", "Velloran Tailors logo"),
-  mark("petalune", "petalune", "Petalune logo"),
-  work("kovalt", phone, "Kovalt's home screen"),
-  mark("fennivo", "fennivo", "Fennivo app icon and name"),
-  mark("brumaro-abstract", "brumaro", "Brumaro abstract logo"),
+  mark("brakko"),
+  work("ferrovane", desktop),
+  mark("kovalt"),
+  work("two-storey-house", firstPicture),
+  mark("tumbloo"),
+  work("fennivo", phone),
+  mark("brumaro-script"),
+  work("velloran", desktop),
+  mark("caravie"),
+  work("petalune", desktop),
+  mark("thronga"),
+  mark("ferrovane"),
+  work("thronga", phone),
+  mark("brumaro-badge"),
+  work("tumbloo", desktop),
+  mark("velloran"),
+  mark("petalune"),
+  work("kovalt", phone),
+  mark("fennivo"),
+  mark("brumaro-abstract"),
 ];
 
-function Tile({ tile, load, copy }) {
-  const src = tile.logo ? tile.src : tile.shot.small || tile.shot.src;
+function Tiles({ load, className = "" }) {
   return (
-    <li className={`strip-tile${tile.logo ? " is-logo" : ""}`}>
-      <Link to={`/studio/library/${tile.slug}`} tabIndex={copy ? -1 : undefined} aria-label={copy ? undefined : tile.alt}>
-        {load && <img src={asset(src)} alt="" width="240" height="150" decoding="async" />}
-      </Link>
-    </li>
+    <ul className={`strip-list${className}`}>
+      {tiles.map((t) => (
+        <li key={t.key} className="strip-tile">
+          {load && <img src={asset(t.src)} alt="" width="240" height="150" decoding="async" />}
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -56,23 +63,20 @@ export default function LogoStrip() {
     <div className={`strip${paused ? " is-paused" : ""}`} ref={box}>
       <div className="strip-head container">
         <p>Brands from the library. All fictional, all concept work.</p>
-        <button type="button" className="strip-toggle" aria-pressed={paused} onClick={() => setPaused((p) => !p)}>
-          {paused ? "Play" : "Pause"}
-        </button>
+        <div className="strip-actions">
+          <Link className="text-link" to="/studio/library">
+            See the library <Icon name="chevron" size={16} stroke={2.2} />
+          </Link>
+          <button type="button" className="strip-toggle" onClick={() => setPaused((p) => !p)}>
+            {paused ? "Play animation" : "Pause animation"}
+          </button>
+        </div>
       </div>
-      <div className="strip-window">
+      <div className="strip-window" aria-hidden="true">
         <div className="strip-track">
-          <ul className="strip-list" aria-label="Fictional brands and their work">
-            {tiles.map((t) => (
-              <Tile key={t.key} tile={t} load={near} />
-            ))}
-          </ul>
-          {/* The same tiles again, so the strip loops without a gap. Hidden from screen readers and the keyboard. */}
-          <ul className="strip-list strip-copy" aria-hidden="true">
-            {tiles.map((t) => (
-              <Tile key={t.key} tile={t} load={near} copy />
-            ))}
-          </ul>
+          <Tiles load={near} />
+          {/* The same tiles again, so the strip loops without a gap */}
+          <Tiles load={near} className=" strip-copy" />
         </div>
       </div>
     </div>
