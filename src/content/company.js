@@ -36,72 +36,86 @@ export const services = [
 ];
 export const serviceById = Object.fromEntries(services.map((s) => [s.id, s]));
 
-// The Studio showcase on the home page: one pill tab per kind of work, each with a before/after pair.
-// Pictures, from the designer (web-visuals/out/studio/README.md): public/images/studio/<pair>-before.webp and
-// <pair>-after.webp (1600x1000), plus <pair>-before-800.webp and <pair>-after-800.webp (800x500) for phones.
-// - `show: false` hides a tab. 3D renders is off until there are renders we may show; its services still show in the list.
+// The Studio showcase (home page and /studio): one pill tab per kind of work, each with a before/after pair.
+// Julius, 16 Nov 2026: examples of our work are our fictional concept brands (src/content/library.js), never our own
+// product logos (Global Alfabet, Alfa Maps, Alfa Finda, Alfa Shop, Account). Our products appear only where the
+// site presents them as our products.
+// Pictures: public/images/studio/<pair>-before.webp and <pair>-after.webp (1600x1000), plus <pair>-before-800.webp
+// and <pair>-after-800.webp (800x500) for phones. Each pair lines up exactly (made from the week-47 sources).
+// - `show: false` hides a tab.
 // - `contact`: the service "Start a project" picks on the Contact form while the tab is open.
 // - `note` (caption) and `example` (a pill on the picture): labels for fictional or made-for-the-showcase work.
-//   The designer's "before" pictures were drawn for the showcase: their labels say "Example" (the picture's own
-//   "Example" tag sits where the slider can hide it).
+//   A "before" drawn only for the showcase (Brakko's wireframe) says "Example" in its label.
+// - `item`: the library item the pair comes from (/studio/library/<item>).
 export const studioTabs = [
   {
     id: "websites",
     label: "Websites & apps",
     services: ["ui-ux", "website-development"],
     contact: "website-development",
-    pair: "websites",
+    pair: "brakko",
+    item: "brakko",
     show: true,
     before: {
       label: "Wireframe · Example",
-      alt: "Wireframe of the Alfa Maps home page: bars for the text, crossed boxes for the logo and the 3D estate, and a pill for the button. Example.",
+      alt: "Wireframe of Brakko's home page: grey bars for the text, crossed boxes for the logo and the poster panel, and outlined buttons. Example.",
     },
     after: {
-      label: "Live site",
-      alt: "The same page finished and live: the Alfa Maps website, one of Global Alfabet's own websites.",
+      label: "Finished page",
+      alt: "The finished Brakko home page: Hit hard. Train smart. on deep red, and today's classes with Book buttons.",
     },
-    compare: "Compare the wireframe with the live site",
-    caption: "From wireframe to live site: the Alfa Maps website, designed and built in-house.",
-    note: "Fictional demo estate.",
+    compare: "Compare the wireframe with the finished page",
+    caption: "Wireframe and finished page: Brakko, a fictional boxing gym.",
+    note: "Concept work for a fictional brand.",
   },
   {
     id: "3d-renders",
     label: "3D renders",
     services: ["3d-renders"],
     contact: "3d-renders",
-    pair: "3d-renders",
-    show: false, // no renders yet (designer's README, 8 Nov 2026)
-    example: true,
-    before: { label: "Floor plan", alt: "A house floor plan: walls, doors and windows in black lines. Example." },
-    after: { label: "3D render", alt: "The same house as a 3D render, an illustration, not a photo. Example." },
-    compare: "Compare the floor plan with the 3D render",
-    caption: "A floor plan turned into a 3D render of the finished house. Example.",
+    pair: "house",
+    item: "two-storey-house",
+    show: true,
+    before: {
+      label: "Sketch",
+      alt: "A line sketch of a two-storey house with notes: cedar battens, flat roof, white render and a 2.5 m cantilever.",
+    },
+    after: {
+      label: "3D render",
+      alt: "The same house as a 3D render in daylight: an illustration, not a photo.",
+    },
+    compare: "Compare the sketch with the 3D render",
+    caption: "Side by side: the sketch and the 3D render of a two-storey house, line for line.",
+    note: "Concept visual for a fictional home.",
   },
   {
     id: "logos",
-    label: "Logos & graphics",
-    services: ["logo-design", "graphic-design"],
+    label: "Logos",
+    services: ["logo-design"],
     contact: "logo-design",
-    pair: "logos",
+    pair: "brumaro",
+    item: "brumaro",
     show: true,
     before: {
-      label: "Sketch · Example",
-      alt: "Construction sketch of the Global Alfabet and Alfa product icons on a grid. Example.",
+      label: "Rough draft",
+      alt: "Brumaro's script logo as a rough draft: the word in grey brush strokes on paper, with guidelines and notes.",
     },
     after: {
-      label: "Finished icons",
-      alt: "The finished Global Alfabet and Alfa product icons in their brand colours.",
+      label: "Clean vector",
+      alt: "The same word as a clean vector: Brumaro in tomato red on butter yellow.",
     },
-    compare: "Compare the sketch with the finished icons",
-    caption: "From construction sketch to finished icons: the Global Alfabet product family.",
+    compare: "Compare the rough draft with the clean vector",
+    caption: "From rough draft to clean vector: Brumaro, a fictional coffee roaster.",
+    note: "Concept work for a fictional brand.",
   },
   {
+    // Off: its pictures are one of Global Alfabet's own ads. Back on when there's ad work for a fictional brand.
     id: "ads",
     label: "Ads & video",
     services: ["advertising", "video-ads"],
     contact: "video-ads",
     pair: "ads",
-    show: true,
+    show: false,
     before: {
       label: "Storyboard · Example",
       alt: "Example storyboard for a Global Alfabet video ad: three rough frames with shot notes.",

@@ -128,8 +128,8 @@ export default function Studio() {
       <section className="section section-soft" id="own-work">
         <div className="container">
           <header className="section-head">
-            <h2>Our own work, before and after.</h2>
-            <p>From the Alfa products we design and build ourselves.</p>
+            <h2>Before and after.</h2>
+            <p>A wireframe, a sketch and a rough draft, next to the finished work.</p>
           </header>
           {/* "What we do" and the closing "Get in touch" already cover the showcase's services line and button */}
           <StudioShowcase showServices={false} showStartProject={false} />

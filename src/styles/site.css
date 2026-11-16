@@ -577,6 +577,13 @@ p {
   font-weight: 400;
   color: var(--ink-2);
 }
+.studio-more {
+  margin-top: 6px;
+  text-align: center;
+}
+.studio-more .text-link {
+  font-size: 15px;
+}
 .studio-covers {
   list-style: none;
   padding: 0;

@@ -1,12 +1,15 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import BeforeAfter from "./BeforeAfter.jsx";
+import Icon from "./Icon.jsx";
 import { services, serviceById, studioTabs } from "../content/company.js";
+import { itemBySlug } from "../content/library.js";
 import { asset } from "../lib/asset.js";
 import { useNearScreen } from "../lib/nearScreen.js";
 
-// Global Alfabet Studio on the home page: one large card, a pill tab per kind of work, and a before/after slider
-// for each. Only the open tab's pictures are on the page, so the others load only when someone opens their tab.
+// Global Alfabet Studio's before and after (home page and /studio): one large card, a pill tab per kind of work, and
+// a before/after slider of fictional concept work for each (studioTabs in src/content/company.js). Only the open
+// tab's pictures are on the page, so the others load only when someone opens their tab.
 const tabs = studioTabs.filter((t) => t.show);
 
 // public/images/studio/<pair>-<side>.webp (1600x1000) and <pair>-<side>-800.webp (800x500, for phones)
@@ -73,6 +76,13 @@ export default function StudioShowcase({ showServices = true, showStartProject =
             {tab.caption}
             {tab.note && <span className="studio-note"> {tab.note}</span>}
           </p>
+          {itemBySlug[tab.item] && (
+            <p className="studio-more">
+              <Link className="text-link" to={`/studio/library/${tab.item}`}>
+                See it in the library <Icon name="chevron" size={16} stroke={2.2} />
+              </Link>
+            </p>
+          )}
           <ul className="studio-covers">
             {tab.services.map((id) => (
               <li key={id}>{serviceById[id].title}</li>
