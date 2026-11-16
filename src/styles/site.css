@@ -1577,11 +1577,20 @@ a.way:hover {
 }
 .strip-head {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 12px 24px;
   margin-bottom: 24px;
   color: var(--ink-2);
+  font-size: 15px;
+}
+.strip-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.strip-actions .text-link {
   font-size: 15px;
 }
 .strip-toggle {
@@ -1607,8 +1616,7 @@ a.way:hover {
   animation: strip-move 80s linear infinite;
 }
 .strip.is-paused .strip-track,
-.strip-window:hover .strip-track,
-.strip-window:focus-within .strip-track {
+.strip-window:hover .strip-track {
   animation-play-state: paused;
 }
 @keyframes strip-move {
@@ -1623,8 +1631,8 @@ a.way:hover {
   padding: 4px 16px 8px 0;
   list-style: none;
 }
-.strip-tile a {
-  display: block;
+.strip-tile {
+  flex: none;
   width: 240px;
   height: 150px;
   overflow: hidden;
@@ -1638,23 +1646,17 @@ a.way:hover {
   object-fit: cover;
   object-position: top;
 }
-.strip-tile a:focus-visible {
-  outline-offset: -3px;
-}
 @media (prefers-reduced-motion: reduce) {
-  /* No motion: one set of tiles that scrolls sideways, and no Pause button */
+  /* No motion: one row standing still, running off the right edge (it's decorative), and no Pause button */
   .strip-track {
     animation: none;
-  }
-  .strip-window {
-    overflow-x: auto;
   }
   .strip-copy,
   .strip-toggle {
     display: none;
   }
   .strip-list {
-    padding-left: 22px;
+    padding-left: max(22px, calc((100vw - var(--container)) / 2 + 22px));
   }
 }
 
@@ -2347,7 +2349,7 @@ a.way:hover {
     left: 62%;
     top: 30%;
   }
-  .strip-tile a {
+  .strip-tile {
     width: 192px;
     height: 120px;
     border-radius: 16px;
