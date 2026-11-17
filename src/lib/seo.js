@@ -5,7 +5,7 @@
 import { company, founder, productLinks } from "../config.js";
 import { products, productNames } from "../content/products.js";
 import { services, faq } from "../content/company.js";
-import { posts, postBySlug } from "./blog.js";
+import { posts, livePosts, postBySlug } from "./blog.js";
 import { coverOf, industryById, itemBySlug, kindById, labelsOf, library } from "../content/library.js";
 
 export const SITE_URL = company.url.replace(/\/$/, "");
@@ -292,7 +292,9 @@ export function getMeta(pathname) {
       // Search results cut titles at about 60 characters: long post titles go without the site name.
       title: post.title.length > 42 ? post.title : `${post.title} · ${company.name}`,
       description: post.summary,
-      canonical: url,
+      // A scheduled post only exists in previews: keep it out of search results.
+      canonical: post.scheduled ? null : url,
+      noindex: post.scheduled,
       type: "article",
       image: cover,
       published: post.date,
@@ -410,7 +412,7 @@ export function headTags(meta) {
 
 /** sitemap.xml: every page that search engines should index. */
 export function sitemap() {
-  const latestPost = posts[0]?.date;
+  const latestPost = livePosts[0]?.date;
   const entries = routes
     .map((path) => ({ path, meta: getMeta(path) }))
     .filter(({ meta }) => !meta.noindex)
@@ -464,7 +466,7 @@ export function llmsTxt() {
     `- [Contact](${absolute("/contact")})`,
     "",
     "## Blog posts",
-    ...posts.map((p) => `- [${p.title}](${absolute(`/blog/${p.slug}`)}): ${p.summary}`),
+    ...livePosts.map((p) => `- [${p.title}](${absolute(`/blog/${p.slug}`)}): ${p.summary}`),
     "",
     "## Contact",
     `- Email: ${company.email}`,

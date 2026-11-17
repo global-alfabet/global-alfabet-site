@@ -7,6 +7,11 @@
 [build.environment]
   NODE_VERSION = "22"
 
+# Deploy previews (pull requests) also show blog posts dated after today, marked "Scheduled for <date>", so they
+# can be read before they go live. Production leaves them out until their date (src/lib/blog.js).
+[context.deploy-preview.environment]
+  SHOW_FUTURE_POSTS = "1"
+
 # Old page addresses keep working. force: products.html etc. now exist as files, and the old .html addresses
 # should still move to the clean ones rather than show the same page twice.
 [[redirects]]

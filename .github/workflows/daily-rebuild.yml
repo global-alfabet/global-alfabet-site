@@ -1,0 +1,27 @@
+# Rebuilds the live site once a day, so blog posts dated today go live without anyone merging anything.
+# It calls a Netlify build hook (a private URL saved as the repository secret NETLIFY_BUILD_HOOK). Netlify then
+# builds main and deploys it. Without the secret, the job skips and says so.
+name: Daily rebuild
+
+on:
+  schedule:
+    # 10:05 UTC every day: 5:05 or 6:05 in the morning in Indianapolis, the time zone blog dates use.
+    - cron: "5 10 * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger a Netlify production build
+        env:
+          NETLIFY_BUILD_HOOK: ${{ secrets.NETLIFY_BUILD_HOOK }}
+        run: |
+          if [ -z "$NETLIFY_BUILD_HOOK" ]; then
+            echo "::notice::Skipped: the NETLIFY_BUILD_HOOK secret isn't set, so the site wasn't rebuilt. See the README (Deploying)."
+            exit 0
+          fi
+          curl --fail --silent --show-error -X POST -d '{}' "$NETLIFY_BUILD_HOOK"
+          echo "Netlify build started."
