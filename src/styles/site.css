@@ -884,14 +884,17 @@ p {
   display: inline-block;
   margin-top: 14px;
   padding: 4px 12px;
+  border: 1px solid var(--line);
   border-radius: var(--radius-pill);
-  background: var(--window);
+  background: var(--soft);
   color: var(--ink);
   font-size: 13px;
   font-weight: 600;
 }
 .article .scheduled-note {
-  margin: 0 0 16px;
+  display: block;
+  width: fit-content;
+  margin: 16px 0;
 }
 /* One post: show it as a wide card instead of a lone column */
 .post-grid.single {

@@ -7,7 +7,10 @@ import { resolve } from "node:path";
 
 export const BLOG_TIME_ZONE = "America/Indiana/Indianapolis";
 
-/** Today's date in the company time zone, as YYYY-MM-DD. BLOG_CUTOFF=2026-12-01 overrides it (for testing). */
+/**
+ * Today's date in the company time zone, as YYYY-MM-DD. BLOG_CUTOFF=2026-12-01 overrides it (for testing).
+ * In `npm run dev` it is worked out once, when the dev server starts (restart it after midnight).
+ */
 export function blogCutoff(now = new Date()) {
   const forced = process.env.BLOG_CUTOFF;
   if (forced) {
@@ -33,8 +36,9 @@ const MODULE = "virtual:blog-files";
 
 /**
  * Vite plugin: `import files from "virtual:blog-files"` gives every post's Markdown, keyed by file path. When scheduled
- * posts are hidden, posts dated after the cutoff are left out of the glob, so nothing about them (not their words,
- * not their address) is in the build or the JavaScript the browser downloads.
+ * posts are hidden, posts dated after the cutoff are left out of the glob, so their words and address are in no page
+ * and not in the JavaScript the browser downloads. Their images in public/ (e.g. public/images/blog/<slug>/) are
+ * still copied into the build, unlinked.
  */
 export function blogFiles({ cutoff, show }) {
   return {

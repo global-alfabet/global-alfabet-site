@@ -1,21 +1,41 @@
-# Rebuilds the live site once a day, so blog posts dated today go live without anyone merging anything.
-# It calls a Netlify build hook (a private URL saved as the repository secret NETLIFY_BUILD_HOOK). Netlify then
-# builds main and deploys it. Without the secret, the job skips and says so.
+# Publishes scheduled blog posts on their date. Once a day it checks whether any post in src/content/blog is dated
+# today (in America/Indiana/Indianapolis, the time zone blog dates use; see scripts/blog-cutoff.js). Only then does
+# it call a Netlify build hook (a private URL saved as the repository secret NETLIFY_BUILD_HOOK), so Netlify builds
+# main and deploys it. Other days cost no deploy (Netlify credits). Run it by hand to force a rebuild.
+# Without the secret, the job skips and says so.
 name: Daily rebuild
 
 on:
   schedule:
-    # 10:05 UTC every day: 5:05 or 6:05 in the morning in Indianapolis, the time zone blog dates use.
+    # 10:05 UTC every day: 5:05 or 6:05 in the morning in Indianapolis.
     - cron: "5 10 * * *"
   workflow_dispatch:
 
-permissions: {}
+permissions:
+  contents: read
 
 jobs:
   rebuild:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+
+      - name: Look for posts dated today
+        id: due
+        run: |
+          today=$(TZ=America/Indiana/Indianapolis date +%F)
+          due=$(grep -lE "^date:[[:space:]]*${today}[[:space:]]*$" src/content/blog/*.md || true)
+          if [ -n "$due" ]; then
+            echo "Posts dated ${today}:"
+            echo "$due"
+            echo "build=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No post is dated ${today}."
+            echo "build=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Trigger a Netlify production build
+        if: steps.due.outputs.build == 'true' || github.event_name == 'workflow_dispatch'
         env:
           NETLIFY_BUILD_HOOK: ${{ secrets.NETLIFY_BUILD_HOOK }}
         run: |
