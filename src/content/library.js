@@ -96,6 +96,7 @@ const page = (slug, alt) => pic(slug, "desktop", 1600, 1000, alt);
 const DRAWN = ["HTML and CSS", "SVG"];
 
 export const library = [
+  // Designed 17 Nov 2026 in HTML, CSS, SVG and three.js, with SIL OFL fonts; no photos, stock or AI.
   {
     slug: "calvere",
     share: "/library/calvere/share.jpg",
@@ -106,42 +107,42 @@ export const library = [
     summary: "A website for a property developer and its development, Fernlow Rise, with a logo, mock-ups and a 3D illustration.",
     choices: [
       "Instrument Serif and Manrope on limestone and deep green: calm, with facts first.",
-      "The logo's one rounded corner is a plot. Cards and buttons repeat it, and brass marks the numbers.",
-      "Land first: a drawn site plan and a simple 3D model show most plots as vacant land.",
+      "The logo is a plot: a square with one rounded corner. Cards and buttons repeat that corner, and brass marks the numbers on green.",
+      "A drawn site plan and a simple 3D model show most plots as open ground, so buyers see what they can choose.",
     ],
     mobile: [
       appScreen(
         "calvere",
         "plots",
-        "Calvere's plots and homes screen: Fernlow Rise, phase 1, with Plots, Townhouses and Homes filters, Plot 14 (612 m², corner, Available, $38,500), Plot 15 (540 m², Reserved), Townhouse T6 (3 bedrooms, 142 m², Available, $96,000) and Home H3 (Sold). Fictional development. Example prices.",
+        "Calvere's plots and homes screen: Fernlow Rise, phase 1, with Plots, Townhouses and Homes filters, Plot 14 (612 m², corner, Available, $38,500), Plot 15 (540 m², Reserved), Townhouse T6 (3 bedrooms, 142 m², Available, $96,000) and Home H3 (Sold). Fictional development. Example prices. Concept work for a fictional brand.",
       ),
       appScreen(
         "calvere",
         "development",
-        "Calvere's development screen: a 3D illustration of Fernlow Rise on a slope, a deep green facts card with 104 units in phase 1, a 1.2 ha park, tarred roads and water and power to each plot, and links to What's included, Site plan and Payment plans.",
+        "Calvere's development screen: a 3D illustration of Fernlow Rise, a deep green facts card with 104 units in phase 1, a 1.2 ha park on the south side, tarred roads and water and power to each plot, and links to What's included, Site plan and Payment plans.",
       ),
       appScreen(
         "calvere",
         "enquire",
-        "Calvere's enquiry screen: Ask about Plot 14, a summary of the plot at $38,500 (example price), name and phone or email fields, the question Is a payment plan available for this plot?, and a Send enquiry button.",
+        "Calvere's enquiry screen: Ask about Plot 14, a summary of the plot at $38,500 (example price), name and phone or email fields, the question Is a payment plan available for this plot?, a Send enquiry button and the line Our sales team replies within one working day. Concept work for a fictional brand.",
       ),
       appScreen(
         "calvere",
         "progress",
-        "Calvere's progress screen: On site this month, a timeline with drawn icons (roads surfaced on the main loop, water connected to plots 1 to 40, townhouses T1 to T8 with roofs on, next: show home opens) and a monthly email switch. Example updates.",
+        "Calvere's progress screen: On site this month, a timeline with drawn icons (roads surfaced on the main loop, water connected to plots 1 to 40, townhouses T1 to T8 with roofs on, next: show home opens) and a switch for one short email a month. Example updates. Concept work for a fictional brand.",
       ),
     ],
     desktop: [
       page(
         "calvere",
-        "Calvere's home page on a desktop: a 3D illustration of Fernlow Rise across the top, the headline Choose your plot. See what's built. Know what's next. on a limestone panel with an Explore Fernlow Rise button, and cards for Plots, Townhouses and Homes.",
+        "Calvere's home page on a desktop: a 3D illustration of Fernlow Rise across the top, the headline \"Choose your plot. See what's built. Know what's next.\" on a limestone panel with an Explore Fernlow Rise button, and cards for Plots, Townhouses and Homes.",
       ),
       pic(
         "calvere",
         "plot-14",
         1600,
         1000,
-        "Calvere's Plot 14 page on a desktop: 612 m², corner plot, faces north-east, 12 m road on two sides; a deep green price card with $38,500, a 20% deposit of $7,700 and 24 monthly payments of $1,283 (example prices); a measured plan of 19.74 m by 31.00 m and a 3D view with Plot 14 picked out.",
+        "Calvere's Plot 14 page on a desktop: 612 m², corner plot, faces north-east, 12 m road on two sides; a deep green price card with $38,500, a 20% deposit of $7,700 and 24 monthly payments of $1,283.33 (example prices); a measured plan of 19.74 m by 31.00 m and a 3D view with Plot 14 picked out.",
       ),
     ],
     images: [
@@ -155,10 +156,18 @@ export const library = [
       ),
       pic(
         "calvere",
+        "render",
+        1600,
+        1000,
+        "3D illustration of Fernlow Rise from above: rows of vacant plots outlined in moss green along charcoal streets, a short row of two-storey townhouses with green roofs, two detached homes and trees beyond. Labelled Illustration, fictional development.",
+        "A simple 3D illustration: plots shown as vacant land, with townhouses T1 to T8 and two homes.",
+      ),
+      pic(
+        "calvere",
         "hoarding",
         1600,
         1200,
-        "Drawing of a deep green site hoarding along a pavement: the Calvere mark, Fernlow Rise. Plots and homes. Phase 1 now selling., a panel with the 3D illustration, and hello@calvere.example. A crane and trees behind.",
+        "Drawing of a deep green site hoarding along a pavement: the Calvere mark, \"Fernlow Rise. Plots and homes. Phase 1 now selling.\", a panel with the 3D illustration, and hello@calvere.example. A crane and trees behind.",
         "A site hoarding, drawn in code.",
       ),
       pic(
@@ -177,19 +186,12 @@ export const library = [
         "Drawing of a stone-clad entrance wall with the Calvere mark, the wordmark and Fernlow Rise in raised brass-coloured letters, with shrubs and trees around it.",
         "The site entrance sign.",
       ),
-      pic(
-        "calvere",
-        "render",
-        1600,
-        1000,
-        "3D illustration of Fernlow Rise from above: rows of vacant plots outlined in moss green along charcoal streets, a short row of two-storey townhouses with green roofs, two detached homes and trees beyond. Labelled Illustration, fictional development.",
-        "A simple 3D illustration, land first.",
-      ),
     ],
     tools: ["HTML and CSS", "SVG", "three.js"],
     made: "2026-11",
     ai: false,
   },
+  // Designed 17 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts; no photos, stock or AI.
   {
     slug: "pockwell",
     share: "/library/pockwell/share.jpg",
@@ -200,42 +202,42 @@ export const library = [
     summary: "An order-ahead app for a neighbourhood coffee shop, with its logo, website and packaging.",
     choices: [
       "Hand-inked lines and Caveat Brush lettering, so the shop feels made by people, not a chain.",
-      "Cream and espresso brown, with sage leaf green kept for stamps, chips and small fills.",
+      "Cream and espresso brown, with sage leaf green for stamps, buttons and the app icon.",
       "The loyalty card is drawn like a paper stamp card: six cups filled, four to go.",
     ],
     mobile: [
       appScreen(
         "pockwell",
         "menu",
-        "Pockwell's menu screen on a phone: Today's menu in hand lettering, tabs for Coffee, Tea and more and Pastries, and five drawn items from Flat white at $3.80 to Butter croissant at $2.90, each with an add button. Example prices.",
+        "Pockwell's menu screen on a phone: \"Today's menu\" in hand lettering, tabs for Coffee, Tea and more and Pastries, and five drawn items from Flat white at $3.80 to Butter croissant at $2.90, each with an add button. Example prices.",
       ),
       appScreen(
         "pockwell",
         "order",
-        "Pockwell's order screen: a flat white with oat milk and a warmed butter croissant, pickup ready in about 8 minutes, a $6.70 total, a Place order button and the line Pay when you collect. Example prices.",
+        "Pockwell's order screen: a flat white with oat milk and a warmed butter croissant, pickup \"Ready in about 8 minutes\", a $6.70 total, a Place order button and the line \"Pay when you collect.\" Example prices.",
       ),
       appScreen(
         "pockwell",
         "card",
-        "Pockwell's loyalty card screen: a drawn stamp card with six of ten cup stamps filled in sage green, the line 4 more and the next one's on us, and three steps: order in the app, collect your cup, a stamp lands here.",
+        "Pockwell's loyalty card screen: a drawn stamp card with six of ten cup stamps filled in sage green and the line \"Fill all ten and your next drink is on us.\", the headline \"4 more and the next one's on us.\", and three steps: order in the app, collect your cup, a stamp lands here.",
       ),
       appScreen(
         "pockwell",
         "find",
-        "Pockwell's Find us screen: a hand-drawn street map of fictional streets with the shop pinned on Market Lane, opening hours for weekdays, Saturday and Sunday, and Get directions and Get in touch buttons. Fictional shop.",
+        "Pockwell's Find us screen: a hand-drawn map of fictional streets with the shop pinned on Lindle Lane at the corner of 3rd Avenue, opening hours for weekdays, Saturday and Sunday, and Get directions and Get in touch buttons. Fictional shop.",
       ),
     ],
     desktop: [
       page(
         "pockwell",
-        "Pockwell's home page on a desktop: Your morning cup, ready when you are. in hand lettering, an Order now button, a drawn counter with an espresso machine and a pastry dome, a phone showing the menu, and cards for Order ahead, Collect a stamp and Take beans home.",
+        "Pockwell's home page on a desktop: the headline \"Your morning cup, ready when you are.\" in hand lettering, an Order now button, a drawn counter with an espresso machine and a pastry dome, a phone showing the menu, and cards for Order ahead, Collect a stamp and Take beans home.",
       ),
       pic(
         "pockwell",
         "desktop-beans",
         1600,
         1000,
-        "Pockwell's Beans to take home page: three drawn coffee bags, House blend $11.00, Filter of the week $12.50 and Decaf $11.50, each with a grind picker and an Add to order button, and a How we brew it at home band: 15 g coffee, 250 ml water, 3 minutes. Example prices.",
+        "Pockwell's \"Beans to take home\" page: three drawn coffee bags, House blend $11.00, Filter of the week $12.50 and Decaf $11.50, each with a grind picker and an Add to order button, and a \"How we brew it at home\" band: 15 g coffee, 250 ml water, 3 minutes. Example prices.",
       ),
     ],
     images: [
@@ -244,23 +246,15 @@ export const library = [
         "logo-board",
         1600,
         1200,
-        "The Pockwell logo board: a hand-drawn cup with a round pocket and a curl of steam beside Pockwell in brush lettering, the cup in a stamp circle, the wordmark in cream on espresso, the app icon at three sizes, the six-colour palette and the two typefaces.",
+        "The Pockwell logo board: a hand-drawn cup with a stitched round pocket on its front and a curl of steam, beside \"Pockwell\" in brush lettering; the cup in a stamp circle; the wordmark in cream on espresso; the app icon at three sizes; the six-colour palette and the two typefaces.",
         "The logo, its two alternates, the app icon, palette and type.",
-      ),
-      pic(
-        "pockwell",
-        "mockup-cup",
-        1600,
-        1200,
-        "An illustration of a cream Pockwell takeaway cup with a black lid and an espresso sleeve printed with the cup stamp, on a wooden counter beside a croissant on a plate.",
-        "Takeaway cup and sleeve. An illustration, drawn in code.",
       ),
       pic(
         "pockwell",
         "mockup-bag",
         1600,
         1200,
-        "An illustration of a kraft Pockwell coffee bag with a cream House blend label and a sage Espresso grind sticker, next to a smaller Decaf bag and a bowl of coffee beans, on sage green.",
+        "An illustration of a kraft Pockwell coffee bag with a cream \"House blend\" label reading \"250 g, espresso grind\" and a sage Espresso sticker, next to a smaller Decaf bag and a bowl of coffee beans, on sage green.",
         "Coffee bags. An illustration, drawn in code.",
       ),
       pic(
@@ -268,8 +262,16 @@ export const library = [
         "mockup-sign",
         1600,
         1200,
-        "An illustration of a round hanging shop sign with the Pockwell cup and Open in hand lettering, and an A-frame chalkboard reading Filter of the week: washed, bright, red apple and honey.",
+        "An illustration of a round hanging shop sign with the Pockwell cup and \"Open\" in hand lettering, and an A-frame chalkboard reading \"Filter of the week: washed, bright, red apple and honey\".",
         "Shop sign and A-frame board. An illustration, drawn in code.",
+      ),
+      pic(
+        "pockwell",
+        "mockup-cup",
+        1600,
+        1200,
+        "An illustration of a cream Pockwell takeaway cup with a dark brown lid and an espresso sleeve printed with the cup stamp, on a wooden counter beside a bag of House blend beans.",
+        "Takeaway cup and sleeve. An illustration, drawn in code.",
       ),
     ],
     tools: DRAWN,
