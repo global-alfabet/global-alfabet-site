@@ -15,7 +15,8 @@
 //   choices    the design choices, 2 or 3 short lines
 //   mobile     phone screens, shown in a phone frame:   [{ src, alt, width, height, small }]
 //   desktop    desktop pages, shown in a browser frame: [{ src, alt, width, height, small }]
-//   images     everything else (logos, renders), shown as a gallery: [{ src, alt, width, height, small, caption }]
+//   images     everything else (logos, renders, mock-ups), shown as a gallery, below the screens when there are any:
+//              [{ src, alt, width, height, small, caption }]. The card cover is the desktop page when there is one.
 //   compare    optional: two pictures of the same view, compared with a slider:
 //              { before: { src, alt, label }, after: { src, alt, label }, width, height, caption }
 //   tools      what it was made with

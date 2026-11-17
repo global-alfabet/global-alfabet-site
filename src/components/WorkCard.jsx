@@ -2,12 +2,13 @@ import { Link } from "react-router-dom";
 import { Browser, Phone, Shot } from "./Device.jsx";
 import { kindById } from "../content/library.js";
 
-// The picture for one piece of work, framed the way it's used: a website as a browser window with its phone page
-// in front, an app as up to three phones, a logo or a render as the picture itself. Decorative: the card's text
-// names the work, and the item's page describes each picture.
+// The picture for one piece of work, framed the way it's used: anything with a desktop page (a website, or an app
+// with its website) as a browser window with its phone screen in front, an app as up to three phones, a logo or a
+// render as the picture itself. Logo boards and mock-ups that come with screens stay on the item's page, never the
+// cover. Decorative: the card's text names the work, and the item's page describes each picture.
 export function WorkMedia({ item, eager = false }) {
   const opts = { small: true, decorative: true, eager };
-  if (item.kind === "website" && item.desktop[0])
+  if (item.desktop[0])
     return (
       <div className="work-media is-website">
         <Browser shot={item.desktop[0]} className="work-browser" {...opts} />

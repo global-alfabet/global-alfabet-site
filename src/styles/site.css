@@ -2151,6 +2151,10 @@ a.way:hover {
   color: var(--ink-2);
   font-size: 15px;
 }
+/* Logo boards and mock-ups shown under an item's phone and desktop screens (LibraryItem.jsx). */
+.viewer-more {
+  margin-top: clamp(32px, 5vw, 64px);
+}
 .viewer-compare .ba {
   aspect-ratio: 3 / 4;
   border-radius: 20px;

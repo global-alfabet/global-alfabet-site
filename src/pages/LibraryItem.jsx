@@ -11,8 +11,8 @@ import { asset } from "../lib/asset.js";
 import { useNearScreen } from "../lib/nearScreen.js";
 import { isHydrated } from "../lib/hydrated.js";
 
-// One piece of Studio work: /studio/library/<slug>. A viewer (phone frames, a browser frame, or a gallery), what we
-// made and why, and a way to start a similar project. Its title and share tags are in src/lib/seo.js.
+// One piece of Studio work: /studio/library/<slug>. A viewer (phone frames, a browser frame, or a gallery, or the
+// screens with a gallery below them), what we made and why, and a way to start a similar project. Its title and share tags are in src/lib/seo.js.
 const VIEWS = [
   { id: "mobile", label: "Mobile" },
   { id: "desktop", label: "Desktop" },
@@ -92,7 +92,8 @@ function Pages({ shots, address, lazy = false }) {
 }
 
 // Logo boards and renders. The first picture is wide; a wide picture (landscape, 1.6:1 or more) takes a full row.
-function Gallery({ item }) {
+// `lazy`: the gallery sits below the phone and desktop viewer, so even its first picture waits until it's near.
+function Gallery({ item, lazy = false }) {
   const box = useRef(null);
   const near = useNearScreen(box);
   const { images, compare } = item;
@@ -102,7 +103,7 @@ function Gallery({ item }) {
       <Shot
         shot={shot}
         sizes={wide(shot, i) ? "(max-width: 1040px) calc(100vw - 84px), 960px" : "(max-width: 640px) calc(100vw - 84px), 470px"}
-        eager={i === 0}
+        eager={!lazy && i === 0}
       />
       {shot.caption && <figcaption>{shot.caption}</figcaption>}
     </figure>
@@ -143,32 +144,44 @@ function Viewer({ item }) {
   const address = `${item.brand.toLowerCase().replace(/[^a-z0-9]+/g, "")}.example`;
 
   if (!item.mobile.length && !item.desktop.length) return <Gallery item={item} />;
+  // Logo boards, mock-ups and renders that come with the screens go in a gallery below them.
+  const more = (item.images.length > 0 || item.compare) && (
+    <div className="viewer-more">
+      <Gallery item={item} lazy />
+    </div>
+  );
   if (!both)
     return (
-      <div className="viewer-stage">
-        {item.mobile.length ? <Phones shots={item.mobile} /> : <Pages shots={item.desktop} address={address} />}
-      </div>
+      <>
+        <div className="viewer-stage">
+          {item.mobile.length ? <Phones shots={item.mobile} /> : <Pages shots={item.desktop} address={address} />}
+        </div>
+        {more}
+      </>
     );
   return (
-    <div className={`viewer-stage${view ? "" : " viewer-auto"}`}>
-      <ViewSwitch view={view} setView={setView} slug={item.slug} />
-      {VIEWS.map((v) => (
-        <div
-          key={v.id}
-          id={`panel-${item.slug}-${v.id}`}
-          role="tabpanel"
-          aria-labelledby={`view-${item.slug}-${v.id}`}
-          className={`viewer-panel viewer-panel-${v.id}`}
-          hidden={view ? view !== v.id : undefined}
-        >
-          {v.id === "mobile" ? (
-            <Phones shots={item.mobile} lazy />
-          ) : (
-            <Pages shots={item.desktop} address={address} lazy />
-          )}
-        </div>
-      ))}
-    </div>
+    <>
+      <div className={`viewer-stage${view ? "" : " viewer-auto"}`}>
+        <ViewSwitch view={view} setView={setView} slug={item.slug} />
+        {VIEWS.map((v) => (
+          <div
+            key={v.id}
+            id={`panel-${item.slug}-${v.id}`}
+            role="tabpanel"
+            aria-labelledby={`view-${item.slug}-${v.id}`}
+            className={`viewer-panel viewer-panel-${v.id}`}
+            hidden={view ? view !== v.id : undefined}
+          >
+            {v.id === "mobile" ? (
+              <Phones shots={item.mobile} lazy />
+            ) : (
+              <Pages shots={item.desktop} address={address} lazy />
+            )}
+          </div>
+        ))}
+      </div>
+      {more}
+    </>
   );
 }
 
