@@ -27,6 +27,12 @@ public/brand/            the logo kit (SVG + PNG). Do not edit by hand: regenera
 - SEO: every page is prerendered at build time and hydrated in the browser. A new route also needs an entry in
   `pages` in `src/lib/seo.js` (title under 60 characters, description under 160). Components must render the same on
   the server and in the browser: read `window`/`document` only inside effects.
+- Blog posts go live on their `date` (YYYY-MM-DD, in America/Indiana/Indianapolis time), so a month of posts can be
+  merged at once. A later date leaves the post out of the build entirely (blog, home page, its page, sitemap,
+  llms.txt). The date is fixed at build time (scripts/blog-cutoff.js); `.github/workflows/daily-rebuild.yml` checks
+  daily and calls a Netlify build hook only when a post is dated today (each deploy costs Netlify credits). `npm run dev`, Netlify deploy previews and `SHOW_FUTURE_POSTS=1` show
+  scheduled posts with a "Scheduled for" note (noindex, still out of the sitemap and llms.txt). A post's images in
+  `public/` are deployed at once: keep anything secret out of them until the post's date.
 - Forms are Netlify Forms. Any field change goes in both `src/pages/Contact.jsx` and the hidden form in `index.html`.
   Keep the hidden `subject` and `source` fields (they name the form and website in our notification email);
   `netlify/functions/submission-created.mjs` emails the sender a confirmation (needs RESEND_API_KEY in Netlify).

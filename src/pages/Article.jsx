@@ -13,6 +13,11 @@ export default function Article() {
         <Link className="text-link back" to="/blog">
           <Icon name="chevron" size={16} stroke={2.2} className="flip" /> Blog
         </Link>
+        {post.scheduled && (
+          <p className="scheduled-note">
+            Scheduled for {formatDate(post.date)}. Preview only: not on the live site yet.
+          </p>
+        )}
         <p className="eyebrow">{post.category}</p>
         <h1>{post.title}</h1>
         {post.subtitle && <p className="lead">{post.subtitle}</p>}

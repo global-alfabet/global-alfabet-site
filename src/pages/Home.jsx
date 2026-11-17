@@ -247,7 +247,11 @@ export default function Home() {
                     <p className="eyebrow">{post.category}</p>
                     <h3>{post.title}</h3>
                     <p className="muted">{post.summary}</p>
-                    <p className="meta">{formatDate(post.date)}</p>
+                    {post.scheduled ? (
+                      <p className="scheduled-note">Scheduled for {formatDate(post.date)}</p>
+                    ) : (
+                      <p className="meta">{formatDate(post.date)}</p>
+                    )}
                   </div>
                 </Link>
               ))}

@@ -879,6 +879,23 @@ p {
 .post-card .meta {
   margin-top: 14px;
 }
+/* A post dated after the build date, shown only in previews (src/lib/blog.js) */
+.scheduled-note {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 4px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--soft);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+}
+.article .scheduled-note {
+  display: block;
+  width: fit-content;
+  margin: 16px 0;
+}
 /* One post: show it as a wide card instead of a lone column */
 .post-grid.single {
   grid-template-columns: 1fr;

@@ -33,8 +33,21 @@ and link previews don't need to run JavaScript to see a page. The details for ea
 the build step is `scripts/prerender.js`, which also writes `sitemap.xml`, `llms.txt` and `404.html`.
 
 - A new page: add its route in `src/App.jsx` and an entry in `pages` in `src/lib/seo.js`.
-- A new blog post: nothing else to do. It gets its own page, share image (its cover) and sitemap entry.
+- A new blog post: nothing else to do. It gets its own page, share image (its cover) and sitemap entry on its
+  `date`.
 - Unknown addresses get `404.html` with a real 404 status.
+
+### Scheduling blog posts
+
+A post goes live on its `date` (written `YYYY-MM-DD`, counted in Indianapolis time, America/Indiana/Indianapolis).
+Posts dated later can be merged early: until their date they are left out of the blog, the home page, the sitemap
+and llms.txt, their address is a 404, and their words aren't in the site's code at all. The build decides this
+(`scripts/blog-cutoff.js`), and a daily check rebuilds the site on days a post is due (see Deploying), so each post appears on its day.
+
+- `npm run dev`, Netlify deploy previews and `SHOW_FUTURE_POSTS=1 npm run build` show scheduled posts, marked
+  "Scheduled for <date>", so they can be read before they go live.
+- `BLOG_CUTOFF=2026-12-01 npm run build` builds the site as it will look on that date.
+- A post's images in `public/` go live when they are merged, even before the post (nothing links to them).
 
 ## Forms
 
@@ -71,5 +84,24 @@ links are in; an empty value hides that network.
 
 ## Deploying
 
-Netlify builds on every push to `main` (`netlify.toml`). Old addresses such as `/products.html` redirect to the new
+Netlify builds on every push to `main` (`netlify.toml`). A GitHub Actions job (`.github/workflows/daily-rebuild.yml`)
+checks once a day at 10:05 UTC whether a blog post is dated today (Indianapolis time). Only then does it call a
+Netlify build hook, so scheduled posts go live on their date without a deploy every day.
+
+Cost: on Netlify's credit-based plans each production deploy uses credits (about 15 each; the Free plan pauses all
+sites at its monthly limit). A rebuild every day would be about 450 credits a month; rebuilding only on post days is
+a few deploys a month. Confirm your Netlify plan first.
+
+To set it up (once):
+
+1. Netlify: open the site, then Site configuration (called Project configuration in newer Netlify menus) →
+   Build & deploy → Continuous deployment → Build hooks → Add build hook. Name it `Daily rebuild`, branch `main`, Save, and copy the URL.
+2. GitHub: open the repository, then Settings → Secrets and variables → Actions → New repository secret. Name
+   `NETLIFY_BUILD_HOOK`, paste the URL as the secret, Add secret.
+3. Check it: Actions → Daily rebuild → Run workflow (a manual run always rebuilds). A new production deploy appears
+   in Netlify under Deploys.
+
+Without the secret, the daily job skips and says so. Keep the hook URL secret: anyone with it can start builds.
+GitHub turns off scheduled workflows in public repositories after 60 days with no activity: if posts stop appearing
+on their date, check that Actions → Daily rebuild is enabled. Old addresses such as `/products.html` redirect to the new
 pages.
