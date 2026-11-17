@@ -35,7 +35,7 @@ Most layout plans have the same parts, even if the drawing style differs. The nu
 1. **Plot numbers.** Every plot has a unique number. It is the number on your agreement of sale, your receipts and, later, your title. Make sure it matches on every document.
 2. **Boundaries and dimensions.** The lines around each plot are its boundaries. The numbers along them are the boundary lengths, usually in metres.
 3. **Area.** The plot's size, usually in square metres (m²) or hectares (1 hectare is 10,000 m²).
-4. **Roads and road reserves.** A road reserve is the land set aside for a road, from boundary to boundary. It is wider than the road surface: it usually also holds the footpaths and verges, and often drains and services such as water and power.
+4. **Roads and road reserves.** A road reserve is the land set aside for a road, from boundary to boundary. It is wider than the road surface: it usually also holds the footpaths and verges, and can also hold drains, pipes and cables.
 5. **Servitudes (also called easements).** A right for someone else to use part of a plot, such as a strip for a power line, a pipe or a right of way. You may own that land but not be able to build on it.
 6. **Open spaces and reserved land.** Parks, green belts and land kept for schools, clinics or other public uses. They are not for sale as plots.
 7. **Contour lines.** Lines joining points of the same height. Lines close together mean a steep slope; lines far apart mean gentle ground.
