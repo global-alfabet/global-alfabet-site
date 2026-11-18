@@ -96,6 +96,181 @@ const page = (slug, alt) => pic(slug, "desktop", 1600, 1000, alt);
 const DRAWN = ["HTML and CSS", "SVG"];
 
 export const library = [
+  // Designed 18 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Newsreader, Work Sans); no photos, stock or AI.
+  {
+    slug: "tarrowen",
+    share: "/library/tarrowen/share.jpg",
+    brand: "Tarrowen",
+    business: "Wood-fire restaurant",
+    industry: "food-drink",
+    kind: "website",
+    summary: "A website and booking app for a wood-fire restaurant, with its logo, a printed menu and a shop window.",
+    choices: [
+      "Newsreader italic and Work Sans on warm charcoal: an editorial menu, not a poster.",
+      "The logo is a serif T whose crossbar is a grill bar, with three flames and one ember dot.",
+      "Ember orange is the one hot colour: kept to buttons, the fire and the ember dot, with charcoal text on the buttons.",
+    ],
+    mobile: [
+      appScreen(
+        "tarrowen",
+        "tonight",
+        "Tarrowen's Tonight screen on a phone: a drawn fire under a grill, \"Tonight at Tarrowen\", Dinner 17:30 to 22:00, a Tables left tonight card with 18:00, 19:30 and 21:15 (sample times), Book a table and See the menu buttons, and the line Walk-ins welcome at the bar.",
+      ),
+      appScreen(
+        "tarrowen",
+        "menu",
+        "Tarrowen's menu screen: \"The menu\", Autumn menu. Changes every few weeks., tabs for Small plates, From the fire, Sides and Sweet, and six dishes from Charred flatbread at $9 to Burnt honey tart at $10, with Vegetarian and gluten-free marks. Example prices. Fictional restaurant.",
+      ),
+      appScreen(
+        "tarrowen",
+        "book",
+        "Tarrowen's Book a table screen: 2 guests, Fri 11 Dec, times 18:00, 18:30, 19:30 (chosen) and 21:15, with 20:00 full, a box for allergies, a birthday or a high chair, a Confirm booking button and the line We hold tables for 15 minutes. Sample times.",
+      ),
+      appScreen(
+        "tarrowen",
+        "booked",
+        "Tarrowen's confirmation screen: \"See you Friday\", table for 2 on Fri 11 Dec at 19:30, Add to calendar and Change or cancel buttons, a drawn map of fictional streets with 22 Ostrel Row pinned, the opening hours, and Get directions and Get in touch buttons. Fictional restaurant. Example booking.",
+      ),
+    ],
+    desktop: [
+      page(
+        "tarrowen",
+        "Tarrowen's home page on a desktop: \"Small plates, big fire, a table for tonight.\" in a large serif beside a drawn fire under a grill with a pan of flatbreads, a Book a table button, and cards for The menu, The bar and Private dining.",
+      ),
+      pic(
+        "tarrowen",
+        "desktop-menu",
+        1600,
+        1000,
+        "Tarrowen's menu page on a desktop: four columns set like a printed menu (Small plates, From the fire, Sides, Sweet) with ten dishes from $7 to $28, a Drinks panel with house wine by the glass at $8, a seasonal cocktail at $12 and fresh lemonade at $5, the dietary key and a Download the menu (PDF) button. Example prices.",
+      ),
+    ],
+    images: [
+      pic(
+        "tarrowen",
+        "logo-board",
+        1600,
+        1200,
+        "The Tarrowen logo board: a serif T with a grill-bar crossbar, three flames and an orange ember dot, beside \"Tarrowen\" in serif italic, parchment on charcoal; the T in a thin stamp circle; the wordmark with the ember dot over the second r; the app icon at three sizes; the six colours and the two typefaces.",
+        "The logo, its two alternates, the app icon, palette and type.",
+      ),
+      pic(
+        "tarrowen",
+        "mockup-menu",
+        1600,
+        1200,
+        "An illustration of a tall parchment menu on a dark clipboard, on a dark wood table with a glass and cutlery: the Tarrowen wordmark, the autumn menu in four sections and the stamp at the foot. Example prices.",
+        "The printed menu. An illustration, drawn in code.",
+      ),
+      pic(
+        "tarrowen",
+        "mockup-window",
+        1600,
+        1200,
+        "An illustration of a dark shop window at night with \"Tarrowen\" painted in parchment and an orange dot, three hanging lamps and tables inside, the opening hours in small capitals in the corner, and a door with the stamp and 22 Ostrel Row.",
+        "The shop window. An illustration, drawn in code.",
+      ),
+      pic(
+        "tarrowen",
+        "mockup-table",
+        1600,
+        1200,
+        "An illustration of a parchment table card reading Reserved, 19:30 with the Tarrowen T, a lit candle beside it, and a phone showing the See you Friday booking screen. Example booking.",
+        "Table card and booking. An illustration, drawn in code.",
+      ),
+    ],
+    tools: DRAWN,
+    made: "2026-11",
+    ai: false,
+  },
+  // Designed 18 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Quicksand, Atkinson Hyperlegible); no photos,
+  // stock or AI.
+  {
+    slug: "orlune",
+    share: "/library/orlune/share.jpg",
+    brand: "Orlune Dental",
+    business: "Dental clinic",
+    industry: "health",
+    kind: "app",
+    summary: "A booking app and website for a neighbourhood dental clinic, with its logo, an appointment card and a door sign.",
+    choices: [
+      "White first, with mint fills and deep navy buttons: calm, and easy to read.",
+      "Atkinson Hyperlegible for body text, buttons and times, and every button and time at least 56 px tall.",
+      "The logo is a mint ring with a small navy crescent in it, like light catching a curve. No tooth cartoon.",
+    ],
+    mobile: [
+      appScreen(
+        "orlune",
+        "home",
+        "Orlune Dental's home screen on a phone: \"What would you like to book?\" with four large mint tiles, each with an icon and a word (Check-up, Clean and polish, Toothache or urgent, Children's visit), the next visit on Tue 8 Dec at 09:40 with a Change link, a Book a visit button and a tab bar with words.",
+      ),
+      appScreen(
+        "orlune",
+        "time",
+        "Orlune Dental's time screen: \"Check-up: pick a time\", large day buttons from Mon 7 to Fri 11 December with Tuesday chosen, big time buttons 08:20, 09:40 (chosen), 11:00, 14:10 and 15:30 with 13:00 taken, a switch to book a child at the same time and a Continue button. Example times.",
+      ),
+      appScreen(
+        "orlune",
+        "booked",
+        "Orlune Dental's confirmation screen: \"You're booked\", a check-up on Tue 8 Dec at 09:40 in Room 2, three things to do before you come (bring a list of medicines, arrive 5 minutes early, tell us if you feel nervous), a reminder switch, and Add to calendar and Get directions buttons. Example booking.",
+      ),
+      appScreen(
+        "orlune",
+        "prices",
+        "Orlune Dental's prices screen: six treatments, each with one plain line, from a children's check-up at $35 to whitening from $280, and the line We tell you the price before we start. Example prices. Fictional clinic.",
+      ),
+    ],
+    desktop: [
+      page(
+        "orlune",
+        "Orlune Dental's home page on a desktop: \"Dental care that explains itself.\" with a Book a visit button and a Toothache today? Call us link, a drawn treatment chair by a window on a mint panel, and four large tiles for Check-up, Clean and polish, Toothache or urgent and Children's visit.",
+      ),
+      pic(
+        "orlune",
+        "desktop-prices",
+        1600,
+        1000,
+        "Orlune Dental's Treatments and prices page on a desktop: a table of eight treatments with what happens, how long and the price, from a children's check-up at $35 to whitening from $280, and a mint card: Not sure what you need? Book a check-up first. Example prices and times.",
+      ),
+    ],
+    images: [
+      pic(
+        "orlune",
+        "logo-board",
+        1600,
+        1200,
+        "The Orlune Dental logo board: a mint ring with a small navy crescent beside \"Orlune\" in rounded navy letters and \"dental\" spaced out beneath; the ring in a mint rounded square; the wordmark in white on navy; the app icon at three sizes; the six colours and the two typefaces.",
+        "The logo, its two alternates, the app icon, palette and type.",
+      ),
+      pic(
+        "orlune",
+        "mockup-hand",
+        1600,
+        1200,
+        "An illustration of a hand holding a phone with the Check-up: pick a time screen, beside the line \"Big times, easy to tap.\" Example times.",
+        "Phone in hand. An illustration, drawn in code.",
+      ),
+      pic(
+        "orlune",
+        "mockup-card",
+        1600,
+        1200,
+        "An illustration of a white appointment card with the Orlune Dental logo reading Your next visit, Tue 8 Dec, 09:40, next to a phone showing a reminder text for the check-up. Example booking.",
+        "Appointment card and reminder. An illustration, drawn in code.",
+      ),
+      pic(
+        "orlune",
+        "mockup-door",
+        1600,
+        1200,
+        "An illustration of a frosted glass clinic door with a navy panel showing the Orlune Dental wordmark in white and the opening hours beneath: Mon to Fri 8:00 to 17:30, Sat 8:30 to 13:00, Sun closed. A plant beside the door.",
+        "The clinic door sign. An illustration, drawn in code.",
+      ),
+    ],
+    tools: DRAWN,
+    made: "2026-11",
+    ai: false,
+  },
   // Designed 17 Nov 2026 in HTML, CSS, SVG and three.js, with SIL OFL fonts; no photos, stock or AI.
   {
     slug: "calvere",
