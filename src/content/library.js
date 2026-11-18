@@ -108,13 +108,13 @@ export const library = [
     choices: [
       "Newsreader italic and Work Sans on warm charcoal: an editorial menu, not a poster.",
       "The logo is a serif T whose crossbar is a grill bar, with three flames and one ember dot.",
-      "Ember orange is the one hot colour: one button or dot per screen, with charcoal text on it.",
+      "Ember orange is the one hot colour: kept to buttons, the fire and the ember dot, with charcoal text on the buttons.",
     ],
     mobile: [
       appScreen(
         "tarrowen",
         "tonight",
-        "Tarrowen's Tonight screen on a phone: a drawn fire under a grill, \"Tonight at Tarrowen\", Dinner 17:30 to 22:30, a Tables left tonight card with 18:00, 19:30 and 21:15 (sample times), Book a table and See the menu buttons, and the line Walk-ins welcome at the bar.",
+        "Tarrowen's Tonight screen on a phone: a drawn fire under a grill, \"Tonight at Tarrowen\", Dinner 17:30 to 22:00, a Tables left tonight card with 18:00, 19:30 and 21:15 (sample times), Book a table and See the menu buttons, and the line Walk-ins welcome at the bar.",
       ),
       appScreen(
         "tarrowen",
@@ -159,7 +159,7 @@ export const library = [
         "mockup-menu",
         1600,
         1200,
-        "An illustration of a tall parchment menu on a dark clipboard, on a dark wood table with a glass, a knife and a fork: the Tarrowen wordmark, the autumn menu in four sections and the stamp at the foot. Example prices.",
+        "An illustration of a tall parchment menu on a dark clipboard, on a dark wood table with a glass and cutlery: the Tarrowen wordmark, the autumn menu in four sections and the stamp at the foot. Example prices.",
         "The printed menu. An illustration, drawn in code.",
       ),
       pic(
@@ -195,14 +195,14 @@ export const library = [
     summary: "A booking app and website for a neighbourhood dental clinic, with its logo, an appointment card and a door sign.",
     choices: [
       "White first, with mint fills and deep navy buttons: calm, and easy to read.",
-      "Atkinson Hyperlegible for every word people read, and every button and time at least 56 px tall.",
+      "Atkinson Hyperlegible for body text, buttons and times, and every button and time at least 56 px tall.",
       "The logo is a mint ring with a small navy crescent in it, like light catching a curve. No tooth cartoon.",
     ],
     mobile: [
       appScreen(
         "orlune",
         "home",
-        "Orlune Dental's home screen on a phone: \"How can we help today?\" with four large mint tiles, each with an icon and a word (Check-up, Clean and polish, Toothache or urgent, Children's visit), the next visit on Tue 8 Dec at 09:40 with a Change link, a Book a visit button and a tab bar with words.",
+        "Orlune Dental's home screen on a phone: \"What would you like to book?\" with four large mint tiles, each with an icon and a word (Check-up, Clean and polish, Toothache or urgent, Children's visit), the next visit on Tue 8 Dec at 09:40 with a Change link, a Book a visit button and a tab bar with words.",
       ),
       appScreen(
         "orlune",
@@ -217,7 +217,7 @@ export const library = [
       appScreen(
         "orlune",
         "prices",
-        "Orlune Dental's prices screen: six treatments, each with one plain line, from a check-up and X-rays at $60 to whitening from $280, and the line We tell you the price before we start. Example prices. Fictional clinic.",
+        "Orlune Dental's prices screen: six treatments, each with one plain line, from a children's check-up at $35 to whitening from $280, and the line We tell you the price before we start. Example prices. Fictional clinic.",
       ),
     ],
     desktop: [
