@@ -142,7 +142,7 @@ export const library = [
         "frumbo",
         "desktop-cakes",
         1600,
-        1000,
+        1236,
         "Frumbo's Celebration cakes page on a desktop: made to order with 3 days' notice, six drawn cakes from vanilla and strawberry at $28 to a number cake from $40, a sizes card with 6, 12 and 20 slices, and a butter-yellow card: Need it sooner? Get in touch. Example prices. Fictional bakery.",
       ),
     ],
@@ -152,7 +152,7 @@ export const library = [
         "logo-board",
         1600,
         1200,
-        "The Frumbo logo board: \"frumbo\" in round dark letters with the o drawn as a pink bun with an icing swirl and a sprinkle over the u; the bun alone on a butter-yellow rounded square; the wordmark in icing white on strawberry pink; the app icon at three sizes; the seven colours and the two typefaces.",
+        "The Frumbo logo board: \"frumbo\" in round dark letters with the o drawn as a pink bun with an icing swirl and a sprinkle over the u; the bun alone on a butter-yellow rounded square; the wordmark in dark ink on strawberry pink; the app icon at three sizes; the seven colours and the two typefaces.",
         "The logo, its two alternates, the app icon, palette and type.",
       ),
       pic(
@@ -160,7 +160,7 @@ export const library = [
         "packaging",
         1600,
         1200,
-        "An illustration of Frumbo's packaging on a counter: a box of six with a strawberry lid, a window showing six buns and striped sides, sealed with a round bun sticker; a tall butter-yellow cake box with a blue handle, frumbo across two sides and a Flavour, Size, For label; and a small paper bun bag reading Still warm? Eat it now.",
+        "An illustration of Frumbo's packaging on a counter: a box of six with a strawberry lid printed with the dark wordmark, a window showing six buns and striped sides, sealed with a round bun sticker; a tall butter-yellow cake box with a blue handle, the frumbo wordmark on the front, the bun mark on the side and a Flavour, Size, For label; and a small paper bun bag reading Still warm? Eat it now.",
         "Box of six, cake box and bun bag. An illustration, drawn in code.",
       ),
       pic(
@@ -184,7 +184,7 @@ export const library = [
         "mockup-shop",
         1600,
         1200,
-        "An illustration of the Frumbo shop front: a strawberry and white striped awning with the wordmark, a window of buns, cakes and boxes, a blue door at 3 Quillow Lane, and a dark A-board reading Out of the oven at 11:00.",
+        "An illustration of the Frumbo shop front: a strawberry and white striped awning with the dark wordmark, a window of buns, cakes and boxes, a blue door at 3 Quillow Lane, and a dark A-board reading Out of the oven at 11:00.",
         "The shop front. An illustration, drawn in code.",
       ),
     ],
@@ -204,7 +204,7 @@ export const library = [
     summary: "A website and booking app for an 18-room hotel on a quay, with its logo, a key card, a door hanger and a 3D room.",
     choices: [
       "Linen and sand with blue-black ink, and a lot of white space: quiet, with facts instead of adjectives.",
-      "The logo is ILVANE in light, widely spaced capitals, with one thin sand-coloured line under the V, like the waterline on a quay wall.",
+      "The logo is ILVANE in light, widely spaced capitals, with a thin beige line under the V, like the waterline on a quay wall.",
       "No bright accent at all: buttons are ink with linen text, and the 3D room shows the stay before anyone books.",
     ],
     mobile: [
@@ -238,7 +238,7 @@ export const library = [
         "ilvane",
         "desktop-room",
         1600,
-        1000,
+        1400,
         "Ilvane's Quay Room page on a desktop: a large 3D illustration of the room with two smaller views (the window and reading chair, and the room in late afternoon), its facts, what's included (breakfast, Wi-Fi, bicycles) and a sand price box from $240 a night with a Book this room button. Example prices and policy.",
       ),
     ],
@@ -248,7 +248,7 @@ export const library = [
         "logo-board",
         1600,
         1200,
-        "The Ilvane logo board: ILVANE in light, widely spaced serif capitals with a thin sand line under the V and HOTEL beneath; a serif I with the line across its foot in a thin square; the wordmark in linen on ink; the app icon at three sizes; the five colours and the two typefaces.",
+        "The Ilvane logo board: ILVANE in light, widely spaced serif capitals with a thin beige line under the V and HOTEL beneath; a serif I with the line across its foot in a thin square; the wordmark in linen on ink; the app icon at three sizes; the five colours and the two typefaces.",
         "The logo, its two alternates, the app icon, palette and type.",
       ),
       pic(
@@ -272,7 +272,7 @@ export const library = [
         "mockup-key",
         1600,
         1200,
-        "An illustration of an ink-coloured key card with the Ilvane I monogram in sand, resting on a linen envelope with Room 4 written on it and the Ilvane wordmark, on a light wood desk with a pen.",
+        "An illustration of an ink-coloured key card with the Ilvane I monogram in beige, resting on a linen envelope with Room 4 written on it and the Ilvane wordmark, on a light wood desk with a pen.",
         "Key card and envelope. An illustration, drawn in code.",
       ),
       pic(
@@ -280,7 +280,7 @@ export const library = [
         "mockup-hanger",
         1600,
         1200,
-        "An illustration of two Ilvane door hangers: a sand one reading Quiet, please hanging on the lever of a dark door, and the other side, reading Ready for the room.",
+        "An illustration of two Ilvane door hangers: a sand one reading Quiet, please hanging on the lever of a dark door, and the other side, in linen, reading Ready for the room.",
         "The door hanger, both sides. An illustration, drawn in code.",
       ),
       pic(
