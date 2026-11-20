@@ -60,7 +60,7 @@ A video flyover is a short film of the estate from the air: drone footage of the
 
 - **The camera decides what the buyer sees.** A buyer can't stop over plot 145 and look at it from the street. If their plot isn't in the shot, the video can't help with it.
 - **It can't show status or prices.** And if it does, those details go out of date the day a plot sells, and changing them means editing the video again.
-- **It shows one moment.** Drone footage shows the site on the day it was filmed. A 3D animation shows what is planned. Both are useful; buyers should be told which one they are watching, because 3D homes are illustrations, not photos of a site.
+- **It shows one moment.** Drone footage shows the site on the day it was filmed. A 3D animation shows what is planned. Both are useful. Tell buyers which one they are watching: 3D homes are illustrations, not photos of the site.
 
 ## The interactive site plan
 
@@ -111,12 +111,12 @@ In Alfa Maps, buyers can:
 - **Find a plot** by number, or filter by status and size.
 - **See status at a glance:** plots for sale are green, reserved plots amber and sold plots red.
 - **Check the facts** of each plot: size, frontage, road width, position and boundary lengths.
-- **Look around** in the estate map, street, aerial, garden, site plan and free-roam views.
+- **Look around** the whole estate, or switch to the estate map, street, aerial, garden, site plan and free-roam views.
 - **See the numbers**: cash price, deposit, fees and monthly payments for each payment plan you offer.
 - **Download a plot pack**, a PDF of one plot with its site plan and boundary lengths, views, price and payment plans, and who to talk to. So the buyer still gets a document to keep and share.
 - **Enquire in one tap**, or copy a link to the plot.
 
-Your team marks plots reserved or sold and changes prices in the admin view, and buyers see the change straight away. Alfa Maps doesn't make videos; if you have a flyover, link it to the estate, and the estate back to it.
+Your team marks plots reserved or sold and changes prices in the admin view. When they save, the next buyer to open the estate sees the change. Alfa Maps doesn't make videos; if you have a flyover, link it to the estate, and the estate back to it.
 
 The quickest way to judge an interactive site plan is to try one. Our [demo estate](https://maps.globalalfabet.com/demo/) is fictional, with 170 plots, and works on your phone.
 
@@ -124,8 +124,8 @@ The quickest way to judge an interactive site plan is to try one. Our [demo esta
 
 ## In short
 
-**What is an interactive site plan?**
-An online version of an estate layout. Buyers open it from a link and tap a plot to see its details, such as size, status and price.
+**How is an interactive site plan different from a PDF?**
+A PDF layout plan is a fixed drawing: every plot looks the same, and it doesn't change when plots sell. An interactive site plan opens from a link, lets buyers tap a plot to see its size, status and price, and shows the latest status when the developer keeps it up to date.
 
 **Is an interactive site plan better than a PDF layout plan?**
 For choosing a plot, usually yes: it shows which plots are still for sale and puts each plot's facts in one place. For confirming a purchase, no: the approved layout plan is the record a buyer's lawyer checks.
@@ -137,4 +137,4 @@ Rarely. It shows the estate well, but buyers can't stop on their own plot, and i
 Most estates benefit from each: video to get attention, an interactive site plan to help buyers choose, and the layout plan to confirm.
 
 **Does Alfa Maps make video flyovers?**
-No. Alfa Maps is an interactive 3D site plan, built from your layout plan and plot schedule, with a downloadable PDF plot pack for each plot.
+No. Alfa Maps doesn't make videos. Buyers can fly over the whole estate in 3D themselves, then pick a plot. Each plot has a downloadable PDF plot pack.
