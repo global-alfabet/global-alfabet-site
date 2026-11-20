@@ -70,6 +70,7 @@ export const industries = [
   { id: "fitness", label: "Fitness" },
   { id: "food-drink", label: "Food and drink" },
   { id: "health", label: "Health" },
+  { id: "hospitality", label: "Hotels and travel" },
   { id: "property", label: "Property" },
   { id: "retail", label: "Retail" },
 ];
@@ -96,6 +97,205 @@ const page = (slug, alt) => pic(slug, "desktop", 1600, 1000, alt);
 const DRAWN = ["HTML and CSS", "SVG"];
 
 export const library = [
+  // Designed 20 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Bagel Fat One, Outfit); no photos, stock or AI.
+  {
+    slug: "frumbo",
+    share: "/library/frumbo/share.jpg",
+    brand: "Frumbo",
+    business: "Neighbourhood bakery",
+    industry: "food-drink",
+    kind: "website",
+    summary: "A website and ordering app for a neighbourhood bakery, with its logo, boxes and bags, and a shop front.",
+    choices: [
+      "Pastel colour blocks, round chunky letters and flat shapes with thick outlines: cheerful, and always clear.",
+      "The logo's last letter is a bun seen from above, with a jam-coloured sprinkle over the u. The bun alone seals every box.",
+      "One dark ink for all text; jam pink-red only for buttons and prices, never a background.",
+    ],
+    mobile: [
+      appScreen(
+        "frumbo",
+        "today",
+        "Frumbo's Fresh today screen on a phone: out of the oven at 7:00, 11:00 and 15:00 (sample times), four round cards for a cinnamon swirl bun at $3.50 (Still warm), a strawberry cream bun at $4, a brown butter cookie at $2.50 and a lemon slice at $3, a Build a box button and a tab bar with Today, Cakes, Box and Visit. Example prices.",
+      ),
+      appScreen(
+        "frumbo",
+        "box",
+        "Frumbo's Box of six screen: a drawn box seen from above with six bakes in it, the list of picks with minus and plus buttons (two cinnamon swirl buns, one strawberry cream bun, two cookies, one lemon slice) and an Add box, $19 button. Example prices. Fictional bakery.",
+      ),
+      appScreen(
+        "frumbo",
+        "cake",
+        "Frumbo's Order a cake screen: size chips for 6, 12 (chosen) and 20 slices, three flavours with Chocolate fudge chosen, a message box reading Happy birthday, Sam (up to 30 letters), pick-up on Sat 19 Dec, the line Cakes need 3 days' notice and a Send cake order button.",
+      ),
+      appScreen(
+        "frumbo",
+        "received",
+        "Frumbo's confirmation screen: \"We've got your order\", a chocolate fudge cake for 12 with Happy birthday, Sam, to pick up on Sat 19 Dec after 10:00, Add to calendar and Change order buttons, and Visit us with a drawn map of fictional streets, 3 Quillow Lane and the opening hours. Fictional bakery. Example order.",
+      ),
+    ],
+    desktop: [
+      page(
+        "frumbo",
+        "Frumbo's home page on a desktop: \"Soft buns, big cakes, still warm.\" in large round letters beside a drawn stack of three boxes in strawberry, butter and striped blueberry, with buns peeking out of the top one, and Order a cake and See today's bakes buttons.",
+      ),
+      pic(
+        "frumbo",
+        "desktop-cakes",
+        1600,
+        1236,
+        "Frumbo's Celebration cakes page on a desktop: made to order with 3 days' notice, six drawn cakes from vanilla and strawberry at $28 to a number cake from $40, a sizes card with 6, 12 and 20 slices, and a butter-yellow card: Need it sooner? Get in touch. Example prices. Fictional bakery.",
+      ),
+    ],
+    images: [
+      pic(
+        "frumbo",
+        "logo-board",
+        1600,
+        1200,
+        "The Frumbo logo board: \"frumbo\" in round dark letters with the o drawn as a pink bun with an icing swirl and a sprinkle over the u; the bun alone on a butter-yellow rounded square; the wordmark in dark ink on strawberry pink; the app icon at three sizes; the seven colours and the two typefaces.",
+        "The logo, its two alternates, the app icon, palette and type.",
+      ),
+      pic(
+        "frumbo",
+        "packaging",
+        1600,
+        1200,
+        "An illustration of Frumbo's packaging on a counter: a box of six with a strawberry lid printed with the dark wordmark, a window showing six buns and striped sides, sealed with a round bun sticker; a tall butter-yellow cake box with a blue handle, the frumbo wordmark on the front, the bun mark on the side and a Flavour, Size, For label; and a small paper bun bag reading Still warm? Eat it now.",
+        "Box of six, cake box and bun bag. An illustration, drawn in code.",
+      ),
+      pic(
+        "frumbo",
+        "mockup-boxes",
+        1600,
+        1200,
+        "An illustration of three Frumbo boxes stacked on a pale counter, with buns peeking out of the top one, beside an open box of six full of buns, and the line Baked this morning. Gone by tonight.",
+        "Stacked boxes. An illustration, drawn in code.",
+      ),
+      pic(
+        "frumbo",
+        "mockup-phone",
+        1600,
+        1200,
+        "An illustration of a hand holding a phone with Frumbo's Box of six screen, beside a box of six seen from above, and the line Pick six. We'll box them. Example prices.",
+        "Phone and box. An illustration, drawn in code.",
+      ),
+      pic(
+        "frumbo",
+        "mockup-shop",
+        1600,
+        1200,
+        "An illustration of the Frumbo shop front: a strawberry and white striped awning with the dark wordmark, a window of buns, cakes and boxes, a blue door at 3 Quillow Lane, and a dark A-board reading Out of the oven at 11:00.",
+        "The shop front. An illustration, drawn in code.",
+      ),
+    ],
+    tools: DRAWN,
+    made: "2026-11",
+    ai: false,
+  },
+  // Designed 20 Nov 2026 in HTML, CSS, SVG and three.js, with SIL OFL fonts (Cormorant Garamond, Jost); no photos,
+  // stock or AI.
+  {
+    slug: "ilvane",
+    share: "/library/ilvane/share.jpg",
+    brand: "Ilvane",
+    business: "Boutique hotel",
+    industry: "hospitality",
+    kind: "website",
+    summary: "A website and booking app for an 18-room hotel on a quay, with its logo, a key card, a door hanger and a 3D room.",
+    choices: [
+      "Linen and sand with blue-black ink, and a lot of white space: quiet, with facts instead of adjectives.",
+      "The logo is ILVANE in light, widely spaced capitals, with a thin beige line under the V, like the waterline on a quay wall.",
+      "No bright accent at all: buttons are ink with linen text, and the 3D room shows the stay before anyone books.",
+    ],
+    mobile: [
+      appScreen(
+        "ilvane",
+        "welcome",
+        "Ilvane's welcome screen on a phone: \"Stay a little slower.\" over a drawn tall arched window looking out to water, Arrive Fri 18 Dec and Leave Sun 20 Dec fields, 2 guests, a Check dates button and the line Book direct: breakfast is included. Fictional offer.",
+      ),
+      appScreen(
+        "ilvane",
+        "rooms",
+        "Ilvane's Rooms for your dates screen: Fri 18 to Sun 20 Dec, 2 guests, and three rooms with line drawings: Quay Room, window over the water, from $240 a night; Loft Room, under the old roof beams, from $280; Reading Suite, a sofa, a desk and two windows, from $360. Example prices. Fictional hotel.",
+      ),
+      appScreen(
+        "ilvane",
+        "room",
+        "Ilvane's Quay Room screen: a 3D illustration of the room, its facts (22 m², king bed with linen sheets, rain shower, window over the water), a Look around in 3D button, $480 for 2 nights, a Book this room button and the line Free cancellation until 48 hours before. Example prices and policy.",
+      ),
+      appScreen(
+        "ilvane",
+        "stay",
+        "Ilvane's confirmation screen: \"See you on Friday\", the Quay Room from Fri 18 to Sun 20 Dec for 2 guests, check in from 15:00, breakfast 7:30 to 10:30, a box asking Anything for your room?, and Add to calendar and Get directions buttons. Fictional hotel. Example booking.",
+      ),
+    ],
+    desktop: [
+      page(
+        "ilvane",
+        "Ilvane's home page on a desktop: \"Stay a little slower.\" in a light serif, the line Eighteen rooms in an old stone warehouse on the quay, a date bar with Arrive, Leave, Guests and Check dates, and a tall 3D illustration of a room with a stone wall and a steel window over the water.",
+      ),
+      pic(
+        "ilvane",
+        "desktop-room",
+        1600,
+        1400,
+        "Ilvane's Quay Room page on a desktop: a large 3D illustration of the room with two smaller views (the window and reading chair, and the room in late afternoon), its facts, what's included (breakfast, Wi-Fi, bicycles) and a sand price box from $240 a night with a Book this room button. Example prices and policy.",
+      ),
+    ],
+    images: [
+      pic(
+        "ilvane",
+        "logo-board",
+        1600,
+        1200,
+        "The Ilvane logo board: ILVANE in light, widely spaced serif capitals with a thin beige line under the V and HOTEL beneath; a serif I with the line across its foot in a thin square; the wordmark in linen on ink; the app icon at three sizes; the five colours and the two typefaces.",
+        "The logo, its two alternates, the app icon, palette and type.",
+      ),
+      pic(
+        "ilvane",
+        "render",
+        1600,
+        1000,
+        "3D illustration of the Quay Room: a king bed with sand linen and a dark wool throw, a low oak bench, an oak floor, a limewashed wall, an exposed stone wall with a tall steel-framed window over water, a timber beam, a reading chair and a small round table. Labelled 3D illustration, fictional hotel.",
+        "The Quay Room in 3D, in daylight. A 3D illustration of a fictional hotel.",
+      ),
+      pic(
+        "ilvane",
+        "render-evening",
+        1600,
+        1000,
+        "The same 3D illustration of the Quay Room in late-afternoon light, warmer, with the bedside lamp on. Labelled 3D illustration, fictional hotel.",
+        "The same room in late-afternoon light. A 3D illustration of a fictional hotel.",
+      ),
+      pic(
+        "ilvane",
+        "mockup-key",
+        1600,
+        1200,
+        "An illustration of an ink-coloured key card with the Ilvane I monogram in beige, resting on a linen envelope with Room 4 written on it and the Ilvane wordmark, on a light wood desk with a pen.",
+        "Key card and envelope. An illustration, drawn in code.",
+      ),
+      pic(
+        "ilvane",
+        "mockup-hanger",
+        1600,
+        1200,
+        "An illustration of two Ilvane door hangers: a sand one reading Quiet, please hanging on the lever of a dark door, and the other side, in linen, reading Ready for the room.",
+        "The door hanger, both sides. An illustration, drawn in code.",
+      ),
+      pic(
+        "ilvane",
+        "mockup-phone",
+        1600,
+        1200,
+        "An illustration of a phone lying on linen sheets beside a dark wool throw, showing Ilvane's See you on Friday screen, with the line Everything for your stay, in one place. Example booking.",
+        "Phone on the bed. An illustration, drawn in code.",
+      ),
+    ],
+    tools: ["HTML and CSS", "SVG", "three.js"],
+    made: "2026-11",
+    ai: false,
+  },
   // Designed 18 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Newsreader, Work Sans); no photos, stock or AI.
   {
     slug: "tarrowen",
