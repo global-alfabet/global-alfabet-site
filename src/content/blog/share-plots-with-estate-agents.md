@@ -85,7 +85,7 @@ For agents, it works like this today:
 - **Plot packs carry the agent's contact.** The printable plot summary a buyer downloads shows the agent as "Your agent", with their details.
 - **One plot, one link.** Every plot has a Copy link to this plot button. On an agent's link, the agent's code stays in the copied link.
 - **Your message, your words.** An owner writes the Chat with us message once, and can include the agent's name, the plot and the estate.
-- **Agents can't change anything.** They see only your shared estates, and can't open your documents or edit plots. Your owners and staff keep availability and prices current, and buyers see a saved change straight away.
+- **Agents can't change anything.** They see only your shared estates, and can't open your documents or edit plots. Your owners and staff keep availability and prices current, and buyers see a saved change the next time they open or refresh the link.
 - **Switching an agent off** sends new enquiries on their links back to your own sales contact.
 
 Alfa Maps doesn't keep a log of buyers' messages: they go straight to the agent's WhatsApp or email. So the simple enquiry record above is still worth keeping.
