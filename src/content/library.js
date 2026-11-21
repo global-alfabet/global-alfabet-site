@@ -217,7 +217,7 @@ export const library = [
       appScreen(
         "nellowyn",
         "plan",
-        "Nellowyn's plan screen for an example couple: Sam and Ruth, 12 June, 28 weeks to go, and a powder-blue timeline: Venue booked: The Long Barn (ticked), Caterer tasting, Sat 9 Jan (next), Send invitations by 13 Mar, Final guest numbers by 15 May, then a card: Next from us: three florist quotes by Friday. Example plan. Fictional couple and venue.",
+        "Nellowyn's plan screen for an example couple: Sam and Ruth, 12 June, 28 weeks to go, and a powder-blue timeline: Venue booked: Wrensby Barn (ticked), Caterer tasting, Sat 9 Jan (next), Send invitations by 13 Mar, Final guest numbers by 15 May, then a card: Next from us: three florist quotes by Friday. Example plan. Fictional couple and venue.",
       ),
       appScreen(
         "nellowyn",
@@ -257,7 +257,7 @@ export const library = [
         "mockup-invite",
         1600,
         1200,
-        "An illustration of an invitation suite on linen: an apricot invitation with Sam and Ruth in script, Saturday 12 June at The Long Barn, a powder-blue reply card, an envelope sealed with the N monogram, and a length of mulberry ribbon. Fictional couple and venue.",
+        "An illustration of an invitation suite on linen: an apricot invitation with Sam and Ruth in script, Saturday 12 June at Wrensby Barn, a powder-blue reply card, an envelope sealed with the N monogram, and a length of mulberry ribbon. Fictional couple and venue.",
         "Invitation, reply card and seal. An illustration, drawn in code.",
       ),
       pic(
