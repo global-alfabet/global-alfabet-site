@@ -110,22 +110,22 @@ export const library = [
     choices: [
       "Carbon black with one electric lime, used as a fill or on black, never as text on a light background.",
       "The logo is GRIVVO in tall, condensed capitals, with the two Vs drawn as one double chevron, like lane arrows on turf.",
-      "Thick lane stripes and plain facts about times and spaces left, with no promises about results.",
+      "Thick lane stripes, plain facts about times and spaces, and no weight-loss or before-and-after claims.",
     ],
     mobile: [
-      phone("grivvo", "today", "Grivvo's Today screen: open 05:30 to 22:00, a How busy bar and three classes to book. Example timetable."),
-      phone("grivvo", "class", "Grivvo's class screen: Strength, 50 min, Tue 5 Jan at 18:15, coach Dee, 2 spaces left and a Book button."),
+      phone("grivvo", "today", "Grivvo's Today screen: open 05:30 to 22:00, a How busy bar and three classes, one full with a waitlist."),
+      phone("grivvo", "class", 'Grivvo\'s class screen: "Strength, 50 min" on Thu 7 Jan at 18:15, coach Dee, 2 spaces left and a Book button.'),
       phone("grivvo", "plan", "Grivvo's My plan screen: this week's three sessions as lane stripes, and the next lift, back squat 3 sets of 5."),
-      phone("grivvo", "join", "Grivvo's memberships at $29, $45 and $90 (example prices), and the gym's fictional address with a drawn floor plan."),
+      phone("grivvo", "join", "Two memberships and a ten-visit pass ($29, $45 and $90, example prices), and the gym's fictional address with a floor plan."),
     ],
     desktop: [
-      page("grivvo", "Grivvo's home page: STRONGER BY THURSDAY. in huge capitals, a drawn barbell, four classes on today and a lime band."),
+      page("grivvo", 'Grivvo\'s home page: "Stronger by Thursday." in huge capitals, a drawn barbell, four classes on today and a lime band.'),
       pic(
         "grivvo",
         "desktop-timetable",
         1600,
         1346,
-        "Grivvo's timetable page: Tuesday's six classes with time, length, coach and spaces, and a free first session card.",
+        "Grivvo's timetable: Tuesday's five classes and open gym, with time, length, coach and spaces, and a free first session card.",
       ),
     ],
     images: [
@@ -134,7 +134,7 @@ export const library = [
         "logo-board",
         1600,
         1200,
-        "The Grivvo logo board: GRIVVO with a lime double V on black, the double V app icon, the logo on lime, palette and type.",
+        "The Grivvo logo board: GRIVVO with its second V in lime on black, the two-V app icon, the logo on lime, palette and type.",
         "The logo, its two alternates, the app icon, palette and type.",
       ),
       pic(
@@ -150,7 +150,7 @@ export const library = [
         "mockup-wall",
         1600,
         1200,
-        "An illustration of Grivvo's double V painted large in lime on a concrete wall, above three barbell racks.",
+        "An illustration of Grivvo's double V painted large in chalk and lime on a concrete wall, above three barbell racks.",
         "The mark on the wall. An illustration, drawn in code.",
       ),
       pic(
@@ -185,10 +185,10 @@ export const library = [
       phone("halvery", "books", "Halvery's client app home: October books done, 4 receipts to send and three dates coming up. Example client."),
       phone("halvery", "receipts", "Halvery's Send receipts screen: a Take a photo button and three sent receipts, one with a question to follow."),
       phone("halvery", "call", "Halvery's Book a call screen: what you need, what your business does, and a free call on Tue 5 Jan at 09:30."),
-      phone("halvery", "booked", "Halvery's confirmation: See you Tuesday, a free call with Jonah, and the fictional office on a drawn map."),
+      phone("halvery", "booked", 'Halvery\'s confirmation: "See you Tuesday", a free call with Jonah, and the fictional office on a drawn map.'),
     ],
     desktop: [
-      page("halvery", "Halvery's home page: Books done every month. No shoebox in April., a drawn ledger card and four services."),
+      page("halvery", 'Halvery\'s home page: "Books done every month. No shoebox in April." with a drawn ledger card and four services.'),
       pic(
         "halvery",
         "desktop-fees",
@@ -219,7 +219,7 @@ export const library = [
         "mockup-letter",
         1600,
         1200,
-        "An illustration of a Halvery letter, Your year-end accounts are ready, and a window envelope. Fictional client.",
+        'An illustration of a Halvery letter, "Your year-end accounts are ready", and a window envelope. Fictional client.',
         "Letterhead and envelope. An illustration, drawn in code.",
       ),
       pic(
