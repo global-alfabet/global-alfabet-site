@@ -109,7 +109,7 @@ export const library = [
     summary: "A website and members' app for a strength and conditioning gym, with its logo, a wall mark, a membership card and a key tag.",
     choices: [
       "Carbon black with one electric lime, used as a fill or on black, never as text on a light background.",
-      "The logo is GRIVVO in tall, condensed capitals, with the two Vs drawn as one double chevron, like lane arrows on turf.",
+      "The logo is GRIVVO in tall, condensed capitals, with the two Vs side by side, chalk then lime, like lane arrows on turf.",
       "Thick lane stripes, plain facts about times and spaces, and no weight-loss or before-and-after claims.",
     ],
     mobile: [
