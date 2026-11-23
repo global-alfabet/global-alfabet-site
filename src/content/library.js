@@ -110,15 +110,15 @@ export const library = [
     kind: "website",
     summary: "A website and client app for a small law firm, with its logo, letterhead, business cards, envelope and a document folder.",
     choices: [
-      "Oxblood on white and stone, with near-square corners like paper: the colour is for the logo, rules and buttons, never a big fill.",
+      "Oxblood on white and stone, with near-square corners like paper: the colour marks the logo, rules, buttons and footer, never the page background.",
       "The logo is MERROWEN in widely spaced Caslon capitals, under a capital M on two stacked sheets of paper, with LAW below a thin rule.",
       "Plain words and fees stated up front, with every service page marked as general information, not legal advice.",
     ],
     mobile: [
       phone("merrowen", "home", 'Merrowen\'s app home: "How can we help?", four ruled rows from making a will to a lease, and a Book a first meeting button.'),
       phone("merrowen", "will", 'Merrowen\'s "Make or update a will" screen: what we do, what you\'ll need, two to three weeks, and fixed fees of $350 and $550. Example prices.'),
-      phone("merrowen", "book", "Merrowen's Book a first meeting screen: what it's about, in the office or by video, Wed 13 Jan at 15:00, and a few lines about your situation."),
-      phone("merrowen", "booked", 'Merrowen\'s confirmation: "See you on Wednesday", a first meeting with Elena, and the fictional office at 3 Ambery Court on a drawn map.'),
+      phone("merrowen", "book", "Merrowen's Book a first meeting screen: four numbered steps, a ruled list of times with 15:00 on Wednesday 13 January chosen."),
+      phone("merrowen", "booked", 'Merrowen\'s confirmation, set as a short letter: "See you on Wednesday", a first meeting with Elena at 15:00, and four ruled links.'),
     ],
     desktop: [
       page("merrowen", 'Merrowen\'s home page: "Legal help, explained in plain words." in large Caslon, with a drawn letterhead, envelope, seal and pen.'),
@@ -196,13 +196,13 @@ export const library = [
     choices: [
       "White first, with blush only behind the products and clay for caps, lids and the big step numbers.",
       "The logo is saunelle in a light, lowercase sans, with one clay half-circle over the u, like the top of a jar lid.",
-      "Each product is a step number and a plain name, and the words say what it is and how to use it, never what it will do.",
+      "Each product is a big, light step number and a plain name, with volumes and prices in a small monospace; the words say how to use it, never what it will do.",
     ],
     mobile: [
       phone("saunelle", "shop", 'Saunelle\'s shop screen: "Four steps." and four blush tiles, 01 Cleanser $24, 02 Serum $34, 03 Cream $30, 04 Face oil $28. Example prices.'),
       phone("saunelle", "serum", "Saunelle's 02 Serum screen: a drawn dropper bottle on a blush podium, 30 ml, use 2 to 3 drops after 01 Cleanser, and $34. Example price."),
       phone("saunelle", "routine", 'Saunelle\'s routine screen: "Morning and evening", with steps 01, 02 and 03 in the morning and 01, 02 and 04 in the evening.'),
-      phone("saunelle", "order", 'Saunelle\'s order screen: "Thank you, Ana.", order SN-1042 for the routine of four at $104, sent in a recyclable box. Example order.'),
+      phone("saunelle", "order", 'Saunelle\'s order screen: "Thank you, Ana.", order SN-1042 for the routine of four at $116, sent in a recyclable box. Example order.'),
     ],
     desktop: [
       page("saunelle", 'Saunelle\'s home page: "A short routine for every day." in light type, beside a 3D render of the four bottles on a blush podium.'),
@@ -218,7 +218,7 @@ export const library = [
         "desktop-serum",
         1600,
         1883,
-        "Saunelle's 02 Serum page: a 3D render of the bottle, 30 ml at $34, how to use it, a fictional ingredient list and a refill. Example prices.",
+        "Saunelle's 02 Serum page: a 3D render of the bottle, 30 ml at $34, how to use it and a fictional ingredient list. Example prices.",
       ),
     ],
     images: [
