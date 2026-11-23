@@ -20,21 +20,21 @@ Someone looking up a coffee shop usually wants a coffee soon. The first thing th
 - **Plan for holidays.** Add a line when your hours change for a holiday or an event, and take it down after.
 - **Match your Google Business Profile.** Google lets you set [special hours for holidays and events](https://support.google.com/business/answer/6303076?hl=en) without changing your regular hours, and recommends confirming your hours for official holidays even when they don't change.
 
-See it on [Pockwell](/studio/library/pockwell): its Find us screen shows weekday, Saturday and Sunday hours in one small card, next to the map.
+See it on [Pockwell](/studio/library/pockwell): its Find us screen shows weekday, Saturday and Sunday hours in one small card, under the map.
 
 ## 2. Where you are, and directions in one tap
 
 Your address is the second question. Make it easy to read and easy to use.
 
 - **Write the full address as text,** plus one line that helps on the street: "Corner of the high street and the station road", "Next to the bookshop", "Entrance on the side street".
-- **Add a Get directions button** that opens the visitor's map app. Google's [Maps URLs](https://developers.google.com/maps/documentation/urls/get-started) build a universal link that opens Google Maps on phones and computers, and they don't need an API key.
+- **Add a Get directions button** that opens Google Maps. Google's [Maps URLs](https://developers.google.com/maps/documentation/urls/get-started) build a universal link that opens Google Maps on phones and computers, and they don't need an API key.
 - **Say what's useful nearby,** such as parking or the nearest bus stop.
 
 ## 3. A menu with prices, written as text
 
 Next comes the menu. Three rules make it work.
 
-- **Use real text, not a photo or a PDF.** A photo of a chalkboard is hard to read on a phone and can't be resized. The W3C's accessibility guidance says [real text styled with CSS is better than images of text](https://www.w3.org/WAI/tutorials/images/textual/): it can be resized without losing clarity, and readers can change its colours. Search engines can read it too.
+- **Use real text, not a photo or a PDF.** A photo of a chalkboard is hard to read on a phone and can't be resized. The W3C's accessibility guidance says [real text styled with CSS is better than images of text](https://www.w3.org/WAI/tutorials/images/textual/): it can be resized without losing clarity, and readers can change its colours.
 - **Show prices.** A menu without prices leaves people guessing. If prices change often, show the main drinks and food and keep them right.
 - **Keep it short and current.** Group it simply, say which milks you offer, and remove what you no longer serve.
 
@@ -53,7 +53,7 @@ Order ahead saves people time on busy mornings. But a button that promises more 
 - **If you take orders,** say plainly how it works: how to order, roughly how long it takes, and how people pay.
 - **If you don't,** say so in a friendly way ("Walk in, we're quick") and leave the button out.
 
-See it on [Pockwell](/studio/library/pockwell): the order screen shows the drinks, an estimated pickup time and one line, "Pay when you collect", so the visitor knows what happens next.
+See it on [Pockwell](/studio/library/pockwell): the order screen shows the order, an estimated pickup time and one line, "Pay when you collect", so the visitor knows what happens next.
 
 ## 6. Photos of your real place
 
@@ -78,7 +78,7 @@ An accessible coffee shop website helps every visitor, not only people with a di
 
 ## 9. Fast on mobile data
 
-A coffee shop page should load fast on a phone with a weak signal. Put your address into [PageSpeed Insights](https://pagespeed.web.dev). Google's web.dev counts a [Largest Contentful Paint of 2.5 seconds or less](https://web.dev/articles/vitals) as good: that is how long the main content takes to appear.
+A coffee shop page should load fast on a phone with a weak signal. Put your website's address into [PageSpeed Insights](https://pagespeed.web.dev). Google's web.dev counts a [Largest Contentful Paint of 2.5 seconds or less](https://web.dev/articles/vitals) as good: that is how long the main content takes to appear.
 
 Start with the photos: resize each to the size it is shown at and save it in a modern format such as WebP. Then remove autoplay videos, big sliders and widgets you don't use.
 
@@ -107,7 +107,7 @@ Open your website on your phone, on mobile data, and check:
 
 Global Alfabet Studio designs and builds websites for businesses. See [Pockwell](/studio/library/pockwell) and more concept work in the [Studio library](/studio/library).
 
-**[Get in touch](/contact)** at hello@globalalfabet.com, and tell us about your coffee shop and your website.
+**[Get in touch](/contact)** at [hello@globalalfabet.com](mailto:hello@globalalfabet.com), and tell us about your coffee shop and your website.
 
 ## In short
 
