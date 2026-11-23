@@ -63,6 +63,7 @@ export const countOf = (kind, n) => (n === 1 ? `One ${kind.one}` : `${n} ${kind.
 
 export const industries = [
   { id: "events", label: "Events" },
+  { id: "beauty", label: "Beauty" },
   { id: "education", label: "Education" },
   { id: "engineering", label: "Engineering" },
   { id: "fashion", label: "Fashion" },
@@ -71,6 +72,7 @@ export const industries = [
   { id: "food-drink", label: "Food and drink" },
   { id: "health", label: "Health" },
   { id: "hospitality", label: "Hotels and travel" },
+  { id: "legal", label: "Legal" },
   { id: "property", label: "Property" },
   { id: "retail", label: "Retail" },
 ];
@@ -97,6 +99,190 @@ const page = (slug, alt) => pic(slug, "desktop", 1600, 1000, alt);
 const DRAWN = ["HTML and CSS", "SVG"];
 
 export const library = [
+  // Designed 23 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Libre Caslon Display, Libre Caslon Text, Karla);
+  // stationery, folder and door drawn as flat shapes; no photos, stock or AI.
+  {
+    slug: "merrowen",
+    share: "/library/merrowen/share.jpg",
+    brand: "Merrowen Law",
+    business: "Law firm",
+    industry: "legal",
+    kind: "website",
+    summary: "A website and client app for a small law firm, with its logo, letterhead, business cards, envelope and a document folder.",
+    choices: [
+      "Oxblood on white and stone, with near-square corners like paper: the colour is for the logo, rules and buttons, never a big fill.",
+      "The logo is MERROWEN in widely spaced Caslon capitals, under a capital M on two stacked sheets of paper, with LAW below a thin rule.",
+      "Plain words and fees stated up front, with every service page marked as general information, not legal advice.",
+    ],
+    mobile: [
+      phone("merrowen", "home", 'Merrowen\'s app home: "How can we help?", four ruled rows from making a will to a lease, and a Book a first meeting button.'),
+      phone("merrowen", "will", 'Merrowen\'s "Make or update a will" screen: what we do, what you\'ll need, two to three weeks, and fixed fees of $350 and $550. Example prices.'),
+      phone("merrowen", "book", "Merrowen's Book a first meeting screen: what it's about, in the office or by video, Wed 13 Jan at 15:00, and a few lines about your situation."),
+      phone("merrowen", "booked", 'Merrowen\'s confirmation: "See you on Wednesday", a first meeting with Elena, and the fictional office at 3 Ambery Court on a drawn map.'),
+    ],
+    desktop: [
+      page("merrowen", 'Merrowen\'s home page: "Legal help, explained in plain words." in large Caslon, with a drawn letterhead, envelope, seal and pen.'),
+      pic(
+        "merrowen",
+        "desktop-sections",
+        1600,
+        1497,
+        "The rest of Merrowen's home page: three stone cards with fixed fees from $300 (example prices), How it works in three steps, and an oxblood footer.",
+      ),
+      pic(
+        "merrowen",
+        "desktop-fees",
+        1600,
+        1403,
+        "Merrowen's Fees page: a ruled table of fixed fees for wills, property and business work, and a $120 first meeting. Example prices.",
+      ),
+    ],
+    images: [
+      pic(
+        "merrowen",
+        "logo-board",
+        1600,
+        1200,
+        "The Merrowen Law logo board: the stacked-sheet M over MERROWEN and LAW in oxblood, the mark alone, the logo on oxblood, palette and type.",
+        "The logo, its two alternates, the app icon, palette and type.",
+      ),
+      pic(
+        "merrowen",
+        "stationery",
+        1600,
+        1200,
+        "Merrowen's stationery laid flat: an A4 letterhead with a sample letter, a business card front and back, a compliments slip and a window envelope with its seal.",
+        "Letterhead, business card, compliments slip and envelope. Flat artwork.",
+      ),
+      pic(
+        "merrowen",
+        "mockup-stationery",
+        1600,
+        1200,
+        "An illustration of Merrowen's letterhead, business cards, compliments slip, sealed envelope and a pen on a stone surface.",
+        "The stationery set. An illustration, drawn in code.",
+      ),
+      pic(
+        "merrowen",
+        "mockup-folder",
+        1600,
+        1200,
+        'An illustration of an oxblood Merrowen folder labelled "Your will: draft for checking", beside a phone showing the will screen.',
+        "Folder and phone. An illustration, drawn in code.",
+      ),
+      pic(
+        "merrowen",
+        "mockup-door",
+        1600,
+        1200,
+        "An illustration of an oxblood Merrowen door plate with the white wordmark, beside a stone-grey door.",
+        "The door plate. An illustration, drawn in code.",
+      ),
+    ],
+    tools: DRAWN,
+    made: "2026-11",
+    ai: false,
+  },
+  // Designed 23 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Hanken Grotesk, DM Mono); the bottles are drawn
+  // in SVG and modelled in three.js for the 3D stills; no photos, stock or AI.
+  {
+    slug: "saunelle",
+    share: "/library/saunelle/share.jpg",
+    brand: "Saunelle",
+    business: "Skincare brand",
+    industry: "beauty",
+    kind: "website",
+    summary: "An online shop and app for a skincare brand with four products, with its logo, bottle labels and 3D renders of the bottles.",
+    choices: [
+      "White first, with blush only behind the products and clay for caps, lids and the big step numbers.",
+      "The logo is saunelle in a light, lowercase sans, with one clay half-circle over the u, like the top of a jar lid.",
+      "Each product is a step number and a plain name, and the words say what it is and how to use it, never what it will do.",
+    ],
+    mobile: [
+      phone("saunelle", "shop", 'Saunelle\'s shop screen: "Four steps." and four blush tiles, 01 Cleanser $24, 02 Serum $34, 03 Cream $30, 04 Face oil $28. Example prices.'),
+      phone("saunelle", "serum", "Saunelle's 02 Serum screen: a drawn dropper bottle on a blush podium, 30 ml, use 2 to 3 drops after 01 Cleanser, and $34. Example price."),
+      phone("saunelle", "routine", 'Saunelle\'s routine screen: "Morning and evening", with steps 01, 02 and 03 in the morning and 01, 02 and 04 in the evening.'),
+      phone("saunelle", "order", 'Saunelle\'s order screen: "Thank you, Ana.", order SN-1042 for the routine of four at $104, sent in a recyclable box. Example order.'),
+    ],
+    desktop: [
+      page("saunelle", 'Saunelle\'s home page: "A short routine for every day." in light type, beside a 3D render of the four bottles on a blush podium.'),
+      pic(
+        "saunelle",
+        "desktop-sections",
+        1600,
+        1933,
+        "The rest of Saunelle's home page: four blush cards with big clay step numbers and example prices, three plain product facts, and a deep clay footer.",
+      ),
+      pic(
+        "saunelle",
+        "desktop-serum",
+        1600,
+        1883,
+        "Saunelle's 02 Serum page: a 3D render of the bottle, 30 ml at $34, how to use it, a fictional ingredient list and a refill. Example prices.",
+      ),
+    ],
+    images: [
+      pic(
+        "saunelle",
+        "logo-board",
+        1600,
+        1200,
+        "The Saunelle logo board: saunelle in umber with a clay half-circle over the u, the round seal, the logo on deep clay, palette and type.",
+        "The logo, its two alternates, the app icon, palette and type.",
+      ),
+      pic(
+        "saunelle",
+        "render-hero",
+        1600,
+        1200,
+        "A 3D render of Saunelle's four bottles, a blush pump bottle, a dropper, a jar with a clay lid and a small bottle, on a blush podium with a clay edge.",
+        "The four steps. 3D render, fictional product.",
+      ),
+      pic(
+        "saunelle",
+        "render-serum",
+        1600,
+        1200,
+        "A 3D render close up of the 02 Serum dropper bottle with its clay cap, and the 03 Cream jar behind it, on a blush podium.",
+        "02 Serum, close up. 3D render, fictional product.",
+      ),
+      pic(
+        "saunelle",
+        "render-box",
+        1600,
+        1200,
+        "A 3D render from above of Saunelle's open gift box: deep clay inside, the four bottles in a blush tray, the lid beside it and the round seal sticker.",
+        "The open box. 3D render, fictional product.",
+      ),
+      pic(
+        "saunelle",
+        "render-stone",
+        1600,
+        1200,
+        "A 3D render of Saunelle's four bottles in a row on a pale ledge, lit from the side.",
+        "Bottles on a ledge. 3D render, fictional product.",
+      ),
+      pic(
+        "saunelle",
+        "labels",
+        1600,
+        1200,
+        "Saunelle's four front labels laid flat, 01 Cleanser, 02 Serum, 03 Cream and 04 Face oil, with drawings of the four bottles below.",
+        "Label artwork for the four bottles. Flat artwork.",
+      ),
+      pic(
+        "saunelle",
+        "mockup-phone",
+        1600,
+        1200,
+        'An illustration of a phone showing Saunelle\'s "Morning and evening" routine screen, in front of a blurred 3D render of the bottles.',
+        "The routine on a phone. An illustration, drawn in code.",
+      ),
+    ],
+    tools: [...DRAWN, "three.js"],
+    made: "2026-11",
+    ai: false,
+  },
   // Designed 22 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Big Shoulders Display, Barlow, Barlow Semi
   // Condensed); barbell, plates, floor plan and kit drawn as flat shapes; no photos, stock or AI.
   {
