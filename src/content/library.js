@@ -97,6 +97,144 @@ const page = (slug, alt) => pic(slug, "desktop", 1600, 1000, alt);
 const DRAWN = ["HTML and CSS", "SVG"];
 
 export const library = [
+  // Designed 22 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Big Shoulders Display, Barlow, Barlow Semi
+  // Condensed); barbell, plates, floor plan and kit drawn as flat shapes; no photos, stock or AI.
+  {
+    slug: "grivvo",
+    share: "/library/grivvo/share.jpg",
+    brand: "Grivvo",
+    business: "Gym",
+    industry: "fitness",
+    kind: "website",
+    summary: "A website and members' app for a strength and conditioning gym, with its logo, a wall mark, a membership card and a key tag.",
+    choices: [
+      "Carbon black with one electric lime, used as a fill or on black, never as text on a light background.",
+      "The logo is GRIVVO in tall, condensed capitals, with the two Vs side by side, chalk then lime, like lane arrows on turf.",
+      "Thick lane stripes, plain facts about times and spaces, and no weight-loss or before-and-after claims.",
+    ],
+    mobile: [
+      phone("grivvo", "today", "Grivvo's Today screen: open 05:30 to 22:00, a How busy bar and three classes, one full with a waitlist."),
+      phone("grivvo", "class", 'Grivvo\'s class screen: "Strength, 50 min" on Thu 7 Jan at 18:15, coach Dee, 2 spaces left and a Book button.'),
+      phone("grivvo", "plan", "Grivvo's My plan screen: this week's three sessions as lane stripes, and the next lift, back squat 3 sets of 5."),
+      phone("grivvo", "join", "Two memberships and a ten-visit pass ($29, $45 and $90, example prices), and the gym's fictional address with a floor plan."),
+    ],
+    desktop: [
+      page("grivvo", 'Grivvo\'s home page: "Stronger by Thursday." in huge capitals, a drawn barbell, four classes on today and a lime band.'),
+      pic(
+        "grivvo",
+        "desktop-timetable",
+        1600,
+        1346,
+        "Grivvo's timetable: Tuesday's five classes and open gym, with time, length, coach and spaces, and a free first session card.",
+      ),
+    ],
+    images: [
+      pic(
+        "grivvo",
+        "logo-board",
+        1600,
+        1200,
+        "The Grivvo logo board: GRIVVO with its second V in lime on black, the two-V app icon, the logo on lime, palette and type.",
+        "The logo, its two alternates, the app icon, palette and type.",
+      ),
+      pic(
+        "grivvo",
+        "mockup-plate",
+        1600,
+        1200,
+        "An illustration of a phone showing Grivvo's Today screen, lying on a black weight plate on a gym floor.",
+        "Phone on a plate. An illustration, drawn in code.",
+      ),
+      pic(
+        "grivvo",
+        "mockup-wall",
+        1600,
+        1200,
+        "An illustration of Grivvo's double V painted large in chalk and lime on a concrete wall, above three barbell racks.",
+        "The mark on the wall. An illustration, drawn in code.",
+      ),
+      pic(
+        "grivvo",
+        "mockup-card",
+        1600,
+        1200,
+        "An illustration of a black Grivvo membership card and a lime key tag with the double V, lying on a gym bench.",
+        "Membership card and key tag. An illustration, drawn in code.",
+      ),
+    ],
+    tools: DRAWN,
+    made: "2026-11",
+    ai: false,
+  },
+  // Designed 22 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Source Serif 4, Source Sans 3); ledger card,
+  // letter and desk drawn as flat shapes; no photos, stock or AI.
+  {
+    slug: "halvery",
+    share: "/library/halvery/share.jpg",
+    brand: "Halvery Accounting",
+    business: "Accounting firm",
+    industry: "finance",
+    kind: "website",
+    summary: "A website and client app for a small accounting firm, with its logo, letterhead and envelope.",
+    choices: [
+      "Navy on warm paper and nothing else: emphasis comes from weight and size, and what's owed is said in words, not colour.",
+      "The logo is Halvery in a calm serif beside a small ledger square, a 3 x 3 grid with one heavier total line.",
+      "Fine ledger rules and tabular figures, so every amount and date lines up.",
+    ],
+    mobile: [
+      phone("halvery", "books", "Halvery's client app home: October books done, 4 receipts to send and three dates coming up. Example client."),
+      phone("halvery", "receipts", "Halvery's Send receipts screen: a Take a photo button and three sent receipts, one with a question to follow."),
+      phone("halvery", "call", "Halvery's Book a call screen: what you need, what your business does, and a free call on Tue 5 Jan at 09:30."),
+      phone("halvery", "booked", 'Halvery\'s confirmation: "See you Tuesday", a free call with Jonah, and the fictional office on a drawn map.'),
+    ],
+    desktop: [
+      page("halvery", 'Halvery\'s home page: "Books done every month. No shoebox in April." with a drawn ledger card and four services.'),
+      pic(
+        "halvery",
+        "desktop-fees",
+        1600,
+        1594,
+        "Halvery's Fees page: three plans from $90, $220 and $320 a month (example prices), with what each includes in words.",
+      ),
+    ],
+    images: [
+      pic(
+        "halvery",
+        "logo-board",
+        1600,
+        1200,
+        "The Halvery logo board: ledger square and serif wordmark in navy, the square alone, the logo on navy, palette and type.",
+        "The logo, its two alternates, the app icon, palette and type.",
+      ),
+      pic(
+        "halvery",
+        "mockup-desk",
+        1600,
+        1200,
+        "An illustration of a phone with Halvery's client app beside a navy folder, ruled paper and a pencil.",
+        "Phone, folder and paper. An illustration, drawn in code.",
+      ),
+      pic(
+        "halvery",
+        "mockup-letter",
+        1600,
+        1200,
+        'An illustration of a Halvery letter, "Your year-end accounts are ready", and a window envelope. Fictional client.',
+        "Letterhead and envelope. An illustration, drawn in code.",
+      ),
+      pic(
+        "halvery",
+        "mockup-laptop",
+        1600,
+        1200,
+        "An illustration of a laptop showing Halvery's Fees page on a desk, with a cup and a navy notebook.",
+        "The Fees page on a laptop. An illustration, drawn in code.",
+      ),
+    ],
+    tools: DRAWN,
+    made: "2026-11",
+    ai: false,
+  },
   // Designed 21 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Syne, Archivo); garments drawn as flat shapes; no
   // photos, stock or AI.
   {
