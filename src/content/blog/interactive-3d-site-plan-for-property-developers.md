@@ -53,7 +53,7 @@ In Alfa Maps, a buyer can:
 
 - **Fly over the whole estate**, or switch to the estate map, street, aerial, garden, site plan and free-roam views.
 - **See what's available at a glance.** Plots for sale are green, reserved plots amber and sold plots red.
-- **Filter plots** by status, size and price, or search for a plot number.
+- **Filter plots** by status and size, sort them by price, or search for a plot number.
 - **Check the facts** of each plot: size, frontage, road width, position and boundary lengths.
 - **Try a house on the plot.** There are eight house types, and buyers can change storeys, garage, pool, roof and colours. The house always fits the plot.
 - **See the numbers**: cash price, deposit, fees and monthly payments for each payment plan you offer.
