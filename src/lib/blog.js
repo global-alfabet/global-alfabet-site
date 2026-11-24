@@ -51,6 +51,10 @@ export const livePosts = posts.filter((p) => !p.scheduled);
 
 export const postBySlug = Object.fromEntries(posts.map((p) => [p.slug, p]));
 
+/** The posts this build shows that link to an address, newest first: a Studio library page lists the posts that
+ * use it as an example. Scheduled posts are left out until their date, as everywhere else. */
+export const postsLinkingTo = (path) => posts.filter((p) => p.html.includes(`href="${path}"`));
+
 export function formatDate(iso) {
   return new Date(`${iso}T12:00:00`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
 }

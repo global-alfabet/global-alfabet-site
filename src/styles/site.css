@@ -2202,6 +2202,18 @@ a.way:hover {
 .item-story .checks .icon {
   color: var(--blue);
 }
+.item-articles {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.item-articles .text-link {
+  display: inline;
+}
+.item-articles .icon {
+  vertical-align: -3px;
+}
 .item-facts {
   padding: 28px;
   border-radius: var(--radius-card);

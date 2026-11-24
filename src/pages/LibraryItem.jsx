@@ -10,6 +10,7 @@ import { formatMade, industryById, itemBySlug, kindById, labelsOf, library } fro
 import { asset } from "../lib/asset.js";
 import { useNearScreen } from "../lib/nearScreen.js";
 import { isHydrated } from "../lib/hydrated.js";
+import { postsLinkingTo } from "../lib/blog.js";
 
 // One piece of Studio work: /studio/library/<slug>. A viewer (phone frames, a browser frame, or a gallery, or the
 // screens with a gallery below them), what we made and why, and a way to start a similar project. Its title and share tags are in src/lib/seo.js.
@@ -197,6 +198,8 @@ export default function LibraryItem() {
     ...library.filter((i) => i.kind === item.kind && i.slug !== item.slug).slice(0, 2),
     ...library.filter((i) => i.kind !== item.kind),
   ].slice(0, 3);
+  // Blog posts that use this piece as an example (they link here), so readers and search engines can go both ways.
+  const articles = postsLinkingTo(`/studio/library/${item.slug}`);
 
   return (
     <>
@@ -240,6 +243,20 @@ export default function LibraryItem() {
                 </li>
               ))}
             </ul>
+            {articles.length > 0 && (
+              <>
+                <h2>On the blog</h2>
+                <ul className="item-articles">
+                  {articles.map((p) => (
+                    <li key={p.slug}>
+                      <Link className="text-link" to={`/blog/${p.slug}`}>
+                        {p.title} <Icon name="chevron" size={16} stroke={2.2} />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
           </div>
           <aside className="item-facts" aria-label="About this piece">
             <dl>
