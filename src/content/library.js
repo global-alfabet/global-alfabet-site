@@ -100,8 +100,9 @@ const DRAWN = ["HTML and CSS", "SVG"];
 
 export const library = [
   // Designed 24 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Bricolage Grotesque, Figtree), and free Adobe Stock
-  // photos licensed under the Standard licence: 434630477, 863445216, 231737628, 454201040 (its phone screen
-  // replaced or blurred). The photos only show the kind of trip; no real places are named. No AI.
+  // photos licensed under the Standard licence: 434630477, 863445216, 231737628, 454201040 (its phone screen showed
+  // a real place name: blurred on the home page, covered by our screen in the mockup). The Old harbour walk picture
+  // is drawn. The photos only show the kind of trip; no real places are named. No AI.
   {
     slug: "tavendi",
     share: "/library/tavendi/share.jpg",
@@ -109,11 +110,11 @@ export const library = [
     business: "Tour operator",
     industry: "hospitality",
     kind: "website",
-    summary: "A website and booking app for a small tour operator with three kinds of trip, with its logo, a luggage tag and a trip confirmation card.",
+    summary: "A website and booking app for a small tour operator, with its logo, a luggage tag and a trip confirmation card.",
     choices: [
       "Big sunset photos lead, on warm sand, with deep dusk teal for headings and the footer, and one sunset apricot for buttons and the sun.",
       "The logo is tavendi in a bold lowercase grotesque, with the dot of the i replaced by a half-sun sitting on a thin horizon line.",
-      "Every tour says what you'll do, how long it takes and what to bring. Dates are requests, confirmed by email, with no promises about weather or wildlife.",
+      "Every tour says what you'll do, how long it takes and what to bring. Dates are requests, confirmed by email, with no promises about wildlife.",
     ],
     mobile: [
       phone("tavendi", "tours", 'Tavendi\'s Tours screen: "Stay out for the sunset." over a photo of an empty road at sunset, and three tours from $30 to $420. Example prices.'),
@@ -178,7 +179,8 @@ export const library = [
   },
   // Designed 24 Nov 2026 in HTML, CSS and SVG, with an SIL OFL font (Plus Jakarta Sans), and free Adobe Stock photos
   // licensed under the Standard licence: 444488016, 89255843, 456006072, 420286868, 480974676 (cropped clear of its
-  // price sign). The photos only show the kind of food; the bags are drawn. No AI.
+  // price sign). The photos only show the kind of food. The bag artwork, table scene and sticker are drawn; the
+  // door mockup is Stock 420286868 with its plain paper bag recoloured basil and our logo added. No AI.
   {
     slug: "lettavo",
     share: "/library/lettavo/share.jpg",
@@ -193,10 +195,10 @@ export const library = [
       "Big food photos, and every item shows its weight and price. Delivery slots are picked by the customer and labelled as examples, with no speed promises.",
     ],
     mobile: [
-      phone("lettavo", "shop", "Lettavo's Shop screen: a search field, a Fruit and veg bag at $18, five aisles and Your usual list with tomatoes, spinach and a sourdough loaf. Example prices."),
-      phone("lettavo", "item", "Lettavo's Tomatoes, 500 g screen: a photo of tomatoes in a paper bag, a 2.40 price tag, a quantity of 2 and an Add 2 to basket, $4.80 button. Example prices."),
+      phone("lettavo", "shop", "Lettavo's Shop screen: a search field, a Fruit and veg bag at $18, five aisles and Your usual list with tomatoes, lettuce and a baguette. Example prices."),
+      phone("lettavo", "item", "Lettavo's Tomatoes, 500 g screen: a photo of tomatoes in a paper bag, a $2.40 price tag, a quantity of 2 and an Add 2 to basket, $4.80 button. Example prices."),
       phone("lettavo", "slot", 'Lettavo\'s "When should we come?" screen: a street field, Thursday chosen and four delivery slots, one full and 17:00 to 19:00 picked. Example slots.'),
-      phone("lettavo", "placed", 'Lettavo\'s confirmation: "Thanks, Mira. Your order is in.", order LT-2081 for $46.20, and a timeline from Order placed to Delivered. Example order.'),
+      phone("lettavo", "placed", 'Lettavo\'s confirmation: "All set for Thursday.", 14 items for $46.20 with delivery, and a timeline from Order placed to Delivered. Example order.'),
     ],
     desktop: [
       page("lettavo", 'Lettavo\'s home page: "Groceries, delivered when it suits you." on a white frosted card over a top-view photo of vegetables in paper bags.'),
@@ -253,7 +255,7 @@ export const library = [
         "mockup-table",
         1600,
         1200,
-        "An illustration from above of a Lettavo grocery bag, two produce bags and the seal sticker on a white table, with photos of tomatoes, apples and cucumbers.",
+        "An illustration from above of a Lettavo grocery bag, two produce bags and the seal sticker on a white table, with photos of tomatoes, an apple and cucumbers.",
         "Bags and produce, from above. An illustration with stock photos.",
       ),
     ],
