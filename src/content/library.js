@@ -99,6 +99,168 @@ const page = (slug, alt) => pic(slug, "desktop", 1600, 1000, alt);
 const DRAWN = ["HTML and CSS", "SVG"];
 
 export const library = [
+  // Designed 24 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Bricolage Grotesque, Figtree), and free Adobe Stock
+  // photos licensed under the Standard licence: 434630477, 863445216, 231737628, 454201040 (its phone screen
+  // replaced or blurred). The photos only show the kind of trip; no real places are named. No AI.
+  {
+    slug: "tavendi",
+    share: "/library/tavendi/share.jpg",
+    brand: "Tavendi Tours",
+    business: "Tour operator",
+    industry: "hospitality",
+    kind: "website",
+    summary: "A website and booking app for a small tour operator with three kinds of trip, with its logo, a luggage tag and a trip confirmation card.",
+    choices: [
+      "Big sunset photos lead, on warm sand, with deep dusk teal for headings and the footer, and one sunset apricot for buttons and the sun.",
+      "The logo is tavendi in a bold lowercase grotesque, with the dot of the i replaced by a half-sun sitting on a thin horizon line.",
+      "Every tour says what you'll do, how long it takes and what to bring. Dates are requests, confirmed by email, with no promises about weather or wildlife.",
+    ],
+    mobile: [
+      phone("tavendi", "tours", 'Tavendi\'s Tours screen: "Stay out for the sunset." over a photo of an empty road at sunset, and three tours from $30 to $420. Example prices.'),
+      phone("tavendi", "tour", "Tavendi's Sunset plains drive screen: 4 hours, up to 8 people, a timed plan from 15:30 to 19:30, what to bring, from $65 a person. Example prices."),
+      phone("tavendi", "request", "Tavendi's Request a date screen: a January calendar with three example dates and Sat 23 Jan chosen, 2 adults, and a Send request button."),
+      phone("tavendi", "trips", "Tavendi's Your trips screen: one trip waiting for confirmation, one confirmed for 09:00 at Ombrey Quay, and the fictional office's hours."),
+    ],
+    desktop: [
+      page("tavendi", 'Tavendi\'s home page: "Stay out for the sunset." in huge sand letters over a photo of a long road at sunset, with a frosted card and two buttons.'),
+      pic(
+        "tavendi",
+        "desktop-sections",
+        1600,
+        2654,
+        "The rest of Tavendi's home page: three tour cards with photos and example prices, How it works in three steps, a photo band and a dusk teal footer.",
+      ),
+      pic(
+        "tavendi",
+        "desktop-coast",
+        1600,
+        1933,
+        "Tavendi's Coast and hills page: a sunset photo header, from $420 a person, three day cards, what's included and a drawn route map with invented names. Example prices.",
+      ),
+    ],
+    images: [
+      pic(
+        "tavendi",
+        "logo-board",
+        1600,
+        1200,
+        "The Tavendi logo board: tavendi in dusk teal with a sunset half-sun for the dot of the i, the app icon, the logo in sand over a photo, palette and type.",
+        "The logo, its two alternates, the app icon, palette and type.",
+      ),
+      pic(
+        "tavendi",
+        "mockup-phone",
+        1600,
+        1200,
+        "A stock photo of a walker holding a phone above a hillside, with Tavendi's Sunset plains drive screen placed on the phone.",
+        "The tour on a phone. Stock photo with our screen added.",
+      ),
+      pic(
+        "tavendi",
+        "mockup-laptop",
+        1600,
+        1200,
+        "An illustration of a laptop showing Tavendi's home page on a sand table, with a drawn map and a cup of coffee.",
+        "The home page on a laptop. An illustration, drawn in code.",
+      ),
+      pic(
+        "tavendi",
+        "mockup-tag",
+        1600,
+        1200,
+        "An illustration of a dusk teal Tavendi luggage tag with the half-sun icon, beside a printed trip confirmation for the Old harbour walk.",
+        "Luggage tag and trip confirmation. An illustration, drawn in code.",
+      ),
+    ],
+    tools: [...DRAWN, "Adobe Stock photos"],
+    made: "2026-11",
+    ai: false,
+  },
+  // Designed 24 Nov 2026 in HTML, CSS and SVG, with an SIL OFL font (Plus Jakarta Sans), and free Adobe Stock photos
+  // licensed under the Standard licence: 444488016, 89255843, 456006072, 420286868, 480974676 (cropped clear of its
+  // price sign). The photos only show the kind of food; the bags are drawn. No AI.
+  {
+    slug: "lettavo",
+    share: "/library/lettavo/share.jpg",
+    brand: "Lettavo",
+    business: "Grocery delivery",
+    industry: "food-drink",
+    kind: "app",
+    summary: "A shopping app and website for a grocery delivery service, with its logo, paper bags and a bag seal sticker.",
+    choices: [
+      "White first, with basil green for the header, logo and bags, and tomato red for price tags and big shapes; red buttons use a deeper tomato so white text stays readable.",
+      "The logo is lettavo in a bold lowercase sans, with the final o drawn as a tomato with a small leaf crown.",
+      "Big food photos, and every item shows its weight and price. Delivery slots are picked by the customer and labelled as examples, with no speed promises.",
+    ],
+    mobile: [
+      phone("lettavo", "shop", "Lettavo's Shop screen: a search field, a Fruit and veg bag at $18, five aisles and Your usual list with tomatoes, spinach and a sourdough loaf. Example prices."),
+      phone("lettavo", "item", "Lettavo's Tomatoes, 500 g screen: a photo of tomatoes in a paper bag, a 2.40 price tag, a quantity of 2 and an Add 2 to basket, $4.80 button. Example prices."),
+      phone("lettavo", "slot", 'Lettavo\'s "When should we come?" screen: a street field, Thursday chosen and four delivery slots, one full and 17:00 to 19:00 picked. Example slots.'),
+      phone("lettavo", "placed", 'Lettavo\'s confirmation: "Thanks, Mira. Your order is in.", order LT-2081 for $46.20, and a timeline from Order placed to Delivered. Example order.'),
+    ],
+    desktop: [
+      page("lettavo", 'Lettavo\'s home page: "Groceries, delivered when it suits you." on a white frosted card over a top-view photo of vegetables in paper bags.'),
+      pic(
+        "lettavo",
+        "desktop-sections",
+        1600,
+        2454,
+        "The rest of Lettavo's home page: six aisle tiles, How it works in three steps on lettuce green, a paper bag at a front door, and a basil footer.",
+      ),
+      pic(
+        "lettavo",
+        "desktop-aisle",
+        1600,
+        1800,
+        "Lettavo's Fruit and veg page: filter chips, twelve items with photos, weights and prices, and a blush basket panel with a Checkout button. Example prices.",
+      ),
+    ],
+    images: [
+      pic(
+        "lettavo",
+        "logo-board",
+        1600,
+        1200,
+        "The Lettavo logo board: lettavo in basil with a tomato for the final o, the tomato app icon, the logo in white on basil, palette and type.",
+        "The logo, its two alternates, the app icon, palette and type.",
+      ),
+      pic(
+        "lettavo",
+        "bags",
+        1600,
+        1200,
+        "Lettavo's packaging laid flat: a basil grocery bag with the white logo and a tomato circle on one corner, a kraft produce bag with a label, and a round seal sticker.",
+        "Grocery bag, produce bag and seal sticker. Flat artwork.",
+      ),
+      pic(
+        "lettavo",
+        "mockup-door",
+        1600,
+        1200,
+        "A stock photo of a full paper grocery bag at a green front door, coloured basil with the white Lettavo logo added.",
+        "A bag at the door. Stock photo with our logo added.",
+      ),
+      pic(
+        "lettavo",
+        "mockup-phone",
+        1600,
+        1200,
+        "A phone showing Lettavo's Shop screen, in front of a blurred photo of vegetables in paper bags.",
+        "The Shop screen on a phone. Illustration over a stock photo.",
+      ),
+      pic(
+        "lettavo",
+        "mockup-table",
+        1600,
+        1200,
+        "An illustration from above of a Lettavo grocery bag, two produce bags and the seal sticker on a white table, with photos of tomatoes, apples and cucumbers.",
+        "Bags and produce, from above. An illustration with stock photos.",
+      ),
+    ],
+    tools: [...DRAWN, "Adobe Stock photos"],
+    made: "2026-11",
+    ai: false,
+  },
   // Designed 23 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Libre Caslon Display, Libre Caslon Text, Karla);
   // stationery, folder and door drawn as flat shapes; no photos, stock or AI.
   {
