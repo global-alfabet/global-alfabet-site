@@ -97,6 +97,190 @@ const page = (slug, alt) => pic(slug, "desktop", 1600, 1000, alt);
 const DRAWN = ["HTML and CSS", "SVG"];
 
 export const library = [
+  // Designed 21 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Syne, Archivo); garments drawn as flat shapes; no
+  // photos, stock or AI.
+  {
+    slug: "jaskel",
+    share: "/library/jaskel/share.jpg",
+    brand: "Jaskel",
+    business: "Fashion boutique",
+    industry: "fashion",
+    kind: "website",
+    summary: "A website and shopping app for a fashion boutique with its own small label, with its logo, bags and swing tags.",
+    choices: [
+      "Black and white with hard, square edges, and one saffron mark per view: the drop number, a tag, the inside of the bag.",
+      "The logo is JASKEL in a wide geometric face, with a cut through the K like a tag's string slot and a saffron square as the full stop.",
+      "Short lines that state facts (\"40 made\"), and try-on bookings next to every piece, with no countdowns.",
+    ],
+    mobile: [
+      appScreen(
+        "jaskel",
+        "new",
+        "Jaskel's New in screen on a phone: a black top half with DROP 04 in saffron, Out now. 6 pieces., and a grid of four drawn pieces on pale grey: a wool overcoat at $320, a boxy cotton shirt at $85, a pleated trouser at $140 and a heavy tee three pack at $70, with a tab bar for New, Shop, Try-on and Bag. Example prices.",
+      ),
+      appScreen(
+        "jaskel",
+        "product",
+        "Jaskel's Wool overcoat screen: a drawn black coat on pale grey with a saffron DROP 04 label, wool and recycled wool, made in a small run of 40, dry clean, colours Black and Stone, sizes XS to XL with L struck through (Sold out in L), $320, and Add to bag and Try it on in the shop buttons. Example prices. Fictional brand.",
+      ),
+      appScreen(
+        "jaskel",
+        "tryon",
+        "Jaskel's Try it on first screen: the wool overcoat in M and L, days Tue 15 to Sat 19 Dec with Thu 17 chosen, times 11:00, 13:30 (chosen), 14:30 (Taken) and 16:00, a box asking Anything we should know?, a Book try-on button and the line We'll have your sizes ready. 30 minutes, no need to buy. Sample times.",
+      ),
+      appScreen(
+        "jaskel",
+        "booked",
+        "Jaskel's confirmation screen: \"See you Thursday\", a black card for a try-on on Thu 17 Dec at 13:30 of the wool overcoat in M and L, Add to calendar and Change buttons, and The shop with a drawn map of fictional streets, 14 Corvell Arcade and the opening hours. Fictional brand. Example booking.",
+      ),
+    ],
+    desktop: [
+      page(
+        "jaskel",
+        "Jaskel's home page on a desktop: a black left half with DROP 04 in saffron and \"Drop 04: the wool coat.\" in large white letters, 40 made. Try it on in the shop or order online., Shop drop 04 and Book a try-on buttons, a drawn black coat on pale grey on the right, and the start of In this drop with six drawn pieces and their prices. Example prices.",
+      ),
+      pic(
+        "jaskel",
+        "desktop-drop",
+        1600,
+        1437,
+        "Jaskel's Drop 04 page on a desktop: DROP 04 in very large black letters with a saffron square, filters for All, Outerwear, Shirts, Trousers and Basics, a grid of six drawn pieces from a wool overcoat at $320 to a wool scarf at $45, each with colour squares and Try on in the shop, and a black side panel: How drops work. Example prices. Fictional brand.",
+      ),
+    ],
+    images: [
+      pic(
+        "jaskel",
+        "logo-board",
+        1600,
+        1200,
+        "The Jaskel logo board: JASKEL in wide black capitals with a cut through the K and a saffron square full stop; a white J with the saffron square in a black square; the wordmark in white on black; the app icon at three sizes; the six colours and the two typefaces.",
+        "The logo, its two alternates, the app icon, palette and type.",
+      ),
+      pic(
+        "jaskel",
+        "bags-tags",
+        1600,
+        1200,
+        "An illustration of Jaskel's packaging: a black paper shopping bag, open to show saffron inside, with the white wordmark and the J square on its side; a saffron swing tag with the wordmark and a large 04, and its white back with the piece, colour, size, $320 and Made in a run of 40; white tissue with small saffron squares and a round black J sticker; and the bag's front face, flat.",
+        "Bag, swing tag, tissue and sticker. An illustration, drawn in code.",
+      ),
+      pic(
+        "jaskel",
+        "mockup-bag",
+        1600,
+        1200,
+        "An illustration of an open black Jaskel bag, saffron inside, standing on a pale concrete step in hard light with a long shadow, beside the line Fewer clothes. Better ones.",
+        "The bag on a step. An illustration, drawn in code.",
+      ),
+      pic(
+        "jaskel",
+        "mockup-tag",
+        1600,
+        1200,
+        "An illustration of a saffron Jaskel swing tag with a large 04, hanging by a black string from the button on the cuff of a black wool sleeve, beside the line Made once. 40 of them.",
+        "The swing tag on a coat sleeve. An illustration, drawn in code.",
+      ),
+      pic(
+        "jaskel",
+        "mockup-phone",
+        1600,
+        1200,
+        "An illustration of a hand in a black sleeve holding a phone with Jaskel's Wool overcoat screen, in front of a clothes rail with three coats out of focus, and the line See it on the rail. Or on your phone. Example prices.",
+        "Phone and rail. An illustration, drawn in code.",
+      ),
+    ],
+    tools: DRAWN,
+    made: "2026-11",
+    ai: false,
+  },
+  // Designed 21 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Marcellus, Pinyon Script, Mulish); no photos, stock
+  // or AI.
+  {
+    slug: "nellowyn",
+    share: "/library/nellowyn/share.jpg",
+    brand: "Nellowyn Events",
+    business: "Event planner",
+    industry: "events",
+    kind: "website",
+    summary: "A website and planning app for a two-person event planner, with its logo, an invitation suite and a table card.",
+    choices: [
+      "Powder blue and apricot cream on porcelain, with mulberry for every word and button: soft, and still easy to read.",
+      "The logo is NELLOWYN in calm classical capitals, with one thin ribbon line that loops under the W and ends in a knot, and events in script.",
+      "Script on one or two words a view only. Everything people need to read quickly is in a plain sans serif.",
+    ],
+    mobile: [
+      appScreen(
+        "nellowyn",
+        "home",
+        "Nellowyn's home screen on a phone: \"Plan it together.\" with together in script, the line Weddings and celebrations for 20 to 150 guests, three soft cards for Full planning, Part planning and On the day, a Tell us about your day button and a tab bar for Home, Plan, Ideas and Contact.",
+      ),
+      appScreen(
+        "nellowyn",
+        "plan",
+        "Nellowyn's plan screen for an example couple: Sam and Ruth, 12 June, 28 weeks to go, and a powder-blue timeline: Venue booked: Wrensby Barn (ticked), Caterer tasting, Sat 9 Jan (next), Send invitations by 13 Mar, Final guest numbers by 15 May, then a card: Next from us: three florist quotes by Friday. Example plan. Fictional couple and venue.",
+      ),
+      appScreen(
+        "nellowyn",
+        "enquire",
+        "Nellowyn's Tell us about your day screen: event chips with Wedding chosen, a date or season box, a guest slider set at 80 between 20 and 150, help chips with Venue and Flowers chosen, an Anything else? box, a Send to Nellowyn button and the line We reply within two working days. Example enquiry.",
+      ),
+      appScreen(
+        "nellowyn",
+        "thanks",
+        "Nellowyn's confirmation screen: \"Thank you, Sam.\", an apricot card: We'll reply by Tue 15 Dec, a card offering a free 20-minute call on Mon 14 Dec at 10:00, 12:30 or 17:00 with a Book a call button, and The studio at 6 Pellory Mews with a drawn map, visits by appointment. Fictional studio. Example enquiry.",
+      ),
+    ],
+    desktop: [
+      page(
+        "nellowyn",
+        "Nellowyn's home page on a desktop: \"Plan it together, then let us take it from here.\" with together in script, Tell us about your day and How we plan buttons, and an apricot panel with an illustration of a long dressed table with a powder-blue runner, apricot napkins and thin mulberry candles, above the start of three planning cards.",
+      ),
+      pic(
+        "nellowyn",
+        "desktop-prices",
+        1600,
+        1121,
+        "Nellowyn's Planning and prices page on a desktop: three rounded cards for On the day from $900, Part planning from $2,200 and Full planning from $4,500, each with what's included, an apricot card: Not sure which one? Book a free 20-minute call, and the note that venue, food and suppliers are paid separately. Example prices. Fictional studio.",
+      ),
+    ],
+    images: [
+      pic(
+        "nellowyn",
+        "logo-board",
+        1600,
+        1200,
+        "The Nellowyn Events logo board: NELLOWYN in mulberry classical capitals with a thin ribbon line looping under the W and ending in a knot, and events in script beneath; an N monogram in a ribbon loop on apricot; the wordmark in porcelain on mulberry; the app icon at three sizes; the five colours and the three typefaces.",
+        "The logo, its two alternates, the app icon, palette and type.",
+      ),
+      pic(
+        "nellowyn",
+        "mockup-invite",
+        1600,
+        1200,
+        "An illustration of an invitation suite on linen: an apricot invitation with Sam and Ruth in script, Saturday 12 June at Wrensby Barn, a powder-blue reply card, an envelope sealed with the N monogram, and a length of mulberry ribbon. Fictional couple and venue.",
+        "Invitation, reply card and seal. An illustration, drawn in code.",
+      ),
+      pic(
+        "nellowyn",
+        "mockup-folder",
+        1600,
+        1200,
+        "An illustration of a phone showing Nellowyn's plan screen for Sam and Ruth, lying on a mulberry planning folder with the porcelain wordmark, beside the line Your whole plan, together. Example plan.",
+        "Phone on the planning folder. An illustration, drawn in code.",
+      ),
+      pic(
+        "nellowyn",
+        "mockup-table",
+        1600,
+        1200,
+        "An illustration of a folded porcelain table card reading Table four, with the ribbon line and Sam and Ruth, 12 June, on a powder-blue runner beside a plate with an apricot napkin and three thin mulberry candles.",
+        "The table card. An illustration, drawn in code.",
+      ),
+    ],
+    tools: DRAWN,
+    made: "2026-11",
+    ai: false,
+  },
   // Designed 20 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Bagel Fat One, Outfit); no photos, stock or AI.
   {
     slug: "frumbo",
