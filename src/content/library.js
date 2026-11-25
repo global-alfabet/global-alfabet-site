@@ -120,7 +120,7 @@ export const library = [
       "Every build is shown in stages and weeks, in plain building words, with example timelines and no promises about dates or prices.",
     ],
     mobile: [
-      phone("ostrak", "build", 'Ostrak\'s Your build screen: a rear extension, 14 weeks (example), a stage bar at Roof, week 6 of 14, "Roof trusses arrive Thursday." and a 3D illustration at week 6.'),
+      phone("ostrak", "build", 'Ostrak\'s Your build screen: a rear extension, 14 weeks (example), a stage bar at Roof, week 6 of 14, "Roof trusses arrive Tuesday." and a 3D illustration at week 6.'),
       phone("ostrak", "plan", "Ostrak's Plan screen for the week of Mon 18 Jan: five day rows from wall plates to no work at the weekend, a side-gate note and the site lead, Tomas."),
       phone("ostrak", "choices", 'Ostrak\'s Choices screen: "Two choices due Fri 22 Jan", window frames in charcoal or white, one large or two small roof lights (+$420), and an agreed $85 socket. Example prices.'),
       phone("ostrak", "request", 'Ostrak\'s Request a site visit form: "Tell us about your project.", five project chips, rough size, start date, street and drawings, and an amber button.'),
@@ -215,7 +215,7 @@ export const library = [
     ],
     mobile: [
       phone("arbekk", "projects", "Arbekk's Projects screen: filter chips with ALL marked by a red square, and five fictional projects with white model thumbnails, from 014 Courtyard house to 006 Village hall extension."),
-      phone("arbekk", "project", "Arbekk's 014 Courtyard house screen: a white 3D model, a facts table (house, 186 m², sloping garden plot, four rooms, planning drawings) and a Turn the model button."),
+      phone("arbekk", "project", "Arbekk's 014 Courtyard house screen: a white 3D model, a facts table (house, 186 m², sloping garden plot, five rooms around a courtyard, planning drawings) and a Turn the model button."),
       phone("arbekk", "viewer", "Arbekk's model viewer: the courtyard house cut at ground level, with a red dot at the entrance, and CUT AT and SUN controls set to GROUND and 17:00."),
       phone("arbekk", "start", 'Arbekk\'s Start a project form: "Tell us what you\'re planning.", five monospace chips, three fields with underlines and a square black Send button.'),
     ],
