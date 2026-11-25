@@ -21,25 +21,33 @@ const SHARE_IMAGE = {
 };
 
 // Titles show as "<title> · Global Alfabet". Keep descriptions under about 160 characters.
+// `updated` (YYYY-MM-DD) is the day the page last changed on the live site: the sitemap's lastmod. Change it in the
+// same pull request as the page (its .jsx file or the content it shows). It is written here, not taken from git at
+// build time, because Netlify's build may clone without full history, and a date that moved on every build would
+// tell search engines nothing. Pages that list posts or library items also move to the newest one (see lastmodOf).
 const pages = {
   "/": {
+    updated: "2026-11-17",
     fullTitle: "Global Alfabet · Digital products and web design studio",
     description:
       "Global Alfabet builds Alfa Maps, 3D estates for property developers, and Alfa Finda, a search for businesses and places to visit, and designs websites.",
   },
   "/products": {
+    updated: "2026-11-16",
     title: productNames(),
     description:
       "Alfa Maps turns a layout plan into a 3D estate buyers explore on their phone. Alfa Finda searches businesses and places to visit.",
     crumb: "Products",
   },
   "/studio": {
+    updated: "2026-11-16",
     fullTitle: "Global Alfabet Studio · Design and development",
     description:
       "Global Alfabet Studio designs apps, websites, logos, ads, videos and 3D renders for businesses. Browse our work and start a project.",
     crumb: "Studio",
   },
   "/studio/library": {
+    updated: "2026-11-16",
     title: "Studio library",
     description:
       "Concept work from Global Alfabet Studio for fictional brands: app screens, websites on phone and desktop, logo directions and 3D renders.",
@@ -54,18 +62,21 @@ const pages = {
     crumb: "Blog",
   },
   "/about": {
+    updated: "2026-11-16",
     fullTitle: "About Global Alfabet · Founder Julius Choga",
     description:
       `Global Alfabet is a technology company founded by Julius Choga. It builds ${productNames(products.filter((p) => p.id !== "account"))}, and designs and builds for businesses.`,
     crumb: "About",
   },
   "/contact": {
+    updated: "2026-11-16",
     title: "Contact",
     description:
       "Book an Alfa Maps demo, list your business on Alfa Finda, start a website project or get help with a Global Alfabet product.",
     crumb: "Contact",
   },
   "/privacy": {
+    updated: "2026-11-05",
     title: "Privacy",
     description: "How the Global Alfabet website handles the information you send us.",
     crumb: "Privacy",
@@ -410,16 +421,47 @@ export function headTags(meta) {
   return tags.filter(Boolean).join("\n    ");
 }
 
+// lastmod dates are compared as text, so a mistyped one would be silently wrong: stop the build instead.
+const DAY = /^\d{4}-\d{2}-\d{2}$/;
+// The date must also exist: 2026-13-45 or 2026-02-30 fail, because they don't survive a round trip through Date.
+function checkedDay(value, where) {
+  const date = new Date(`${value}T00:00:00Z`);
+  const real = DAY.test(value) && !Number.isNaN(date.getTime()) && date.toISOString().slice(0, 10) === value;
+  if (!real) throw new Error(`${where} needs a real date written as YYYY-MM-DD, not "${value}".`);
+  return value;
+}
+const newest = (dates) => dates.filter(Boolean).reduce((a, b) => (a > b ? a : b), "") || null;
+
+/** A library item's last change: `updated`, or the first day of the month it was made (`made` is "YYYY-MM").
+ * Items without `updated` still work: their date never lies in the future and doesn't change between builds. */
+function itemLastmod(item) {
+  if (item.updated) return checkedDay(item.updated, `Library item ${item.slug}: updated`);
+  return checkedDay(/^\d{4}-\d{2}$/.test(item.made) ? `${item.made}-01` : item.made, `Library item ${item.slug}: made`);
+}
+
+/** The sitemap's lastmod for one address, or null. */
+function lastmodOf(path) {
+  const post = path.startsWith("/blog/") ? postBySlug[path.slice(6)] : null;
+  if (post) return post.updated || post.date;
+  const item = path.startsWith(LIBRARY_PATH) ? itemBySlug[path.slice(LIBRARY_PATH.length)] : null;
+  if (item) return itemLastmod(item);
+  const latestPost = livePosts[0]?.date;
+  if (path === "/blog") return latestPost;
+  const page = pages[path];
+  const own = page?.updated ? checkedDay(page.updated, `Page ${path}: updated`) : null;
+  // The home page shows the newest posts; the Studio page and the library count and list the library items.
+  if (path === "/") return newest([own, latestPost]);
+  if (path === "/studio" || path === "/studio/library") return newest([own, ...library.map(itemLastmod)]);
+  return own;
+}
+
 /** sitemap.xml: every page that search engines should index. */
 export function sitemap() {
-  const latestPost = livePosts[0]?.date;
   const entries = routes
     .map((path) => ({ path, meta: getMeta(path) }))
     .filter(({ meta }) => !meta.noindex)
     .map(({ path }) => {
-      const post = path.startsWith("/blog/") ? postBySlug[path.slice(6)] : null;
-      const item = path.startsWith(LIBRARY_PATH) ? itemBySlug[path.slice(LIBRARY_PATH.length)] : null;
-      const lastmod = post ? post.updated || post.date : path === "/blog" ? latestPost : item ? item.made : null;
+      const lastmod = lastmodOf(path);
       return `  <url><loc>${absolute(path)}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ""}</url>`;
     });
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.join("\n")}\n</urlset>\n`;
