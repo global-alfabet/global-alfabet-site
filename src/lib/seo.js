@@ -423,8 +423,11 @@ export function headTags(meta) {
 
 // lastmod dates are compared as text, so a mistyped one would be silently wrong: stop the build instead.
 const DAY = /^\d{4}-\d{2}-\d{2}$/;
+// The date must also exist: 2026-13-45 or 2026-02-30 fail, because they don't survive a round trip through Date.
 function checkedDay(value, where) {
-  if (!DAY.test(value)) throw new Error(`${where} needs a date written as YYYY-MM-DD, not "${value}".`);
+  const date = new Date(`${value}T00:00:00Z`);
+  const real = DAY.test(value) && !Number.isNaN(date.getTime()) && date.toISOString().slice(0, 10) === value;
+  if (!real) throw new Error(`${where} needs a real date written as YYYY-MM-DD, not "${value}".`);
   return value;
 }
 const newest = (dates) => dates.filter(Boolean).reduce((a, b) => (a > b ? a : b), "") || null;

@@ -27,6 +27,8 @@ public/brand/            the logo kit (SVG + PNG). Do not edit by hand: regenera
 - SEO: every page is prerendered at build time and hydrated in the browser. A new route also needs an entry in
   `pages` in `src/lib/seo.js` (title under 60 characters, description under 160). Components must render the same on
   the server and in the browser: read `window`/`document` only inside effects.
+  Sitemap dates: a library item (`updated` in `src/content/library.js`) or a page (`updated` in `pages` in
+  `src/lib/seo.js`) that changes gets its `updated` set to the merge day (YYYY-MM-DD) in the same pull request.
 - Blog posts go live on their `date` (YYYY-MM-DD, in America/Indiana/Indianapolis time), so a month of posts can be
   merged at once. A later date leaves the post out of the build entirely (blog, home page, its page, sitemap,
   llms.txt). The date is fixed at build time (scripts/blog-cutoff.js); `.github/workflows/daily-rebuild.yml` checks
