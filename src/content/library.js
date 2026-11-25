@@ -20,7 +20,9 @@
 //   compare    optional: two pictures of the same view, compared with a slider:
 //              { before: { src, alt, label }, after: { src, alt, label }, width, height, caption }
 //   tools      what it was made with
-//   made       "YYYY-MM"
+//   made       "YYYY-MM": the month we made it, shown on the page
+//   updated    optional "YYYY-MM-DD": the day the item's page last changed on the live site (the day its pull request
+//              merged). The sitemap's lastmod. Without it, the first day of `made`. Change it when you change the item.
 //   ai         true if any picture was made with AI-assisted tools
 //   label      optional: replaces "Concept work for a fictional brand." when that isn't the right words
 //   share      optional: a 1200x630 JPG for link previews (WhatsApp, LinkedIn…); without it the site's own picture
@@ -181,6 +183,7 @@ export const library = [
     ],
     tools: DRAWN,
     made: "2026-11",
+    updated: "2026-11-23",
     ai: false,
   },
   // Designed 23 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Hanken Grotesk, DM Mono); the bottles are drawn
@@ -281,6 +284,7 @@ export const library = [
     ],
     tools: [...DRAWN, "three.js"],
     made: "2026-11",
+    updated: "2026-11-23",
     ai: false,
   },
   // Designed 22 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Big Shoulders Display, Barlow, Barlow Semi
@@ -350,6 +354,7 @@ export const library = [
     ],
     tools: DRAWN,
     made: "2026-11",
+    updated: "2026-11-23",
     ai: false,
   },
   // Designed 22 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Source Serif 4, Source Sans 3); ledger card,
@@ -419,6 +424,7 @@ export const library = [
     ],
     tools: DRAWN,
     made: "2026-11",
+    updated: "2026-11-23",
     ai: false,
   },
   // Designed 21 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Syne, Archivo); garments drawn as flat shapes; no
@@ -515,6 +521,7 @@ export const library = [
     ],
     tools: DRAWN,
     made: "2026-11",
+    updated: "2026-11-23",
     ai: false,
   },
   // Designed 21 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Marcellus, Pinyon Script, Mulish); no photos, stock
@@ -603,6 +610,7 @@ export const library = [
     ],
     tools: DRAWN,
     made: "2026-11",
+    updated: "2026-11-23",
     ai: false,
   },
   // Designed 20 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Bagel Fat One, Outfit); no photos, stock or AI.
@@ -698,6 +706,7 @@ export const library = [
     ],
     tools: DRAWN,
     made: "2026-11",
+    updated: "2026-11-23",
     ai: false,
   },
   // Designed 20 Nov 2026 in HTML, CSS, SVG and three.js, with SIL OFL fonts (Cormorant Garamond, Jost); no photos,
@@ -802,6 +811,7 @@ export const library = [
     ],
     tools: ["HTML and CSS", "SVG", "three.js"],
     made: "2026-11",
+    updated: "2026-11-23",
     ai: false,
   },
   // Designed 18 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Newsreader, Work Sans); no photos, stock or AI.
@@ -889,6 +899,7 @@ export const library = [
     ],
     tools: DRAWN,
     made: "2026-11",
+    updated: "2026-11-18",
     ai: false,
   },
   // Designed 18 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Quicksand, Atkinson Hyperlegible); no photos,
@@ -977,6 +988,7 @@ export const library = [
     ],
     tools: DRAWN,
     made: "2026-11",
+    updated: "2026-11-18",
     ai: false,
   },
   // Designed 17 Nov 2026 in HTML, CSS, SVG and three.js, with SIL OFL fonts; no photos, stock or AI.
@@ -1072,6 +1084,7 @@ export const library = [
     ],
     tools: ["HTML and CSS", "SVG", "three.js"],
     made: "2026-11",
+    updated: "2026-11-17",
     ai: false,
   },
   // Designed 17 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts; no photos, stock or AI.
@@ -1159,6 +1172,7 @@ export const library = [
     ],
     tools: DRAWN,
     made: "2026-11",
+    updated: "2026-11-17",
     ai: false,
   },
   {
@@ -1190,6 +1204,7 @@ export const library = [
     images: [],
     tools: DRAWN,
     made: "2026-11",
+    updated: "2026-11-16",
     ai: false,
   },
   {
@@ -1221,6 +1236,7 @@ export const library = [
     images: [],
     tools: DRAWN,
     made: "2026-11",
+    updated: "2026-11-16",
     ai: false,
   },
   {
@@ -1300,6 +1316,7 @@ export const library = [
     ],
     tools: ["SVG", "potrace"],
     made: "2026-11",
+    updated: "2026-11-16",
     ai: false,
   },
   {
@@ -1400,6 +1417,7 @@ export const library = [
     },
     tools: ["three.js"],
     made: "2026-11",
+    updated: "2026-11-16",
     ai: false,
     label: "Concept visual for a fictional home.",
   },
@@ -1432,6 +1450,7 @@ export const library = [
     images: [],
     tools: DRAWN,
     made: "2026-11",
+    updated: "2026-11-16",
     ai: false,
   },
   {
@@ -1468,6 +1487,7 @@ export const library = [
     images: [],
     tools: DRAWN,
     made: "2026-11",
+    updated: "2026-11-16",
     ai: false,
   },
   {
@@ -1499,6 +1519,7 @@ export const library = [
     images: [],
     tools: DRAWN,
     made: "2026-11",
+    updated: "2026-11-16",
     ai: false,
   },
   {
@@ -1525,6 +1546,7 @@ export const library = [
     images: [],
     tools: DRAWN,
     made: "2026-11",
+    updated: "2026-11-16",
     ai: false,
   },
   {
@@ -1556,6 +1578,7 @@ export const library = [
     images: [],
     tools: DRAWN,
     made: "2026-11",
+    updated: "2026-11-16",
     ai: false,
   },
   {
@@ -1582,6 +1605,7 @@ export const library = [
     images: [],
     tools: DRAWN,
     made: "2026-11",
+    updated: "2026-11-16",
     ai: false,
   },
   {
@@ -1613,6 +1637,7 @@ export const library = [
     images: [],
     tools: DRAWN,
     made: "2026-11",
+    updated: "2026-11-16",
     ai: false,
   },
 ];
