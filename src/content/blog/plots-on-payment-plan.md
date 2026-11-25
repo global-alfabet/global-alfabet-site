@@ -28,7 +28,7 @@ For every plot and every plan, show:
 3. **Deposit.** As an amount, not only a percentage. "10% deposit" means little until the buyer sees the figure for their plot.
 4. **Other upfront costs.** Agreement fees, admin fees, legal or transfer costs you charge: name each one and say when it is paid.
 5. **Monthly payment and term.** The amount, how many months, and whether the payment is fixed.
-6. **Total paid.** Deposit plus fees plus every monthly payment. It is the number that lets buyers compare plans, and some consumer credit rules ask lenders to give a single figure for the total cost of credit before signing.
+6. **Total paid.** Deposit plus fees plus every monthly payment. It is the number that lets buyers compare plans. Some consumer credit rules go further, and ask lenders to show the number, size and frequency of payments and a yearly rate that covers all costs before signing.
 
 Add one line on interest: whether the plan charges it, the yearly rate, and whether it can change. Longer terms mean lower monthly payments but more interest in total, so buyers need both figures to choose.
 
@@ -113,4 +113,4 @@ Every amount and date, the interest rate, what happens with late or missed payme
 
 - Consumer Financial Protection Bureau, [What is amortization and how could it affect my loan?](https://www.consumerfinance.gov/ask-cfpb/what-is-amortization-and-how-could-it-affect-my-loan-en-771/) (read 25 November 2026): fixed payments cover interest and principal; early payments are mostly interest; a longer term means more interest in total.
 - Consumer Financial Protection Bureau, [What is a contract for deed?](https://www.consumerfinance.gov/ask-cfpb/what-is-a-contract-for-deed-en-2149/) (read 25 November 2026): in this kind of instalment sale the seller keeps legal title until all payments are made, and buyers who miss payments can lose what they have paid.
-- European Commission, Your Europe, [Consumer credits and loans](https://europa.eu/youreurope/citizens/consumers/financial-products-and-services/consumer-credits-and-loans) (last checked by the publisher 30 June 2026, read 25 November 2026): an example of the information lenders must give before signing, including the number, frequency and size of payments and a single figure for the total cost of credit.
+- European Commission, Your Europe, [Consumer credits and loans](https://europa.eu/youreurope/citizens/consumers/financial-products-and-services/consumer-credits-and-loans) (last checked by the publisher 30 June 2026, read 25 November 2026): an example of the information lenders must give before signing, including the number, frequency and size of payments and the annual percentage rate (APR), a yearly rate that covers interest and other costs.
