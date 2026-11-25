@@ -63,7 +63,9 @@ export const countOf = (kind, n) => (n === 1 ? `One ${kind.one}` : `${n} ${kind.
 
 export const industries = [
   { id: "events", label: "Events" },
+  { id: "architecture", label: "Architecture" },
   { id: "beauty", label: "Beauty" },
+  { id: "construction", label: "Construction" },
   { id: "education", label: "Education" },
   { id: "engineering", label: "Engineering" },
   { id: "fashion", label: "Fashion" },
@@ -99,6 +101,203 @@ const page = (slug, alt) => pic(slug, "desktop", 1600, 1000, alt);
 const DRAWN = ["HTML and CSS", "SVG"];
 
 export const library = [
+  // Brands 17 and 18 (designed 25 Nov 2026). Kept together at the top of the list so they rebase cleanly.
+  // Ostrak Build: drawn in HTML, CSS and SVG with SIL OFL fonts (Anybody, Public Sans); the extension is a three.js
+  // model; free Adobe Stock photos licensed under the Standard licence (Adobe backup LOG, 23 Nov 2026): 446725602
+  // (phone mockup, Extensions card), 268328877 (folder mockup), 404836328 (Renovations card), 359371422 (New builds
+  // card). The photos only show the kind of work and carry no safety wording. 277383537 not used. No AI.
+  {
+    slug: "ostrak",
+    share: "/library/ostrak/share.jpg",
+    brand: "Ostrak Build",
+    business: "Building contractor",
+    industry: "construction",
+    kind: "app",
+    summary: "A client app and website for a building contractor, with its logo, 3D build stages, a site board and a quote folder.",
+    choices: [
+      "Concrete and white first, with charcoal for text and one deep plant amber for bars, blocks and buttons, never for text on white.",
+      "The logo is OSTRAK in wide, heavy capitals over an amber lintel bar, with BUILD set small inside the bar.",
+      "Every build is shown in stages and weeks, in plain building words, with example timelines and no promises about dates or prices.",
+    ],
+    mobile: [
+      phone("ostrak", "build", 'Ostrak\'s Your build screen: a rear extension, 14 weeks (example), a stage bar at Roof, week 6 of 14, "Roof trusses arrive Tuesday." and a 3D illustration at week 6.'),
+      phone("ostrak", "plan", "Ostrak's Plan screen for the week of Mon 18 Jan: five day rows from wall plates to no work at the weekend, a side-gate note and the site lead, Tomas."),
+      phone("ostrak", "choices", 'Ostrak\'s Choices screen: "Two choices due Fri 22 Jan", window frames in charcoal or white, one large or two small roof lights (+$420), and an agreed $85 socket. Example prices.'),
+      phone("ostrak", "request", 'Ostrak\'s Request a site visit form: "Tell us about your project.", five project chips, rough size, start date, street and drawings, and an amber button.'),
+    ],
+    desktop: [
+      page("ostrak", 'Ostrak\'s home page: "Extensions and renovations, built week by week." in wide heavy type on concrete, beside a 3D illustration of a finished rear extension.'),
+      pic(
+        "ostrak",
+        "desktop-sections",
+        1600,
+        1964,
+        "The rest of Ostrak's home page: three cards with stock photos (extensions, renovations, new builds), four steps with big amber numbers, a charcoal band and the footer.",
+      ),
+      pic(
+        "ostrak",
+        "desktop-extensions",
+        1600,
+        2058,
+        "Ostrak's Rear extensions page: three 3D illustrations (walls up, roof on, finished), what a typical build includes, and an amber 14-week example timeline.",
+      ),
+    ],
+    images: [
+      pic(
+        "ostrak",
+        "logo-board",
+        1600,
+        1200,
+        "The Ostrak Build logo board: OSTRAK over an amber lintel bar with BUILD, the charcoal lintel mark with a wide O, the logo on charcoal, palette and type.",
+        "The logo, its two alternates, the app icon, palette and type.",
+      ),
+      pic(
+        "ostrak",
+        "render-stages",
+        1600,
+        1200,
+        "Three 3D illustrations of the same rear extension from one camera: block walls up, the flat roof on, and finished with sliding doors and a table inside.",
+        "Walls up, roof on, finished. 3D illustration of a fictional project.",
+      ),
+      pic(
+        "ostrak",
+        "render-corner",
+        1600,
+        1200,
+        "A high corner 3D illustration of the finished single-storey rear extension, with its roof light and sliding doors, on a plain two-storey house.",
+        "The finished extension from above. 3D illustration of a fictional project.",
+      ),
+      pic(
+        "ostrak",
+        "mockup-board",
+        1600,
+        1200,
+        'An illustration of a charcoal Ostrak site board on a timber fence: the lintel mark, the logo, "Rear extension in progress." and hello@ostrak.example.',
+        "The site board. An illustration, drawn in code.",
+      ),
+      pic(
+        "ostrak",
+        "mockup-phone",
+        1600,
+        1200,
+        "A stock photo of a hard hat, plans and a tape measure on a desk, with a phone showing Ostrak's Your build screen added.",
+        "The build on a phone. Stock photo with our screen added.",
+      ),
+      pic(
+        "ostrak",
+        "mockup-folder",
+        1600,
+        1200,
+        "A stock photo of hard hats, gloves and a tape measure on a concrete floor, with a charcoal Ostrak quote folder and a printed example weekly plan added.",
+        "Quote folder and weekly plan. Stock photo with our folder added.",
+      ),
+    ],
+    tools: [...DRAWN, "three.js", "Adobe Stock photos"],
+    made: "2026-11",
+    ai: false,
+  },
+  // Arbekk Studio ("Studio", never "Architects": a protected title in many countries): drawn in HTML, CSS and SVG with
+  // SIL OFL fonts (Schibsted Grotesk, JetBrains Mono); the white models are three.js; free Adobe Stock photos licensed
+  // under the Standard licence (Adobe backup LOG, 23 Nov 2026): 637609417 (mood image on the home page, captioned as
+  // stock) and 182347520 (phone mockup, turned black and white). Stock is never shown on a project. No AI.
+  {
+    slug: "arbekk",
+    share: "/library/arbekk/share.jpg",
+    brand: "Arbekk Studio",
+    business: "Architecture studio",
+    industry: "architecture",
+    kind: "website",
+    summary: "A website and project app for an architecture studio, with its logo, white 3D models, a drawing sheet and stationery.",
+    choices: [
+      "Black, white and grey, with square corners and square buttons; the only colour is a small red square, never a button or a band.",
+      "The logo is arbekk in a tight lowercase grotesque, with a small red square above the last k, like a marker on a site plan.",
+      "Projects are white card-style 3D models, numbered and named by type, with facts in small monospace labels and no claims about awards or energy.",
+    ],
+    mobile: [
+      phone("arbekk", "projects", "Arbekk's Projects screen: filter chips with ALL marked by a red square, and five fictional projects with white model thumbnails, from 014 Courtyard house to 006 Village hall extension."),
+      phone("arbekk", "project", "Arbekk's 014 Courtyard house screen: a white 3D model, a facts table (house, 186 m², sloping garden plot, five rooms around a courtyard, planning drawings) and a Turn the model button."),
+      phone("arbekk", "viewer", "Arbekk's model viewer: the courtyard house cut at ground level, with a red dot at the entrance, and CUT AT and SUN controls set to GROUND and 17:00."),
+      phone("arbekk", "start", 'Arbekk\'s Start a project form: "Tell us what you\'re planning.", five monospace chips, three fields with underlines and a square black Send button.'),
+    ],
+    desktop: [
+      page("arbekk", 'Arbekk\'s home page: "Houses and small buildings, drawn from the site up." in very large black type, with a white 3D model of the courtyard house casting long shadows.'),
+      pic(
+        "arbekk",
+        "desktop-sections",
+        1600,
+        2360,
+        "The rest of Arbekk's home page: three square white model stills, four process steps under hairlines, a black and white stock mood image and a paper footer.",
+      ),
+      pic(
+        "arbekk",
+        "desktop-courtyard",
+        1600,
+        3112,
+        "Arbekk's 014 Courtyard house page: a wide model still, the facts table, an aerial view, a section, a drawn ground floor plan and the model viewer panel.",
+      ),
+    ],
+    images: [
+      pic(
+        "arbekk",
+        "logo-board",
+        1600,
+        1200,
+        "The Arbekk Studio logo board: arbekk in black with a small red square, the black tile with a white a, the logo on black, the mono ARBEKK STUDIO lockup, palette and type.",
+        "The logo, its alternates, the mono lockup, palette and type.",
+      ),
+      pic(
+        "arbekk",
+        "render-hero",
+        1600,
+        1200,
+        "A 3D illustration of the white massing model of 014 Courtyard house, stepping down a slope, with long low-sun shadows and white lollipop trees.",
+        "014 Courtyard house in low sun. 3D illustration of a fictional project.",
+      ),
+      pic(
+        "arbekk",
+        "render-section",
+        1600,
+        1200,
+        "A 3D illustration of the courtyard house model cut through the courtyard, with the cut walls and roofs in solid black.",
+        "Section through the courtyard. 3D illustration of a fictional project.",
+      ),
+      pic(
+        "arbekk",
+        "render-sun",
+        1600,
+        1200,
+        "Three 3D illustrations of the courtyard house model from one camera, with the sun at 09:00, 12:00 and 17:00.",
+        "Sun study. 3D illustration of a fictional project; sun positions are illustrative.",
+      ),
+      pic(
+        "arbekk",
+        "mockup-sheet",
+        1600,
+        1200,
+        "An illustration of an A2 drawing sheet pinned to a pale wall: the ground floor plan, a section, and a title block reading ARBEKK, 014 COURTYARD HOUSE, FICTIONAL PROJECT.",
+        "The drawing sheet. An illustration, drawn in code.",
+      ),
+      pic(
+        "arbekk",
+        "mockup-phone",
+        1600,
+        1200,
+        "A black and white stock photo of hands at a desk with a white card model and drawings, with a phone showing Arbekk's model viewer added.",
+        "The model viewer on a phone. Stock photo with our screen added.",
+      ),
+      pic(
+        "arbekk",
+        "mockup-stationery",
+        1600,
+        1200,
+        "An illustration of Arbekk's stationery: a letterhead with the mono lockup, a business card front and back, and a compliments slip.",
+        "Letterhead, business card and compliments slip. An illustration, drawn in code.",
+      ),
+    ],
+    tools: [...DRAWN, "three.js", "Adobe Stock photos"],
+    made: "2026-11",
+    ai: false,
+  },
   // Designed 23 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Libre Caslon Display, Libre Caslon Text, Karla);
   // stationery, folder and door drawn as flat shapes; no photos, stock or AI.
   {
