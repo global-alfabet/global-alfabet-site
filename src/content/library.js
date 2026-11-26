@@ -65,6 +65,7 @@ export const industries = [
   { id: "events", label: "Events" },
   { id: "beauty", label: "Beauty" },
   { id: "education", label: "Education" },
+  { id: "energy", label: "Energy" },
   { id: "engineering", label: "Engineering" },
   { id: "fashion", label: "Fashion" },
   { id: "finance", label: "Finance" },
@@ -73,6 +74,7 @@ export const industries = [
   { id: "health", label: "Health" },
   { id: "hospitality", label: "Hotels and travel" },
   { id: "legal", label: "Legal" },
+  { id: "logistics", label: "Logistics" },
   { id: "property", label: "Property" },
   { id: "retail", label: "Retail" },
 ];
@@ -99,6 +101,175 @@ const page = (slug, alt) => pic(slug, "desktop", 1600, 1000, alt);
 const DRAWN = ["HTML and CSS", "SVG"];
 
 export const library = [
+  // Brands 19 and 20 (designed 26 Nov 2026). Kept together at the top of the list, like Ostrak and Arbekk (PR #44).
+  // Skarvo: drawn in HTML, CSS and SVG with SIL OFL fonts (Exo 2, Instrument Sans); logo, van and map drawn in code;
+  // free Adobe Stock photos licensed under the Standard licence (Adobe backup LOG, 23 Nov 2026): 980807027 (home page
+  // hero, captioned as stock), 1095431492 (business band, captioned), 450469085 (label mockup, cropped above the
+  // numbers on the glass). 301642815 and 425912788 not used; 374737303 dropped by marketing. No AI.
+  {
+    slug: "skarvo",
+    share: "/library/skarvo/share.jpg",
+    brand: "Skarvo",
+    business: "Courier",
+    industry: "logistics",
+    kind: "app",
+    summary: "A booking and tracking app and website for a same-day courier, with its logo, a drawn map, the van livery and a shipping label.",
+    choices: [
+      "White and fog first, with night navy for text and one signal orange for the parcel, slashes, route and buttons, never for text on white.",
+      "The logo is SKARVO in heavy italic capitals, with the last O a tilted orange parcel and one white tape line across it.",
+      "Times, sizes and prices in plain numbers, every one labelled as an example, with no promises about speed or cover.",
+    ],
+    mobile: [
+      phone("skarvo", "send", 'Skarvo\'s Send a parcel screen: collect from and deliver to fields, Small, Medium and Large size chips with Medium picked, Today $9.50 and Tomorrow $6.00 (example prices) and an orange Book collection button.'),
+      phone("skarvo", "track", "Skarvo's Track screen for SK 4821 7730: a drawn map of unnamed streets with an orange route and a navy van, arriving between 14:00 and 15:00, a timeline at Out for delivery and Sam, the driver."),
+      phone("skarvo", "delivered", 'Skarvo\'s Delivered screen: a navy tick, "Delivered at 14:36.", left with reception, signed by Ana, and a drawn delivery photo of a parcel at a door, marked as an example.'),
+      phone("skarvo", "business", "Skarvo's Business account screen for an example shop: 18 sent this week and 2 out now (example figures), a regular pickup switch for Mon, Wed and Fri at 15:00, and four recent parcels with status chips."),
+    ],
+    desktop: [
+      page("skarvo", 'Skarvo\'s home page: "Parcels across town, picked up when you\'re ready." in large white italic type on night navy under three orange slashes, beside a stock photo of a courier wheeling a parcel from a white van.'),
+      pic(
+        "skarvo",
+        "desktop-sections",
+        1600,
+        1792,
+        "The rest of Skarvo's home page: three steps with big orange italic numbers, sizes and example prices for today and tomorrow, a navy business band with a stock photo, and the footer.",
+      ),
+      pic(
+        "skarvo",
+        "desktop-business",
+        1600,
+        1883,
+        "Skarvo's For business page: four feature cards (regular pickups, upload a list, returns labels, monthly invoice), the business account on a laptop, and a per-parcel price table marked as examples.",
+      ),
+    ],
+    images: [
+      pic(
+        "skarvo",
+        "logo-board",
+        1600,
+        1200,
+        "The Skarvo logo board: SKARVO in navy italic capitals with an orange parcel O, the parcel on a navy square, the logo on navy, the wide version with three slashes, palette and type.",
+        "The logo, its alternates, the wide version, palette and type.",
+      ),
+      pic(
+        "skarvo",
+        "van",
+        1600,
+        1200,
+        "Flat livery artwork for a generic white van from the side, back and front: a navy lower band with the white logo, three orange slashes behind the cab door, and the parcel on both rear doors.",
+        "Van livery, side, back and front. Flat artwork on a drawn, generic van.",
+      ),
+      pic(
+        "skarvo",
+        "mockup-van",
+        1600,
+        1200,
+        "An illustration of the Skarvo van in its livery parked at a plain grey kerb.",
+        "The van at the kerb. An illustration, drawn in code.",
+      ),
+      pic(
+        "skarvo",
+        "mockup-phone",
+        1600,
+        1200,
+        "A blurred stock photo of a courier at an open van, with a phone showing Skarvo's Track screen and a frosted card reading \"Follow the van on the map.\" added.",
+        "Tracking on a phone. Stock photo with our screen added.",
+      ),
+      pic(
+        "skarvo",
+        "mockup-label",
+        1600,
+        1200,
+        "A stock photo of a parcel passed between two pairs of hands, with orange Skarvo tape and a white example shipping label with a drawn barcode added.",
+        "Label and tape. Stock photo with our label added; the barcode scans to nothing.",
+      ),
+    ],
+    tools: [...DRAWN, "Adobe Stock photos"],
+    made: "2026-11",
+    updated: "2026-11-26",
+    ai: false,
+  },
+  // Penrayo Solar: drawn in HTML, CSS and SVG with SIL OFL fonts (Sora, Red Hat Text); logo, roof drawings, report and
+  // laptop drawn in code; free Adobe Stock photos licensed under the Standard licence (Adobe backup LOG, 23 Nov 2026):
+  // 562625176 (home page hero and share picture, captioned as stock), 483730131 (photo band, no safety wording near it),
+  // 171324126 (phone mockup background, blurred). 496152691 not used; 1747659131 and 614656764 dropped by marketing.
+  // Palette changed from the brief: a lighter cell blue instead of a deep panel blue, so it stays apart from Skarvo's
+  // night navy, and sun yellow only in the logo's disk and one marker. No AI.
+  {
+    slug: "penrayo",
+    share: "/library/penrayo/share.jpg",
+    brand: "Penrayo Solar",
+    business: "Solar installer",
+    industry: "energy",
+    kind: "app",
+    summary: "A website and customer app for a solar installer, with its logo, drawn roof plans, a daily energy chart and a survey report.",
+    choices: [
+      "White and sky first, with one clear cell blue for headings, buttons and charts; sun yellow appears only in the logo's disk and one marker.",
+      "The logo is a sun disk rising behind a tilted panel with two white cell lines, beside penrayo in a lowercase geometric sans.",
+      "Units are explained in plain words, every figure is labelled as an example, and there are no savings, payback or environmental claims.",
+    ],
+    mobile: [
+      phone("penrayo", "today", 'Penrayo\'s Today screen: a thin sun arc at 14:00 over "12.4 kWh made so far today", 2.1 kW right now, 286 kWh this month, an hourly chart and a line explaining kWh and kW. Example figures.'),
+      phone("penrayo", "history", 'Penrayo\'s History screen: Week, Month and Year with Month picked, daily bars for March with the most in a day, 3 Mar, 21.8 kWh, marked in blue, and "Cloudy days make less. That\'s normal."'),
+      phone("penrayo", "install", "Penrayo's Your install screen: a timeline from roof survey (done) to install day (next, Tue 2 Feb, marked with a sun dot), a drawn roof plan with 10 panels on the back roof, and a Message your installer button."),
+      phone("penrayo", "survey", 'Penrayo\'s Book a roof survey form: "Tell us about your roof.", chips for roof type, which way it faces and shade, a street field, three example visit dates and a blue button.'),
+    ],
+    desktop: [
+      page("penrayo", 'Penrayo\'s home page: a stock photo of an installer fixing panels on a flat roof, with a frosted card reading "Solar panels, planned around your roof." in blue and a yellow sun disk in the top corner.'),
+      pic(
+        "penrayo",
+        "desktop-sections",
+        1600,
+        2247,
+        "The rest of Penrayo's home page: four steps on sky blue, the app on a phone beside three short lines, a stock photo band of two installers lifting a panel with a frosted card, and the footer.",
+      ),
+      pic(
+        "penrayo",
+        "desktop-install",
+        1600,
+        1812,
+        "Penrayo's How an install works page: four cards with drawn diagrams (the survey, the panel layout from above, install day, switch-on with the app) and three plain questions and answers.",
+      ),
+    ],
+    images: [
+      pic(
+        "penrayo",
+        "logo-board",
+        1600,
+        1200,
+        "The Penrayo Solar logo board: a yellow sun behind a tilted blue panel beside penrayo in blue, the mark on a sky square, the logo in white on blue, app icon sizes, palette and type.",
+        "The logo, its alternates, the app icon, palette and type.",
+      ),
+      pic(
+        "penrayo",
+        "mockup-phone",
+        1600,
+        1200,
+        "A phone showing Penrayo's Today screen in front of a blurred stock photo of solar cells against a blue sky.",
+        "The app over panels. Stock photo, blurred, with our screen added.",
+      ),
+      pic(
+        "penrayo",
+        "mockup-report",
+        1600,
+        1200,
+        "An illustration of an A4 Penrayo roof survey report on a table, with the mark, a drawn roof plan with ten panels and a short list of roof type, direction, shade and panels, beside a pen.",
+        "The survey report, marked as an example. An illustration, drawn in code.",
+      ),
+      pic(
+        "penrayo",
+        "mockup-laptop",
+        1600,
+        1200,
+        "An illustration of a laptop on a kitchen table in morning light, showing Penrayo's home page.",
+        "The website on a laptop. An illustration, drawn in code.",
+      ),
+    ],
+    tools: [...DRAWN, "Adobe Stock photos"],
+    made: "2026-11",
+    updated: "2026-11-26",
+    ai: false,
+  },
   // Designed 23 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Libre Caslon Display, Libre Caslon Text, Karla);
   // stationery, folder and door drawn as flat shapes; no photos, stock or AI.
   {
