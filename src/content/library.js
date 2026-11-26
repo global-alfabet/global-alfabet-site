@@ -104,8 +104,8 @@ export const library = [
   // Brands 19 and 20 (designed 26 Nov 2026). Kept together at the top of the list, like Ostrak and Arbekk (PR #44).
   // Skarvo: drawn in HTML, CSS and SVG with SIL OFL fonts (Exo 2, Instrument Sans); logo, van and map drawn in code;
   // free Adobe Stock photos licensed under the Standard licence (Adobe backup LOG, 23 Nov 2026): 980807027 (home page
-  // hero, captioned as stock), 1095431492 (business band, captioned), 450469085 (label mockup, cropped above the
-  // numbers on the glass). 301642815 and 425912788 not used; 374737303 dropped by marketing. No AI.
+  // hero, captioned as stock), 1095431492 (business band, captioned; and blurred behind the phone mockup), 450469085
+  // (label mockup, cropped above the numbers on the glass). 301642815 and 425912788 not used; 374737303 dropped by marketing. No AI.
   {
     slug: "skarvo",
     share: "/library/skarvo/share.jpg",
@@ -191,10 +191,10 @@ export const library = [
   },
   // Penrayo Solar: drawn in HTML, CSS and SVG with SIL OFL fonts (Sora, Red Hat Text); logo, roof drawings, report and
   // laptop drawn in code; free Adobe Stock photos licensed under the Standard licence (Adobe backup LOG, 23 Nov 2026):
-  // 562625176 (home page hero and share picture, captioned as stock), 483730131 (photo band, no safety wording near it),
+  // 562625176 (home page hero and share picture, both captioned as stock), 483730131 (photo band, no safety wording near it),
   // 171324126 (phone mockup background, blurred). 496152691 not used; 1747659131 and 614656764 dropped by marketing.
   // Palette changed from the brief: a lighter cell blue instead of a deep panel blue, so it stays apart from Skarvo's
-  // night navy, and sun yellow only in the logo's disk and one marker. No AI.
+  // night navy, and sun yellow only as the sun disk and a few small markers (marketing confirmed, 26 Nov). No AI.
   {
     slug: "penrayo",
     share: "/library/penrayo/share.jpg",
@@ -204,14 +204,14 @@ export const library = [
     kind: "app",
     summary: "A website and customer app for a solar installer, with its logo, drawn roof plans, a daily energy chart and a survey report.",
     choices: [
-      "White and sky first, with one clear cell blue for headings, buttons and charts; sun yellow appears only in the logo's disk and one marker.",
+      "White and sky first, with one clear cell blue for headings, buttons and charts; sun yellow appears only as the sun disk and a few small markers.",
       "The logo is a sun disk rising behind a tilted panel with two white cell lines, beside penrayo in a lowercase geometric sans.",
       "Units are explained in plain words, every figure is labelled as an example, and there are no savings, payback or environmental claims.",
     ],
     mobile: [
-      phone("penrayo", "today", 'Penrayo\'s Today screen: a thin sun arc at 14:00 over "12.4 kWh made so far today", 2.1 kW right now, 286 kWh this month, an hourly chart and a line explaining kWh and kW. Example figures.'),
+      phone("penrayo", "today", 'Penrayo\'s Today screen: a thin sun arc at 14:00 over "12.4 kWh made so far today", 2.1 kW right now, 326 kWh this month, an hourly chart and a line explaining kWh and kW. Example figures.'),
       phone("penrayo", "history", 'Penrayo\'s History screen: Week, Month and Year with Month picked, daily bars for March with the most in a day, 3 Mar, 21.8 kWh, marked in blue, and "Cloudy days make less. That\'s normal."'),
-      phone("penrayo", "install", "Penrayo's Your install screen: a timeline from roof survey (done) to install day (next, Tue 2 Feb, marked with a sun dot), a drawn roof plan with 10 panels on the back roof, and a Message your installer button."),
+      phone("penrayo", "install", "Penrayo's Your install screen: a timeline with the roof survey, panel layout, install day and switch-on done and the app marked now with a sun dot, a drawn roof plan with 10 panels on the back roof, and a Message your installer button."),
       phone("penrayo", "survey", 'Penrayo\'s Book a roof survey form: "Tell us about your roof.", chips for roof type, which way it faces and shade, a street field, three example visit dates and a blue button.'),
     ],
     desktop: [
