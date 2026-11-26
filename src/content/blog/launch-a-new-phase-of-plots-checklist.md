@@ -118,7 +118,7 @@ Before you announce the phase, check that:
 - **Review it privately before launch.** When the 3D estate is ready, only your team and Global Alfabet can open it. You set prices, payment plans, the sales contact, the description and each plot's status, then an owner approves it or asks for changes. A checklist shows what's still missing: prices, a sales contact, a description and plots marked for sale.
 - **Choose when buyers see it.** After approval the estate is live but still private. On launch day an owner switches it to anyone with the link, or to public.
 - **One link, and a link to each plot.** Share the estate's link, copy a link to any plot, or put the estate on your website with an embed code.
-- **Your team keeps status current.** Owners and staff mark plots for sale, reserved or sold, and change prices. Buyers see a saved change the next time they open or refresh the link. The estate's activity lists every plot status and price change.
+- **Your team keeps status current.** Owners and staff mark plots for sale, reserved or sold, and change prices. Buyers see a saved change the next time they open or refresh the link. The estate's activity records plot status and price changes.
 - **Agents get their own links.** Buyers who open an agent's link send their enquiries to that agent, and the plot packs they download show the agent's contact.
 - **Plot packs.** Buyers can download a PDF for any plot, with the site plan and boundary lengths, views, the price and payment plans, and who to contact.
 
