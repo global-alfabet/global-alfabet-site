@@ -51,6 +51,19 @@ export const livePosts = posts.filter((p) => !p.scheduled);
 
 export const postBySlug = Object.fromEntries(posts.map((p) => [p.slug, p]));
 
+/** The posts this build shows that link to an address, newest first: a Studio library page lists the posts that
+ * use it as an example. Scheduled posts appear only where the blog shows them (dev and deploy previews).
+ * A link counts whether it is relative or a full globalalfabet.com address, with or without a trailing slash,
+ * #anchor or ?query. */
+const escapeRegExp = (text) => text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+export const postsLinkingTo = (path) => {
+  const bare = path.replace(/\/+$/, "");
+  const pattern = new RegExp(
+    `href="(?:https?://(?:www\\.)?globalalfabet\\.com)?${escapeRegExp(bare)}/?(?:[?#][^"]*)?"`,
+  );
+  return posts.filter((p) => pattern.test(p.html));
+};
+
 export function formatDate(iso) {
   return new Date(`${iso}T12:00:00`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
 }
