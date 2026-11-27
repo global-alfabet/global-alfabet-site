@@ -4,13 +4,16 @@ subtitle: Ownership papers, boundaries, services and access, building rules, and
 author: Julius Choga
 date: 2027-01-13
 category: Guides
+cover: /images/blog/what-to-check-before-buying-a-plot/plot-survey-pegs-cover.jpg
+coverAlt: A cleared, levelled piece of land with wooden survey pegs and small flags marking out plots
+coverCredit: Adobe Stock 662485210 (free collection, standard licence), licensed for Global Alfabet on 27 Nov 2026. Stock photo, not an Alfa Maps estate
 summary: What to check before buying a plot: who owns the land, where the boundaries are, services and access, building rules, and payment terms in writing.
 ---
 Before you buy a plot, check five things: that the seller has the right to sell it, that the plot on paper is the plot on the ground, that roads, water and power reach it (or when they will), what the rules let you build, and that every payment term is written down. Ask for documents, not promises, and have a lawyer or conveyancer check them before you pay a deposit. Most problems with land are cheap to find before you pay and expensive to fix after.
 
 ## Why these checks matter
 
-A plot is often the largest thing a person buys. Unlike a phone or a car, you can't return it, and many buyers pay months before they can build. Some never visit the land before they pay, because they live far away.
+A plot is often the largest thing a person buys. Unlike most things you buy, you can't return it, and many buyers pay months before they can build. Some never visit the land before they pay, because they live far away.
 
 The checks below are the same whether you buy from a developer selling a new estate or from a private seller. Some markets call a plot a stand, a lot or an erf; the checks don't change.
 
@@ -24,7 +27,7 @@ The first question is not about the plot. It is about the seller.
 - **Check the name matches the seller.** If a developer is selling, the land may be in the name of a company. Ask how the seller is connected to the owner, and for proof that they may sell on the owner's behalf.
 - **Ask whether the plot has its own title yet.** On a new estate, the whole piece of land often has one title until it is subdivided and each plot is registered. Ask what you are buying today (a plot with its own title, or the right to one later) and when you will get the title in your name.
 - **Ask about loans and claims on the land.** Land can be held as security for a loan (a mortgage or bond), or have other claims against it. Ask the seller in writing, and ask your lawyer to check the register.
-- **Have the register checked yourself.** Don't rely on a copy the seller gives you. A lawyer or conveyancer can search the official record and tell you who owns the land and what is registered against it.
+- **Have the register checked independently.** Don't rely on a copy the seller gives you. A lawyer or conveyancer can search the official record and tell you who owns the land and what is registered against it.
 
 If the seller can't show who owns the land, stop there until they can.
 
