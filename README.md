@@ -71,7 +71,7 @@ notifications there.
 
 ## Analytics and cookies
 
-Google Analytics 4 runs only after a visitor presses Accept on the cookie banner (`src/lib/consent.js`,
+Google Analytics 4 runs only after a visitor presses OK on the cookie banner, or allows it under Manage (`src/lib/consent.js`,
 `src/components/CookieBanner.jsx`). Paste the measurement ID (`G-…`) into `analytics.ga4` in `src/config.js`; while
 it's empty there's no banner and nothing is measured. The same consent code is used on every Global Alfabet site, and
 one answer covers them all (the `ga_consent` cookie is set for globalalfabet.com). Visitors change their answer with

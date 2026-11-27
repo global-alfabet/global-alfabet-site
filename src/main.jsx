@@ -24,5 +24,5 @@ const root = document.getElementById("root");
 if (root.hasChildNodes()) hydrateRoot(root, app);
 else createRoot(root).render(app);
 
-// Visit counts for everyone, without cookies. Google Analytics waits for Accept (CookieBanner).
+// Visit counts for everyone, without cookies. Google Analytics waits for OK (CookieBanner).
 initWebAnalytics(company.analytics.cloudflare);
