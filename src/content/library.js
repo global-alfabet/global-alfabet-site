@@ -63,6 +63,7 @@ export const countOf = (kind, n) => (n === 1 ? `One ${kind.one}` : `${n} ${kind.
 
 export const industries = [
   { id: "events", label: "Events" },
+  { id: "automotive", label: "Automotive" },
   { id: "beauty", label: "Beauty" },
   { id: "education", label: "Education" },
   { id: "engineering", label: "Engineering" },
@@ -99,6 +100,187 @@ const page = (slug, alt) => pic(slug, "desktop", 1600, 1000, alt);
 const DRAWN = ["HTML and CSS", "SVG"];
 
 export const library = [
+  // Brands 21 and 22 (designed 27 Nov 2026). Kept together at the top of the list, like Ostrak and Arbekk (PR #44)
+  // and Skarvo and Penrayo (PR #47).
+  // Ivrosa Flowers: drawn in HTML, CSS and SVG with SIL OFL fonts (Gloock, Albert Sans); logo, wrap print, care card,
+  // tag and flat lay drawn in code; free Adobe Stock photos licensed under the Standard licence (Adobe backup LOG,
+  // 24 Nov 2026): 531281427 (home page hero and share picture, cropped to the bouquet below the florist's face),
+  // 108963532 (bouquet cards and screens, workroom photos), 644240402 (bouquet cards, events photo, phone mockup
+  // background, blurred), 1192572328 (wrap mockup, cropped clear of the card reader, with our wrap print added).
+  // 1894114060 not used; 164676436 dropped by marketing. Every stock photo is captioned as stock. No AI.
+  {
+    slug: "ivrosa",
+    share: "/library/ivrosa/share.jpg",
+    brand: "Ivrosa Flowers",
+    business: "Florist",
+    industry: "retail",
+    kind: "website",
+    summary: "A photo-led website and ordering screens for a florist, with its logo, a bouquet wrap and a care card.",
+    choices: [
+      "White first and photo-led, with Gloock headings, one leaf green for buttons and peony pink only in the petal, the wrap and small markers.",
+      "The logo is ivrosa in lowercase Gloock, with the dot of the i a single peony petal on a thin green stem.",
+      "Every bouquet names its flowers and comes with a care card; prices, dates and orders are labelled as examples.",
+    ],
+    mobile: [
+      phone("ivrosa", "week", "Ivrosa's This week's flowers screen: a stock photo card for The market bunch, $38 (example price), with chips for ranunculus, eucalyptus and waxflower, the next card cut off at the edge as the row scrolls, and a petal-pink subscription card."),
+      phone("ivrosa", "bouquet", "Ivrosa's bouquet screen for The market bunch, $38: a stock photo of ranunculus, four flower names with peony ticks, Small, Medium and Large chips with Medium picked, a card message field and a green Add to basket button."),
+      phone("ivrosa", "delivery", 'Ivrosa\'s delivery screen, "When should it arrive?": Thu 4, Fri 5 and Sat 6 Feb with Friday picked, collect or delivery, delivery address and recipient\'s phone fields, and Continue to payment. Example dates.'),
+      phone("ivrosa", "care", 'Ivrosa\'s care card screen, "Keep them going": four steps with thin green line icons (trim, vase, water, place) and a green card for The market bunch, delivered Fri 5 Feb. Example order.'),
+    ],
+    desktop: [
+      page("ivrosa", 'Ivrosa\'s home page: "Flowers, named and wrapped by hand." in large Gloock type on white beside a tall stock photo of a pink bouquet, with a frosted card naming its flowers and saying it is a stock photo.'),
+      pic(
+        "ivrosa",
+        "desktop-sections",
+        1600,
+        2976,
+        "The rest of Ivrosa's home page: three bouquet cards with example prices, a petal-pink subscription band, a flowers for small events section with a stock photo, the wrap mockup, and a leaf-green footer.",
+      ),
+      pic(
+        "ivrosa",
+        "desktop-care",
+        1600,
+        1830,
+        "Ivrosa's flower care page: How to keep your flowers going, four green cards with line drawings (trim, vase, water, place), one line on each flower this month beside a stock photo, and two short questions.",
+      ),
+    ],
+    images: [
+      pic(
+        "ivrosa",
+        "logo-board",
+        1600,
+        1200,
+        "The Ivrosa logo board: ivrosa in black Gloock with a peony petal over the i and flowers below, the petal and stem in a pink circle, the logo in white on leaf green, palette and type.",
+        "The logo, its alternates, palette and type.",
+      ),
+      pic(
+        "ivrosa",
+        "wrap",
+        1600,
+        1200,
+        "Flat artwork for the Ivrosa bouquet wrap: white paper with a repeat of small peony petals and green stems, pink tissue, a round seal, a green ribbon and tag, and an A6 care card front and back.",
+        "The bouquet wrap, flat artwork.",
+      ),
+      pic(
+        "ivrosa",
+        "mockup-wrap",
+        1600,
+        1200,
+        "A stock photo of hands wrapping a small bouquet in pink paper, with the Ivrosa petal print added to the paper.",
+        "The wrap in use. Stock photo with our print added.",
+      ),
+      pic(
+        "ivrosa",
+        "mockup-phone",
+        1600,
+        1200,
+        "A phone showing Ivrosa's bouquet screen in front of a blurred stock photo of wrapped flowers in buckets, with a frosted card reading \"Every flower, named.\"",
+        "The bouquet screen at the shop. Stock photo, blurred, with our screen added.",
+      ),
+      pic(
+        "ivrosa",
+        "mockup-flatlay",
+        1600,
+        1200,
+        "An illustration of the Ivrosa care card front and back and the green swing tag on a ribbon, with two eucalyptus sprigs and a few loose peony petals on white.",
+        "Care card and tag. An illustration, drawn in code.",
+      ),
+    ],
+    tools: [...DRAWN, "Adobe Stock photos"],
+    made: "2026-11",
+    updated: "2026-11-27",
+    ai: false,
+  },
+  // Holtrig Auto Repairs: drawn in HTML, CSS and SVG with SIL OFL fonts (Zilla Slab, Rubik); logo, sign, brake
+  // diagram, workshop front, job card and key tag drawn in code; free Adobe Stock photos licensed under the Standard
+  // licence (Adobe backup LOG, 24 Nov 2026): 479178273 (home page hero and share picture, a small mark on the engine
+  // cover blurred), 401102578 (prices photo and the Found something screen), 223406218 (How it works photo, cropped
+  // above the lift's labels and stripes, an exhibition sign blurred, colour toned down), 168473828 (phone mockup
+  // background, blurred so no maker marks can be read). 517164845 not used; 435242134 dropped by marketing. Every
+  // stock photo is captioned as stock. Kept clear of JetWash (a real client): no navy, emerald, pale blue or washing. No AI.
+  {
+    slug: "holtrig",
+    share: "/library/holtrig/share.jpg",
+    brand: "Holtrig Auto Repairs",
+    business: "Auto repair workshop",
+    industry: "automotive",
+    kind: "website",
+    summary: "A website and booking screens for a car repair workshop, with its logo, a written quote, a brake diagram and the workshop sign.",
+    choices: [
+      "Grey steel blue on white and concrete, with gunmetal for the header, footer and sign; Zilla Slab headings and squarer 8 px corners.",
+      "The logo is HOLTRIG in slab capitals on a steel bar like a workshop lintel, with the crossbar of the H drawn as a hex-bolt head.",
+      "Each screen says what the job is, what was found and what it costs, in that order; prices, times and findings are labelled as examples.",
+    ],
+    mobile: [
+      phone("holtrig", "book", 'Holtrig\'s booking screen, "What does your car need?": chips for service, brakes, tyres, battery, warning light and something else with Brakes picked, a registration field reading PLATE 001, three example times and a Book a repair button.'),
+      phone("holtrig", "quote", "Holtrig's Your quote screen for PLATE 001: front brake pads fitted $120, brake fluid change 45, labour included, total $165, \"Nothing is done until you approve it.\", and Approve and Ask a question buttons. Example prices."),
+      phone("holtrig", "found", 'Holtrig\'s "We found something else" screen: a stock photo of tyres, a note that the rear tyres are close to the wear marks, $140 for two, and Add to this job and Not now buttons. Example finding and prices.'),
+      phone("holtrig", "ready", "Holtrig's status screen: a steel blue timeline from booked in at 08:00 to ready to collect at 14:30, a gunmetal card reading Ready to collect at Bay 2, and a Message the workshop button. Example times."),
+    ],
+    desktop: [
+      page("holtrig", 'Holtrig\'s home page: a gunmetal header and a wide stock photo of gloved hands working in an engine bay, with a frosted card reading "Car repairs, explained before we start." and Book a repair and How it works buttons.'),
+      pic(
+        "holtrig",
+        "desktop-sections",
+        1600,
+        2664,
+        "The rest of Holtrig's home page: eight cards with thin steel blue icons for what the workshop fixes, four numbered steps on concrete beside a stock photo of a car on a lift, an example price table beside a stock photo of tyres, and a gunmetal footer with example hours.",
+      ),
+      pic(
+        "holtrig",
+        "desktop-brakes",
+        1600,
+        1548,
+        "Holtrig's Brakes page: three signs to watch for, a drawn diagram of a disc, pad and calliper with a plain line on each, three numbered steps and an example price table.",
+      ),
+    ],
+    images: [
+      pic(
+        "holtrig",
+        "logo-board",
+        1600,
+        1200,
+        "The Holtrig logo board: HOLTRIG in gunmetal slab capitals on a steel blue bar with AUTO REPAIRS below, the H with its hex-bolt crossbar on a steel blue square, the logo in white on gunmetal, palette and type.",
+        "The logo, its alternates, palette and type.",
+      ),
+      pic(
+        "holtrig",
+        "sign",
+        1600,
+        1200,
+        "Flat artwork for the Holtrig sign set: a long gunmetal fascia with the white logo, steel blue bay number plates 1 to 4, an opening-hours plate with example hours, and an A-board reading Book a repair.",
+        "Fascia, bay numbers, hours plate and A-board, flat artwork.",
+      ),
+      pic(
+        "holtrig",
+        "mockup-front",
+        1600,
+        1200,
+        "An illustration of a two-bay workshop front with the Holtrig fascia over two roller doors, bay numbers 1 and 2, and the A-board on the pavement.",
+        "The workshop front. An illustration, drawn in code.",
+      ),
+      pic(
+        "holtrig",
+        "mockup-phone",
+        1600,
+        1200,
+        "A phone showing Holtrig's Your quote screen on a workbench in front of a blurred stock photo of a tool wall, with a frosted card reading \"Approve each job from your phone.\"",
+        "The quote on a phone. Stock photo, blurred, with our screen added.",
+      ),
+      pic(
+        "holtrig",
+        "mockup-jobcard",
+        1600,
+        1200,
+        "An illustration of a printed Holtrig job card for PLATE 001 with the quote lines and a total of $165, beside a steel blue key tag for Bay 2 on a concrete surface.",
+        "Example job card and key tag. An illustration, drawn in code.",
+      ),
+    ],
+    tools: [...DRAWN, "Adobe Stock photos"],
+    made: "2026-11",
+    updated: "2026-11-27",
+    ai: false,
+  },
   // Designed 23 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Libre Caslon Display, Libre Caslon Text, Karla);
   // stationery, folder and door drawn as flat shapes; no photos, stock or AI.
   {
