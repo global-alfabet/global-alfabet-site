@@ -122,7 +122,7 @@ export const library = [
       "Every bouquet names its flowers and comes with a care card; prices, dates and orders are labelled as examples.",
     ],
     mobile: [
-      phone("ivrosa", "week", "Ivrosa's This week's flowers screen: stock photo cards for The market bunch $38, The tall one $55 and The small one $26 (example prices), chips for ranunculus, eucalyptus and waxflower, and a petal-pink subscription card."),
+      phone("ivrosa", "week", "Ivrosa's This week's flowers screen: a stock photo card for The market bunch, $38 (example price), with chips for ranunculus, eucalyptus and waxflower, the next card cut off at the edge as the row scrolls, and a petal-pink subscription card."),
       phone("ivrosa", "bouquet", "Ivrosa's bouquet screen for The market bunch, $38: a stock photo of ranunculus, four flower names with peony ticks, Small, Medium and Large chips with Medium picked, a card message field and a green Add to basket button."),
       phone("ivrosa", "delivery", 'Ivrosa\'s delivery screen, "When should it arrive?": Thu 4, Fri 5 and Sat 6 Feb with Friday picked, collect or delivery, delivery address and recipient\'s phone fields, and Continue to payment. Example dates.'),
       phone("ivrosa", "care", 'Ivrosa\'s care card screen, "Keep them going": four steps with thin green line icons (trim, vase, water, place) and a green card for The market bunch, delivered Fri 5 Feb. Example order.'),
@@ -224,7 +224,7 @@ export const library = [
         "desktop-sections",
         1600,
         2664,
-        "The rest of Holtrig's home page: eight cards with thin steel blue icons for what the workshop fixes, four numbered steps on concrete beside a stock photo of a car on a lift, an example price table, and a gunmetal footer with example hours.",
+        "The rest of Holtrig's home page: eight cards with thin steel blue icons for what the workshop fixes, four numbered steps on concrete beside a stock photo of a car on a lift, an example price table beside a stock photo of tyres, and a gunmetal footer with example hours.",
       ),
       pic(
         "holtrig",
