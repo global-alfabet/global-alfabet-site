@@ -63,6 +63,7 @@ export const countOf = (kind, n) => (n === 1 ? `One ${kind.one}` : `${n} ${kind.
 
 export const industries = [
   { id: "events", label: "Events" },
+  { id: "agriculture", label: "Agriculture" },
   { id: "beauty", label: "Beauty" },
   { id: "education", label: "Education" },
   { id: "engineering", label: "Engineering" },
@@ -73,6 +74,7 @@ export const industries = [
   { id: "health", label: "Health" },
   { id: "hospitality", label: "Hotels and travel" },
   { id: "legal", label: "Legal" },
+  { id: "nonprofit", label: "Charities and nonprofits" },
   { id: "property", label: "Property" },
   { id: "retail", label: "Retail" },
 ];
@@ -99,6 +101,182 @@ const page = (slug, alt) => pic(slug, "desktop", 1600, 1000, alt);
 const DRAWN = ["HTML and CSS", "SVG"];
 
 export const library = [
+  // Brands 23 and 24 (designed 28 Nov 2026). Kept together at the top of the list, like Ivrosa and Holtrig (PR #49).
+  // Kernaby Farm Supply: drawn in HTML, CSS and SVG with SIL OFL fonts (Vollkorn, Lato); logo, woodcut prints, sacks,
+  // fence diagram, price board and seed bag drawn in code; free Adobe Stock photos licensed under the Standard licence
+  // (Adobe backup LOG, 27 Nov 2026), marketing's keep/crop picks only: 1039036751 (home page hero and share picture,
+  // a faint print and a small tag blurred, cropped above the pallets), 154650087 (fencing band, cropped clear of the
+  // tape and a bottle), 269772433 (Fencing page photo and phone mockup background, cropped to the post and wire,
+  // blurred in the mockup). 858630641, 92525026 and 531518019 were kept by marketing but not used (the sacks and
+  // category tiles are drawn); 304397228 dropped by marketing. No prices anywhere: stock and times are labelled as examples. Every stock photo is
+  // captioned as stock. No AI.
+  {
+    slug: "kernaby",
+    share: "/library/kernaby/share.jpg",
+    brand: "Kernaby Farm Supply",
+    business: "Farm supply store",
+    industry: "agriculture",
+    kind: "website",
+    summary: "A website and reserve-and-collect screens for a farm supply store, with its logo, woodcut prints and two own-label feed sacks.",
+    choices: [
+      "Kraft, soil brown and a soft maize, with heavy Vollkorn headings and woodcut-style prints drawn in SVG for each part of the yard.",
+      "The logo is a single maize kernel with three cut lines above Kernaby, with FARM SUPPLY under a rough-edged rule.",
+      "Screens say what's in stock and when to collect it; stock, times and the yard ticket are labelled as examples, and there are no prices.",
+    ],
+    mobile: [
+      appScreen("kernaby", "stock", "Kernaby's Stock screen: a soil-brown header with the logo and a search field, five woodcut category tiles (seed, feed, fencing, tools, water), and a list of layer feed, barbed wire and a water tank marked In stock or Order in. Example stock."),
+      appScreen("kernaby", "item", "Kernaby's item screen for Layer feed, 50 kg: a large woodcut print of a hen on kraft, a quantity stepper set to 10 sacks, the line \"Pellets for laying hens. Feed as the label says.\" and a Reserve for collection button."),
+      appScreen("kernaby", "reserve", "Kernaby's Your reservation screen: 10 sacks of layer feed and 2 rolls of barbed wire, three collection times with Tomorrow 07:00 to 12:00 picked in maize, \"Pay at the yard when you collect.\" and a Reserve button. Example times."),
+      appScreen("kernaby", "ticket", "Kernaby's yard ticket on soil brown: a kraft ticket reading Ticket 0427, Ready to collect, Bay 3, a drawn square pattern (not a real code) and the items, with \"Show this at the yard gate.\""),
+    ],
+    desktop: [
+      page("kernaby", 'Kernaby\'s home page: a wide stock photo of kraft sacks stacked in a warehouse, with a frosted card reading "Seed, feed and fencing, ready when you are." and Check stock and Ask for a delivery quote buttons.'),
+      pic(
+        "kernaby",
+        "desktop-sections",
+        1600,
+        2894,
+        "The rest of Kernaby's home page: five kraft cards with woodcut prints for what's in the yard, three numbered steps on kraft, the two own-label sacks on soil brown, a fencing band with a stock photo of timber posts, and a soil footer with example hours.",
+      ),
+      pic(
+        "kernaby",
+        "desktop-fencing",
+        1600,
+        2636,
+        "Kernaby's Fencing page: a stock photo of a fence post and wire, a table of wire, posts and droppers with sizes, units and example stock (no prices), a woodcut diagram of a fence line with five labels, and a delivery quote form.",
+      ),
+    ],
+    images: [
+      pic(
+        "kernaby",
+        "logo-board",
+        1600,
+        1200,
+        "The Kernaby logo board: a maize kernel with three cut lines above Kernaby in soil-brown Vollkorn and FARM SUPPLY under a rough rule, the kernel in a soil circle, the wordmark in kraft on soil, palette and type.",
+        "The logo, its alternates, palette and type.",
+      ),
+      pic(
+        "kernaby",
+        "packaging",
+        1600,
+        1200,
+        "Flat artwork for two Kernaby own-label 50 kg feed sacks, front and back: a soil band with the logo, a woodcut hen or young bird, the product name, a maize 50 kg box, storage lines and a blank batch box.",
+        "Own-label feed sacks, front and back. Fictional product, example weights.",
+      ),
+      pic(
+        "kernaby",
+        "mockup-sacks",
+        1600,
+        1200,
+        "An illustration of the two Kernaby feed sacks standing on a wooden pallet against a kraft wall, with the logo sign above.",
+        "The sacks in the yard. An illustration, drawn in code.",
+      ),
+      pic(
+        "kernaby",
+        "mockup-phone",
+        1600,
+        1200,
+        "A phone showing Kernaby's yard ticket in front of a blurred stock photo of a fence post and wire, with a frosted card reading \"Show your ticket at the yard gate.\"",
+        "The yard ticket on a phone. Stock photo, blurred, with our screen added.",
+      ),
+      pic(
+        "kernaby",
+        "mockup-board",
+        1600,
+        1200,
+        "An illustration of a chalk-style board headed In the yard today with the Kernaby logo, listing feed, wire, posts, tanks and seed as in stock or order in, beside a kraft seed bag with the kernel stamp.",
+        "Stock board and seed bag. An illustration, drawn in code. Example stock.",
+      ),
+    ],
+    tools: [...DRAWN, "Adobe Stock photos"],
+    made: "2026-11",
+    updated: "2026-11-28",
+    ai: false,
+  },
+  // Kettlow: drawn in HTML, CSS and SVG with SIL OFL fonts (Gabarito, Rethink Sans); logo, badge and leaflet drawn in
+  // code; free Adobe Stock photos licensed under the Standard licence (Adobe backup LOG, 25 and 27 Nov 2026),
+  // marketing's keep/crop picks only: 238888239 (home page hero, share picture, home screen and phone mockup; the
+  // right fifth cropped off, faces cut above the mouth), 1575040101 (tea and a chat, cropped above the phone on the
+  // table), 471326793 (help with a phone, passers-by trimmed), 980775284 (a lift to the shops, the shop sign and the
+  // trolley cropped out), 544856345 (Volunteer page, hands only), 488728476 (cork board behind the leaflet).
+  // 678307715 and 265749079 not used; 532673979 dropped by marketing. Not a
+  // real charity or cause: no amounts, figures, impact claims or registration wording. Every stock photo is captioned
+  // as stock. Kettlow coral (#F2787A, pink-salmon) is kept for shapes only and is not Alfa Homes' coral. No AI.
+  {
+    slug: "kettlow",
+    share: "/library/kettlow/share.jpg",
+    brand: "Kettlow",
+    business: "Charity",
+    industry: "nonprofit",
+    kind: "website",
+    summary: "A website and screens for a neighbourhood charity whose volunteers visit for tea and a chat, with its logo, a volunteer badge and a leaflet.",
+    choices: [
+      "White and warm paper with warm photos, blue-black ink for type and buttons, and a pink-salmon coral only in shapes, never in text.",
+      "The logo is kettlow in lowercase Gabarito, with the o drawn as a small coral cup with one curl of steam.",
+      "Every screen says what happens on a visit, not what it achieves: no amounts, figures or claims, and the Give screen has no preset amounts.",
+    ],
+    mobile: [
+      appScreen("kettlow", "home", "Kettlow's Home screen: the logo, a rounded stock photo of tea being poured, \"A cup of tea, and someone to share it with.\" with a coral highlight behind someone, and three cards: Ask for a visit, Volunteer and Give."),
+      appScreen("kettlow", "ask", "Kettlow's Ask for a visit screen: \"Who would like a visit?\" with Someone I know picked, first name and area fields, best-day chips with Mon and Fri picked, what-would-help chips, and an Ask for a visit button. Example form."),
+      appScreen("kettlow", "volunteer", "Kettlow's Volunteer screen, \"Give an hour a week\": three numbered steps in coral-ringed circles, chips for when you're free, a Volunteer with us button and a note about references."),
+      appScreen("kettlow", "give", "Kettlow's Give screen: the cup icon, Once and Monthly, one empty Amount field with no preset amounts, \"Gifts pay for volunteer training, travel and tea.\" and a Continue button. Example screen; nothing is taken."),
+    ],
+    desktop: [
+      page("kettlow", 'Kettlow\'s home page: a wide stock photo of tea being poured at a table, with a frosted card reading "A cup of tea, and someone to share it with." and Ask for a visit and Volunteer with us buttons.'),
+      pic(
+        "kettlow",
+        "desktop-sections",
+        1600,
+        2220,
+        "The rest of Kettlow's home page: How a visit works in three steps on warm paper, three stock photo cards for tea and a chat, help with a phone and a lift to the shops, a coral wash band asking \"Have an hour a week?\", and an ink footer.",
+      ),
+      pic(
+        "kettlow",
+        "desktop-volunteer",
+        1600,
+        1386,
+        "Kettlow's Volunteer page: \"Volunteer with Kettlow\" beside a stock photo of hands on a phone, three cards (what you'd do, what we ask, what we give you, labelled example terms), two short questions and a Volunteer with us button.",
+      ),
+    ],
+    images: [
+      pic(
+        "kettlow",
+        "logo-board",
+        1600,
+        1200,
+        "The Kettlow logo board: kettlow in ink Gabarito with the o as a coral cup and a curl of steam, the cup on a coral wash square, the logo in white on ink, palette and type.",
+        "The logo, its alternates, palette and type.",
+      ),
+      pic(
+        "kettlow",
+        "mockup-phone",
+        1600,
+        1200,
+        "A phone showing Kettlow's Ask for a visit screen in front of a blurred stock photo of a teacup and teapot, with a frosted card reading \"Ask for a visit, in a minute.\"",
+        "The Ask for a visit screen. Stock photo, blurred, with our screen added.",
+      ),
+      pic(
+        "kettlow",
+        "mockup-badge",
+        1600,
+        1200,
+        "An illustration of a white Kettlow volunteer badge on an ink lanyard, with the cup icon, a blank name line and the logo on warm paper.",
+        "Volunteer badge. An illustration, drawn in code.",
+      ),
+      pic(
+        "kettlow",
+        "mockup-leaflet",
+        1600,
+        1200,
+        "A Kettlow leaflet pinned to a stock photo of a cork board: the logo, a photo of tea, the hero line, three numbered steps and hello@kettlow.example.",
+        "Example leaflet. Stock photo of a cork board, with our leaflet added.",
+      ),
+    ],
+    tools: [...DRAWN, "Adobe Stock photos"],
+    made: "2026-11",
+    updated: "2026-11-28",
+    ai: false,
+  },
   // Designed 23 Nov 2026 in HTML, CSS and SVG, with SIL OFL fonts (Libre Caslon Display, Libre Caslon Text, Karla);
   // stationery, folder and door drawn as flat shapes; no photos, stock or AI.
   {
